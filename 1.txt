@@ -1,0 +1,2004 @@
+IPCTrace 1.1 (c) 2001 Nitrobit Software.
+*** www.nitrobit.com *** (email: melber@nitrobit.com)
+
+00000001 {P:3788 T:3604 S:0} MessageSender::MessageSender
+00000002 {P:3788 T:3604 S:0} - working thread launched, tid=3540
+00000003 {P:3788 T:3604 S:0} - find tag certificate
+00000004 {P:3788 T:3604 S:0} - not found
+00000005 {P:3788 T:3604 S:0} fs::LoadResourceToString [id=142,type='JSONDATA']
+00000006 {P:3788 T:3604 S:0} - size: 39435
+00000007 {P:3788 T:3604 S:0} Start app v1.19.3506 (win6.1.7601 64bit with ie9.0)
+00000008 {P:3788 T:3604 S:0} !>App::Create
+00000009 {P:3788 T:3604 S:0} SaveTimeStamp, 'appStart'/-1 -> 1383816280686
+00000010 {P:3788 T:3604 S:0} !>App::ParseCommandLine
+00000011 {P:3788 T:3604 S:0} - 2 args, options: '/L '
+00000012 {P:3788 T:3604 S:0} !<App::ParseCommandLine
+00000013 {P:3788 T:3604 S:0} - found 32bpp icon 0x006C0369
+00000014 {P:3788 T:3604 S:0} fs::LoadResourceToString [id=145,type='JSONDATA']
+00000015 {P:3788 T:3604 S:0} - size: 691
+00000016 {P:3788 T:3604 S:0} !>fs::CreateTemp
+00000017 {P:3788 T:3604 S:0} fs::RandomName -> pnZ7b5DCPP
+00000018 {P:3788 T:3604 S:0} !<fs::CreateTemp
+00000019 {P:3788 T:3604 S:0} fs::RandomName -> AHr8F1ksjh
+00000020 {P:3788 T:3604 S:0} - create marker window: 0x0012023C
+00000021 {P:3788 T:3604 S:0} fs::CopyFileW [in='C:\New folder\avg_avc_oin_en_2014_v103.exe',out='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\OIAssistWTD.exe']
+00000022 {P:3788 T:3604 S:0} - ok
+00000023 {P:3788 T:3604 S:0} fs::RegisterFileAsTemp [f='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\OIAssistWTD.exe']
+00000024 {P:3788 T:3604 S:0} fs::SaveResourceToFile [id='AVGSADUMPX.EXE',type='BINARY',f='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\AVGSADUMPX.EXE']
+00000025 {P:3788 T:3604 S:0} - size: 419328
+00000026 {P:3788 T:3604 S:0} fs::RegisterFileAsTemp [f='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\AVGSADUMPX.EXE']
+00000027 {P:3788 T:3604 S:0} MessageSender::SetUuid, uuid='1'
+00000028 {P:3788 T:3604 S:0} fs::LoadResourceToString [id=141,type='JSONDATA']
+00000029 {P:3788 T:3604 S:0} - size: 1
+00000030 {P:3788 T:3604 S:0} App::InitScriptEngine
+00000031 {P:3788 T:3604 S:0} CScriptSiteObj::InitializeScriptFrame
+00000032 {P:3788 T:3604 S:0} - download config
+00000033 {P:3788 T:3604 S:0} GSFT bios size -> 16052
+00000034 {P:3788 T:3604 S:0} MACS -> 00:FF:C2:1E:0D:87,00:0C:29:14:E2:D8
+00000035 {P:3788 T:3604 S:0} GSFT bios size -> 16052
+00000036 {P:3788 T:3604 S:0} GMID -> 8d7bf9875c9d741962e7932caa008c3c
+00000037 {P:3788 T:3604 S:0} SaveTimeStamp, 'getSetupStart'/-1 -> 1383816280858
+00000038 {P:3788 T:3604 S:0} !>fs::DownloadBunch [N=1]
+00000039 {P:3788 T:2300 S:0} !>fs::doDownloadFile [url='http://c04.inst.avg.com/serve/getSetup.php?pid=10872680&k=43a9519ed4b5e9c75eb7d683e3d1e09708f9b34a&sid=&pid=10872680&k=43a9519ed4b5e9c75eb7d683e3d1e09708f9b34a&sid=&user_agent=Mozilla%2F5.0+%28Windows+NT+6.1%3B+WOW64%3B+rv%3A24.0%29+Gecko%2F20100101+Firefox%2F24.0', to.f=0, ui=1, len(post)=0]
+00000040 {P:3788 T:2300 S:0} !>fs::OpenInetRequestWithStatusCheck [url='http://c04.inst.avg.com/serve/getSetup.php?pid=10872680&k=43a9519ed4b5e9c75eb7d683e3d1e09708f9b34a&sid=&pid=10872680&k=43a9519ed4b5e9c75eb7d683e3d1e09708f9b34a&sid=&user_agent=Mozilla%2F5.0+%28Windows+NT+6.1%3B+WOW64%3B+rv%3A24.0%29+Gecko%2F20100101+Firefox%2F24.0',len(post)=0,head=0]
+00000041 {P:3788 T:2300 S:0} !>fs::SendInetRequestWithStatusCheck [hReq=0x00CC000C]
+00000042 {P:3788 T:2300 S:0} !<fs::SendInetRequestWithStatusCheck
+00000043 {P:3788 T:2300 S:0} - part length: 0 bytes
+00000044 {P:3788 T:2300 S:0} - content length: 0 bytes
+00000045 {P:3788 T:2300 S:0} !<fs::OpenInetRequestWithStatusCheck
+00000046 {P:3788 T:2300 S:0} - inet read 41533 bytes by 6 portions
+00000047 {P:3788 T:2300 S:0} !<fs::doDownloadFile
+00000048 {P:3788 T:3604 S:0} !<fs::DownloadBunch
+00000049 {P:3788 T:3604 S:0} SaveTimeStamp, 'getSetupEnd'/-1 -> 1383816283140
+00000050 {P:3788 T:3604 S:0} - apply config
+00000051 {P:3788 T:3604 S:0} App::ParseJsonConfigs
+00000052 {P:3788 T:3604 S:0} SaveTimeStamp, 'eInitStart'/-1 -> 1383816283140
+00000053 {P:3788 T:3604 S:0} App::InitInstallerByScript
+00000054 {P:3788 T:3604 S:0} !>App::EvalScript [ns='MainNS',ctx=0x0204D1B0]
+00000055 {P:3788 T:3604 S:0} CScriptSiteObj::AddNamespace [ns='MainNS'], hr=0x00000000
+00000056 {P:3788 T:3604 S:0} fs::LoadResourceToString [id=140,type='SCRIPT']
+00000057 {P:3788 T:3604 S:0} - size: 22943
+00000058 {P:3788 T:3604 S:0} Eval, len(expr)=22943, ns='MainNS', hr=0x00000000
+00000059 {P:3788 T:3604 S:0} CScriptSiteObj::GetItemInfo, name='Sys'
+00000060 {P:3788 T:3604 S:0} App::ScriptSite_OnGetNamedItem [name='Sys']
+00000061 {P:3788 T:3604 S:0} CompInfo::QueryRegValueAsStr, branch='HKEY_LOCAL_MACHINE\Software\Microsoft\Internet Explorer',key='Version',def='0.0.0'
+00000062 {P:3788 T:3604 S:0} - got: '9.0.8112.16421'
+00000063 {P:3788 T:3604 S:0} CompInfo::QueryRegValueAsStr, branch='HKEY_LOCAL_MACHINE\Software\Mozilla\Mozilla Firefox',key='CurrentVersion',def='0.0.0'
+00000064 {P:3788 T:3604 S:0} - got: '24.0 (en-US)'
+00000065 {P:3788 T:3604 S:0} CompInfo::QueryRegValueAsStr, branch='HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\Google Chrome',key='Version',def='0.0.0'
+00000066 {P:3788 T:3604 S:0} - got: '30.0.1599.69'
+00000067 {P:3788 T:3604 S:0} Eval, len(expr)=163, ns='MainNS', hr=0x00000000
+00000068 {P:3788 T:3604 S:0} !<App::EvalScript
+00000069 {P:3788 T:3604 S:0} SaveTimeStamp, 'eInitEnd'/-1 -> 1383816283202
+00000070 {P:3788 T:3604 S:0} SaveTimeStamp, 'formPagesStart'/-1 -> 1383816283202
+00000071 {P:3788 T:3604 S:0} !>App::FormPages
+00000072 {P:3788 T:3604 S:0} - initial browser: 1
+00000073 {P:3788 T:3604 S:0} - gather static offers
+00000074 {P:3788 T:3604 S:0} !>CompInfo::CheckRules [id=442038,main=0,f=0]
+00000075 {P:3788 T:3604 S:0} !>App::EvalScript [ns='OfferNS_id442038',ctx=0x023D46E8]
+00000076 {P:3788 T:3604 S:0} CScriptSiteObj::AddNamespace [ns='OfferNS_id442038'], hr=0x00000000
+00000077 {P:3788 T:3604 S:0} fs::LoadResourceToString [id=140,type='SCRIPT']
+00000078 {P:3788 T:3604 S:0} - size: 22943
+00000079 {P:3788 T:3604 S:0} Eval, len(expr)=22943, ns='OfferNS_id442038', hr=0x00000000
+00000080 {P:3788 T:3604 S:0} - init by script
+00000081 {P:3788 T:3604 S:0} IAvgOpi::Create
+00000082 {P:3788 T:3604 S:0} fs::SaveResourceToFile [id='AVGOPIX.DLL',type='BINARY',f='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\AVGOPIX.DLL']
+00000083 {P:3788 T:3604 S:0} - size: 2433024
+00000084 {P:3788 T:3604 S:0} fs::RegisterFileAsTemp [f='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\AVGOPIX.DLL']
+00000085 {P:3788 T:3604 S:0} - DLL version: 1
+00000086 {P:3788 T:3604 S:1} MFA locked?: 0
+00000087 {P:3788 T:3604 S:1} Generating dialog
+00000088 {P:3788 T:3604 S:0} !>CJsSys::GetGeneralHardwareInfo
+00000089 {P:3788 T:3604 S:0} GlobalMemoryStatusEx -> 0*2^32+1073274880
+00000090 {P:3788 T:3604 S:0} CPU freq -> 3392
+00000091 {P:3788 T:3604 S:0} !<CJsSys::GetGeneralHardwareInfo
+00000092 {P:3788 T:3604 S:1} AVG AV: detecting a previous version...HKEY_LOCAL_MACHINE\SOFTWARE\AVG\AVG2014
+00000093 {P:3788 T:3604 S:1} AVG AV: RegKeyExists: false
+00000094 {P:3788 T:3604 S:1} AVG AV: detecting a previous version...HKEY_LOCAL_MACHINE\SOFTWARE\AVG\AVG2013
+00000095 {P:3788 T:3604 S:1} AVG AV: RegKeyExists: false
+00000096 {P:3788 T:3604 S:1} AVG AV: detecting a previous version...HKEY_LOCAL_MACHINE\SOFTWARE\AVG\AVG2012
+00000097 {P:3788 T:3604 S:1} AVG AV: RegKeyExists: false
+00000098 {P:3788 T:3604 S:1} AVG AV: detecting a previous version...HKEY_LOCAL_MACHINE\SOFTWARE\AVG\AVG2011
+00000099 {P:3788 T:3604 S:1} AVG AV: RegKeyExists: false
+00000100 {P:3788 T:3604 S:1} AVG AV: detecting a previous version...HKEY_LOCAL_MACHINE\SOFTWARE\AVG\AVG2010
+00000101 {P:3788 T:3604 S:1} AVG AV: RegKeyExists: false
+00000102 {P:3788 T:3604 S:1} AVG AV: detecting a previous version...HKEY_LOCAL_MACHINE\SOFTWARE\AVG\AVG13
+00000103 {P:3788 T:3604 S:1} AVG AV: RegKeyExists: false
+00000104 {P:3788 T:3604 S:1} AVG AV: detecting a previous version...HKEY_LOCAL_MACHINE\SOFTWARE\AVG\AVG12
+00000105 {P:3788 T:3604 S:1} AVG AV: RegKeyExists: false
+00000106 {P:3788 T:3604 S:1} AVG AV: detecting a previous version...HKEY_LOCAL_MACHINE\SOFTWARE\AVG\AVG11
+00000107 {P:3788 T:3604 S:1} AVG AV: RegKeyExists: false
+00000108 {P:3788 T:3604 S:1} AVG AV: detecting a previous version...HKEY_LOCAL_MACHINE\SOFTWARE\AVG\AVG10
+00000109 {P:3788 T:3604 S:1} AVG AV: RegKeyExists: false
+00000110 {P:3788 T:3604 S:1} AVG AV: AVG9_RegKeyExists: false
+00000111 {P:3788 T:3604 S:1} AVG AV: AVG8_RegKeyExists: false
+00000112 {P:3788 T:3604 S:1} AVG AV: AVG7_RegKeyExists: false
+00000113 {P:3788 T:3604 S:1} AVG AV: safeMode 0
+00000114 {P:3788 T:3604 S:1} AVG AV: Outlook RegKeyExists: true
+00000115 {P:3788 T:3604 S:1} AVG AV: Outlook outlookPathExists: true
+00000116 {P:3788 T:3604 S:0} CompInfo::QueryRegValueAsStr, branch='HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\App Paths\OUTLOOK.EXE',key='',def=''
+00000117 {P:3788 T:3604 S:0} - got: 'C:\PROGRA~1\MICROS~2\Office14\OUTLOOK.EXE'
+00000118 {P:3788 T:3604 S:1} AVG AV: Outlook outlookPath: C:\PROGRA~1\MICROS~2\Office14\OUTLOOK.EXE
+00000119 {P:3788 T:3604 S:0} CompInfo::TestFileExists, f='C:\PROGRA~1\MICROS~2\Office14\OUTLOOK.EXE',isDir=-1
+00000120 {P:3788 T:3604 S:0} - fullpath='C:\PROGRA~1\MICROS~2\Office14\OUTLOOK.EXE'
+00000121 {P:3788 T:3604 S:1} AVG AV: Outlook outlookExists: true
+00000122 {P:3788 T:3604 S:0} - check comp #1
+00000123 {P:3788 T:3604 S:0} Eval, len(expr)=26, ns='OfferNS_id442038', hr=0x00000000
+00000124 {P:3788 T:3604 S:0} !<App::EvalScript
+00000125 {P:3788 T:3604 S:0} !<CompInfo::CheckRules
+00000126 {P:3788 T:3604 S:0} - sort by script, '[442038]
+'
+00000127 {P:3788 T:3604 S:0} - hr=0x80020006, ret.vt=0
+00000128 {P:3788 T:3604 S:0} - form offers [limits=99/99]
+00000129 {P:3788 T:3604 S:0} - call preDisplay
+00000130 {P:3788 T:3604 S:0} !>App::EvalScript [ns='MainNS',ctx=0x0240F6C0]
+00000131 {P:3788 T:3604 S:0} Eval, len(expr)=1670, ns='MainNS', hr=0x00000000
+00000132 {P:3788 T:3604 S:0} !<App::EvalScript
+00000133 {P:3788 T:3604 S:0} - form pages
+00000134 {P:3788 T:3604 S:0} !<App::FormPages
+00000135 {P:3788 T:3604 S:0} SaveTimeStamp, 'formPagesEnd'/-1 -> 1383816283436
+00000136 {P:3788 T:3604 S:0} SaveTimeStamp, 'selLangStart'/-1 -> 1383816283436
+00000137 {P:3788 T:3604 S:0} SaveTimeStamp, 'selLangEnd'/-1 -> 1383816283436
+00000138 {P:3788 T:3604 S:0} !>App::CreateMainWindow
+00000139 {P:3788 T:3604 S:0} MainWindow::OnSize
+00000140 {P:3788 T:3604 S:0} MainWindow::SetOpaqueIfNotInFadeIn
+00000141 {P:3788 T:3604 S:0} MainWindow::OnSize
+00000142 {P:3788 T:3604 S:0} - main hwnd=0x000B036A, h=300, w=500
+00000143 {P:3788 T:3604 S:0} !<App::CreateMainWindow
+00000144 {P:3788 T:3604 S:0} !<App::Create
+00000145 {P:3788 T:3604 S:0} !>App::Create_PagesAndShow
+00000146 {P:3788 T:3604 S:0} !>App::DownloadPagesResources
+00000147 {P:3788 T:3604 S:0} fs::RandomName -> 5Bhpy0cmVE
+00000148 {P:3788 T:3604 S:0} - add include 'http://c12081072.r72.cf2.rackcdn.com/main.min.js'->'oilocal_main.min.js'
+00000149 {P:3788 T:3604 S:0} - add include 'http://c12081072.r72.cf2.rackcdn.com/screen_2.min.js'->'oilocal_screen_2.min.js'
+00000150 {P:3788 T:3604 S:0} - add include 'http://c12081072.r72.cf2.rackcdn.com/screen_2_4.min.js'->'oilocal_screen_2_4.min.js'
+00000151 {P:3788 T:3604 S:0} fs::RandomName -> FWD80YyEU9
+00000152 {P:3788 T:3604 S:0} fs::RandomName -> xo27NOJFFy
+00000153 {P:3788 T:3604 S:0} - add include 'http://c12081072.r72.cf2.rackcdn.com/main.min.js'->'oilocal_main.min.js'
+00000154 {P:3788 T:3604 S:0} - add include 'http://c12081072.r72.cf2.rackcdn.com/screen_2.min.js'->'oilocal_screen_2.min.js'
+00000155 {P:3788 T:3604 S:0} - add include 'http://c12081072.r72.cf2.rackcdn.com/screen_2_4.min.js'->'oilocal_screen_2_4.min.js'
+00000156 {P:3788 T:3604 S:0} fs::RandomName -> cPHWTCBOVw
+00000157 {P:3788 T:3604 S:0} - add include 'http://c12081072.r72.cf2.rackcdn.com/main.min.js'->'oilocal_main.min.js'
+00000158 {P:3788 T:3604 S:0} - add include 'http://c12081072.r72.cf2.rackcdn.com/screen_2.min.js'->'oilocal_screen_2.min.js'
+00000159 {P:3788 T:3604 S:0} - add include 'http://c12081072.r72.cf2.rackcdn.com/screen_2_4.min.js'->'oilocal_screen_2_4.min.js'
+00000160 {P:3788 T:3604 S:0} fs::RandomName -> 7OsBnW2aM9
+00000161 {P:3788 T:3604 S:0} - add include 'http://c12081072.r72.cf2.rackcdn.com/main.min.js'->'oilocal_main.min.js'
+00000162 {P:3788 T:3604 S:0} - add include 'http://c12081072.r72.cf2.rackcdn.com/screen_2.min.js'->'oilocal_screen_2.min.js'
+00000163 {P:3788 T:3604 S:0} - add include 'http://c12081072.r72.cf2.rackcdn.com/screen_2_4.min.js'->'oilocal_screen_2_4.min.js'
+00000164 {P:3788 T:3604 S:0} fs::RandomName -> pQ73kKtp2v
+00000165 {P:3788 T:3604 S:0} - add include 'http://c12081072.r72.cf2.rackcdn.com/main.min.js'->'oilocal_main.min.js'
+00000166 {P:3788 T:3604 S:0} - add include 'http://c12081072.r72.cf2.rackcdn.com/screen_2.min.js'->'oilocal_screen_2.min.js'
+00000167 {P:3788 T:3604 S:0} - add include 'http://c12081072.r72.cf2.rackcdn.com/screen_2_4.min.js'->'oilocal_screen_2_4.min.js'
+00000168 {P:3788 T:3604 S:0} fs::RandomName -> 7WmwnxlSXb
+00000169 {P:3788 T:3604 S:0} - add include 'http://c12081072.r72.cf2.rackcdn.com/main.min.js'->'oilocal_main.min.js'
+00000170 {P:3788 T:3604 S:0} - add include 'http://c12081072.r72.cf2.rackcdn.com/screen_2.min.js'->'oilocal_screen_2.min.js'
+00000171 {P:3788 T:3604 S:0} - add include 'http://c12081072.r72.cf2.rackcdn.com/screen_2_4.min.js'->'oilocal_screen_2_4.min.js'
+00000172 {P:3788 T:3604 S:0} fs::RandomName -> pBofGDyQaZ
+00000173 {P:3788 T:3604 S:0} - add include 'http://c12081072.r72.cf2.rackcdn.com/main.min.js'->'oilocal_main.min.js'
+00000174 {P:3788 T:3604 S:0} - add include 'http://c12081072.r72.cf2.rackcdn.com/screen_2.min.js'->'oilocal_screen_2.min.js'
+00000175 {P:3788 T:3604 S:0} - add include 'http://c12081072.r72.cf2.rackcdn.com/screen_2_4.min.js'->'oilocal_screen_2_4.min.js'
+00000176 {P:3788 T:3604 S:0} fs::RandomName -> mHKU8EyIfG
+00000177 {P:3788 T:3604 S:0} - add include 'http://c12081072.r72.cf2.rackcdn.com/main.min.js'->'oilocal_main.min.js'
+00000178 {P:3788 T:3604 S:0} - add include 'http://c12081072.r72.cf2.rackcdn.com/screen_2.min.js'->'oilocal_screen_2.min.js'
+00000179 {P:3788 T:3604 S:0} - add include 'http://c12081072.r72.cf2.rackcdn.com/screen_2_4.min.js'->'oilocal_screen_2_4.min.js'
+00000180 {P:3788 T:3604 S:0} fs::RandomName -> sy03gfkJmb
+00000181 {P:3788 T:3604 S:0} - add include 'http://c12081072.r72.cf2.rackcdn.com/main.min.js'->'oilocal_main.min.js'
+00000182 {P:3788 T:3604 S:0} - add include 'http://c12081072.r72.cf2.rackcdn.com/screen_2.min.js'->'oilocal_screen_2.min.js'
+00000183 {P:3788 T:3604 S:0} - add include 'http://c12081072.r72.cf2.rackcdn.com/screen_2_4.min.js'->'oilocal_screen_2_4.min.js'
+00000184 {P:3788 T:3604 S:0} fs::RandomName -> XNx2CxoPYW
+00000185 {P:3788 T:3604 S:0} - add include 'http://c12081072.r72.cf2.rackcdn.com/main.min.js'->'oilocal_main.min.js'
+00000186 {P:3788 T:3604 S:0} - add include 'http://c12081072.r72.cf2.rackcdn.com/screen_2.min.js'->'oilocal_screen_2.min.js'
+00000187 {P:3788 T:3604 S:0} - add include 'http://c12081072.r72.cf2.rackcdn.com/screen_2_4.min.js'->'oilocal_screen_2_4.min.js'
+00000188 {P:3788 T:3604 S:0} fs::RandomName -> GntJoymuKj
+00000189 {P:3788 T:3604 S:0} - add include 'http://c12081072.r72.cf2.rackcdn.com/main.min.js'->'oilocal_main.min.js'
+00000190 {P:3788 T:3604 S:0} - add include 'http://c12081072.r72.cf2.rackcdn.com/screen_2.min.js'->'oilocal_screen_2.min.js'
+00000191 {P:3788 T:3604 S:0} - add include 'http://c12081072.r72.cf2.rackcdn.com/screen_2_4.min.js'->'oilocal_screen_2_4.min.js'
+00000192 {P:3788 T:3604 S:0} fs::RandomName -> 69H3exGrr1
+00000193 {P:3788 T:3604 S:0} - add include 'http://c12081072.r72.cf2.rackcdn.com/main.min.js'->'oilocal_main.min.js'
+00000194 {P:3788 T:3604 S:0} - add include 'http://c12081072.r72.cf2.rackcdn.com/screen_2.min.js'->'oilocal_screen_2.min.js'
+00000195 {P:3788 T:3604 S:0} - add include 'http://c12081072.r72.cf2.rackcdn.com/screen_2_4.min.js'->'oilocal_screen_2_4.min.js'
+00000196 {P:3788 T:3604 S:0} fs::RandomName -> TN69nv1Glk
+00000197 {P:3788 T:3604 S:0} - add include 'http://c12081072.r72.cf2.rackcdn.com/main.min.js'->'oilocal_main.min.js'
+00000198 {P:3788 T:3604 S:0} - add include 'http://c12081072.r72.cf2.rackcdn.com/screen_2.min.js'->'oilocal_screen_2.min.js'
+00000199 {P:3788 T:3604 S:0} - add include 'http://c12081072.r72.cf2.rackcdn.com/screen_2_4.min.js'->'oilocal_screen_2_4.min.js'
+00000200 {P:3788 T:3604 S:0} fs::RandomName -> DuZ6XqNF0O
+00000201 {P:3788 T:3604 S:0} - add include 'http://c12081072.r72.cf2.rackcdn.com/main.min.js'->'oilocal_main.min.js'
+00000202 {P:3788 T:3604 S:0} - add include 'http://c12081072.r72.cf2.rackcdn.com/screen_2.min.js'->'oilocal_screen_2.min.js'
+00000203 {P:3788 T:3604 S:0} - add include 'http://c12081072.r72.cf2.rackcdn.com/screen_2_4.min.js'->'oilocal_screen_2_4.min.js'
+00000204 {P:3788 T:3604 S:0} SaveTimeStamp, 'getPagesStart'/-1 -> 1383816283811
+00000205 {P:3788 T:3604 S:0} !>fs::DownloadBunch [N=57]
+00000206 {P:3788 T:3604 S:0} ValidateFileName [f='5Bhpy0cmVE.mht']
+00000207 {P:3788 T:3604 S:0} fs::RegisterFileAsTemp [f='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\5Bhpy0cmVE.mht']
+00000208 {P:3788 T:3604 S:0} ValidateFileName [f='oilocal_main.min.js']
+00000209 {P:3788 T:3604 S:0} fs::RegisterFileAsTemp [f='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\oilocal_main.min.js']
+00000210 {P:3788 T:3604 S:0} ValidateFileName [f='oilocal_screen_2.min.js']
+00000211 {P:3788 T:3604 S:0} fs::RegisterFileAsTemp [f='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\oilocal_screen_2.min.js']
+00000212 {P:3788 T:3604 S:0} ValidateFileName [f='oilocal_screen_2_4.min.js']
+00000213 {P:3788 T:3604 S:0} fs::RegisterFileAsTemp [f='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\oilocal_screen_2_4.min.js']
+00000214 {P:3788 T:3604 S:0} ValidateFileName [f='FWD80YyEU9.mht']
+00000215 {P:3788 T:3604 S:0} fs::RegisterFileAsTemp [f='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\FWD80YyEU9.mht']
+00000216 {P:3788 T:3604 S:0} ValidateFileName [f='xo27NOJFFy.mht']
+00000217 {P:3788 T:3604 S:0} fs::RegisterFileAsTemp [f='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\xo27NOJFFy.mht']
+00000218 {P:3788 T:3604 S:0} ValidateFileName [f='oilocal_main.min.js']
+00000219 {P:3788 T:3604 S:0} fs::RegisterFileAsTemp [f='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\oilocal_main.min.js']
+00000220 {P:3788 T:3604 S:0} ValidateFileName [f='oilocal_screen_2.min.js']
+00000221 {P:3788 T:3604 S:0} fs::RegisterFileAsTemp [f='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\oilocal_screen_2.min.js']
+00000222 {P:3788 T:3604 S:0} ValidateFileName [f='oilocal_screen_2_4.min.js']
+00000223 {P:3788 T:3604 S:0} fs::RegisterFileAsTemp [f='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\oilocal_screen_2_4.min.js']
+00000224 {P:3788 T:3604 S:0} ValidateFileName [f='cPHWTCBOVw.mht']
+00000225 {P:3788 T:3604 S:0} fs::RegisterFileAsTemp [f='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\cPHWTCBOVw.mht']
+00000226 {P:3788 T:3604 S:0} ValidateFileName [f='oilocal_main.min.js']
+00000227 {P:3788 T:3604 S:0} fs::RegisterFileAsTemp [f='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\oilocal_main.min.js']
+00000228 {P:3788 T:3604 S:0} ValidateFileName [f='oilocal_screen_2.min.js']
+00000229 {P:3788 T:3604 S:0} fs::RegisterFileAsTemp [f='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\oilocal_screen_2.min.js']
+00000230 {P:3788 T:3604 S:0} ValidateFileName [f='oilocal_screen_2_4.min.js']
+00000231 {P:3788 T:3604 S:0} fs::RegisterFileAsTemp [f='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\oilocal_screen_2_4.min.js']
+00000232 {P:3788 T:3604 S:0} ValidateFileName [f='7OsBnW2aM9.mht']
+00000233 {P:3788 T:3604 S:0} fs::RegisterFileAsTemp [f='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\7OsBnW2aM9.mht']
+00000234 {P:3788 T:3604 S:0} ValidateFileName [f='oilocal_main.min.js']
+00000235 {P:3788 T:3604 S:0} fs::RegisterFileAsTemp [f='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\oilocal_main.min.js']
+00000236 {P:3788 T:3604 S:0} ValidateFileName [f='oilocal_screen_2.min.js']
+00000237 {P:3788 T:3604 S:0} fs::RegisterFileAsTemp [f='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\oilocal_screen_2.min.js']
+00000238 {P:3788 T:3604 S:0} ValidateFileName [f='oilocal_screen_2_4.min.js']
+00000239 {P:3788 T:3604 S:0} fs::RegisterFileAsTemp [f='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\oilocal_screen_2_4.min.js']
+00000240 {P:3788 T:3604 S:0} ValidateFileName [f='pQ73kKtp2v.mht']
+00000241 {P:3788 T:3604 S:0} fs::RegisterFileAsTemp [f='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\pQ73kKtp2v.mht']
+00000242 {P:3788 T:3604 S:0} ValidateFileName [f='oilocal_main.min.js']
+00000243 {P:3788 T:3604 S:0} fs::RegisterFileAsTemp [f='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\oilocal_main.min.js']
+00000244 {P:3788 T:3604 S:0} ValidateFileName [f='oilocal_screen_2.min.js']
+00000245 {P:3788 T:3604 S:0} fs::RegisterFileAsTemp [f='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\oilocal_screen_2.min.js']
+00000246 {P:3788 T:3604 S:0} ValidateFileName [f='oilocal_screen_2_4.min.js']
+00000247 {P:3788 T:3604 S:0} fs::RegisterFileAsTemp [f='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\oilocal_screen_2_4.min.js']
+00000248 {P:3788 T:3604 S:0} ValidateFileName [f='7WmwnxlSXb.mht']
+00000249 {P:3788 T:3604 S:0} fs::RegisterFileAsTemp [f='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\7WmwnxlSXb.mht']
+00000250 {P:3788 T:3604 S:0} ValidateFileName [f='oilocal_main.min.js']
+00000251 {P:3788 T:3604 S:0} fs::RegisterFileAsTemp [f='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\oilocal_main.min.js']
+00000252 {P:3788 T:3604 S:0} ValidateFileName [f='oilocal_screen_2.min.js']
+00000253 {P:3788 T:3604 S:0} fs::RegisterFileAsTemp [f='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\oilocal_screen_2.min.js']
+00000254 {P:3788 T:3604 S:0} ValidateFileName [f='oilocal_screen_2_4.min.js']
+00000255 {P:3788 T:3604 S:0} fs::RegisterFileAsTemp [f='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\oilocal_screen_2_4.min.js']
+00000256 {P:3788 T:3604 S:0} ValidateFileName [f='pBofGDyQaZ.mht']
+00000257 {P:3788 T:3604 S:0} fs::RegisterFileAsTemp [f='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\pBofGDyQaZ.mht']
+00000258 {P:3788 T:3604 S:0} ValidateFileName [f='oilocal_main.min.js']
+00000259 {P:3788 T:3604 S:0} fs::RegisterFileAsTemp [f='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\oilocal_main.min.js']
+00000260 {P:3788 T:3604 S:0} ValidateFileName [f='oilocal_screen_2.min.js']
+00000261 {P:3788 T:3604 S:0} fs::RegisterFileAsTemp [f='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\oilocal_screen_2.min.js']
+00000262 {P:3788 T:3604 S:0} ValidateFileName [f='oilocal_screen_2_4.min.js']
+00000263 {P:3788 T:3604 S:0} fs::RegisterFileAsTemp [f='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\oilocal_screen_2_4.min.js']
+00000264 {P:3788 T:3604 S:0} ValidateFileName [f='mHKU8EyIfG.mht']
+00000265 {P:3788 T:3604 S:0} fs::RegisterFileAsTemp [f='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\mHKU8EyIfG.mht']
+00000266 {P:3788 T:3604 S:0} ValidateFileName [f='oilocal_main.min.js']
+00000267 {P:3788 T:3604 S:0} fs::RegisterFileAsTemp [f='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\oilocal_main.min.js']
+00000268 {P:3788 T:3604 S:0} ValidateFileName [f='oilocal_screen_2.min.js']
+00000269 {P:3788 T:3604 S:0} fs::RegisterFileAsTemp [f='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\oilocal_screen_2.min.js']
+00000270 {P:3788 T:3604 S:0} ValidateFileName [f='oilocal_screen_2_4.min.js']
+00000271 {P:3788 T:3604 S:0} fs::RegisterFileAsTemp [f='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\oilocal_screen_2_4.min.js']
+00000272 {P:3788 T:3604 S:0} ValidateFileName [f='sy03gfkJmb.mht']
+00000273 {P:3788 T:3604 S:0} fs::RegisterFileAsTemp [f='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\sy03gfkJmb.mht']
+00000274 {P:3788 T:3604 S:0} ValidateFileName [f='oilocal_main.min.js']
+00000275 {P:3788 T:3604 S:0} fs::RegisterFileAsTemp [f='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\oilocal_main.min.js']
+00000276 {P:3788 T:3604 S:0} ValidateFileName [f='oilocal_screen_2.min.js']
+00000277 {P:3788 T:3604 S:0} fs::RegisterFileAsTemp [f='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\oilocal_screen_2.min.js']
+00000278 {P:3788 T:3604 S:0} ValidateFileName [f='oilocal_screen_2_4.min.js']
+00000279 {P:3788 T:3604 S:0} fs::RegisterFileAsTemp [f='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\oilocal_screen_2_4.min.js']
+00000280 {P:3788 T:3604 S:0} ValidateFileName [f='XNx2CxoPYW.mht']
+00000281 {P:3788 T:3604 S:0} fs::RegisterFileAsTemp [f='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\XNx2CxoPYW.mht']
+00000282 {P:3788 T:3604 S:0} ValidateFileName [f='oilocal_main.min.js']
+00000283 {P:3788 T:3604 S:0} fs::RegisterFileAsTemp [f='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\oilocal_main.min.js']
+00000284 {P:3788 T:3604 S:0} ValidateFileName [f='oilocal_screen_2.min.js']
+00000285 {P:3788 T:3604 S:0} fs::RegisterFileAsTemp [f='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\oilocal_screen_2.min.js']
+00000286 {P:3788 T:3604 S:0} ValidateFileName [f='oilocal_screen_2_4.min.js']
+00000287 {P:3788 T:3604 S:0} fs::RegisterFileAsTemp [f='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\oilocal_screen_2_4.min.js']
+00000288 {P:3788 T:3604 S:0} ValidateFileName [f='GntJoymuKj.mht']
+00000289 {P:3788 T:3604 S:0} fs::RegisterFileAsTemp [f='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\GntJoymuKj.mht']
+00000290 {P:3788 T:3604 S:0} ValidateFileName [f='oilocal_main.min.js']
+00000291 {P:3788 T:3604 S:0} fs::RegisterFileAsTemp [f='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\oilocal_main.min.js']
+00000292 {P:3788 T:3604 S:0} ValidateFileName [f='oilocal_screen_2.min.js']
+00000293 {P:3788 T:3604 S:0} fs::RegisterFileAsTemp [f='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\oilocal_screen_2.min.js']
+00000294 {P:3788 T:3604 S:0} ValidateFileName [f='oilocal_screen_2_4.min.js']
+00000295 {P:3788 T:3604 S:0} fs::RegisterFileAsTemp [f='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\oilocal_screen_2_4.min.js']
+00000296 {P:3788 T:3604 S:0} ValidateFileName [f='69H3exGrr1.mht']
+00000297 {P:3788 T:3604 S:0} fs::RegisterFileAsTemp [f='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\69H3exGrr1.mht']
+00000298 {P:3788 T:3604 S:0} ValidateFileName [f='oilocal_main.min.js']
+00000299 {P:3788 T:3604 S:0} fs::RegisterFileAsTemp [f='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\oilocal_main.min.js']
+00000300 {P:3788 T:3604 S:0} ValidateFileName [f='oilocal_screen_2.min.js']
+00000301 {P:3788 T:3604 S:0} fs::RegisterFileAsTemp [f='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\oilocal_screen_2.min.js']
+00000302 {P:3788 T:3604 S:0} ValidateFileName [f='oilocal_screen_2_4.min.js']
+00000303 {P:3788 T:3604 S:0} fs::RegisterFileAsTemp [f='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\oilocal_screen_2_4.min.js']
+00000304 {P:3788 T:3604 S:0} ValidateFileName [f='TN69nv1Glk.mht']
+00000305 {P:3788 T:3604 S:0} fs::RegisterFileAsTemp [f='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\TN69nv1Glk.mht']
+00000306 {P:3788 T:3604 S:0} ValidateFileName [f='oilocal_main.min.js']
+00000307 {P:3788 T:3604 S:0} fs::RegisterFileAsTemp [f='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\oilocal_main.min.js']
+00000308 {P:3788 T:3604 S:0} ValidateFileName [f='oilocal_screen_2.min.js']
+00000309 {P:3788 T:3604 S:0} fs::RegisterFileAsTemp [f='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\oilocal_screen_2.min.js']
+00000310 {P:3788 T:3604 S:0} ValidateFileName [f='oilocal_screen_2_4.min.js']
+00000311 {P:3788 T:3604 S:0} fs::RegisterFileAsTemp [f='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\oilocal_screen_2_4.min.js']
+00000312 {P:3788 T:3604 S:0} ValidateFileName [f='DuZ6XqNF0O.mht']
+00000313 {P:3788 T:3604 S:0} fs::RegisterFileAsTemp [f='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\DuZ6XqNF0O.mht']
+00000314 {P:3788 T:3604 S:0} ValidateFileName [f='oilocal_main.min.js']
+00000315 {P:3788 T:3604 S:0} fs::RegisterFileAsTemp [f='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\oilocal_main.min.js']
+00000316 {P:3788 T:3604 S:0} ValidateFileName [f='oilocal_screen_2.min.js']
+00000317 {P:3788 T:3604 S:0} fs::RegisterFileAsTemp [f='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\oilocal_screen_2.min.js']
+00000318 {P:3788 T:3604 S:0} ValidateFileName [f='oilocal_screen_2_4.min.js']
+00000319 {P:3788 T:3604 S:0} fs::RegisterFileAsTemp [f='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\oilocal_screen_2_4.min.js']
+00000320 {P:3788 T:3480 S:0} !>fs::doDownloadFile [url='http://c04.inst.avg.com/serve/getTemplate.php?pid=10872680&u=1383510550&lang=en', to.f=1, ui=1, len(post)=0]
+00000321 {P:3788 T:3480 S:0} !>fs::OpenInetRequestWithStatusCheck [url='http://c04.inst.avg.com/serve/getTemplate.php?pid=10872680&u=1383510550&lang=en',len(post)=0,head=0]
+00000322 {P:3788 T:3480 S:0} !>fs::SendInetRequestWithStatusCheck [hReq=0x00CC000C]
+00000323 {P:3788 T:3172 S:0} !>fs::doDownloadFile [url='http://c12081072.r72.cf2.rackcdn.com/main.min.js?lang=en', to.f=1, ui=1, len(post)=0]
+00000324 {P:3788 T:3172 S:0} !>fs::OpenInetRequestWithStatusCheck [url='http://c12081072.r72.cf2.rackcdn.com/main.min.js?lang=en',len(post)=0,head=0]
+00000325 {P:3788 T:3172 S:0} !>fs::SendInetRequestWithStatusCheck [hReq=0x00CC0018]
+00000326 {P:3788 T:4168 S:0} !>fs::doDownloadFile [url='http://c12081072.r72.cf2.rackcdn.com/screen_2.min.js?lang=en', to.f=1, ui=1, len(post)=0]
+00000327 {P:3788 T:4168 S:0} !>fs::OpenInetRequestWithStatusCheck [url='http://c12081072.r72.cf2.rackcdn.com/screen_2.min.js?lang=en',len(post)=0,head=0]
+00000328 {P:3788 T:1924 S:0} !>fs::doDownloadFile [url='http://c12081072.r72.cf2.rackcdn.com/screen_2_4.min.js?lang=en', to.f=1, ui=1, len(post)=0]
+00000329 {P:3788 T:4168 S:0} !>fs::SendInetRequestWithStatusCheck [hReq=0x00CC0024]
+00000330 {P:3788 T:1924 S:0} !>fs::OpenInetRequestWithStatusCheck [url='http://c12081072.r72.cf2.rackcdn.com/screen_2_4.min.js?lang=en',len(post)=0,head=0]
+00000331 {P:3788 T:1924 S:0} !>fs::SendInetRequestWithStatusCheck [hReq=0x00CC0030]
+00000332 {P:3788 T:1956 S:0} !>fs::doDownloadFile [url='http://c04.inst.avg.com/serve/getScreen.php?pid=10872680&k=43a9519ed4b5e9c75eb7d683e3d1e09708f9b34a&id=442038&u=1383510618&lang=en', to.f=1, ui=1, len(post)=0]
+00000333 {P:3788 T:1956 S:0} !>fs::OpenInetRequestWithStatusCheck [url='http://c04.inst.avg.com/serve/getScreen.php?pid=10872680&k=43a9519ed4b5e9c75eb7d683e3d1e09708f9b34a&id=442038&u=1383510618&lang=en',len(post)=0,head=0]
+00000334 {P:3788 T:1956 S:0} !>fs::SendInetRequestWithStatusCheck [hReq=0x00CC003C]
+00000335 {P:3788 T:0580 S:0} !>fs::doDownloadFile [url='http://c04.inst.avg.com/serve/getTemplate.php?pid=10872680&u=1383510550&lang=en', to.f=1, ui=1, len(post)=0]
+00000336 {P:3788 T:3484 S:0} !>fs::doDownloadFile [url='http://c12081072.r72.cf2.rackcdn.com/main.min.js?lang=en', to.f=1, ui=1, len(post)=0]
+00000337 {P:3788 T:4172 S:0} !>fs::doDownloadFile [url='http://c12081072.r72.cf2.rackcdn.com/screen_2.min.js?lang=en', to.f=1, ui=1, len(post)=0]
+00000338 {P:3788 T:1940 S:0} !>fs::doDownloadFile [url='http://c12081072.r72.cf2.rackcdn.com/screen_2_4.min.js?lang=en', to.f=1, ui=1, len(post)=0]
+00000339 {P:3788 T:1976 S:0} !>fs::doDownloadFile [url='http://c04.inst.avg.com/serve/getTemplate.php?pid=10872680&u=1383510550&lang=en', to.f=1, ui=1, len(post)=0]
+00000340 {P:3788 T:4176 S:0} !>fs::doDownloadFile [url='http://c12081072.r72.cf2.rackcdn.com/main.min.js?lang=en', to.f=1, ui=1, len(post)=0]
+00000341 {P:3788 T:1704 S:0} !>fs::doDownloadFile [url='http://c12081072.r72.cf2.rackcdn.com/screen_2.min.js?lang=en', to.f=1, ui=1, len(post)=0]
+00000342 {P:3788 T:0924 S:0} !>fs::doDownloadFile [url='http://c12081072.r72.cf2.rackcdn.com/screen_2_4.min.js?lang=en', to.f=1, ui=1, len(post)=0]
+00000343 {P:3788 T:2732 S:0} !>fs::doDownloadFile [url='http://c04.inst.avg.com/serve/getTemplate.php?pid=10872680&u=1383510550&lang=en', to.f=1, ui=1, len(post)=0]
+00000344 {P:3788 T:1856 S:0} !>fs::doDownloadFile [url='http://c12081072.r72.cf2.rackcdn.com/main.min.js?lang=en', to.f=1, ui=1, len(post)=0]
+00000345 {P:3788 T:4180 S:0} !>fs::doDownloadFile [url='http://c12081072.r72.cf2.rackcdn.com/screen_2.min.js?lang=en', to.f=1, ui=1, len(post)=0]
+00000346 {P:3788 T:2820 S:0} !>fs::doDownloadFile [url='http://c12081072.r72.cf2.rackcdn.com/screen_2_4.min.js?lang=en', to.f=1, ui=1, len(post)=0]
+00000347 {P:3788 T:4032 S:0} !>fs::doDownloadFile [url='http://c04.inst.avg.com/serve/getTemplate.php?pid=10872680&u=1383510550&lang=en', to.f=1, ui=1, len(post)=0]
+00000348 {P:3788 T:2992 S:0} !>fs::doDownloadFile [url='http://c12081072.r72.cf2.rackcdn.com/main.min.js?lang=en', to.f=1, ui=1, len(post)=0]
+00000349 {P:3788 T:3420 S:0} !>fs::doDownloadFile [url='http://c12081072.r72.cf2.rackcdn.com/screen_2.min.js?lang=en', to.f=1, ui=1, len(post)=0]
+00000350 {P:3788 T:4016 S:0} !>fs::doDownloadFile [url='http://c12081072.r72.cf2.rackcdn.com/screen_2_4.min.js?lang=en', to.f=1, ui=1, len(post)=0]
+00000351 {P:3788 T:4184 S:0} !>fs::doDownloadFile [url='http://c04.inst.avg.com/serve/getTemplate.php?pid=10872680&u=1383510550&lang=en', to.f=1, ui=1, len(post)=0]
+00000352 {P:3788 T:3148 S:0} !>fs::doDownloadFile [url='http://c12081072.r72.cf2.rackcdn.com/main.min.js?lang=en', to.f=1, ui=1, len(post)=0]
+00000353 {P:3788 T:4188 S:0} !>fs::doDownloadFile [url='http://c12081072.r72.cf2.rackcdn.com/screen_2.min.js?lang=en', to.f=1, ui=1, len(post)=0]
+00000354 {P:3788 T:3544 S:0} !>fs::doDownloadFile [url='http://c12081072.r72.cf2.rackcdn.com/screen_2_4.min.js?lang=en', to.f=1, ui=1, len(post)=0]
+00000355 {P:3788 T:3276 S:0} !>fs::doDownloadFile [url='http://c04.inst.avg.com/serve/getTemplate.php?pid=10872680&u=1383510550&lang=en', to.f=1, ui=1, len(post)=0]
+00000356 {P:3788 T:0364 S:0} !>fs::doDownloadFile [url='http://c12081072.r72.cf2.rackcdn.com/main.min.js?lang=en', to.f=1, ui=1, len(post)=0]
+00000357 {P:3788 T:3280 S:0} !>fs::doDownloadFile [url='http://c12081072.r72.cf2.rackcdn.com/screen_2.min.js?lang=en', to.f=1, ui=1, len(post)=0]
+00000358 {P:3788 T:1964 S:0} !>fs::doDownloadFile [url='http://c12081072.r72.cf2.rackcdn.com/screen_2_4.min.js?lang=en', to.f=1, ui=1, len(post)=0]
+00000359 {P:3788 T:4192 S:0} !>fs::doDownloadFile [url='http://c04.inst.avg.com/serve/getTemplate.php?pid=10872680&u=1383510550&lang=en', to.f=1, ui=1, len(post)=0]
+00000360 {P:3788 T:3792 S:0} !>fs::doDownloadFile [url='http://c12081072.r72.cf2.rackcdn.com/main.min.js?lang=en', to.f=1, ui=1, len(post)=0]
+00000361 {P:3788 T:3712 S:0} !>fs::doDownloadFile [url='http://c12081072.r72.cf2.rackcdn.com/screen_2.min.js?lang=en', to.f=1, ui=1, len(post)=0]
+00000362 {P:3788 T:2688 S:0} !>fs::doDownloadFile [url='http://c12081072.r72.cf2.rackcdn.com/screen_2_4.min.js?lang=en', to.f=1, ui=1, len(post)=0]
+00000363 {P:3788 T:3016 S:0} !>fs::doDownloadFile [url='http://c04.inst.avg.com/serve/getTemplate.php?pid=10872680&u=1383510550&lang=en', to.f=1, ui=1, len(post)=0]
+00000364 {P:3788 T:2156 S:0} !>fs::doDownloadFile [url='http://c12081072.r72.cf2.rackcdn.com/main.min.js?lang=en', to.f=1, ui=1, len(post)=0]
+00000365 {P:3788 T:1480 S:0} !>fs::doDownloadFile [url='http://c12081072.r72.cf2.rackcdn.com/screen_2.min.js?lang=en', to.f=1, ui=1, len(post)=0]
+00000366 {P:3788 T:4196 S:0} !>fs::doDownloadFile [url='http://c12081072.r72.cf2.rackcdn.com/screen_2_4.min.js?lang=en', to.f=1, ui=1, len(post)=0]
+00000367 {P:3788 T:3020 S:0} !>fs::doDownloadFile [url='http://c04.inst.avg.com/serve/getTemplate.php?pid=10872680&u=1383510550&lang=en', to.f=1, ui=1, len(post)=0]
+00000368 {P:3788 T:2076 S:0} !>fs::doDownloadFile [url='http://c12081072.r72.cf2.rackcdn.com/main.min.js?lang=en', to.f=1, ui=1, len(post)=0]
+00000369 {P:3788 T:4216 S:0} !>fs::doDownloadFile [url='http://c12081072.r72.cf2.rackcdn.com/screen_2.min.js?lang=en', to.f=1, ui=1, len(post)=0]
+00000370 {P:3788 T:0964 S:0} !>fs::doDownloadFile [url='http://c12081072.r72.cf2.rackcdn.com/screen_2_4.min.js?lang=en', to.f=1, ui=1, len(post)=0]
+00000371 {P:3788 T:1804 S:0} !>fs::doDownloadFile [url='http://c04.inst.avg.com/serve/getTemplate.php?pid=10872680&u=1383510550&lang=en', to.f=1, ui=1, len(post)=0]
+00000372 {P:3788 T:4128 S:0} !>fs::doDownloadFile [url='http://c12081072.r72.cf2.rackcdn.com/main.min.js?lang=en', to.f=1, ui=1, len(post)=0]
+00000373 {P:3788 T:3160 S:0} !>fs::doDownloadFile [url='http://c12081072.r72.cf2.rackcdn.com/screen_2.min.js?lang=en', to.f=1, ui=1, len(post)=0]
+00000374 {P:3788 T:4212 S:0} !>fs::doDownloadFile [url='http://c12081072.r72.cf2.rackcdn.com/screen_2_4.min.js?lang=en', to.f=1, ui=1, len(post)=0]
+00000375 {P:3788 T:1580 S:0} !>fs::doDownloadFile [url='http://c04.inst.avg.com/serve/getTemplate.php?pid=10872680&u=1383510550&lang=en', to.f=1, ui=1, len(post)=0]
+00000376 {P:3788 T:4056 S:0} !>fs::doDownloadFile [url='http://c12081072.r72.cf2.rackcdn.com/main.min.js?lang=en', to.f=1, ui=1, len(post)=0]
+00000377 {P:3788 T:3228 S:0} !>fs::doDownloadFile [url='http://c12081072.r72.cf2.rackcdn.com/screen_2.min.js?lang=en', to.f=1, ui=1, len(post)=0]
+00000378 {P:3788 T:2364 S:0} !>fs::doDownloadFile [url='http://c12081072.r72.cf2.rackcdn.com/screen_2_4.min.js?lang=en', to.f=1, ui=1, len(post)=0]
+00000379 {P:3788 T:3104 S:0} !>fs::doDownloadFile [url='http://c04.inst.avg.com/serve/getTemplate.php?pid=10872680&u=1383510550&lang=en', to.f=1, ui=1, len(post)=0]
+00000380 {P:3788 T:3116 S:0} !>fs::doDownloadFile [url='http://c12081072.r72.cf2.rackcdn.com/main.min.js?lang=en', to.f=1, ui=1, len(post)=0]
+00000381 {P:3788 T:3672 S:0} !>fs::doDownloadFile [url='http://c12081072.r72.cf2.rackcdn.com/screen_2.min.js?lang=en', to.f=1, ui=1, len(post)=0]
+00000382 {P:3788 T:3920 S:0} !>fs::doDownloadFile [url='http://c12081072.r72.cf2.rackcdn.com/screen_2_4.min.js?lang=en', to.f=1, ui=1, len(post)=0]
+00000383 {P:3788 T:3700 S:0} !>fs::doDownloadFile [url='http://c04.inst.avg.com/serve/getProgress.php?pid=10872680&u=1383510550&lang=en', to.f=1, ui=1, len(post)=0]
+00000384 {P:3788 T:3700 S:0} !>fs::OpenInetRequestWithStatusCheck [url='http://c04.inst.avg.com/serve/getProgress.php?pid=10872680&u=1383510550&lang=en',len(post)=0,head=0]
+00000385 {P:3788 T:3700 S:0} !>fs::SendInetRequestWithStatusCheck [hReq=0x00CC0048]
+00000386 {P:3788 T:3380 S:0} !>fs::doDownloadFile [url='http://c12081072.r72.cf2.rackcdn.com/main.min.js?lang=en', to.f=1, ui=1, len(post)=0]
+00000387 {P:3788 T:3308 S:0} !>fs::doDownloadFile [url='http://c12081072.r72.cf2.rackcdn.com/screen_2.min.js?lang=en', to.f=1, ui=1, len(post)=0]
+00000388 {P:3788 T:0988 S:0} !>fs::doDownloadFile [url='http://c12081072.r72.cf2.rackcdn.com/screen_2_4.min.js?lang=en', to.f=1, ui=1, len(post)=0]
+00000389 {P:3788 T:3172 S:0} !<fs::SendInetRequestWithStatusCheck
+00000390 {P:3788 T:3172 S:0} - part length: 0 bytes
+00000391 {P:3788 T:3172 S:0} - content length: 0 bytes
+00000392 {P:3788 T:3172 S:0} !<fs::OpenInetRequestWithStatusCheck
+00000393 {P:3788 T:3172 S:0} - inet read 128756 bytes by 16 portions
+00000394 {P:3788 T:3172 S:0} !<fs::doDownloadFile
+00000395 {P:3788 T:3380 S:0} - cache hit: 128756 bytes
+00000396 {P:3788 T:3380 S:0} !<fs::doDownloadFile
+00000397 {P:3788 T:3116 S:0} - cache hit: 128756 bytes
+00000398 {P:3788 T:3116 S:0} !<fs::doDownloadFile
+00000399 {P:3788 T:4056 S:0} - cache hit: 128756 bytes
+00000400 {P:3788 T:4056 S:0} !<fs::doDownloadFile
+00000401 {P:3788 T:4128 S:0} - cache hit: 128756 bytes
+00000402 {P:3788 T:4128 S:0} !<fs::doDownloadFile
+00000403 {P:3788 T:2076 S:0} - cache hit: 128756 bytes
+00000404 {P:3788 T:2076 S:0} !<fs::doDownloadFile
+00000405 {P:3788 T:2156 S:0} - cache hit: 128756 bytes
+00000406 {P:3788 T:2156 S:0} !<fs::doDownloadFile
+00000407 {P:3788 T:3792 S:0} - cache hit: 128756 bytes
+00000408 {P:3788 T:3792 S:0} !<fs::doDownloadFile
+00000409 {P:3788 T:0364 S:0} - cache hit: 128756 bytes
+00000410 {P:3788 T:0364 S:0} !<fs::doDownloadFile
+00000411 {P:3788 T:3148 S:0} - cache hit: 128756 bytes
+00000412 {P:3788 T:3148 S:0} !<fs::doDownloadFile
+00000413 {P:3788 T:2992 S:0} - cache hit: 128756 bytes
+00000414 {P:3788 T:2992 S:0} !<fs::doDownloadFile
+00000415 {P:3788 T:1856 S:0} - cache hit: 128756 bytes
+00000416 {P:3788 T:1856 S:0} !<fs::doDownloadFile
+00000417 {P:3788 T:4176 S:0} - cache hit: 128756 bytes
+00000418 {P:3788 T:4176 S:0} !<fs::doDownloadFile
+00000419 {P:3788 T:3484 S:0} - cache hit: 128756 bytes
+00000420 {P:3788 T:3484 S:0} !<fs::doDownloadFile
+00000421 {P:3788 T:4168 S:0} !<fs::SendInetRequestWithStatusCheck
+00000422 {P:3788 T:4168 S:0} - part length: 11658 bytes
+00000423 {P:3788 T:4168 S:0} - content length: 11658 bytes
+00000424 {P:3788 T:4168 S:0} !<fs::OpenInetRequestWithStatusCheck
+00000425 {P:3788 T:4168 S:0} - inet read 11658 bytes by 2 portions
+00000426 {P:3788 T:4168 S:0} !<fs::doDownloadFile
+00000427 {P:3788 T:3308 S:0} - cache hit: 11658 bytes
+00000428 {P:3788 T:3308 S:0} !<fs::doDownloadFile
+00000429 {P:3788 T:3672 S:0} - cache hit: 11658 bytes
+00000430 {P:3788 T:3672 S:0} !<fs::doDownloadFile
+00000431 {P:3788 T:3228 S:0} - cache hit: 11658 bytes
+00000432 {P:3788 T:3228 S:0} !<fs::doDownloadFile
+00000433 {P:3788 T:3160 S:0} - cache hit: 11658 bytes
+00000434 {P:3788 T:3160 S:0} !<fs::doDownloadFile
+00000435 {P:3788 T:4216 S:0} - cache hit: 11658 bytes
+00000436 {P:3788 T:4216 S:0} !<fs::doDownloadFile
+00000437 {P:3788 T:1480 S:0} - cache hit: 11658 bytes
+00000438 {P:3788 T:1480 S:0} !<fs::doDownloadFile
+00000439 {P:3788 T:3712 S:0} - cache hit: 11658 bytes
+00000440 {P:3788 T:3712 S:0} !<fs::doDownloadFile
+00000441 {P:3788 T:3280 S:0} - cache hit: 11658 bytes
+00000442 {P:3788 T:3280 S:0} !<fs::doDownloadFile
+00000443 {P:3788 T:4188 S:0} - cache hit: 11658 bytes
+00000444 {P:3788 T:4188 S:0} !<fs::doDownloadFile
+00000445 {P:3788 T:3420 S:0} - cache hit: 11658 bytes
+00000446 {P:3788 T:3420 S:0} !<fs::doDownloadFile
+00000447 {P:3788 T:4180 S:0} - cache hit: 11658 bytes
+00000448 {P:3788 T:4180 S:0} !<fs::doDownloadFile
+00000449 {P:3788 T:1704 S:0} - cache hit: 11658 bytes
+00000450 {P:3788 T:1704 S:0} !<fs::doDownloadFile
+00000451 {P:3788 T:4172 S:0} - cache hit: 11658 bytes
+00000452 {P:3788 T:4172 S:0} !<fs::doDownloadFile
+00000453 {P:3788 T:1924 S:0} !<fs::SendInetRequestWithStatusCheck
+00000454 {P:3788 T:1924 S:0} - part length: 209 bytes
+00000455 {P:3788 T:1924 S:0} - content length: 209 bytes
+00000456 {P:3788 T:1924 S:0} !<fs::OpenInetRequestWithStatusCheck
+00000457 {P:3788 T:1924 S:0} - inet read 209 bytes by 1 portions
+00000458 {P:3788 T:1924 S:0} !<fs::doDownloadFile
+00000459 {P:3788 T:0988 S:0} - cache hit: 209 bytes
+00000460 {P:3788 T:0988 S:0} !<fs::doDownloadFile
+00000461 {P:3788 T:3920 S:0} - cache hit: 209 bytes
+00000462 {P:3788 T:3920 S:0} !<fs::doDownloadFile
+00000463 {P:3788 T:2364 S:0} - cache hit: 209 bytes
+00000464 {P:3788 T:2364 S:0} !<fs::doDownloadFile
+00000465 {P:3788 T:4212 S:0} - cache hit: 209 bytes
+00000466 {P:3788 T:4212 S:0} !<fs::doDownloadFile
+00000467 {P:3788 T:0964 S:0} - cache hit: 209 bytes
+00000468 {P:3788 T:0964 S:0} !<fs::doDownloadFile
+00000469 {P:3788 T:4196 S:0} - cache hit: 209 bytes
+00000470 {P:3788 T:4196 S:0} !<fs::doDownloadFile
+00000471 {P:3788 T:2688 S:0} - cache hit: 209 bytes
+00000472 {P:3788 T:2688 S:0} !<fs::doDownloadFile
+00000473 {P:3788 T:1964 S:0} - cache hit: 209 bytes
+00000474 {P:3788 T:1964 S:0} !<fs::doDownloadFile
+00000475 {P:3788 T:3544 S:0} - cache hit: 209 bytes
+00000476 {P:3788 T:3544 S:0} !<fs::doDownloadFile
+00000477 {P:3788 T:4016 S:0} - cache hit: 209 bytes
+00000478 {P:3788 T:4016 S:0} !<fs::doDownloadFile
+00000479 {P:3788 T:2820 S:0} - cache hit: 209 bytes
+00000480 {P:3788 T:2820 S:0} !<fs::doDownloadFile
+00000481 {P:3788 T:0924 S:0} - cache hit: 209 bytes
+00000482 {P:3788 T:0924 S:0} !<fs::doDownloadFile
+00000483 {P:3788 T:1940 S:0} - cache hit: 209 bytes
+00000484 {P:3788 T:1940 S:0} !<fs::doDownloadFile
+00000485 {P:3788 T:3480 S:0} !<fs::SendInetRequestWithStatusCheck
+00000486 {P:3788 T:3480 S:0} - part length: 0 bytes
+00000487 {P:3788 T:3480 S:0} - content length: 0 bytes
+00000488 {P:3788 T:3480 S:0} !<fs::OpenInetRequestWithStatusCheck
+00000489 {P:3788 T:3480 S:0} - inet read 78587 bytes by 10 portions
+00000490 {P:3788 T:3480 S:0} - postprocess response of 'http://c04.inst.avg.com/serve/getTemplate.php?pid=10872680&u=1383510550&lang=en'
+00000491 {P:3788 T:3480 S:0} fs::LoadFileToString [fn='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\5Bhpy0cmVE.mht']
+00000492 {P:3788 T:3480 S:0} - replace src 'http://c12081072.r72.cf2.rackcdn.com/main.min.js' to 'oilocal_main.min.js'
+00000493 {P:3788 T:3480 S:0} - replace src 'http://c12081072.r72.cf2.rackcdn.com/screen_2_4.min.js' to 'oilocal_screen_2_4.min.js'
+00000494 {P:3788 T:3480 S:0} fs::SaveFileFromBuffer [fn='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\5Bhpy0cmVE.mht']
+00000495 {P:3788 T:3480 S:0} fs::RegisterFileAsTemp [f='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\5Bhpy0cmVE.html']
+00000496 {P:3788 T:3480 S:0} !<fs::doDownloadFile
+00000497 {P:3788 T:3104 S:0} fs::RegisterFileAsTemp [f='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\TN69nv1Glk.html']
+00000498 {P:3788 T:3104 S:0} - cache hit: 78529 bytes
+00000499 {P:3788 T:3104 S:0} !<fs::doDownloadFile
+00000500 {P:3788 T:1580 S:0} fs::RegisterFileAsTemp [f='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\69H3exGrr1.html']
+00000501 {P:3788 T:1580 S:0} - cache hit: 78529 bytes
+00000502 {P:3788 T:1580 S:0} !<fs::doDownloadFile
+00000503 {P:3788 T:1804 S:0} fs::RegisterFileAsTemp [f='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\GntJoymuKj.html']
+00000504 {P:3788 T:1804 S:0} - cache hit: 78529 bytes
+00000505 {P:3788 T:1804 S:0} !<fs::doDownloadFile
+00000506 {P:3788 T:3020 S:0} fs::RegisterFileAsTemp [f='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\XNx2CxoPYW.html']
+00000507 {P:3788 T:3020 S:0} - cache hit: 78529 bytes
+00000508 {P:3788 T:3020 S:0} !<fs::doDownloadFile
+00000509 {P:3788 T:3016 S:0} fs::RegisterFileAsTemp [f='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\sy03gfkJmb.html']
+00000510 {P:3788 T:3016 S:0} - cache hit: 78529 bytes
+00000511 {P:3788 T:3016 S:0} !<fs::doDownloadFile
+00000512 {P:3788 T:4192 S:0} fs::RegisterFileAsTemp [f='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\mHKU8EyIfG.html']
+00000513 {P:3788 T:4192 S:0} - cache hit: 78529 bytes
+00000514 {P:3788 T:4192 S:0} !<fs::doDownloadFile
+00000515 {P:3788 T:3276 S:0} fs::RegisterFileAsTemp [f='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\pBofGDyQaZ.html']
+00000516 {P:3788 T:3276 S:0} - cache hit: 78529 bytes
+00000517 {P:3788 T:3276 S:0} !<fs::doDownloadFile
+00000518 {P:3788 T:4184 S:0} fs::RegisterFileAsTemp [f='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\7WmwnxlSXb.html']
+00000519 {P:3788 T:4184 S:0} - cache hit: 78529 bytes
+00000520 {P:3788 T:4184 S:0} !<fs::doDownloadFile
+00000521 {P:3788 T:4032 S:0} fs::RegisterFileAsTemp [f='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\pQ73kKtp2v.html']
+00000522 {P:3788 T:4032 S:0} - cache hit: 78529 bytes
+00000523 {P:3788 T:4032 S:0} !<fs::doDownloadFile
+00000524 {P:3788 T:2732 S:0} fs::RegisterFileAsTemp [f='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\7OsBnW2aM9.html']
+00000525 {P:3788 T:2732 S:0} - cache hit: 78529 bytes
+00000526 {P:3788 T:2732 S:0} !<fs::doDownloadFile
+00000527 {P:3788 T:1976 S:0} fs::RegisterFileAsTemp [f='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\cPHWTCBOVw.html']
+00000528 {P:3788 T:1976 S:0} - cache hit: 78529 bytes
+00000529 {P:3788 T:1976 S:0} !<fs::doDownloadFile
+00000530 {P:3788 T:0580 S:0} fs::RegisterFileAsTemp [f='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\xo27NOJFFy.html']
+00000531 {P:3788 T:0580 S:0} - cache hit: 78529 bytes
+00000532 {P:3788 T:0580 S:0} !<fs::doDownloadFile
+00000533 {P:3788 T:1956 S:0} !<fs::SendInetRequestWithStatusCheck
+00000534 {P:3788 T:1956 S:0} - part length: 0 bytes
+00000535 {P:3788 T:1956 S:0} - content length: 0 bytes
+00000536 {P:3788 T:1956 S:0} !<fs::OpenInetRequestWithStatusCheck
+00000537 {P:3788 T:1956 S:0} - inet read 89897 bytes by 11 portions
+00000538 {P:3788 T:1956 S:0} - postprocess response of 'http://c04.inst.avg.com/serve/getScreen.php?pid=10872680&k=43a9519ed4b5e9c75eb7d683e3d1e09708f9b34a&id=442038&u=1383510618&lang=en'
+00000539 {P:3788 T:1956 S:0} fs::LoadFileToString [fn='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\FWD80YyEU9.mht']
+00000540 {P:3788 T:1956 S:0} - replace src 'http://c12081072.r72.cf2.rackcdn.com/main.min.js' to 'oilocal_main.min.js'
+00000541 {P:3788 T:1956 S:0} fs::SaveFileFromBuffer [fn='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\FWD80YyEU9.mht']
+00000542 {P:3788 T:1956 S:0} fs::RegisterFileAsTemp [f='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\FWD80YyEU9.html']
+00000543 {P:3788 T:1956 S:0} !<fs::doDownloadFile
+00000544 {P:3788 T:3700 S:0} !<fs::SendInetRequestWithStatusCheck
+00000545 {P:3788 T:3700 S:0} - part length: 0 bytes
+00000546 {P:3788 T:3700 S:0} - content length: 0 bytes
+00000547 {P:3788 T:3700 S:0} !<fs::OpenInetRequestWithStatusCheck
+00000548 {P:3788 T:3700 S:0} - inet read 105491 bytes by 13 portions
+00000549 {P:3788 T:3700 S:0} - postprocess response of 'http://c04.inst.avg.com/serve/getProgress.php?pid=10872680&u=1383510550&lang=en'
+00000550 {P:3788 T:3700 S:0} fs::LoadFileToString [fn='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\DuZ6XqNF0O.mht']
+00000551 {P:3788 T:3700 S:0} - replace src 'http://c12081072.r72.cf2.rackcdn.com/main.min.js' to 'oilocal_main.min.js'
+00000552 {P:3788 T:3700 S:0} - replace src 'http://c12081072.r72.cf2.rackcdn.com/screen_2.min.js' to 'oilocal_screen_2.min.js'
+00000553 {P:3788 T:3700 S:0} - replace src 'http://c12081072.r72.cf2.rackcdn.com/screen_2_4.min.js' to 'oilocal_screen_2_4.min.js'
+00000554 {P:3788 T:3700 S:0} fs::SaveFileFromBuffer [fn='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\DuZ6XqNF0O.mht']
+00000555 {P:3788 T:3700 S:0} fs::RegisterFileAsTemp [f='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\DuZ6XqNF0O.html']
+00000556 {P:3788 T:3700 S:0} !<fs::doDownloadFile
+00000557 {P:3788 T:3604 S:0} !<fs::DownloadBunch
+00000558 {P:3788 T:3604 S:0} SaveTimeStamp, 'getPagesEnd'/-1 -> 1383816289640
+00000559 {P:3788 T:3604 S:0} SaveTimeStamp, 'waitPagesStart'/-1 -> 1383816289655
+00000560 {P:3788 T:3604 S:0} !>App::PreparePage_ApplyResources [idx=0]
+00000561 {P:3788 T:3604 S:0} SaveTimeStamp, 'loadStart'/0 -> 1383816289655
+00000562 {P:3788 T:3604 S:0} SaveTimeStamp, 'createStart'/0 -> 1383816289655
+00000563 {P:3788 T:3604 S:0} !>App::PreparePage_CreateBrowser [fn='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\5Bhpy0cmVE.mht']
+00000564 {P:3788 T:3604 S:0} HtmlWindow::HtmlWindow, this=0x0241D9C8, idx=0, auto=1
+00000565 {P:3788 T:3604 S:0} HtmlWindow::OnCreate, this=0x0241D9C8
+00000566 {P:3788 T:3604 S:0} - defwinproc res=0
+00000567 {P:3788 T:3604 S:0} HtmlWindow::CreateControls, this=0x0241D9C8
+00000568 {P:3788 T:3604 S:0} CJsExternal::CJsExternal [i=-1]
+00000569 {P:3788 T:3604 S:0} - hwnd=0x001601F0, path='file://C:/Users/Admin/AppData/Local/Temp/oi_pnZ7b5DCPP/5Bhpy0cmVE.html'
+00000570 {P:3788 T:3604 S:0} !<App::PreparePage_CreateBrowser
+00000571 {P:3788 T:3604 S:0} SaveTimeStamp, 'createEnd'/0 -> 1383816289811
+00000572 {P:3788 T:3604 S:0} !<App::PreparePage_ApplyResources
+00000573 {P:3788 T:3604 S:0} HtmlWindow::OnNavigateComplete, this=0x0241D9C8, disp=0x009E8EE8, url='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\5Bhpy0cmVE.html'
+00000574 {P:3788 T:3604 S:0} !>HtmlWindow_HostUIHandler::SetUIHandlerToDoc [winref=0x0241D9C8]
+00000575 {P:3788 T:3604 S:0} - ok
+00000576 {P:3788 T:3604 S:0} !<HtmlWindow_HostUIHandler::SetUIHandlerToDoc
+00000577 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=0,n='onPageDestroy',f=0x03B8E704]
+00000578 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=0,n='onPageClose',f=0x03B8E744]
+00000579 {P:3788 T:3604 S:0} load basic page #0 content frame `http://c04.inst.avg.com/serve/getScreen.php?pid=10872680&k=43a9519ed4b5e9c75eb7d683e3d1e09708f9b34a&id=442040&u=1383511056&lang=en`
+00000580 {P:3788 T:4460 S:0} CHttpSink::BeginningTransaction, this=0x0241DBB0, url='http://c15040647.r47.cf2.rackcdn.com/1368481937/AVG2013Installer-3-3.png'
+00000581 {P:3788 T:4460 S:0} CHttpSink::OnResponse, this=0x0241DBB0, code=200 -> hr=0x00000000
+00000582 {P:3788 T:4460 S:0} CHttpSink::ReportResult, this=0x0241DBB0, hr=0x00000000, err=0, url='http://c15040647.r47.cf2.rackcdn.com/1368481937/AVG2013Installer-3-3.png'
+00000583 {P:3788 T:4460 S:0} CHttpSink::BeginningTransaction, this=0x023F1818, url='http://c15040647.r47.cf2.rackcdn.com/AVG_white_logo-L.png'
+00000584 {P:3788 T:4460 S:0} CHttpSink::OnResponse, this=0x023F1818, code=200 -> hr=0x00000000
+00000585 {P:3788 T:4460 S:0} CHttpSink::ReportResult, this=0x023F1818, hr=0x00000000, err=0, url='http://c15040647.r47.cf2.rackcdn.com/AVG_white_logo-L.png'
+00000586 {P:3788 T:4460 S:0} CHttpSink::BeginningTransaction, this=0x023F18C8, url='http://c15040647.r47.cf2.rackcdn.com/AVG-Consumer-Logo-Lockups-Horizontal-CMYK_AV-FREE-2013_Rev_AV-FREE._ie6png'
+00000587 {P:3788 T:4460 S:0} CHttpSink::OnResponse, this=0x023F18C8, code=200 -> hr=0x00000000
+00000588 {P:3788 T:4460 S:0} CHttpSink::ReportResult, this=0x023F18C8, hr=0x00000000, err=0, url='http://c15040647.r47.cf2.rackcdn.com/AVG-Consumer-Logo-Lockups-Horizontal-CMYK_AV-FREE-2013_Rev_AV-FREE._ie6png'
+00000589 {P:3788 T:4460 S:0} CHttpSink::BeginningTransaction, this=0x02417C10, url='http://c15040647.r47.cf2.rackcdn.com/AVG-Consumer-Logo-Lockups-Horizontal-CMYK-2013_IS-REV_IS_ie6.png'
+00000590 {P:3788 T:4460 S:0} CHttpSink::OnResponse, this=0x02417C10, code=200 -> hr=0x00000000
+00000591 {P:3788 T:4460 S:0} CHttpSink::ReportResult, this=0x02417C10, hr=0x00000000, err=0, url='http://c15040647.r47.cf2.rackcdn.com/AVG-Consumer-Logo-Lockups-Horizontal-CMYK-2013_IS-REV_IS_ie6.png'
+00000592 {P:3788 T:4460 S:0} CHttpSink::BeginningTransaction, this=0x02417E20, url='http://c1a96aea271ff5c521b5-7239cc787f1002798ea565bed17dac82.r50.cf2.rackcdn.com/avg_logo16.gif'
+00000593 {P:3788 T:4460 S:0} CHttpSink::OnResponse, this=0x02417E20, code=200 -> hr=0x00000000
+00000594 {P:3788 T:4460 S:0} CHttpSink::ReportResult, this=0x02417E20, hr=0x00000000, err=0, url='http://c1a96aea271ff5c521b5-7239cc787f1002798ea565bed17dac82.r50.cf2.rackcdn.com/avg_logo16.gif'
+00000595 {P:3788 T:4460 S:0} CHttpSink::BeginningTransaction, this=0x02418030, url='http://c1a96aea271ff5c521b5-7239cc787f1002798ea565bed17dac82.r50.cf2.rackcdn.com/mb_question_48.gif'
+00000596 {P:3788 T:4460 S:0} CHttpSink::OnResponse, this=0x02418030, code=200 -> hr=0x00000000
+00000597 {P:3788 T:4460 S:0} CHttpSink::ReportResult, this=0x02418030, hr=0x00000000, err=0, url='http://c1a96aea271ff5c521b5-7239cc787f1002798ea565bed17dac82.r50.cf2.rackcdn.com/mb_question_48.gif'
+00000598 {P:3788 T:3604 S:0} HtmlWindow::OnBeforeNavigate2, this=0x0241D9C8, disp=0x0476A5FC, url='about:blank'
+00000599 {P:3788 T:3604 S:0} CHttpSink::BeginningTransaction, this=0x02417E20, url='http://c15040647.r47.cf2.rackcdn.com/close_alone.png'
+00000600 {P:3788 T:3604 S:0} CHttpSink::OnResponse, this=0x02417E20, code=200 -> hr=0x00000000
+00000601 {P:3788 T:3604 S:0} CHttpSink::ReportResult, this=0x02417E20, hr=0x00000000, err=0, url='http://c15040647.r47.cf2.rackcdn.com/close_alone.png'
+00000602 {P:3788 T:3604 S:0} HtmlWindow::OnNavigateComplete, this=0x0241D9C8, disp=0x0476A5FC, url='about:blank'
+00000603 {P:3788 T:3604 S:0} HtmlWindow::OnDocumentComplete, this=0x0241D9C8, disp=0x0476A5FC, url='about:blank'
+00000604 {P:3788 T:3604 S:0} - compat mode: BackCompat
+00000605 {P:3788 T:3604 S:0} - document mode: 5
+00000606 {P:3788 T:3988 S:0} - run watchdog, e='AVGInstall_Assist_AHr8F1ksjh'
+00000607 {P:3788 T:3604 S:0} CHttpSink::BeginningTransaction, this=0x02417E20, url='http://stats.inst.avg.com/run?p=10872680&m=undefined&ua=Mozilla%2F5.0+%28Windows+NT+6.1%3B+WOW64%3B+rv%3A24.0%29+Gecko%2F20100101+Firefox%2F24.0&d_d=2013-11-06&d_h=04&ts=2013-11-06+04%3A19%3A22&uq=0&ip=108.178.32.130&g_cc=us&c_0=c04&pub=255&p=10872680&i=10872680&ir=http%3A%2F%2F&u=&pa=20768&s=&sl=&ob=Firefox&obv=24.0&os=Windows+7&lang='
+00000608 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=0,n='onAppWinActiveChange',f=0x03B8EBC4]
+00000609 {P:3788 T:3604 S:0} CJsExternal::put_onHitTest [i=0,f=0x03B8EC04]
+00000610 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=0,n='onPageShow',f=0x03B8EC44]
+00000611 {P:3788 T:3604 S:1} setSurvey called
+00000612 {P:3788 T:3604 S:0} HtmlWindow::OnBeforeNavigate2, this=0x0241D9C8, disp=0x0476A5FC, url='http://c04.inst.avg.com/serve/getScreen.php?pid=10872680&k=43a9519ed4b5e9c75eb7d683e3d1e09708f9b34a&id=442040&u=1383511056&lang=en'
+00000613 {P:3788 T:3604 S:0} CHttpSink::BeginningTransaction, this=0x02417C10, url='http://c04.inst.avg.com/serve/getScreen.php?pid=10872680&k=43a9519ed4b5e9c75eb7d683e3d1e09708f9b34a&id=442040&u=1383511056&lang=en'
+00000614 {P:3788 T:3604 S:0} CHttpSink::OnResponse, this=0x02417C10, code=200 -> hr=0x00000000
+00000615 {P:3788 T:3604 S:0} CHttpSink::ReportResult, this=0x02417C10, hr=0x00000000, err=0, url='http://c04.inst.avg.com/serve/getScreen.php?pid=10872680&k=43a9519ed4b5e9c75eb7d683e3d1e09708f9b34a&id=442040&u=1383511056&lang=en'
+00000616 {P:3788 T:4460 S:0} CHttpSink::BeginningTransaction, this=0x0241F490, url='http://c12081072.r72.cf2.rackcdn.com/main.min.js'
+00000617 {P:3788 T:3604 S:0} HtmlWindow::OnDocumentComplete, this=0x0241D9C8, disp=0x009E8EE8, url='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\5Bhpy0cmVE.html'
+00000618 {P:3788 T:4460 S:0} CHttpSink::OnResponse, this=0x0241F490, code=200 -> hr=0x00000000
+00000619 {P:3788 T:3604 S:0} - compat mode: CSS1Compat
+00000620 {P:3788 T:4460 S:0} CHttpSink::ReportResult, this=0x0241F490, hr=0x00000000, err=0, url='http://c12081072.r72.cf2.rackcdn.com/main.min.js'
+00000621 {P:3788 T:3604 S:0} - document mode: 7
+00000622 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=0,n='onPageShow',f=0x03B8EDC4]
+00000623 {P:3788 T:3604 S:0} HtmlWindow::OnNavigateComplete, this=0x0241D9C8, disp=0x0476A5FC, url='http://c04.inst.avg.com/serve/getScreen.php?pid=10872680&k=43a9519ed4b5e9c75eb7d683e3d1e09708f9b34a&id=442040&u=1383511056&lang=en'
+00000624 {P:3788 T:3604 S:0} CJsExternal::DelEventListener [i=0,n='onPageDestroy',f=0x03B8E704]
+00000625 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=0,n='onPageDestroy',f=0x05E3A4C4]
+00000626 {P:4508 T:4512 S:0} MessageSender::MessageSender
+00000627 {P:4508 T:4512 S:0} - working thread launched, tid=612
+00000628 {P:3788 T:3604 S:1} AVG AV: Installer RegKeyExists: true
+00000629 {P:3788 T:3604 S:1} AVG AV: Installer InstallerPathExists: true
+00000630 {P:3788 T:3604 S:0} CompInfo::QueryRegValueAsStr, branch='HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Installer',key='InstallerLocation',def=''
+00000631 {P:3788 T:3604 S:0} - got: 'C:\Windows\SysWOW64\'
+00000632 {P:3788 T:3604 S:1} AVG AV: Installer installerPath: C:\Windows\SysWOW64\
+00000633 {P:3788 T:3604 S:0} CompInfo::TestFileExists, f='C:\Windows\SysWOW64\\msi.dll',isDir=-1
+00000634 {P:3788 T:3604 S:0} - fullpath='C:\Windows\SysWOW64\\msi.dll'
+00000635 {P:3788 T:3604 S:1} AVG AV: Installer installerExists: true
+00000636 {P:3788 T:3604 S:0} CompInfo::QueryRegValueAsInt, branch='HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\msiserver',key='Start',def=4
+00000637 {P:3788 T:3604 S:0} - got: 3
+00000638 {P:3788 T:3604 S:1} index_targetDrive0
+00000639 {P:3788 T:3604 S:0} HtmlWindow::OnDocumentComplete, this=0x0241D9C8, disp=0x0476A5FC, url='http://c04.inst.avg.com/serve/getScreen.php?pid=10872680&k=43a9519ed4b5e9c75eb7d683e3d1e09708f9b34a&id=442040&u=1383511056&lang=en'
+00000640 {P:3788 T:3604 S:0} - compat mode: CSS1Compat
+00000641 {P:3788 T:3604 S:0} - document mode: 7
+00000642 {P:3788 T:3604 S:0} CJsExternal::DelEventListener [i=0,n='onPageShow',f=0x03B8EDC4]
+00000643 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=0,n='onPageShow',f=0x05E3A644]
+00000644 {P:3788 T:3604 S:0} !>App::SelectActivePage [from=0,dir=-1]
+00000645 {P:3788 T:3604 S:0} - may go to page #-1
+00000646 {P:3788 T:3604 S:0} !<App::SelectActivePage
+00000647 {P:3788 T:3604 S:0} Skipping offer frame load, current_offer is null
+00000648 {P:3788 T:3604 S:0} !>App::OnPageComplete [hwndHW=0x001601F0,main=0]
+00000649 {P:3788 T:3604 S:0} - complete in page #0, rs=2
+00000650 {P:3788 T:3604 S:0} !<App::OnPageComplete
+00000651 {P:3788 T:3604 S:0} !>App::OnPageComplete [hwndHW=0x001601F0,main=1]
+00000652 {P:3788 T:3604 S:0} - complete in page #0, rs=2
+00000653 {P:3788 T:3604 S:0} - main loaded
+00000654 {P:3788 T:3604 S:0} SaveTimeStamp, 'loadMainEnd'/0 -> 1383816290655
+00000655 {P:3788 T:3604 S:0} - totally complete
+00000656 {P:3788 T:3604 S:0} SaveTimeStamp, 'loadEnd'/0 -> 1383816290671
+00000657 {P:3788 T:3604 S:0} !<App::OnPageComplete
+00000658 {P:3788 T:3604 S:0} !>App::PreparePage_ApplyResources [idx=1]
+00000659 {P:3788 T:3604 S:0} SaveTimeStamp, 'loadStart'/1 -> 1383816290702
+00000660 {P:3788 T:3604 S:0} !>App::PreparePage_FixOfferFile
+00000661 {P:3788 T:3604 S:0} fs::LoadFileToString [fn='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\FWD80YyEU9.html']
+00000662 {P:3788 T:3604 S:0} fs::SaveFileFromBuffer [fn='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\FWD80YyEU9.html']
+00000663 {P:3788 T:3604 S:0} !<App::PreparePage_FixOfferFile
+00000664 {P:3788 T:3604 S:0} SaveTimeStamp, 'createStart'/1 -> 1383816290874
+00000665 {P:3788 T:3604 S:0} !>App::PreparePage_CreateBrowser [fn='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\xo27NOJFFy.mht']
+00000666 {P:3788 T:3604 S:0} HtmlWindow::HtmlWindow, this=0x02450610, idx=1, auto=1
+00000667 {P:3788 T:3604 S:0} HtmlWindow::OnCreate, this=0x02450610
+00000668 {P:3788 T:3604 S:0} - defwinproc res=0
+00000669 {P:3788 T:3604 S:0} HtmlWindow::CreateControls, this=0x02450610
+00000670 {P:3788 T:3604 S:0} CJsExternal::CJsExternal [i=-1]
+00000671 {P:3788 T:3604 S:0} - hwnd=0x000E04B4, path='file://C:/Users/Admin/AppData/Local/Temp/oi_pnZ7b5DCPP/xo27NOJFFy.html'
+00000672 {P:3788 T:3604 S:0} !<App::PreparePage_CreateBrowser
+00000673 {P:3788 T:3604 S:0} SaveTimeStamp, 'createEnd'/1 -> 1383816290905
+00000674 {P:3788 T:3604 S:0} !<App::PreparePage_ApplyResources
+00000675 {P:3788 T:3604 S:0} !>App::OnPageComplete [hwndHW=0x001601F0,main=0]
+00000676 {P:3788 T:3604 S:0} !<App::OnPageComplete
+00000677 {P:3788 T:3604 S:0} HtmlWindow::OnNavigateComplete, this=0x02450610, disp=0x064A39C0, url='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\xo27NOJFFy.html'
+00000678 {P:3788 T:3604 S:0} !>HtmlWindow_HostUIHandler::SetUIHandlerToDoc [winref=0x02450610]
+00000679 {P:3788 T:3604 S:0} - ok
+00000680 {P:3788 T:3604 S:0} !<HtmlWindow_HostUIHandler::SetUIHandlerToDoc
+00000681 {P:4508 T:4512 S:0} - find tag certificate
+00000682 {P:4508 T:4512 S:0} - not found
+00000683 {P:4508 T:4512 S:0} fs::LoadResourceToString [id=142,type='JSONDATA']
+00000684 {P:4508 T:4512 S:0} - size: 39435
+00000685 {P:4508 T:4512 S:0} Start app v1.19.3506 (win6.1.7601 64bit with ie9.0)
+00000686 {P:4508 T:4512 S:0} !>App::Create
+00000687 {P:4508 T:4512 S:0} SaveTimeStamp, 'appStart'/-1 -> 1383816290983
+00000688 {P:4508 T:4512 S:0} !>App::ParseCommandLine
+00000689 {P:4508 T:4512 S:0} - 11 args, options: '/WTD /E /U 1 /L /TP /DLL OICB4D5.tmp '
+00000690 {P:4508 T:4512 S:0} !<App::ParseCommandLine
+00000691 {P:4508 T:4512 S:0} !>App::CreateCommandWindow
+00000692 {P:4508 T:4512 S:0} MainWindow::OnSize
+00000693 {P:4508 T:4512 S:0} - command hwnd=0x001301E8, e='AVGInstall_Assist_AHr8F1ksjh'
+00000694 {P:4508 T:4512 S:0} !<App::CreateCommandWindow
+00000695 {P:4508 T:4512 S:0} !<App::Create
+00000696 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=1,n='onPageDestroy',f=0x05E3AD84]
+00000697 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=1,n='onPageClose',f=0x05E3ADC4]
+00000698 {P:3788 T:3604 S:0} HtmlWindow::OnBeforeNavigate2, this=0x02450610, disp=0x047C43F4, url='about:blank'
+00000699 {P:3788 T:3604 S:0} HtmlWindow::OnNavigateComplete, this=0x02450610, disp=0x047C43F4, url='about:blank'
+00000700 {P:3788 T:3604 S:0} HtmlWindow::OnDocumentComplete, this=0x02450610, disp=0x047C43F4, url='about:blank'
+00000701 {P:3788 T:3604 S:0} - compat mode: BackCompat
+00000702 {P:3788 T:3604 S:0} - document mode: 5
+00000703 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=1,n='onAppWinActiveChange',f=0x06795244]
+00000704 {P:3788 T:3604 S:0} CJsExternal::put_onHitTest [i=1,f=0x06795284]
+00000705 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=1,n='onPageShow',f=0x067952C4]
+00000706 {P:3788 T:3604 S:1} setSurvey called
+00000707 {P:3788 T:3604 S:0} HtmlWindow::OnDocumentComplete, this=0x02450610, disp=0x064A39C0, url='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\xo27NOJFFy.html'
+00000708 {P:3788 T:3604 S:0} - compat mode: CSS1Compat
+00000709 {P:3788 T:3604 S:0} - document mode: 7
+00000710 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=1,n='onPageShow',f=0x06795404]
+00000711 {P:3788 T:3604 S:0} !>App::OnPageComplete [hwndHW=0x000E04B4,main=0]
+00000712 {P:3788 T:3604 S:0} - complete in page #1, rs=2
+00000713 {P:3788 T:3604 S:0} !<App::OnPageComplete
+00000714 {P:3788 T:3604 S:0} !>App::OnPageComplete [hwndHW=0x000E04B4,main=1]
+00000715 {P:3788 T:3604 S:0} - complete in page #1, rs=2
+00000716 {P:3788 T:3604 S:0} - main loaded
+00000717 {P:3788 T:3604 S:0} SaveTimeStamp, 'loadMainEnd'/1 -> 1383816291108
+00000718 {P:3788 T:3604 S:0} !>App::SetOfferFrameInBrowser [src='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\FWD80YyEU9.mht',injected=0]
+00000719 {P:3788 T:3604 S:0} !>App::exectScriptAndGetAnswer [code='setOfferFrameSrc('file://C:/Users/Admin/AppData/Local/Temp/oi_pnZ7b5DCPP/FWD80YyEU9.html');']
+00000720 {P:3788 T:3604 S:0} HtmlWindow::OnBeforeNavigate2, this=0x02450610, disp=0x047C43F4, url='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\FWD80YyEU9.html'
+00000721 {P:3788 T:3604 S:0} !<App::exectScriptAndGetAnswer
+00000722 {P:3788 T:3604 S:0} !<App::SetOfferFrameInBrowser
+00000723 {P:3788 T:3604 S:0} SaveTimeStamp, 'loadFrameStart'/1 -> 1383816291155
+00000724 {P:3788 T:3604 S:0} !<App::OnPageComplete
+00000725 {P:3788 T:3604 S:0} HtmlWindow::OnNavigateComplete, this=0x02450610, disp=0x047C43F4, url='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\FWD80YyEU9.html'
+00000726 {P:3788 T:3604 S:0} CJsExternal::DelEventListener [i=1,n='onPageDestroy',f=0x05E3AD84]
+00000727 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=1,n='onPageDestroy',f=0x06795A44]
+00000728 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=1,n='onPageShow',f=0x06795384]
+00000729 {P:3788 T:4452 S:0} CHttpSink::OnResponse, this=0x02417E20, code=200 -> hr=0x00000000
+00000730 {P:3788 T:4452 S:0} CHttpSink::ReportResult, this=0x02417E20, hr=0x00000000, err=0, url='http://stats.inst.avg.com/run?p=10872680&m=undefined&ua=Mozilla%2F5.0+%28Windows+NT+6.1%3B+WOW64%3B+rv%3A24.0%29+Gecko%2F20100101+Firefox%2F24.0&d_d=2013-11-06&d_h=04&ts=2013-11-06+04%3A19%3A22&uq=0&ip=108.178.32.130&g_cc=us&c_0=c04&pub=255&p=10872680&i=10872680&ir=http%3A%2F%2F&u=&pa=20768&s=&sl=&ob=Firefox&obv=24.0&os=Windows+7&lang='
+00000731 {P:3788 T:4460 S:0} CHttpSink::BeginningTransaction, this=0x02417C10, url='http://c1a96aea271ff5c521b5-7239cc787f1002798ea565bed17dac82.r50.cf2.rackcdn.com/mb_error_48.gif'
+00000732 {P:3788 T:4460 S:0} CHttpSink::OnResponse, this=0x02417C10, code=200 -> hr=0x00000000
+00000733 {P:3788 T:4460 S:0} CHttpSink::ReportResult, this=0x02417C10, hr=0x00000000, err=0, url='http://c1a96aea271ff5c521b5-7239cc787f1002798ea565bed17dac82.r50.cf2.rackcdn.com/mb_error_48.gif'
+00000734 {P:3788 T:3604 S:1} windowsCheckPass: true
+00000735 {P:3788 T:3604 S:0} HtmlWindow::OnDocumentComplete, this=0x02450610, disp=0x047C43F4, url='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\FWD80YyEU9.html'
+00000736 {P:3788 T:3604 S:0} - compat mode: CSS1Compat
+00000737 {P:3788 T:3604 S:0} - document mode: 7
+00000738 {P:3788 T:3604 S:0} no checkbox container found for undefined
+00000739 {P:3788 T:3604 S:0} CJsExternal::DelEventListener [i=1,n='onPageShow',f=0x06795404]
+00000740 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=1,n='onPageShow',f=0x06795F84]
+00000741 {P:3788 T:3604 S:0} !>App::SelectActivePage [from=1,dir=-1]
+00000742 {P:3788 T:3604 S:0} - may go to page #-1
+00000743 {P:3788 T:3604 S:0} !<App::SelectActivePage
+00000744 {P:3788 T:3604 S:0} !>App::OnPageComplete [hwndHW=0x000E04B4,main=0]
+00000745 {P:3788 T:3604 S:0} - complete in page #1, rs=3
+00000746 {P:3788 T:3604 S:0} - totally complete
+00000747 {P:3788 T:3604 S:0} SaveTimeStamp, 'loadEnd'/1 -> 1383816291311
+00000748 {P:3788 T:3604 S:0} !<App::OnPageComplete
+00000749 {P:3788 T:3604 S:0} !>App::PreparePage_ApplyResources [idx=2]
+00000750 {P:3788 T:3604 S:0} SaveTimeStamp, 'loadStart'/2 -> 1383816291327
+00000751 {P:3788 T:3604 S:0} SaveTimeStamp, 'createStart'/2 -> 1383816291327
+00000752 {P:3788 T:3604 S:0} !>App::PreparePage_CreateBrowser [fn='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\cPHWTCBOVw.mht']
+00000753 {P:3788 T:3604 S:0} HtmlWindow::HtmlWindow, this=0x02450780, idx=2, auto=1
+00000754 {P:3788 T:3604 S:0} HtmlWindow::OnCreate, this=0x02450780
+00000755 {P:3788 T:3604 S:0} - defwinproc res=0
+00000756 {P:3788 T:3604 S:0} HtmlWindow::CreateControls, this=0x02450780
+00000757 {P:3788 T:3604 S:0} CJsExternal::CJsExternal [i=-1]
+00000758 {P:3788 T:3604 S:0} - hwnd=0x001301BC, path='file://C:/Users/Admin/AppData/Local/Temp/oi_pnZ7b5DCPP/cPHWTCBOVw.html'
+00000759 {P:3788 T:3604 S:0} !<App::PreparePage_CreateBrowser
+00000760 {P:3788 T:3604 S:0} SaveTimeStamp, 'createEnd'/2 -> 1383816291374
+00000761 {P:3788 T:3604 S:0} !<App::PreparePage_ApplyResources
+00000762 {P:3788 T:3604 S:0} HtmlWindow::OnNavigateComplete, this=0x02450780, disp=0x04790330, url='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\cPHWTCBOVw.html'
+00000763 {P:3788 T:3604 S:0} !>HtmlWindow_HostUIHandler::SetUIHandlerToDoc [winref=0x02450780]
+00000764 {P:3788 T:3604 S:0} - ok
+00000765 {P:3788 T:3604 S:0} !<HtmlWindow_HostUIHandler::SetUIHandlerToDoc
+00000766 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=2,n='onPageDestroy',f=0x05E3A484]
+00000767 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=2,n='onPageClose',f=0x05E3A504]
+00000768 {P:3788 T:3604 S:0} load basic page #2 content frame `http://c04.inst.avg.com/serve/getScreen.php?pid=10872680&k=43a9519ed4b5e9c75eb7d683e3d1e09708f9b34a&id=442042&u=1383511063&lang=en`
+00000769 {P:3788 T:3604 S:0} HtmlWindow::OnBeforeNavigate2, this=0x02450780, disp=0x047C411C, url='about:blank'
+00000770 {P:3788 T:3604 S:0} HtmlWindow::OnNavigateComplete, this=0x02450780, disp=0x047C411C, url='about:blank'
+00000771 {P:3788 T:3604 S:0} HtmlWindow::OnDocumentComplete, this=0x02450780, disp=0x047C411C, url='about:blank'
+00000772 {P:3788 T:3604 S:0} - compat mode: BackCompat
+00000773 {P:3788 T:3604 S:0} - document mode: 5
+00000774 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=2,n='onAppWinActiveChange',f=0x05E3A884]
+00000775 {P:3788 T:3604 S:0} CJsExternal::put_onHitTest [i=2,f=0x05E3A804]
+00000776 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=2,n='onPageShow',f=0x05E3A7C4]
+00000777 {P:3788 T:3604 S:1} setSurvey called
+00000778 {P:3788 T:3604 S:0} HtmlWindow::OnBeforeNavigate2, this=0x02450780, disp=0x047C411C, url='http://c04.inst.avg.com/serve/getScreen.php?pid=10872680&k=43a9519ed4b5e9c75eb7d683e3d1e09708f9b34a&id=442042&u=1383511063&lang=en'
+00000779 {P:3788 T:3604 S:0} CHttpSink::BeginningTransaction, this=0x02417C10, url='http://c04.inst.avg.com/serve/getScreen.php?pid=10872680&k=43a9519ed4b5e9c75eb7d683e3d1e09708f9b34a&id=442042&u=1383511063&lang=en'
+00000780 {P:3788 T:3604 S:0} CHttpSink::OnResponse, this=0x02417C10, code=200 -> hr=0x00000000
+00000781 {P:3788 T:3604 S:0} CHttpSink::ReportResult, this=0x02417C10, hr=0x00000000, err=0, url='http://c04.inst.avg.com/serve/getScreen.php?pid=10872680&k=43a9519ed4b5e9c75eb7d683e3d1e09708f9b34a&id=442042&u=1383511063&lang=en'
+00000782 {P:3788 T:3604 S:0} HtmlWindow::OnDocumentComplete, this=0x02450780, disp=0x04790330, url='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\cPHWTCBOVw.html'
+00000783 {P:3788 T:4460 S:0} CHttpSink::BeginningTransaction, this=0x02420C78, url='http://c12081072.r72.cf2.rackcdn.com/main.min.js'
+00000784 {P:3788 T:3604 S:0} - compat mode: CSS1Compat
+00000785 {P:3788 T:3604 S:0} - document mode: 7
+00000786 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=2,n='onPageShow',f=0x03B8E484]
+00000787 {P:3788 T:4460 S:0} CHttpSink::OnResponse, this=0x02420C78, code=200 -> hr=0x00000000
+00000788 {P:3788 T:4460 S:0} CHttpSink::ReportResult, this=0x02420C78, hr=0x00000000, err=0, url='http://c12081072.r72.cf2.rackcdn.com/main.min.js'
+00000789 {P:3788 T:3604 S:0} HtmlWindow::OnNavigateComplete, this=0x02450780, disp=0x047C411C, url='http://c04.inst.avg.com/serve/getScreen.php?pid=10872680&k=43a9519ed4b5e9c75eb7d683e3d1e09708f9b34a&id=442042&u=1383511063&lang=en'
+00000790 {P:3788 T:3604 S:0} CJsExternal::DelEventListener [i=2,n='onPageDestroy',f=0x05E3A484]
+00000791 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=2,n='onPageDestroy',f=0x03B8E044]
+00000792 {P:3788 T:4460 S:0} CHttpSink::BeginningTransaction, this=0x02420C78, url='http://c15040647.r47.cf2.rackcdn.com/OK.png'
+00000793 {P:3788 T:4460 S:0} CHttpSink::OnResponse, this=0x02420C78, code=200 -> hr=0x00000000
+00000794 {P:3788 T:4460 S:0} CHttpSink::ReportResult, this=0x02420C78, hr=0x00000000, err=0, url='http://c15040647.r47.cf2.rackcdn.com/OK.png'
+00000795 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=2,n='onPageShow',f=0x07623184]
+00000796 {P:3788 T:3604 S:0} HtmlWindow::OnDocumentComplete, this=0x02450780, disp=0x047C411C, url='http://c04.inst.avg.com/serve/getScreen.php?pid=10872680&k=43a9519ed4b5e9c75eb7d683e3d1e09708f9b34a&id=442042&u=1383511063&lang=en'
+00000797 {P:3788 T:3604 S:0} - compat mode: CSS1Compat
+00000798 {P:3788 T:3604 S:0} - document mode: 7
+00000799 {P:3788 T:3604 S:0} CJsExternal::DelEventListener [i=2,n='onPageShow',f=0x03B8E484]
+00000800 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=2,n='onPageShow',f=0x076231C4]
+00000801 {P:3788 T:3604 S:0} !>App::SelectActivePage [from=2,dir=-1]
+00000802 {P:3788 T:3604 S:0} - may go to page #1
+00000803 {P:3788 T:3604 S:0} !<App::SelectActivePage
+00000804 {P:3788 T:3604 S:0} Skipping offer frame load, current_offer is null
+00000805 {P:3788 T:3604 S:0} !>App::OnPageComplete [hwndHW=0x001301BC,main=0]
+00000806 {P:3788 T:3604 S:0} - complete in page #2, rs=2
+00000807 {P:3788 T:3604 S:0} !<App::OnPageComplete
+00000808 {P:3788 T:3604 S:0} !>App::OnPageComplete [hwndHW=0x001301BC,main=1]
+00000809 {P:3788 T:3604 S:0} - complete in page #2, rs=2
+00000810 {P:3788 T:3604 S:0} - main loaded
+00000811 {P:3788 T:3604 S:0} SaveTimeStamp, 'loadMainEnd'/2 -> 1383816291686
+00000812 {P:3788 T:3604 S:0} - totally complete
+00000813 {P:3788 T:3604 S:0} SaveTimeStamp, 'loadEnd'/2 -> 1383816291702
+00000814 {P:3788 T:3604 S:0} !<App::OnPageComplete
+00000815 {P:3788 T:3604 S:0} !>App::OnPageComplete [hwndHW=0x001301BC,main=0]
+00000816 {P:3788 T:3604 S:0} !<App::OnPageComplete
+00000817 {P:3788 T:3604 S:0} !>App::PreparePage_ApplyResources [idx=3]
+00000818 {P:3788 T:3604 S:0} SaveTimeStamp, 'loadStart'/3 -> 1383816291749
+00000819 {P:3788 T:3604 S:0} SaveTimeStamp, 'createStart'/3 -> 1383816291749
+00000820 {P:3788 T:3604 S:0} !>App::PreparePage_CreateBrowser [fn='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\7OsBnW2aM9.mht']
+00000821 {P:3788 T:3604 S:0} HtmlWindow::HtmlWindow, this=0x024508F0, idx=3, auto=1
+00000822 {P:3788 T:3604 S:0} HtmlWindow::OnCreate, this=0x024508F0
+00000823 {P:3788 T:3604 S:0} - defwinproc res=0
+00000824 {P:3788 T:3604 S:0} HtmlWindow::CreateControls, this=0x024508F0
+00000825 {P:3788 T:3604 S:0} CJsExternal::CJsExternal [i=-1]
+00000826 {P:3788 T:3604 S:0} - hwnd=0x000903A6, path='file://C:/Users/Admin/AppData/Local/Temp/oi_pnZ7b5DCPP/7OsBnW2aM9.html'
+00000827 {P:3788 T:3604 S:0} !<App::PreparePage_CreateBrowser
+00000828 {P:3788 T:3604 S:0} SaveTimeStamp, 'createEnd'/3 -> 1383816291796
+00000829 {P:3788 T:3604 S:0} !<App::PreparePage_ApplyResources
+00000830 {P:3788 T:3604 S:0} HtmlWindow::OnNavigateComplete, this=0x024508F0, disp=0x065C8298, url='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\7OsBnW2aM9.html'
+00000831 {P:3788 T:3604 S:0} !>HtmlWindow_HostUIHandler::SetUIHandlerToDoc [winref=0x024508F0]
+00000832 {P:3788 T:3604 S:0} - ok
+00000833 {P:3788 T:3604 S:0} !<HtmlWindow_HostUIHandler::SetUIHandlerToDoc
+00000834 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=3,n='onPageDestroy',f=0x07623904]
+00000835 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=3,n='onPageClose',f=0x07623944]
+00000836 {P:3788 T:3604 S:0} load basic page #3 content frame `http://c04.inst.avg.com/serve/getScreen.php?pid=10872680&k=43a9519ed4b5e9c75eb7d683e3d1e09708f9b34a&id=442044&u=1383511069&lang=en`
+00000837 {P:3788 T:3604 S:0} HtmlWindow::OnBeforeNavigate2, this=0x024508F0, disp=0x00A5AC3C, url='about:blank'
+00000838 {P:3788 T:3604 S:0} HtmlWindow::OnNavigateComplete, this=0x024508F0, disp=0x00A5AC3C, url='about:blank'
+00000839 {P:3788 T:3604 S:0} HtmlWindow::OnDocumentComplete, this=0x024508F0, disp=0x00A5AC3C, url='about:blank'
+00000840 {P:3788 T:3604 S:0} - compat mode: BackCompat
+00000841 {P:3788 T:3604 S:0} - document mode: 5
+00000842 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=3,n='onAppWinActiveChange',f=0x07623DC4]
+00000843 {P:3788 T:3604 S:0} CJsExternal::put_onHitTest [i=3,f=0x07623E04]
+00000844 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=3,n='onPageShow',f=0x07623E44]
+00000845 {P:3788 T:3604 S:1} setSurvey called
+00000846 {P:3788 T:3604 S:0} HtmlWindow::OnBeforeNavigate2, this=0x024508F0, disp=0x00A5AC3C, url='http://c04.inst.avg.com/serve/getScreen.php?pid=10872680&k=43a9519ed4b5e9c75eb7d683e3d1e09708f9b34a&id=442044&u=1383511069&lang=en'
+00000847 {P:3788 T:3604 S:0} CHttpSink::BeginningTransaction, this=0x02417C10, url='http://c04.inst.avg.com/serve/getScreen.php?pid=10872680&k=43a9519ed4b5e9c75eb7d683e3d1e09708f9b34a&id=442044&u=1383511069&lang=en'
+00000848 {P:3788 T:3604 S:0} CHttpSink::OnResponse, this=0x02417C10, code=200 -> hr=0x00000000
+00000849 {P:3788 T:3604 S:0} CHttpSink::ReportResult, this=0x02417C10, hr=0x00000000, err=0, url='http://c04.inst.avg.com/serve/getScreen.php?pid=10872680&k=43a9519ed4b5e9c75eb7d683e3d1e09708f9b34a&id=442044&u=1383511069&lang=en'
+00000850 {P:3788 T:3604 S:0} HtmlWindow::OnDocumentComplete, this=0x024508F0, disp=0x065C8298, url='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\7OsBnW2aM9.html'
+00000851 {P:3788 T:3604 S:0} - compat mode: CSS1Compat
+00000852 {P:3788 T:4460 S:0} CHttpSink::BeginningTransaction, this=0x02438728, url='http://c12081072.r72.cf2.rackcdn.com/main.min.js'
+00000853 {P:3788 T:3604 S:0} - document mode: 7
+00000854 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=3,n='onPageShow',f=0x0785F004]
+00000855 {P:3788 T:4460 S:0} CHttpSink::OnResponse, this=0x02438728, code=200 -> hr=0x00000000
+00000856 {P:3788 T:4460 S:0} CHttpSink::ReportResult, this=0x02438728, hr=0x00000000, err=0, url='http://c12081072.r72.cf2.rackcdn.com/main.min.js'
+00000857 {P:3788 T:3604 S:0} HtmlWindow::OnNavigateComplete, this=0x024508F0, disp=0x00A5AC3C, url='http://c04.inst.avg.com/serve/getScreen.php?pid=10872680&k=43a9519ed4b5e9c75eb7d683e3d1e09708f9b34a&id=442044&u=1383511069&lang=en'
+00000858 {P:3788 T:3604 S:0} CJsExternal::DelEventListener [i=3,n='onPageDestroy',f=0x07623904]
+00000859 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=3,n='onPageDestroy',f=0x0785F704]
+00000860 {P:3788 T:4460 S:0} CHttpSink::BeginningTransaction, this=0x02438728, url='http://c15040647.r47.cf2.rackcdn.com/pg06.png'
+00000861 {P:3788 T:4460 S:0} CHttpSink::OnResponse, this=0x02438728, code=200 -> hr=0x00000000
+00000862 {P:3788 T:4460 S:0} CHttpSink::ReportResult, this=0x02438728, hr=0x00000000, err=0, url='http://c15040647.r47.cf2.rackcdn.com/pg06.png'
+00000863 {P:3788 T:3604 S:0} !>App::OnPageComplete [hwndHW=0x000903A6,main=0]
+00000864 {P:3788 T:3604 S:0} - complete in page #3, rs=2
+00000865 {P:3788 T:3604 S:0} !<App::OnPageComplete
+00000866 {P:3788 T:3604 S:0} !>App::OnPageComplete [hwndHW=0x000903A6,main=1]
+00000867 {P:3788 T:3604 S:0} - complete in page #3, rs=2
+00000868 {P:3788 T:3604 S:0} - main loaded
+00000869 {P:3788 T:3604 S:0} SaveTimeStamp, 'loadMainEnd'/3 -> 1383816292061
+00000870 {P:3788 T:3604 S:0} - wait 1 complete
+00000871 {P:3788 T:3604 S:0} !<App::OnPageComplete
+00000872 {P:3788 T:3604 S:0} !>App::PreparePage_ApplyResources [idx=4]
+00000873 {P:3788 T:3604 S:0} SaveTimeStamp, 'loadStart'/4 -> 1383816292108
+00000874 {P:3788 T:3604 S:0} SaveTimeStamp, 'createStart'/4 -> 1383816292108
+00000875 {P:3788 T:3604 S:0} !>App::PreparePage_CreateBrowser [fn='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\pQ73kKtp2v.mht']
+00000876 {P:3788 T:3604 S:0} HtmlWindow::HtmlWindow, this=0x02450A60, idx=4, auto=1
+00000877 {P:3788 T:3604 S:0} HtmlWindow::OnCreate, this=0x02450A60
+00000878 {P:3788 T:3604 S:0} - defwinproc res=0
+00000879 {P:3788 T:3604 S:0} HtmlWindow::CreateControls, this=0x02450A60
+00000880 {P:3788 T:3604 S:0} CJsExternal::CJsExternal [i=-1]
+00000881 {P:3788 T:3604 S:0} - hwnd=0x0009051E, path='file://C:/Users/Admin/AppData/Local/Temp/oi_pnZ7b5DCPP/pQ73kKtp2v.html'
+00000882 {P:3788 T:3604 S:0} !<App::PreparePage_CreateBrowser
+00000883 {P:3788 T:3604 S:0} SaveTimeStamp, 'createEnd'/4 -> 1383816292155
+00000884 {P:3788 T:3604 S:0} !<App::PreparePage_ApplyResources
+00000885 {P:3788 T:3604 S:0} HtmlWindow::OnNavigateComplete, this=0x02450A60, disp=0x065C84C0, url='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\pQ73kKtp2v.html'
+00000886 {P:3788 T:3604 S:0} !>HtmlWindow_HostUIHandler::SetUIHandlerToDoc [winref=0x02450A60]
+00000887 {P:3788 T:3604 S:0} - ok
+00000888 {P:3788 T:3604 S:0} !<HtmlWindow_HostUIHandler::SetUIHandlerToDoc
+00000889 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=4,n='onPageDestroy',f=0x0785F1C4]
+00000890 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=4,n='onPageClose',f=0x0785F144]
+00000891 {P:3788 T:3604 S:0} load basic page #4 content frame `http://c04.inst.avg.com/serve/getScreen.php?pid=10872680&k=43a9519ed4b5e9c75eb7d683e3d1e09708f9b34a&id=442046&u=1383511078&lang=en`
+00000892 {P:3788 T:3604 S:0} HtmlWindow::OnBeforeNavigate2, this=0x02450A60, disp=0x00A5AB5C, url='about:blank'
+00000893 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=3,n='onPageShow',f=0x07623AC4]
+00000894 {P:3788 T:3604 S:0} CHttpSink::BeginningTransaction, this=0x02417C10, url='http://c15040647.r47.cf2.rackcdn.com/pg06_x.png'
+00000895 {P:3788 T:3604 S:0} CHttpSink::OnResponse, this=0x02417C10, code=200 -> hr=0x00000000
+00000896 {P:3788 T:3604 S:0} CHttpSink::ReportResult, this=0x02417C10, hr=0x00000000, err=0, url='http://c15040647.r47.cf2.rackcdn.com/pg06_x.png'
+00000897 {P:3788 T:3604 S:0} HtmlWindow::OnDocumentComplete, this=0x024508F0, disp=0x00A5AC3C, url='http://c04.inst.avg.com/serve/getScreen.php?pid=10872680&k=43a9519ed4b5e9c75eb7d683e3d1e09708f9b34a&id=442044&u=1383511069&lang=en'
+00000898 {P:3788 T:3604 S:0} - compat mode: CSS1Compat
+00000899 {P:3788 T:3604 S:0} - document mode: 7
+00000900 {P:3788 T:3604 S:0} CJsExternal::DelEventListener [i=3,n='onPageShow',f=0x0785F004]
+00000901 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=3,n='onPageShow',f=0x07623404]
+00000902 {P:3788 T:3604 S:0} !>App::SelectActivePage [from=3,dir=-1]
+00000903 {P:3788 T:3604 S:0} - may go to page #2
+00000904 {P:3788 T:3604 S:0} !<App::SelectActivePage
+00000905 {P:3788 T:3604 S:0} Skipping offer frame load, current_offer is null
+00000906 {P:3788 T:3604 S:0} HtmlWindow::OnNavigateComplete, this=0x02450A60, disp=0x00A5AB5C, url='about:blank'
+00000907 {P:3788 T:3604 S:0} HtmlWindow::OnDocumentComplete, this=0x02450A60, disp=0x00A5AB5C, url='about:blank'
+00000908 {P:3788 T:3604 S:0} - compat mode: BackCompat
+00000909 {P:3788 T:3604 S:0} - document mode: 5
+00000910 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=4,n='onAppWinActiveChange',f=0x03B8E284]
+00000911 {P:3788 T:3604 S:0} CJsExternal::put_onHitTest [i=4,f=0x03B8E304]
+00000912 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=4,n='onPageShow',f=0x03B8E384]
+00000913 {P:3788 T:3604 S:1} setSurvey called
+00000914 {P:3788 T:3604 S:0} HtmlWindow::OnBeforeNavigate2, this=0x02450A60, disp=0x00A5AB5C, url='http://c04.inst.avg.com/serve/getScreen.php?pid=10872680&k=43a9519ed4b5e9c75eb7d683e3d1e09708f9b34a&id=442046&u=1383511078&lang=en'
+00000915 {P:3788 T:3604 S:0} CHttpSink::BeginningTransaction, this=0x02438728, url='http://c04.inst.avg.com/serve/getScreen.php?pid=10872680&k=43a9519ed4b5e9c75eb7d683e3d1e09708f9b34a&id=442046&u=1383511078&lang=en'
+00000916 {P:3788 T:3604 S:0} CHttpSink::OnResponse, this=0x02438728, code=200 -> hr=0x00000000
+00000917 {P:3788 T:3604 S:0} CHttpSink::ReportResult, this=0x02438728, hr=0x00000000, err=0, url='http://c04.inst.avg.com/serve/getScreen.php?pid=10872680&k=43a9519ed4b5e9c75eb7d683e3d1e09708f9b34a&id=442046&u=1383511078&lang=en'
+00000918 {P:3788 T:3604 S:0} HtmlWindow::OnDocumentComplete, this=0x02450A60, disp=0x065C84C0, url='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\pQ73kKtp2v.html'
+00000919 {P:3788 T:3604 S:0} - compat mode: CSS1Compat
+00000920 {P:3788 T:3604 S:0} - document mode: 7
+00000921 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=4,n='onPageShow',f=0x03B8ED04]
+00000922 {P:3788 T:3604 S:0} !>App::OnPageComplete [hwndHW=0x000903A6,main=0]
+00000923 {P:3788 T:3604 S:0} - complete in page #3, rs=3
+00000924 {P:3788 T:3604 S:0} - totally complete
+00000925 {P:3788 T:3604 S:0} SaveTimeStamp, 'loadEnd'/3 -> 1383816292390
+00000926 {P:3788 T:3604 S:0} !<App::OnPageComplete
+00000927 {P:3788 T:3604 S:0} !>App::OnPageComplete [hwndHW=0x0009051E,main=0]
+00000928 {P:3788 T:3604 S:0} - complete in page #4, rs=2
+00000929 {P:3788 T:3604 S:0} !<App::OnPageComplete
+00000930 {P:3788 T:3604 S:0} !>App::OnPageComplete [hwndHW=0x0009051E,main=1]
+00000931 {P:3788 T:3604 S:0} - complete in page #4, rs=2
+00000932 {P:3788 T:3604 S:0} - main loaded
+00000933 {P:3788 T:3604 S:0} SaveTimeStamp, 'loadMainEnd'/4 -> 1383816292405
+00000934 {P:3788 T:3604 S:0} - wait 1 complete
+00000935 {P:3788 T:4460 S:0} CHttpSink::BeginningTransaction, this=0x02417C10, url='http://c12081072.r72.cf2.rackcdn.com/main.min.js'
+00000936 {P:3788 T:3604 S:0} !<App::OnPageComplete
+00000937 {P:3788 T:4460 S:0} CHttpSink::OnResponse, this=0x02417C10, code=200 -> hr=0x00000000
+00000938 {P:3788 T:3604 S:0} !>App::PreparePage_ApplyResources [idx=4]
+00000939 {P:3788 T:4460 S:0} CHttpSink::ReportResult, this=0x02417C10, hr=0x00000000, err=0, url='http://c12081072.r72.cf2.rackcdn.com/main.min.js'
+00000940 {P:3788 T:3604 S:0} - already done, rs=3
+00000941 {P:3788 T:3604 S:0} !<App::PreparePage_ApplyResources
+00000942 {P:3788 T:3604 S:0} HtmlWindow::OnNavigateComplete, this=0x02450A60, disp=0x00A5AB5C, url='http://c04.inst.avg.com/serve/getScreen.php?pid=10872680&k=43a9519ed4b5e9c75eb7d683e3d1e09708f9b34a&id=442046&u=1383511078&lang=en'
+00000943 {P:3788 T:3604 S:0} CJsExternal::DelEventListener [i=4,n='onPageDestroy',f=0x0785F1C4]
+00000944 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=4,n='onPageDestroy',f=0x06795B04]
+00000945 {P:3788 T:3604 S:1} index_conflictingProductDetected4
+00000946 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=4,n='onPageShow',f=0x06795F44]
+00000947 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=4,n='onPageHide',f=0x06795D84]
+00000948 {P:3788 T:3604 S:0} HtmlWindow::OnDocumentComplete, this=0x02450A60, disp=0x00A5AB5C, url='http://c04.inst.avg.com/serve/getScreen.php?pid=10872680&k=43a9519ed4b5e9c75eb7d683e3d1e09708f9b34a&id=442046&u=1383511078&lang=en'
+00000949 {P:3788 T:3604 S:0} - compat mode: CSS1Compat
+00000950 {P:3788 T:3604 S:0} - document mode: 7
+00000951 {P:3788 T:3604 S:0} CJsExternal::DelEventListener [i=4,n='onPageShow',f=0x03B8ED04]
+00000952 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=4,n='onPageShow',f=0x06795D44]
+00000953 {P:3788 T:3604 S:0} !>App::SelectActivePage [from=4,dir=-1]
+00000954 {P:3788 T:3604 S:0} - may go to page #2
+00000955 {P:3788 T:3604 S:0} !<App::SelectActivePage
+00000956 {P:3788 T:3604 S:0} Skipping offer frame load, current_offer is null
+00000957 {P:3788 T:3604 S:0} !>App::OnPageComplete [hwndHW=0x0009051E,main=0]
+00000958 {P:3788 T:3604 S:0} - complete in page #4, rs=3
+00000959 {P:3788 T:3604 S:0} - totally complete
+00000960 {P:3788 T:3604 S:0} SaveTimeStamp, 'loadEnd'/4 -> 1383816292530
+00000961 {P:3788 T:3604 S:0} !<App::OnPageComplete
+00000962 {P:3788 T:3604 S:0} !>App::PreparePage_ApplyResources [idx=5]
+00000963 {P:3788 T:3604 S:0} SaveTimeStamp, 'loadStart'/5 -> 1383816292530
+00000964 {P:3788 T:3604 S:0} SaveTimeStamp, 'createStart'/5 -> 1383816292530
+00000965 {P:3788 T:3604 S:0} !>App::PreparePage_CreateBrowser [fn='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\7WmwnxlSXb.mht']
+00000966 {P:3788 T:3604 S:0} HtmlWindow::HtmlWindow, this=0x02450BD0, idx=5, auto=1
+00000967 {P:3788 T:3604 S:0} HtmlWindow::OnCreate, this=0x02450BD0
+00000968 {P:3788 T:3604 S:0} - defwinproc res=0
+00000969 {P:3788 T:3604 S:0} HtmlWindow::CreateControls, this=0x02450BD0
+00000970 {P:3788 T:3604 S:0} CJsExternal::CJsExternal [i=-1]
+00000971 {P:3788 T:3604 S:0} - hwnd=0x000205EC, path='file://C:/Users/Admin/AppData/Local/Temp/oi_pnZ7b5DCPP/7WmwnxlSXb.html'
+00000972 {P:3788 T:3604 S:0} !<App::PreparePage_CreateBrowser
+00000973 {P:3788 T:3604 S:0} SaveTimeStamp, 'createEnd'/5 -> 1383816292561
+00000974 {P:3788 T:3604 S:0} !<App::PreparePage_ApplyResources
+00000975 {P:3788 T:3604 S:0} HtmlWindow::OnNavigateComplete, this=0x02450BD0, disp=0x065C9600, url='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\7WmwnxlSXb.html'
+00000976 {P:3788 T:3604 S:0} !>HtmlWindow_HostUIHandler::SetUIHandlerToDoc [winref=0x02450BD0]
+00000977 {P:3788 T:3604 S:0} - ok
+00000978 {P:3788 T:3604 S:0} !<HtmlWindow_HostUIHandler::SetUIHandlerToDoc
+00000979 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=5,n='onPageDestroy',f=0x087B6644]
+00000980 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=5,n='onPageClose',f=0x087B6684]
+00000981 {P:3788 T:3604 S:0} load basic page #5 content frame `http://c04.inst.avg.com/serve/getScreen.php?pid=10872680&k=43a9519ed4b5e9c75eb7d683e3d1e09708f9b34a&id=442048&u=1383511086&lang=en`
+00000982 {P:3788 T:3604 S:0} HtmlWindow::OnBeforeNavigate2, this=0x02450BD0, disp=0x07EFC45C, url='about:blank'
+00000983 {P:3788 T:3604 S:0} HtmlWindow::OnNavigateComplete, this=0x02450BD0, disp=0x07EFC45C, url='about:blank'
+00000984 {P:3788 T:3604 S:0} HtmlWindow::OnDocumentComplete, this=0x02450BD0, disp=0x07EFC45C, url='about:blank'
+00000985 {P:3788 T:3604 S:0} - compat mode: BackCompat
+00000986 {P:3788 T:3604 S:0} - document mode: 5
+00000987 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=5,n='onAppWinActiveChange',f=0x087B6B04]
+00000988 {P:3788 T:3604 S:0} CJsExternal::put_onHitTest [i=5,f=0x087B6B44]
+00000989 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=5,n='onPageShow',f=0x087B6B84]
+00000990 {P:3788 T:3604 S:1} setSurvey called
+00000991 {P:3788 T:3604 S:0} HtmlWindow::OnBeforeNavigate2, this=0x02450BD0, disp=0x07EFC45C, url='http://c04.inst.avg.com/serve/getScreen.php?pid=10872680&k=43a9519ed4b5e9c75eb7d683e3d1e09708f9b34a&id=442048&u=1383511086&lang=en'
+00000992 {P:3788 T:3604 S:0} CHttpSink::BeginningTransaction, this=0x02417C10, url='http://c04.inst.avg.com/serve/getScreen.php?pid=10872680&k=43a9519ed4b5e9c75eb7d683e3d1e09708f9b34a&id=442048&u=1383511086&lang=en'
+00000993 {P:3788 T:3604 S:0} CHttpSink::OnResponse, this=0x02417C10, code=200 -> hr=0x00000000
+00000994 {P:3788 T:3604 S:0} CHttpSink::ReportResult, this=0x02417C10, hr=0x00000000, err=0, url='http://c04.inst.avg.com/serve/getScreen.php?pid=10872680&k=43a9519ed4b5e9c75eb7d683e3d1e09708f9b34a&id=442048&u=1383511086&lang=en'
+00000995 {P:3788 T:3604 S:0} HtmlWindow::OnDocumentComplete, this=0x02450BD0, disp=0x065C9600, url='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\7WmwnxlSXb.html'
+00000996 {P:3788 T:4460 S:0} CHttpSink::BeginningTransaction, this=0x02443270, url='http://c12081072.r72.cf2.rackcdn.com/main.min.js'
+00000997 {P:3788 T:3604 S:0} - compat mode: CSS1Compat
+00000998 {P:3788 T:4460 S:0} CHttpSink::OnResponse, this=0x02443270, code=200 -> hr=0x00000000
+00000999 {P:3788 T:3604 S:0} - document mode: 7
+00001000 {P:3788 T:4460 S:0} CHttpSink::ReportResult, this=0x02443270, hr=0x00000000, err=0, url='http://c12081072.r72.cf2.rackcdn.com/main.min.js'
+00001001 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=5,n='onPageShow',f=0x087B6D04]
+00001002 {P:3788 T:3604 S:0} HtmlWindow::OnNavigateComplete, this=0x02450BD0, disp=0x07EFC45C, url='http://c04.inst.avg.com/serve/getScreen.php?pid=10872680&k=43a9519ed4b5e9c75eb7d683e3d1e09708f9b34a&id=442048&u=1383511086&lang=en'
+00001003 {P:3788 T:3604 S:0} CJsExternal::DelEventListener [i=5,n='onPageDestroy',f=0x087B6644]
+00001004 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=5,n='onPageDestroy',f=0x08D3C404]
+00001005 {P:3788 T:3604 S:1} index_salesLicense5
+00001006 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=5,n='onPageHide',f=0x08D3CFC4]
+00001007 {P:3788 T:3604 S:0} HtmlWindow::OnDocumentComplete, this=0x02450BD0, disp=0x07EFC45C, url='http://c04.inst.avg.com/serve/getScreen.php?pid=10872680&k=43a9519ed4b5e9c75eb7d683e3d1e09708f9b34a&id=442048&u=1383511086&lang=en'
+00001008 {P:3788 T:3604 S:0} - compat mode: CSS1Compat
+00001009 {P:3788 T:3604 S:0} - document mode: 7
+00001010 {P:3788 T:3604 S:0} CJsExternal::DelEventListener [i=5,n='onPageShow',f=0x087B6D04]
+00001011 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=5,n='onPageShow',f=0x08D3CF84]
+00001012 {P:3788 T:3604 S:0} !>App::SelectActivePage [from=5,dir=-1]
+00001013 {P:3788 T:3604 S:0} - may go to page #2
+00001014 {P:3788 T:3604 S:0} !<App::SelectActivePage
+00001015 {P:3788 T:3604 S:0} Skipping offer frame load, current_offer is null
+00001016 {P:3788 T:3604 S:0} !>App::OnPageComplete [hwndHW=0x000205EC,main=0]
+00001017 {P:3788 T:3604 S:0} - complete in page #5, rs=2
+00001018 {P:3788 T:3604 S:0} !<App::OnPageComplete
+00001019 {P:3788 T:3604 S:0} !>App::OnPageComplete [hwndHW=0x000205EC,main=1]
+00001020 {P:3788 T:3604 S:0} - complete in page #5, rs=2
+00001021 {P:3788 T:3604 S:0} - main loaded
+00001022 {P:3788 T:3604 S:0} SaveTimeStamp, 'loadMainEnd'/5 -> 1383816292827
+00001023 {P:3788 T:3604 S:0} - totally complete
+00001024 {P:3788 T:3604 S:0} SaveTimeStamp, 'loadEnd'/5 -> 1383816292827
+00001025 {P:3788 T:3604 S:0} !<App::OnPageComplete
+00001026 {P:3788 T:3604 S:0} !>App::OnPageComplete [hwndHW=0x000205EC,main=0]
+00001027 {P:3788 T:3604 S:0} !<App::OnPageComplete
+00001028 {P:3788 T:3604 S:0} !>App::PreparePage_ApplyResources [idx=6]
+00001029 {P:3788 T:3604 S:0} SaveTimeStamp, 'loadStart'/6 -> 1383816292843
+00001030 {P:3788 T:3604 S:0} SaveTimeStamp, 'createStart'/6 -> 1383816292843
+00001031 {P:3788 T:3604 S:0} !>App::PreparePage_CreateBrowser [fn='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\pBofGDyQaZ.mht']
+00001032 {P:3788 T:3604 S:0} HtmlWindow::HtmlWindow, this=0x02450D40, idx=6, auto=1
+00001033 {P:3788 T:3604 S:0} HtmlWindow::OnCreate, this=0x02450D40
+00001034 {P:3788 T:3604 S:0} - defwinproc res=0
+00001035 {P:3788 T:3604 S:0} HtmlWindow::CreateControls, this=0x02450D40
+00001036 {P:3788 T:3604 S:0} CJsExternal::CJsExternal [i=-1]
+00001037 {P:3788 T:3604 S:0} - hwnd=0x000205DA, path='file://C:/Users/Admin/AppData/Local/Temp/oi_pnZ7b5DCPP/pBofGDyQaZ.html'
+00001038 {P:3788 T:3604 S:0} !<App::PreparePage_CreateBrowser
+00001039 {P:3788 T:3604 S:0} SaveTimeStamp, 'createEnd'/6 -> 1383816292874
+00001040 {P:3788 T:3604 S:0} !<App::PreparePage_ApplyResources
+00001041 {P:3788 T:3604 S:0} HtmlWindow::OnNavigateComplete, this=0x02450D40, disp=0x065C8F88, url='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\pBofGDyQaZ.html'
+00001042 {P:3788 T:3604 S:0} !>HtmlWindow_HostUIHandler::SetUIHandlerToDoc [winref=0x02450D40]
+00001043 {P:3788 T:3604 S:0} - ok
+00001044 {P:3788 T:3604 S:0} !<HtmlWindow_HostUIHandler::SetUIHandlerToDoc
+00001045 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=6,n='onPageDestroy',f=0x08D3C844]
+00001046 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=6,n='onPageClose',f=0x08D3C804]
+00001047 {P:3788 T:3604 S:0} load basic page #6 content frame `http://c04.inst.avg.com/serve/getScreen.php?pid=10872680&k=43a9519ed4b5e9c75eb7d683e3d1e09708f9b34a&id=442050&u=1383511094&lang=en`
+00001048 {P:3788 T:3604 S:0} HtmlWindow::OnBeforeNavigate2, this=0x02450D40, disp=0x07FD4DD4, url='about:blank'
+00001049 {P:3788 T:3604 S:0} HtmlWindow::OnNavigateComplete, this=0x02450D40, disp=0x07FD4DD4, url='about:blank'
+00001050 {P:3788 T:3604 S:0} HtmlWindow::OnDocumentComplete, this=0x02450D40, disp=0x07FD4DD4, url='about:blank'
+00001051 {P:3788 T:3604 S:0} - compat mode: BackCompat
+00001052 {P:3788 T:3604 S:0} - document mode: 5
+00001053 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=6,n='onAppWinActiveChange',f=0x087B6304]
+00001054 {P:3788 T:3604 S:0} CJsExternal::put_onHitTest [i=6,f=0x087B6484]
+00001055 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=6,n='onPageShow',f=0x087B6544]
+00001056 {P:3788 T:3604 S:1} setSurvey called
+00001057 {P:3788 T:3604 S:0} HtmlWindow::OnBeforeNavigate2, this=0x02450D40, disp=0x07FD4DD4, url='http://c04.inst.avg.com/serve/getScreen.php?pid=10872680&k=43a9519ed4b5e9c75eb7d683e3d1e09708f9b34a&id=442050&u=1383511094&lang=en'
+00001058 {P:3788 T:3604 S:0} CHttpSink::BeginningTransaction, this=0x02417C10, url='http://c04.inst.avg.com/serve/getScreen.php?pid=10872680&k=43a9519ed4b5e9c75eb7d683e3d1e09708f9b34a&id=442050&u=1383511094&lang=en'
+00001059 {P:3788 T:3604 S:0} CHttpSink::OnResponse, this=0x02417C10, code=200 -> hr=0x00000000
+00001060 {P:3788 T:3604 S:0} CHttpSink::ReportResult, this=0x02417C10, hr=0x00000000, err=0, url='http://c04.inst.avg.com/serve/getScreen.php?pid=10872680&k=43a9519ed4b5e9c75eb7d683e3d1e09708f9b34a&id=442050&u=1383511094&lang=en'
+00001061 {P:3788 T:3604 S:0} HtmlWindow::OnDocumentComplete, this=0x02450D40, disp=0x065C8F88, url='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\pBofGDyQaZ.html'
+00001062 {P:3788 T:4460 S:0} CHttpSink::BeginningTransaction, this=0x02444428, url='http://c12081072.r72.cf2.rackcdn.com/main.min.js'
+00001063 {P:3788 T:3604 S:0} - compat mode: CSS1Compat
+00001064 {P:3788 T:4460 S:0} CHttpSink::OnResponse, this=0x02444428, code=200 -> hr=0x00000000
+00001065 {P:3788 T:3604 S:0} - document mode: 7
+00001066 {P:3788 T:4460 S:0} CHttpSink::ReportResult, this=0x02444428, hr=0x00000000, err=0, url='http://c12081072.r72.cf2.rackcdn.com/main.min.js'
+00001067 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=6,n='onPageShow',f=0x087B67C4]
+00001068 {P:3788 T:3604 S:0} HtmlWindow::OnNavigateComplete, this=0x02450D40, disp=0x07FD4DD4, url='http://c04.inst.avg.com/serve/getScreen.php?pid=10872680&k=43a9519ed4b5e9c75eb7d683e3d1e09708f9b34a&id=442050&u=1383511094&lang=en'
+00001069 {P:3788 T:3604 S:0} CJsExternal::DelEventListener [i=6,n='onPageDestroy',f=0x08D3C844]
+00001070 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=6,n='onPageDestroy',f=0x06795E44]
+00001071 {P:3788 T:4460 S:0} CHttpSink::BeginningTransaction, this=0x02444428, url='http://c1a96aea271ff5c521b5-7239cc787f1002798ea565bed17dac82.r50.cf2.rackcdn.com/mb_information_48.gif'
+00001072 {P:3788 T:4460 S:0} CHttpSink::OnResponse, this=0x02444428, code=200 -> hr=0x00000000
+00001073 {P:3788 T:4460 S:0} CHttpSink::ReportResult, this=0x02444428, hr=0x00000000, err=0, url='http://c1a96aea271ff5c521b5-7239cc787f1002798ea565bed17dac82.r50.cf2.rackcdn.com/mb_information_48.gif'
+00001074 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=6,n='onPageHide',f=0x05E3AAC4]
+00001075 {P:3788 T:3604 S:1} sParentFolderC:\
+00001076 {P:3788 T:3604 S:0} CompInfo::TestFileExists, f='C:\',isDir=-1
+00001077 {P:3788 T:3604 S:0} - fullpath='C:\'
+00001078 {P:3788 T:3604 S:1} Local path C:\Program Files (x86)
+00001079 {P:3788 T:3604 S:1} sParentFolderC:\
+00001080 {P:3788 T:3604 S:1} country :us
+00001081 {P:3788 T:3604 S:1} tbOffer?:true
+00001082 {P:3788 T:3604 S:1} tbType?:SAFEG
+00001083 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=6,n='onPageShow',f=0x07623F04]
+00001084 {P:3788 T:3604 S:0} HtmlWindow::OnDocumentComplete, this=0x02450D40, disp=0x07FD4DD4, url='http://c04.inst.avg.com/serve/getScreen.php?pid=10872680&k=43a9519ed4b5e9c75eb7d683e3d1e09708f9b34a&id=442050&u=1383511094&lang=en'
+00001085 {P:3788 T:3604 S:0} - compat mode: CSS1Compat
+00001086 {P:3788 T:3604 S:0} - document mode: 7
+00001087 {P:3788 T:3604 S:0} CJsExternal::DelEventListener [i=6,n='onPageShow',f=0x087B67C4]
+00001088 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=6,n='onPageShow',f=0x07623F44]
+00001089 {P:3788 T:3604 S:0} !>App::SelectActivePage [from=6,dir=-1]
+00001090 {P:3788 T:3604 S:0} - may go to page #2
+00001091 {P:3788 T:3604 S:0} !<App::SelectActivePage
+00001092 {P:3788 T:3604 S:0} Skipping offer frame load, current_offer is null
+00001093 {P:3788 T:3604 S:0} !>App::OnPageComplete [hwndHW=0x000205DA,main=0]
+00001094 {P:3788 T:3604 S:0} - complete in page #6, rs=2
+00001095 {P:3788 T:3604 S:0} !<App::OnPageComplete
+00001096 {P:3788 T:3604 S:0} !>App::OnPageComplete [hwndHW=0x000205DA,main=1]
+00001097 {P:3788 T:3604 S:0} - complete in page #6, rs=2
+00001098 {P:3788 T:3604 S:0} - main loaded
+00001099 {P:3788 T:3604 S:0} SaveTimeStamp, 'loadMainEnd'/6 -> 1383816293140
+00001100 {P:3788 T:3604 S:0} - totally complete
+00001101 {P:3788 T:3604 S:0} SaveTimeStamp, 'loadEnd'/6 -> 1383816293140
+00001102 {P:3788 T:3604 S:0} !<App::OnPageComplete
+00001103 {P:3788 T:3604 S:0} !>App::OnPageComplete [hwndHW=0x000205DA,main=0]
+00001104 {P:3788 T:3604 S:0} !<App::OnPageComplete
+00001105 {P:3788 T:3604 S:0} !>App::PreparePage_ApplyResources [idx=7]
+00001106 {P:3788 T:3604 S:0} SaveTimeStamp, 'loadStart'/7 -> 1383816293140
+00001107 {P:3788 T:3604 S:0} SaveTimeStamp, 'createStart'/7 -> 1383816293140
+00001108 {P:3788 T:3604 S:0} !>App::PreparePage_CreateBrowser [fn='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\mHKU8EyIfG.mht']
+00001109 {P:3788 T:3604 S:0} HtmlWindow::HtmlWindow, this=0x02450F68, idx=7, auto=1
+00001110 {P:3788 T:3604 S:0} HtmlWindow::OnCreate, this=0x02450F68
+00001111 {P:3788 T:3604 S:0} - defwinproc res=0
+00001112 {P:3788 T:3604 S:0} HtmlWindow::CreateControls, this=0x02450F68
+00001113 {P:3788 T:3604 S:0} CJsExternal::CJsExternal [i=-1]
+00001114 {P:3788 T:3604 S:0} - hwnd=0x00060280, path='file://C:/Users/Admin/AppData/Local/Temp/oi_pnZ7b5DCPP/mHKU8EyIfG.html'
+00001115 {P:3788 T:3604 S:0} !<App::PreparePage_CreateBrowser
+00001116 {P:3788 T:3604 S:0} SaveTimeStamp, 'createEnd'/7 -> 1383816293186
+00001117 {P:3788 T:3604 S:0} !<App::PreparePage_ApplyResources
+00001118 {P:3788 T:3604 S:0} HtmlWindow::OnNavigateComplete, this=0x02450F68, disp=0x065CA740, url='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\mHKU8EyIfG.html'
+00001119 {P:3788 T:3604 S:0} !>HtmlWindow_HostUIHandler::SetUIHandlerToDoc [winref=0x02450F68]
+00001120 {P:3788 T:3604 S:0} - ok
+00001121 {P:3788 T:3604 S:0} !<HtmlWindow_HostUIHandler::SetUIHandlerToDoc
+00001122 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=7,n='onPageDestroy',f=0x092BD204]
+00001123 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=7,n='onPageClose',f=0x092BD244]
+00001124 {P:3788 T:3604 S:0} load basic page #7 content frame `http://c04.inst.avg.com/serve/getScreen.php?pid=10872680&k=43a9519ed4b5e9c75eb7d683e3d1e09708f9b34a&id=442052&u=1383540638&lang=en`
+00001125 {P:3788 T:3604 S:0} HtmlWindow::OnBeforeNavigate2, this=0x02450F68, disp=0x081ABADC, url='about:blank'
+00001126 {P:3788 T:3604 S:0} HtmlWindow::OnNavigateComplete, this=0x02450F68, disp=0x081ABADC, url='about:blank'
+00001127 {P:3788 T:3604 S:0} HtmlWindow::OnDocumentComplete, this=0x02450F68, disp=0x081ABADC, url='about:blank'
+00001128 {P:3788 T:3604 S:0} - compat mode: BackCompat
+00001129 {P:3788 T:3604 S:0} - document mode: 5
+00001130 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=7,n='onAppWinActiveChange',f=0x092BD6C4]
+00001131 {P:3788 T:3604 S:0} CJsExternal::put_onHitTest [i=7,f=0x092BD704]
+00001132 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=7,n='onPageShow',f=0x092BD744]
+00001133 {P:3788 T:3604 S:1} setSurvey called
+00001134 {P:3788 T:3604 S:0} HtmlWindow::OnBeforeNavigate2, this=0x02450F68, disp=0x081ABADC, url='http://c04.inst.avg.com/serve/getScreen.php?pid=10872680&k=43a9519ed4b5e9c75eb7d683e3d1e09708f9b34a&id=442052&u=1383540638&lang=en'
+00001135 {P:3788 T:3604 S:0} CHttpSink::BeginningTransaction, this=0x02417C10, url='http://c04.inst.avg.com/serve/getScreen.php?pid=10872680&k=43a9519ed4b5e9c75eb7d683e3d1e09708f9b34a&id=442052&u=1383540638&lang=en'
+00001136 {P:3788 T:3604 S:0} CHttpSink::OnResponse, this=0x02417C10, code=200 -> hr=0x00000000
+00001137 {P:3788 T:3604 S:0} CHttpSink::ReportResult, this=0x02417C10, hr=0x00000000, err=0, url='http://c04.inst.avg.com/serve/getScreen.php?pid=10872680&k=43a9519ed4b5e9c75eb7d683e3d1e09708f9b34a&id=442052&u=1383540638&lang=en'
+00001138 {P:3788 T:3604 S:0} HtmlWindow::OnDocumentComplete, this=0x02450F68, disp=0x065CA740, url='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\mHKU8EyIfG.html'
+00001139 {P:3788 T:4460 S:0} CHttpSink::BeginningTransaction, this=0x02444428, url='http://c12081072.r72.cf2.rackcdn.com/main.min.js'
+00001140 {P:3788 T:3604 S:0} - compat mode: CSS1Compat
+00001141 {P:3788 T:4460 S:0} CHttpSink::OnResponse, this=0x02444428, code=200 -> hr=0x00000000
+00001142 {P:3788 T:3604 S:0} - document mode: 7
+00001143 {P:3788 T:4460 S:0} CHttpSink::ReportResult, this=0x02444428, hr=0x00000000, err=0, url='http://c12081072.r72.cf2.rackcdn.com/main.min.js'
+00001144 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=7,n='onPageShow',f=0x092BD8C4]
+00001145 {P:3788 T:3604 S:0} HtmlWindow::OnNavigateComplete, this=0x02450F68, disp=0x081ABADC, url='http://c04.inst.avg.com/serve/getScreen.php?pid=10872680&k=43a9519ed4b5e9c75eb7d683e3d1e09708f9b34a&id=442052&u=1383540638&lang=en'
+00001146 {P:3788 T:3604 S:0} CJsExternal::DelEventListener [i=7,n='onPageDestroy',f=0x092BD204]
+00001147 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=7,n='onPageDestroy',f=0x092BDF84]
+00001148 {P:3788 T:4460 S:0} CHttpSink::BeginningTransaction, this=0x02444428, url='http://c15040647.r47.cf2.rackcdn.com/avg_toolbar_opt-in2.png'
+00001149 {P:3788 T:4460 S:0} CHttpSink::OnResponse, this=0x02444428, code=200 -> hr=0x00000000
+00001150 {P:3788 T:4460 S:0} CHttpSink::ReportResult, this=0x02444428, hr=0x00000000, err=0, url='http://c15040647.r47.cf2.rackcdn.com/avg_toolbar_opt-in2.png'
+00001151 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=7,n='onPageHide',f=0x092BD1C4]
+00001152 {P:3788 T:3604 S:1} sParentFolderC:\
+00001153 {P:3788 T:3604 S:0} CompInfo::TestFileExists, f='C:\',isDir=-1
+00001154 {P:3788 T:3604 S:0} - fullpath='C:\'
+00001155 {P:3788 T:3604 S:1} Local path C:\Program Files (x86)
+00001156 {P:3788 T:3604 S:1} sParentFolderC:\
+00001157 {P:3788 T:3604 S:1} INFO: IsAVGToolbarOfferInstalled :false
+00001158 {P:3788 T:3604 S:1} country :us
+00001159 {P:3788 T:3604 S:1} country :us
+00001160 {P:3788 T:3604 S:1} tbOffer?:true
+00001161 {P:3788 T:3604 S:1} tbType?:SAFEG
+00001162 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=7,n='onPageShow',f=0x076233C4]
+00001163 {P:3788 T:3604 S:0} HtmlWindow::OnDocumentComplete, this=0x02450F68, disp=0x081ABADC, url='http://c04.inst.avg.com/serve/getScreen.php?pid=10872680&k=43a9519ed4b5e9c75eb7d683e3d1e09708f9b34a&id=442052&u=1383540638&lang=en'
+00001164 {P:3788 T:3604 S:0} - compat mode: CSS1Compat
+00001165 {P:3788 T:3604 S:0} - document mode: 7
+00001166 {P:3788 T:3604 S:0} CJsExternal::DelEventListener [i=7,n='onPageShow',f=0x092BD8C4]
+00001167 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=7,n='onPageShow',f=0x07623644]
+00001168 {P:3788 T:3604 S:0} !>App::SelectActivePage [from=7,dir=-1]
+00001169 {P:3788 T:3604 S:0} - may go to page #2
+00001170 {P:3788 T:3604 S:0} !<App::SelectActivePage
+00001171 {P:3788 T:3604 S:0} Skipping offer frame load, current_offer is null
+00001172 {P:3788 T:3604 S:0} !>App::OnPageComplete [hwndHW=0x00060280,main=0]
+00001173 {P:3788 T:3604 S:0} - complete in page #7, rs=2
+00001174 {P:3788 T:3604 S:0} !<App::OnPageComplete
+00001175 {P:3788 T:3604 S:0} !>App::OnPageComplete [hwndHW=0x00060280,main=1]
+00001176 {P:3788 T:3604 S:0} - complete in page #7, rs=2
+00001177 {P:3788 T:3604 S:0} - main loaded
+00001178 {P:3788 T:3604 S:0} SaveTimeStamp, 'loadMainEnd'/7 -> 1383816293483
+00001179 {P:3788 T:3604 S:0} - totally complete
+00001180 {P:3788 T:3604 S:0} SaveTimeStamp, 'loadEnd'/7 -> 1383816293499
+00001181 {P:3788 T:3604 S:0} !<App::OnPageComplete
+00001182 {P:3788 T:3604 S:0} !>App::OnPageComplete [hwndHW=0x00060280,main=0]
+00001183 {P:3788 T:3604 S:0} !<App::OnPageComplete
+00001184 {P:3788 T:3604 S:0} !>App::PreparePage_ApplyResources [idx=8]
+00001185 {P:3788 T:3604 S:0} SaveTimeStamp, 'loadStart'/8 -> 1383816293515
+00001186 {P:3788 T:3604 S:0} SaveTimeStamp, 'createStart'/8 -> 1383816293515
+00001187 {P:3788 T:3604 S:0} !>App::PreparePage_CreateBrowser [fn='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\sy03gfkJmb.mht']
+00001188 {P:3788 T:3604 S:0} HtmlWindow::HtmlWindow, this=0x024510D8, idx=8, auto=1
+00001189 {P:3788 T:3604 S:0} HtmlWindow::OnCreate, this=0x024510D8
+00001190 {P:3788 T:3604 S:0} - defwinproc res=0
+00001191 {P:3788 T:3604 S:0} HtmlWindow::CreateControls, this=0x024510D8
+00001192 {P:3788 T:3604 S:0} CJsExternal::CJsExternal [i=-1]
+00001193 {P:3788 T:3604 S:0} - hwnd=0x000205D2, path='file://C:/Users/Admin/AppData/Local/Temp/oi_pnZ7b5DCPP/sy03gfkJmb.html'
+00001194 {P:3788 T:3604 S:0} !<App::PreparePage_CreateBrowser
+00001195 {P:3788 T:3604 S:0} SaveTimeStamp, 'createEnd'/8 -> 1383816293561
+00001196 {P:3788 T:3604 S:0} !<App::PreparePage_ApplyResources
+00001197 {P:3788 T:3604 S:0} HtmlWindow::OnNavigateComplete, this=0x024510D8, disp=0x065C9EA0, url='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\sy03gfkJmb.html'
+00001198 {P:3788 T:3604 S:0} !>HtmlWindow_HostUIHandler::SetUIHandlerToDoc [winref=0x024510D8]
+00001199 {P:3788 T:3604 S:0} - ok
+00001200 {P:3788 T:3604 S:0} !<HtmlWindow_HostUIHandler::SetUIHandlerToDoc
+00001201 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=8,n='onPageDestroy',f=0x087B62C4]
+00001202 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=8,n='onPageClose',f=0x08D3C044]
+00001203 {P:3788 T:3604 S:0} load basic page #8 content frame `http://c04.inst.avg.com/serve/getScreen.php?pid=10872680&k=43a9519ed4b5e9c75eb7d683e3d1e09708f9b34a&id=442054&u=1383511114&lang=en`
+00001204 {P:3788 T:3604 S:0} HtmlWindow::OnBeforeNavigate2, this=0x024510D8, disp=0x082A574C, url='about:blank'
+00001205 {P:3788 T:3604 S:0} HtmlWindow::OnNavigateComplete, this=0x024510D8, disp=0x082A574C, url='about:blank'
+00001206 {P:3788 T:3604 S:0} HtmlWindow::OnDocumentComplete, this=0x024510D8, disp=0x082A574C, url='about:blank'
+00001207 {P:3788 T:3604 S:0} - compat mode: BackCompat
+00001208 {P:3788 T:3604 S:0} - document mode: 5
+00001209 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=8,n='onAppWinActiveChange',f=0x08D3CDC4]
+00001210 {P:3788 T:3604 S:0} CJsExternal::put_onHitTest [i=8,f=0x08D3CD44]
+00001211 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=8,n='onPageShow',f=0x08D3CC84]
+00001212 {P:3788 T:3604 S:1} setSurvey called
+00001213 {P:3788 T:3604 S:0} HtmlWindow::OnBeforeNavigate2, this=0x024510D8, disp=0x082A574C, url='http://c04.inst.avg.com/serve/getScreen.php?pid=10872680&k=43a9519ed4b5e9c75eb7d683e3d1e09708f9b34a&id=442054&u=1383511114&lang=en'
+00001214 {P:3788 T:3604 S:0} CHttpSink::BeginningTransaction, this=0x02417C10, url='http://c04.inst.avg.com/serve/getScreen.php?pid=10872680&k=43a9519ed4b5e9c75eb7d683e3d1e09708f9b34a&id=442054&u=1383511114&lang=en'
+00001215 {P:3788 T:3604 S:0} CHttpSink::OnResponse, this=0x02417C10, code=200 -> hr=0x00000000
+00001216 {P:3788 T:3604 S:0} CHttpSink::ReportResult, this=0x02417C10, hr=0x00000000, err=0, url='http://c04.inst.avg.com/serve/getScreen.php?pid=10872680&k=43a9519ed4b5e9c75eb7d683e3d1e09708f9b34a&id=442054&u=1383511114&lang=en'
+00001217 {P:3788 T:3604 S:0} HtmlWindow::OnDocumentComplete, this=0x024510D8, disp=0x065C9EA0, url='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\sy03gfkJmb.html'
+00001218 {P:3788 T:4460 S:0} CHttpSink::BeginningTransaction, this=0x02444428, url='http://c12081072.r72.cf2.rackcdn.com/main.min.js'
+00001219 {P:3788 T:3604 S:0} - compat mode: CSS1Compat
+00001220 {P:3788 T:4460 S:0} CHttpSink::OnResponse, this=0x02444428, code=200 -> hr=0x00000000
+00001221 {P:3788 T:3604 S:0} - document mode: 7
+00001222 {P:3788 T:4460 S:0} CHttpSink::ReportResult, this=0x02444428, hr=0x00000000, err=0, url='http://c12081072.r72.cf2.rackcdn.com/main.min.js'
+00001223 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=8,n='onPageShow',f=0x0968E0C4]
+00001224 {P:3788 T:3604 S:0} HtmlWindow::OnNavigateComplete, this=0x024510D8, disp=0x082A574C, url='http://c04.inst.avg.com/serve/getScreen.php?pid=10872680&k=43a9519ed4b5e9c75eb7d683e3d1e09708f9b34a&id=442054&u=1383511114&lang=en'
+00001225 {P:3788 T:3604 S:0} CJsExternal::DelEventListener [i=8,n='onPageDestroy',f=0x087B62C4]
+00001226 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=8,n='onPageDestroy',f=0x0968E784]
+00001227 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=8,n='onPageHide',f=0x0968E844]
+00001228 {P:3788 T:3604 S:1} Windows version6.1
+00001229 {P:3788 T:3604 S:1} sParentFolderC:\
+00001230 {P:3788 T:3604 S:0} CompInfo::TestFileExists, f='C:\',isDir=-1
+00001231 {P:3788 T:3604 S:0} - fullpath='C:\'
+00001232 {P:3788 T:3604 S:1} Local path C:\Program Files (x86)
+00001233 {P:3788 T:3604 S:1} sParentFolderC:\
+00001234 {P:3788 T:3604 S:1} country :us
+00001235 {P:3788 T:3604 S:1} tbOffer?:true
+00001236 {P:3788 T:3604 S:1} tbType?:SAFEG
+00001237 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=8,n='onPageShow',f=0x0968EF44]
+00001238 {P:3788 T:3604 S:0} HtmlWindow::OnDocumentComplete, this=0x024510D8, disp=0x082A574C, url='http://c04.inst.avg.com/serve/getScreen.php?pid=10872680&k=43a9519ed4b5e9c75eb7d683e3d1e09708f9b34a&id=442054&u=1383511114&lang=en'
+00001239 {P:3788 T:3604 S:0} - compat mode: CSS1Compat
+00001240 {P:3788 T:3604 S:0} - document mode: 7
+00001241 {P:3788 T:3604 S:0} CJsExternal::DelEventListener [i=8,n='onPageShow',f=0x0968E0C4]
+00001242 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=8,n='onPageShow',f=0x0968EF84]
+00001243 {P:3788 T:3604 S:0} !>App::SelectActivePage [from=8,dir=-1]
+00001244 {P:3788 T:3604 S:0} - may go to page #7
+00001245 {P:3788 T:3604 S:0} !<App::SelectActivePage
+00001246 {P:3788 T:3604 S:0} Skipping offer frame load, current_offer is null
+00001247 {P:3788 T:3604 S:0} !>App::OnPageComplete [hwndHW=0x000205D2,main=0]
+00001248 {P:3788 T:3604 S:0} - complete in page #8, rs=2
+00001249 {P:3788 T:3604 S:0} !<App::OnPageComplete
+00001250 {P:3788 T:3604 S:0} !>App::OnPageComplete [hwndHW=0x000205D2,main=1]
+00001251 {P:3788 T:3604 S:0} - complete in page #8, rs=2
+00001252 {P:3788 T:3604 S:0} - main loaded
+00001253 {P:3788 T:3604 S:0} SaveTimeStamp, 'loadMainEnd'/8 -> 1383816293811
+00001254 {P:3788 T:3604 S:0} - totally complete
+00001255 {P:3788 T:3604 S:0} SaveTimeStamp, 'loadEnd'/8 -> 1383816293811
+00001256 {P:3788 T:3604 S:0} !<App::OnPageComplete
+00001257 {P:3788 T:3604 S:0} !>App::OnPageComplete [hwndHW=0x000205D2,main=0]
+00001258 {P:3788 T:3604 S:0} !<App::OnPageComplete
+00001259 {P:3788 T:3604 S:0} !>App::PreparePage_ApplyResources [idx=9]
+00001260 {P:3788 T:3604 S:0} SaveTimeStamp, 'loadStart'/9 -> 1383816293827
+00001261 {P:3788 T:3604 S:0} SaveTimeStamp, 'createStart'/9 -> 1383816293827
+00001262 {P:3788 T:3604 S:0} !>App::PreparePage_CreateBrowser [fn='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\XNx2CxoPYW.mht']
+00001263 {P:3788 T:3604 S:0} HtmlWindow::HtmlWindow, this=0x02451248, idx=9, auto=1
+00001264 {P:3788 T:3604 S:0} HtmlWindow::OnCreate, this=0x02451248
+00001265 {P:3788 T:3604 S:0} - defwinproc res=0
+00001266 {P:3788 T:3604 S:0} HtmlWindow::CreateControls, this=0x02451248
+00001267 {P:3788 T:3604 S:0} CJsExternal::CJsExternal [i=-1]
+00001268 {P:3788 T:3604 S:0} - hwnd=0x000205BE, path='file://C:/Users/Admin/AppData/Local/Temp/oi_pnZ7b5DCPP/XNx2CxoPYW.html'
+00001269 {P:3788 T:3604 S:0} !<App::PreparePage_CreateBrowser
+00001270 {P:3788 T:3604 S:0} SaveTimeStamp, 'createEnd'/9 -> 1383816293858
+00001271 {P:3788 T:3604 S:0} !<App::PreparePage_ApplyResources
+00001272 {P:3788 T:3604 S:0} HtmlWindow::OnNavigateComplete, this=0x02451248, disp=0x082D1108, url='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\XNx2CxoPYW.html'
+00001273 {P:3788 T:3604 S:0} !>HtmlWindow_HostUIHandler::SetUIHandlerToDoc [winref=0x02451248]
+00001274 {P:3788 T:3604 S:0} - ok
+00001275 {P:3788 T:3604 S:0} !<HtmlWindow_HostUIHandler::SetUIHandlerToDoc
+00001276 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=9,n='onPageDestroy',f=0x09AEE744]
+00001277 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=9,n='onPageClose',f=0x09AEE784]
+00001278 {P:3788 T:3604 S:0} load basic page #9 content frame `http://c04.inst.avg.com/serve/getScreen.php?pid=10872680&k=43a9519ed4b5e9c75eb7d683e3d1e09708f9b34a&id=442056&u=1383511121&lang=en`
+00001279 {P:3788 T:3604 S:0} HtmlWindow::OnBeforeNavigate2, this=0x02451248, disp=0x0833E81C, url='about:blank'
+00001280 {P:3788 T:3604 S:0} HtmlWindow::OnNavigateComplete, this=0x02451248, disp=0x0833E81C, url='about:blank'
+00001281 {P:3788 T:3604 S:0} HtmlWindow::OnDocumentComplete, this=0x02451248, disp=0x0833E81C, url='about:blank'
+00001282 {P:3788 T:3604 S:0} - compat mode: BackCompat
+00001283 {P:3788 T:3604 S:0} - document mode: 5
+00001284 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=9,n='onAppWinActiveChange',f=0x09AEEC04]
+00001285 {P:3788 T:3604 S:0} CJsExternal::put_onHitTest [i=9,f=0x09AEEC44]
+00001286 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=9,n='onPageShow',f=0x09AEEC84]
+00001287 {P:3788 T:3604 S:1} setSurvey called
+00001288 {P:3788 T:3604 S:0} HtmlWindow::OnBeforeNavigate2, this=0x02451248, disp=0x0833E81C, url='http://c04.inst.avg.com/serve/getScreen.php?pid=10872680&k=43a9519ed4b5e9c75eb7d683e3d1e09708f9b34a&id=442056&u=1383511121&lang=en'
+00001289 {P:3788 T:3604 S:0} CHttpSink::BeginningTransaction, this=0x02417C10, url='http://c04.inst.avg.com/serve/getScreen.php?pid=10872680&k=43a9519ed4b5e9c75eb7d683e3d1e09708f9b34a&id=442056&u=1383511121&lang=en'
+00001290 {P:3788 T:3604 S:0} CHttpSink::OnResponse, this=0x02417C10, code=200 -> hr=0x00000000
+00001291 {P:3788 T:3604 S:0} CHttpSink::ReportResult, this=0x02417C10, hr=0x00000000, err=0, url='http://c04.inst.avg.com/serve/getScreen.php?pid=10872680&k=43a9519ed4b5e9c75eb7d683e3d1e09708f9b34a&id=442056&u=1383511121&lang=en'
+00001292 {P:3788 T:3604 S:0} HtmlWindow::OnDocumentComplete, this=0x02451248, disp=0x082D1108, url='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\XNx2CxoPYW.html'
+00001293 {P:3788 T:4460 S:0} CHttpSink::BeginningTransaction, this=0x02444428, url='http://c12081072.r72.cf2.rackcdn.com/main.min.js'
+00001294 {P:3788 T:3604 S:0} - compat mode: CSS1Compat
+00001295 {P:3788 T:4460 S:0} CHttpSink::OnResponse, this=0x02444428, code=200 -> hr=0x00000000
+00001296 {P:3788 T:3604 S:0} - document mode: 7
+00001297 {P:3788 T:4460 S:0} CHttpSink::ReportResult, this=0x02444428, hr=0x00000000, err=0, url='http://c12081072.r72.cf2.rackcdn.com/main.min.js'
+00001298 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=9,n='onPageShow',f=0x09AEEE04]
+00001299 {P:3788 T:3604 S:0} HtmlWindow::OnNavigateComplete, this=0x02451248, disp=0x0833E81C, url='http://c04.inst.avg.com/serve/getScreen.php?pid=10872680&k=43a9519ed4b5e9c75eb7d683e3d1e09708f9b34a&id=442056&u=1383511121&lang=en'
+00001300 {P:3788 T:3604 S:0} CJsExternal::DelEventListener [i=9,n='onPageDestroy',f=0x09AEE744]
+00001301 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=9,n='onPageDestroy',f=0x09FA0504]
+00001302 {P:3788 T:3604 S:1} index_targetDrive9
+00001303 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=9,n='onPageShow',f=0x09FA0FC4]
+00001304 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=9,n='onPageHide',f=0x09FA0F84]
+00001305 {P:3788 T:3604 S:0} HtmlWindow::OnDocumentComplete, this=0x02451248, disp=0x0833E81C, url='http://c04.inst.avg.com/serve/getScreen.php?pid=10872680&k=43a9519ed4b5e9c75eb7d683e3d1e09708f9b34a&id=442056&u=1383511121&lang=en'
+00001306 {P:3788 T:3604 S:0} - compat mode: CSS1Compat
+00001307 {P:3788 T:3604 S:0} - document mode: 7
+00001308 {P:3788 T:3604 S:0} CJsExternal::DelEventListener [i=9,n='onPageShow',f=0x09AEEE04]
+00001309 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=9,n='onPageShow',f=0x09FA0F44]
+00001310 {P:3788 T:3604 S:0} !>App::SelectActivePage [from=9,dir=-1]
+00001311 {P:3788 T:3604 S:0} - may go to page #7
+00001312 {P:3788 T:3604 S:0} !<App::SelectActivePage
+00001313 {P:3788 T:3604 S:0} Skipping offer frame load, current_offer is null
+00001314 {P:3788 T:3604 S:0} !>App::OnPageComplete [hwndHW=0x000205BE,main=0]
+00001315 {P:3788 T:3604 S:0} - complete in page #9, rs=2
+00001316 {P:3788 T:3604 S:0} !<App::OnPageComplete
+00001317 {P:3788 T:3604 S:0} !>App::OnPageComplete [hwndHW=0x000205BE,main=1]
+00001318 {P:3788 T:3604 S:0} - complete in page #9, rs=2
+00001319 {P:3788 T:3604 S:0} - main loaded
+00001320 {P:3788 T:3604 S:0} SaveTimeStamp, 'loadMainEnd'/9 -> 1383816294124
+00001321 {P:3788 T:3604 S:0} - totally complete
+00001322 {P:3788 T:3604 S:0} SaveTimeStamp, 'loadEnd'/9 -> 1383816294140
+00001323 {P:3788 T:3604 S:0} !<App::OnPageComplete
+00001324 {P:3788 T:3604 S:0} !>App::OnPageComplete [hwndHW=0x000205BE,main=0]
+00001325 {P:3788 T:3604 S:0} !<App::OnPageComplete
+00001326 {P:3788 T:3604 S:0} !>App::PreparePage_ApplyResources [idx=10]
+00001327 {P:3788 T:3604 S:0} SaveTimeStamp, 'loadStart'/10 -> 1383816294140
+00001328 {P:3788 T:3604 S:0} SaveTimeStamp, 'createStart'/10 -> 1383816294140
+00001329 {P:3788 T:3604 S:0} !>App::PreparePage_CreateBrowser [fn='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\GntJoymuKj.mht']
+00001330 {P:3788 T:3604 S:0} HtmlWindow::HtmlWindow, this=0x024513B8, idx=10, auto=1
+00001331 {P:3788 T:3604 S:0} HtmlWindow::OnCreate, this=0x024513B8
+00001332 {P:3788 T:3604 S:0} - defwinproc res=0
+00001333 {P:3788 T:3604 S:0} HtmlWindow::CreateControls, this=0x024513B8
+00001334 {P:3788 T:3604 S:0} CJsExternal::CJsExternal [i=-1]
+00001335 {P:3788 T:3604 S:0} - hwnd=0x000205E4, path='file://C:/Users/Admin/AppData/Local/Temp/oi_pnZ7b5DCPP/GntJoymuKj.html'
+00001336 {P:3788 T:3604 S:0} !<App::PreparePage_CreateBrowser
+00001337 {P:3788 T:3604 S:0} SaveTimeStamp, 'createEnd'/10 -> 1383816294186
+00001338 {P:3788 T:3604 S:0} !<App::PreparePage_ApplyResources
+00001339 {P:3788 T:3604 S:0} HtmlWindow::OnNavigateComplete, this=0x024513B8, disp=0x00A103A8, url='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\GntJoymuKj.html'
+00001340 {P:3788 T:3604 S:0} !>HtmlWindow_HostUIHandler::SetUIHandlerToDoc [winref=0x024513B8]
+00001341 {P:3788 T:3604 S:0} - ok
+00001342 {P:3788 T:3604 S:0} !<HtmlWindow_HostUIHandler::SetUIHandlerToDoc
+00001343 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=10,n='onPageDestroy',f=0x09FA0804]
+00001344 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=10,n='onPageClose',f=0x09FA07C4]
+00001345 {P:3788 T:3604 S:0} load basic page #10 content frame `http://c04.inst.avg.com/serve/getScreen.php?pid=10872680&k=43a9519ed4b5e9c75eb7d683e3d1e09708f9b34a&id=442058&u=1383511131&lang=en`
+00001346 {P:3788 T:3604 S:0} HtmlWindow::OnBeforeNavigate2, this=0x024513B8, disp=0x084432FC, url='about:blank'
+00001347 {P:3788 T:3604 S:0} HtmlWindow::OnNavigateComplete, this=0x024513B8, disp=0x084432FC, url='about:blank'
+00001348 {P:3788 T:3604 S:0} HtmlWindow::OnDocumentComplete, this=0x024513B8, disp=0x084432FC, url='about:blank'
+00001349 {P:3788 T:3604 S:0} - compat mode: BackCompat
+00001350 {P:3788 T:3604 S:0} - document mode: 5
+00001351 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=10,n='onAppWinActiveChange',f=0x09AEE404]
+00001352 {P:3788 T:3604 S:0} CJsExternal::put_onHitTest [i=10,f=0x09AEE584]
+00001353 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=10,n='onPageShow',f=0x09AEE644]
+00001354 {P:3788 T:3604 S:1} setSurvey called
+00001355 {P:3788 T:3604 S:0} HtmlWindow::OnBeforeNavigate2, this=0x024513B8, disp=0x084432FC, url='http://c04.inst.avg.com/serve/getScreen.php?pid=10872680&k=43a9519ed4b5e9c75eb7d683e3d1e09708f9b34a&id=442058&u=1383511131&lang=en'
+00001356 {P:3788 T:3604 S:0} CHttpSink::BeginningTransaction, this=0x02417C10, url='http://c04.inst.avg.com/serve/getScreen.php?pid=10872680&k=43a9519ed4b5e9c75eb7d683e3d1e09708f9b34a&id=442058&u=1383511131&lang=en'
+00001357 {P:3788 T:3604 S:0} CHttpSink::OnResponse, this=0x02417C10, code=200 -> hr=0x00000000
+00001358 {P:3788 T:3604 S:0} CHttpSink::ReportResult, this=0x02417C10, hr=0x00000000, err=0, url='http://c04.inst.avg.com/serve/getScreen.php?pid=10872680&k=43a9519ed4b5e9c75eb7d683e3d1e09708f9b34a&id=442058&u=1383511131&lang=en'
+00001359 {P:3788 T:3604 S:0} HtmlWindow::OnDocumentComplete, this=0x024513B8, disp=0x00A103A8, url='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\GntJoymuKj.html'
+00001360 {P:3788 T:4460 S:0} CHttpSink::BeginningTransaction, this=0x02444428, url='http://c12081072.r72.cf2.rackcdn.com/main.min.js'
+00001361 {P:3788 T:3604 S:0} - compat mode: CSS1Compat
+00001362 {P:3788 T:4460 S:0} CHttpSink::OnResponse, this=0x02444428, code=200 -> hr=0x00000000
+00001363 {P:3788 T:3604 S:0} - document mode: 7
+00001364 {P:3788 T:4460 S:0} CHttpSink::ReportResult, this=0x02444428, hr=0x00000000, err=0, url='http://c12081072.r72.cf2.rackcdn.com/main.min.js'
+00001365 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=10,n='onPageShow',f=0x09AEE8C4]
+00001366 {P:3788 T:3604 S:0} HtmlWindow::OnNavigateComplete, this=0x024513B8, disp=0x084432FC, url='http://c04.inst.avg.com/serve/getScreen.php?pid=10872680&k=43a9519ed4b5e9c75eb7d683e3d1e09708f9b34a&id=442058&u=1383511131&lang=en'
+00001367 {P:3788 T:3604 S:0} CJsExternal::DelEventListener [i=10,n='onPageDestroy',f=0x09FA0804]
+00001368 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=10,n='onPageDestroy',f=0x0968E804]
+00001369 {P:3788 T:3604 S:1} index_unsupportedBrowserDetected10
+00001370 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=10,n='onPageHide',f=0x0968EFC4]
+00001371 {P:3788 T:3604 S:0} HtmlWindow::OnDocumentComplete, this=0x024513B8, disp=0x084432FC, url='http://c04.inst.avg.com/serve/getScreen.php?pid=10872680&k=43a9519ed4b5e9c75eb7d683e3d1e09708f9b34a&id=442058&u=1383511131&lang=en'
+00001372 {P:3788 T:3604 S:0} - compat mode: CSS1Compat
+00001373 {P:3788 T:3604 S:0} - document mode: 7
+00001374 {P:3788 T:3604 S:0} CJsExternal::DelEventListener [i=10,n='onPageShow',f=0x09AEE8C4]
+00001375 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=10,n='onPageShow',f=0x0968EEC4]
+00001376 {P:3788 T:3604 S:0} !>App::SelectActivePage [from=10,dir=-1]
+00001377 {P:3788 T:3604 S:0} - may go to page #7
+00001378 {P:3788 T:3604 S:0} !<App::SelectActivePage
+00001379 {P:3788 T:3604 S:0} Skipping offer frame load, current_offer is null
+00001380 {P:3788 T:3604 S:0} !>App::OnPageComplete [hwndHW=0x000205E4,main=0]
+00001381 {P:3788 T:3604 S:0} - complete in page #10, rs=2
+00001382 {P:3788 T:3604 S:0} !<App::OnPageComplete
+00001383 {P:3788 T:3604 S:0} !>App::OnPageComplete [hwndHW=0x000205E4,main=1]
+00001384 {P:3788 T:3604 S:0} - complete in page #10, rs=2
+00001385 {P:3788 T:3604 S:0} - main loaded
+00001386 {P:3788 T:3604 S:0} SaveTimeStamp, 'loadMainEnd'/10 -> 1383816294452
+00001387 {P:3788 T:3604 S:0} - totally complete
+00001388 {P:3788 T:3604 S:0} SaveTimeStamp, 'loadEnd'/10 -> 1383816294468
+00001389 {P:3788 T:3604 S:0} !<App::OnPageComplete
+00001390 {P:3788 T:3604 S:0} !>App::OnPageComplete [hwndHW=0x000205E4,main=0]
+00001391 {P:3788 T:3604 S:0} !<App::OnPageComplete
+00001392 {P:3788 T:3604 S:0} !>App::PreparePage_ApplyResources [idx=11]
+00001393 {P:3788 T:3604 S:0} SaveTimeStamp, 'loadStart'/11 -> 1383816294468
+00001394 {P:3788 T:3604 S:0} SaveTimeStamp, 'createStart'/11 -> 1383816294483
+00001395 {P:3788 T:3604 S:0} !>App::PreparePage_CreateBrowser [fn='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\69H3exGrr1.mht']
+00001396 {P:3788 T:3604 S:0} HtmlWindow::HtmlWindow, this=0x02451528, idx=11, auto=1
+00001397 {P:3788 T:3604 S:0} HtmlWindow::OnCreate, this=0x02451528
+00001398 {P:3788 T:3604 S:0} - defwinproc res=0
+00001399 {P:3788 T:3604 S:0} HtmlWindow::CreateControls, this=0x02451528
+00001400 {P:3788 T:3604 S:0} CJsExternal::CJsExternal [i=-1]
+00001401 {P:3788 T:3604 S:0} - hwnd=0x000205B8, path='file://C:/Users/Admin/AppData/Local/Temp/oi_pnZ7b5DCPP/69H3exGrr1.html'
+00001402 {P:3788 T:3604 S:0} !<App::PreparePage_CreateBrowser
+00001403 {P:3788 T:3604 S:0} SaveTimeStamp, 'createEnd'/11 -> 1383816294515
+00001404 {P:3788 T:3604 S:0} !<App::PreparePage_ApplyResources
+00001405 {P:3788 T:3604 S:0} HtmlWindow::OnNavigateComplete, this=0x02451528, disp=0x082D2020, url='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\69H3exGrr1.html'
+00001406 {P:3788 T:3604 S:0} !>HtmlWindow_HostUIHandler::SetUIHandlerToDoc [winref=0x02451528]
+00001407 {P:3788 T:3604 S:0} - ok
+00001408 {P:3788 T:3604 S:0} !<HtmlWindow_HostUIHandler::SetUIHandlerToDoc
+00001409 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=11,n='onPageDestroy',f=0x0785F184]
+00001410 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=11,n='onPageClose',f=0x0785F204]
+00001411 {P:3788 T:3604 S:0} load basic page #11 content frame `http://c04.inst.avg.com/serve/getScreen.php?pid=10872680&k=43a9519ed4b5e9c75eb7d683e3d1e09708f9b34a&id=442060&u=1383705004&lang=en`
+00001412 {P:3788 T:3604 S:0} HtmlWindow::OnBeforeNavigate2, this=0x02451528, disp=0x07FD4A8C, url='about:blank'
+00001413 {P:3788 T:3604 S:0} HtmlWindow::OnNavigateComplete, this=0x02451528, disp=0x07FD4A8C, url='about:blank'
+00001414 {P:3788 T:3604 S:0} HtmlWindow::OnDocumentComplete, this=0x02451528, disp=0x07FD4A8C, url='about:blank'
+00001415 {P:3788 T:3604 S:0} - compat mode: BackCompat
+00001416 {P:3788 T:3604 S:0} - document mode: 5
+00001417 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=11,n='onAppWinActiveChange',f=0x0A5370C4]
+00001418 {P:3788 T:3604 S:0} CJsExternal::put_onHitTest [i=11,f=0x0A537104]
+00001419 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=11,n='onPageShow',f=0x0A537144]
+00001420 {P:3788 T:3604 S:1} setSurvey called
+00001421 {P:3788 T:3604 S:0} HtmlWindow::OnBeforeNavigate2, this=0x02451528, disp=0x07FD4A8C, url='http://c04.inst.avg.com/serve/getScreen.php?pid=10872680&k=43a9519ed4b5e9c75eb7d683e3d1e09708f9b34a&id=442060&u=1383705004&lang=en'
+00001422 {P:3788 T:3604 S:0} CHttpSink::BeginningTransaction, this=0x02417C10, url='http://c04.inst.avg.com/serve/getScreen.php?pid=10872680&k=43a9519ed4b5e9c75eb7d683e3d1e09708f9b34a&id=442060&u=1383705004&lang=en'
+00001423 {P:3788 T:3604 S:0} CHttpSink::OnResponse, this=0x02417C10, code=200 -> hr=0x00000000
+00001424 {P:3788 T:3604 S:0} CHttpSink::ReportResult, this=0x02417C10, hr=0x00000000, err=0, url='http://c04.inst.avg.com/serve/getScreen.php?pid=10872680&k=43a9519ed4b5e9c75eb7d683e3d1e09708f9b34a&id=442060&u=1383705004&lang=en'
+00001425 {P:3788 T:4460 S:0} CHttpSink::BeginningTransaction, this=0x02444428, url='http://c12081072.r72.cf2.rackcdn.com/main.min.js'
+00001426 {P:3788 T:3604 S:0} HtmlWindow::OnDocumentComplete, this=0x02451528, disp=0x082D2020, url='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\69H3exGrr1.html'
+00001427 {P:3788 T:4460 S:0} CHttpSink::OnResponse, this=0x02444428, code=200 -> hr=0x00000000
+00001428 {P:3788 T:4460 S:0} CHttpSink::ReportResult, this=0x02444428, hr=0x00000000, err=0, url='http://c12081072.r72.cf2.rackcdn.com/main.min.js'
+00001429 {P:3788 T:3604 S:0} - compat mode: CSS1Compat
+00001430 {P:3788 T:3604 S:0} - document mode: 7
+00001431 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=11,n='onPageShow',f=0x0A5372C4]
+00001432 {P:3788 T:3604 S:0} HtmlWindow::OnNavigateComplete, this=0x02451528, disp=0x07FD4A8C, url='http://c04.inst.avg.com/serve/getScreen.php?pid=10872680&k=43a9519ed4b5e9c75eb7d683e3d1e09708f9b34a&id=442060&u=1383705004&lang=en'
+00001433 {P:3788 T:3604 S:0} CJsExternal::DelEventListener [i=11,n='onPageDestroy',f=0x0785F184]
+00001434 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=11,n='onPageDestroy',f=0x0A5379C4]
+00001435 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=11,n='onPageHide',f=0x0A537A84]
+00001436 {P:3788 T:4460 S:0} CHttpSink::BeginningTransaction, this=0x02444428, url='http://5ccd0014cb4401fe1fa9-d85323896d2909630ae789d9fbf86e07.r95.cf2.rackcdn.com/AVG/av/jquery.hotkeys.js'
+00001437 {P:3788 T:4460 S:0} CHttpSink::OnResponse, this=0x02444428, code=200 -> hr=0x00000000
+00001438 {P:3788 T:4460 S:0} CHttpSink::ReportResult, this=0x02444428, hr=0x00000000, err=0, url='http://5ccd0014cb4401fe1fa9-d85323896d2909630ae789d9fbf86e07.r95.cf2.rackcdn.com/AVG/av/jquery.hotkeys.js'
+00001439 {P:3788 T:4460 S:0} CHttpSink::BeginningTransaction, this=0x02444428, url='http://5ccd0014cb4401fe1fa9-d85323896d2909630ae789d9fbf86e07.r95.cf2.rackcdn.com/AVG/av/jquery.jstree3.js'
+00001440 {P:3788 T:4460 S:0} CHttpSink::OnResponse, this=0x02444428, code=200 -> hr=0x00000000
+00001441 {P:3788 T:4460 S:0} CHttpSink::ReportResult, this=0x02444428, hr=0x00000000, err=0, url='http://5ccd0014cb4401fe1fa9-d85323896d2909630ae789d9fbf86e07.r95.cf2.rackcdn.com/AVG/av/jquery.jstree3.js'
+00001442 {P:3788 T:3604 S:0} !>App::OnPageComplete [hwndHW=0x000205B8,main=0]
+00001443 {P:3788 T:3604 S:0} - complete in page #11, rs=2
+00001444 {P:3788 T:3604 S:0} !<App::OnPageComplete
+00001445 {P:3788 T:3604 S:0} !>App::OnPageComplete [hwndHW=0x000205B8,main=1]
+00001446 {P:3788 T:3604 S:0} - complete in page #11, rs=2
+00001447 {P:3788 T:3604 S:0} - main loaded
+00001448 {P:3788 T:3604 S:0} SaveTimeStamp, 'loadMainEnd'/11 -> 1383816294780
+00001449 {P:3788 T:3604 S:0} - wait 1 complete
+00001450 {P:3788 T:3604 S:0} !<App::OnPageComplete
+00001451 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=11,n='onPageShow',f=0x03B96604]
+00001452 {P:3788 T:3604 S:0} HtmlWindow::OnDocumentComplete, this=0x02451528, disp=0x07FD4A8C, url='http://c04.inst.avg.com/serve/getScreen.php?pid=10872680&k=43a9519ed4b5e9c75eb7d683e3d1e09708f9b34a&id=442060&u=1383705004&lang=en'
+00001453 {P:3788 T:3604 S:0} - compat mode: CSS1Compat
+00001454 {P:3788 T:3604 S:0} - document mode: 7
+00001455 {P:3788 T:3604 S:0} CJsExternal::DelEventListener [i=11,n='onPageShow',f=0x0A5372C4]
+00001456 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=11,n='onPageShow',f=0x03B96AC4]
+00001457 {P:3788 T:3604 S:0} !>App::SelectActivePage [from=11,dir=-1]
+00001458 {P:3788 T:3604 S:0} - may go to page #7
+00001459 {P:3788 T:3604 S:0} !<App::SelectActivePage
+00001460 {P:3788 T:3604 S:0} Skipping offer frame load, current_offer is null
+00001461 {P:3788 T:3604 S:0} !>App::OnPageComplete [hwndHW=0x000205B8,main=0]
+00001462 {P:3788 T:3604 S:0} - complete in page #11, rs=3
+00001463 {P:3788 T:3604 S:0} - totally complete
+00001464 {P:3788 T:3604 S:0} SaveTimeStamp, 'loadEnd'/11 -> 1383816294905
+00001465 {P:3788 T:3604 S:0} !<App::OnPageComplete
+00001466 {P:3788 T:3604 S:0} !>App::PreparePage_ApplyResources [idx=12]
+00001467 {P:3788 T:3604 S:0} SaveTimeStamp, 'loadStart'/12 -> 1383816294905
+00001468 {P:3788 T:3604 S:0} SaveTimeStamp, 'createStart'/12 -> 1383816294905
+00001469 {P:3788 T:3604 S:0} !>App::PreparePage_CreateBrowser [fn='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\TN69nv1Glk.mht']
+00001470 {P:3788 T:3604 S:0} HtmlWindow::HtmlWindow, this=0x02451978, idx=12, auto=1
+00001471 {P:3788 T:3604 S:0} HtmlWindow::OnCreate, this=0x02451978
+00001472 {P:3788 T:3604 S:0} - defwinproc res=0
+00001473 {P:3788 T:3604 S:0} HtmlWindow::CreateControls, this=0x02451978
+00001474 {P:3788 T:3604 S:0} CJsExternal::CJsExternal [i=-1]
+00001475 {P:3788 T:3604 S:0} - hwnd=0x000205A6, path='file://C:/Users/Admin/AppData/Local/Temp/oi_pnZ7b5DCPP/TN69nv1Glk.html'
+00001476 {P:3788 T:3604 S:0} !<App::PreparePage_CreateBrowser
+00001477 {P:3788 T:3604 S:0} SaveTimeStamp, 'createEnd'/12 -> 1383816294936
+00001478 {P:3788 T:3604 S:0} !<App::PreparePage_ApplyResources
+00001479 {P:3788 T:3604 S:0} HtmlWindow::OnNavigateComplete, this=0x02451978, disp=0x082D2AE8, url='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\TN69nv1Glk.html'
+00001480 {P:3788 T:3604 S:0} !>HtmlWindow_HostUIHandler::SetUIHandlerToDoc [winref=0x02451978]
+00001481 {P:3788 T:3604 S:0} - ok
+00001482 {P:3788 T:3604 S:0} !<HtmlWindow_HostUIHandler::SetUIHandlerToDoc
+00001483 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=12,n='onPageDestroy',f=0x0A537A44]
+00001484 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=12,n='onPageClose',f=0x0A537FC4]
+00001485 {P:3788 T:3604 S:0} load basic page #12 content frame `http://c04.inst.avg.com/serve/getScreen.php?pid=10872680&k=43a9519ed4b5e9c75eb7d683e3d1e09708f9b34a&id=442064&u=1383511150&lang=en`
+00001486 {P:3788 T:3604 S:0} HtmlWindow::OnBeforeNavigate2, this=0x02451978, disp=0x082A5FD4, url='about:blank'
+00001487 {P:3788 T:3604 S:0} HtmlWindow::OnNavigateComplete, this=0x02451978, disp=0x082A5FD4, url='about:blank'
+00001488 {P:3788 T:3604 S:0} HtmlWindow::OnDocumentComplete, this=0x02451978, disp=0x082A5FD4, url='about:blank'
+00001489 {P:3788 T:3604 S:0} - compat mode: BackCompat
+00001490 {P:3788 T:3604 S:0} - document mode: 5
+00001491 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=12,n='onAppWinActiveChange',f=0x0A537B44]
+00001492 {P:3788 T:3604 S:0} CJsExternal::put_onHitTest [i=12,f=0x0A537B04]
+00001493 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=12,n='onPageShow',f=0x0A537AC4]
+00001494 {P:3788 T:3604 S:1} setSurvey called
+00001495 {P:3788 T:3604 S:0} HtmlWindow::OnBeforeNavigate2, this=0x02451978, disp=0x082A5FD4, url='http://c04.inst.avg.com/serve/getScreen.php?pid=10872680&k=43a9519ed4b5e9c75eb7d683e3d1e09708f9b34a&id=442064&u=1383511150&lang=en'
+00001496 {P:3788 T:3604 S:0} CHttpSink::BeginningTransaction, this=0x02444428, url='http://c04.inst.avg.com/serve/getScreen.php?pid=10872680&k=43a9519ed4b5e9c75eb7d683e3d1e09708f9b34a&id=442064&u=1383511150&lang=en'
+00001497 {P:3788 T:3604 S:0} CHttpSink::OnResponse, this=0x02444428, code=200 -> hr=0x00000000
+00001498 {P:3788 T:3604 S:0} CHttpSink::ReportResult, this=0x02444428, hr=0x00000000, err=0, url='http://c04.inst.avg.com/serve/getScreen.php?pid=10872680&k=43a9519ed4b5e9c75eb7d683e3d1e09708f9b34a&id=442064&u=1383511150&lang=en'
+00001499 {P:3788 T:4460 S:0} CHttpSink::BeginningTransaction, this=0x02417C10, url='http://c12081072.r72.cf2.rackcdn.com/main.min.js'
+00001500 {P:3788 T:3604 S:0} HtmlWindow::OnDocumentComplete, this=0x02451978, disp=0x082D2AE8, url='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\TN69nv1Glk.html'
+00001501 {P:3788 T:4460 S:0} CHttpSink::OnResponse, this=0x02417C10, code=200 -> hr=0x00000000
+00001502 {P:3788 T:4460 S:0} CHttpSink::ReportResult, this=0x02417C10, hr=0x00000000, err=0, url='http://c12081072.r72.cf2.rackcdn.com/main.min.js'
+00001503 {P:3788 T:3604 S:0} - compat mode: CSS1Compat
+00001504 {P:3788 T:3604 S:0} - document mode: 7
+00001505 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=12,n='onPageShow',f=0x0A537404]
+00001506 {P:3788 T:3604 S:0} HtmlWindow::OnNavigateComplete, this=0x02451978, disp=0x082A5FD4, url='http://c04.inst.avg.com/serve/getScreen.php?pid=10872680&k=43a9519ed4b5e9c75eb7d683e3d1e09708f9b34a&id=442064&u=1383511150&lang=en'
+00001507 {P:3788 T:3604 S:0} CJsExternal::DelEventListener [i=12,n='onPageDestroy',f=0x0A537A44]
+00001508 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=12,n='onPageDestroy',f=0x0968E204]
+00001509 {P:3788 T:4460 S:0} CHttpSink::BeginningTransaction, this=0x02417C10, url='http://c15040647.r47.cf2.rackcdn.com/1380769558/toolbar_10-2-2013.png'
+00001510 {P:3788 T:4460 S:0} CHttpSink::OnResponse, this=0x02417C10, code=200 -> hr=0x00000000
+00001511 {P:3788 T:4460 S:0} CHttpSink::ReportResult, this=0x02417C10, hr=0x00000000, err=0, url='http://c15040647.r47.cf2.rackcdn.com/1380769558/toolbar_10-2-2013.png'
+00001512 {P:3788 T:3604 S:0} HtmlWindow::OnBeforeNavigate2, this=0x02451978, disp=0x0A92DF0C, url='http://2269908802470eb0496c-dc1c36962a29033e033e27299621a808.r4.cf2.rackcdn.com/AVG/AVG_Nation/EULA/license_us.htm'
+00001513 {P:3788 T:3604 S:0} CHttpSink::BeginningTransaction, this=0x02417C10, url='http://2269908802470eb0496c-dc1c36962a29033e033e27299621a808.r4.cf2.rackcdn.com/AVG/AVG_Nation/EULA/license_us.htm'
+00001514 {P:3788 T:3604 S:0} CHttpSink::OnResponse, this=0x02417C10, code=200 -> hr=0x00000000
+00001515 {P:3788 T:3604 S:0} CHttpSink::ReportResult, this=0x02417C10, hr=0x00000000, err=0, url='http://2269908802470eb0496c-dc1c36962a29033e033e27299621a808.r4.cf2.rackcdn.com/AVG/AVG_Nation/EULA/license_us.htm'
+00001516 {P:3788 T:3604 S:0} HtmlWindow::OnNavigateComplete, this=0x02451978, disp=0x0A92DF0C, url='http://2269908802470eb0496c-dc1c36962a29033e033e27299621a808.r4.cf2.rackcdn.com/AVG/AVG_Nation/EULA/license_us.htm'
+00001517 {P:3788 T:3604 S:0} HtmlWindow::OnDocumentComplete, this=0x02451978, disp=0x0A92DF0C, url='http://2269908802470eb0496c-dc1c36962a29033e033e27299621a808.r4.cf2.rackcdn.com/AVG/AVG_Nation/EULA/license_us.htm'
+00001518 {P:3788 T:3604 S:0} - compat mode: CSS1Compat
+00001519 {P:3788 T:3604 S:0} - document mode: 7
+00001520 {P:3788 T:3604 S:1} index_avgSecurityToolbar12
+00001521 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=12,n='onPageShow',f=0x09FA0D44]
+00001522 {P:3788 T:3604 S:0} HtmlWindow::OnDocumentComplete, this=0x02451978, disp=0x082A5FD4, url='http://c04.inst.avg.com/serve/getScreen.php?pid=10872680&k=43a9519ed4b5e9c75eb7d683e3d1e09708f9b34a&id=442064&u=1383511150&lang=en'
+00001523 {P:3788 T:3604 S:0} - compat mode: CSS1Compat
+00001524 {P:3788 T:3604 S:0} - document mode: 7
+00001525 {P:3788 T:3604 S:0} CJsExternal::DelEventListener [i=12,n='onPageShow',f=0x0A537404]
+00001526 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=12,n='onPageShow',f=0x09FA0844]
+00001527 {P:3788 T:3604 S:0} !>App::SelectActivePage [from=12,dir=-1]
+00001528 {P:3788 T:3604 S:0} - may go to page #7
+00001529 {P:3788 T:3604 S:0} !<App::SelectActivePage
+00001530 {P:3788 T:3604 S:0} Skipping offer frame load, current_offer is null
+00001531 {P:3788 T:3604 S:0} !>App::OnPageComplete [hwndHW=0x000205A6,main=0]
+00001532 {P:3788 T:3604 S:0} - complete in page #12, rs=2
+00001533 {P:3788 T:3604 S:0} !<App::OnPageComplete
+00001534 {P:3788 T:3604 S:0} !>App::OnPageComplete [hwndHW=0x000205A6,main=1]
+00001535 {P:3788 T:3604 S:0} - complete in page #12, rs=2
+00001536 {P:3788 T:3604 S:0} - main loaded
+00001537 {P:3788 T:3604 S:0} SaveTimeStamp, 'loadMainEnd'/12 -> 1383816295233
+00001538 {P:3788 T:3604 S:0} - totally complete
+00001539 {P:3788 T:3604 S:0} SaveTimeStamp, 'loadEnd'/12 -> 1383816295249
+00001540 {P:3788 T:3604 S:0} !<App::OnPageComplete
+00001541 {P:3788 T:3604 S:0} !>App::OnPageComplete [hwndHW=0x000205A6,main=0]
+00001542 {P:3788 T:3604 S:0} !<App::OnPageComplete
+00001543 {P:3788 T:3604 S:0} !>App::OnPageComplete [hwndHW=0x000205A6,main=0]
+00001544 {P:3788 T:3604 S:0} !<App::OnPageComplete
+00001545 {P:3788 T:3604 S:0} !>App::PreparePage_ApplyResources [idx=13]
+00001546 {P:3788 T:3604 S:0} SaveTimeStamp, 'loadStart'/13 -> 1383816295265
+00001547 {P:3788 T:3604 S:0} SaveTimeStamp, 'createStart'/13 -> 1383816295265
+00001548 {P:3788 T:3604 S:0} !>App::PreparePage_CreateBrowser [fn='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\DuZ6XqNF0O.mht']
+00001549 {P:3788 T:3604 S:0} HtmlWindow::HtmlWindow, this=0x02451BA0, idx=13, auto=1
+00001550 {P:3788 T:3604 S:0} HtmlWindow::OnCreate, this=0x02451BA0
+00001551 {P:3788 T:3604 S:0} - defwinproc res=0
+00001552 {P:3788 T:3604 S:0} HtmlWindow::CreateControls, this=0x02451BA0
+00001553 {P:3788 T:3604 S:0} CJsExternal::CJsExternal [i=-1]
+00001554 {P:3788 T:3604 S:0} - hwnd=0x00020592, path='file://C:/Users/Admin/AppData/Local/Temp/oi_pnZ7b5DCPP/DuZ6XqNF0O.html'
+00001555 {P:3788 T:3604 S:0} !<App::PreparePage_CreateBrowser
+00001556 {P:3788 T:3604 S:0} SaveTimeStamp, 'createEnd'/13 -> 1383816295296
+00001557 {P:3788 T:3604 S:0} !<App::PreparePage_ApplyResources
+00001558 {P:3788 T:3604 S:0} HtmlWindow::OnNavigateComplete, this=0x02451BA0, disp=0x082D1BD0, url='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\DuZ6XqNF0O.html'
+00001559 {P:3788 T:3604 S:0} !>HtmlWindow_HostUIHandler::SetUIHandlerToDoc [winref=0x02451BA0]
+00001560 {P:3788 T:3604 S:0} - ok
+00001561 {P:3788 T:3604 S:0} !<HtmlWindow_HostUIHandler::SetUIHandlerToDoc
+00001562 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=13,n='onPageDestroy',f=0x09AEE3C4]
+00001563 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=13,n='onPageClose',f=0x0968E1C4]
+00001564 {P:3788 T:4460 S:0} CHttpSink::BeginningTransaction, this=0x02417C10, url='http://c15040647.r47.cf2.rackcdn.com/progress_info.png'
+00001565 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=13,n='onPageShow',f=0x0785F8C4]
+00001566 {P:3788 T:4460 S:0} CHttpSink::OnResponse, this=0x02417C10, code=200 -> hr=0x00000000
+00001567 {P:3788 T:4460 S:0} CHttpSink::ReportResult, this=0x02417C10, hr=0x00000000, err=0, url='http://c15040647.r47.cf2.rackcdn.com/progress_info.png'
+00001568 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=13,n='onAppWinActiveChange',f=0x0A537A44]
+00001569 {P:3788 T:3604 S:0} CJsExternal::put_onHitTest [i=13,f=0x0A537B84]
+00001570 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=13,n='onPageShow',f=0x0A537E44]
+00001571 {P:3788 T:3604 S:0} HtmlWindow::OnDocumentComplete, this=0x02451BA0, disp=0x082D1BD0, url='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\DuZ6XqNF0O.html'
+00001572 {P:3788 T:3604 S:0} - compat mode: CSS1Compat
+00001573 {P:3788 T:3604 S:0} - document mode: 7
+00001574 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=13,n='onPageShow',f=0x0A537F84]
+00001575 {P:3788 T:3604 S:0} !>App::OnPageComplete [hwndHW=0x00020592,main=1]
+00001576 {P:3788 T:3604 S:0} - complete in page #13, rs=2
+00001577 {P:3788 T:3604 S:0} - main loaded
+00001578 {P:3788 T:3604 S:0} SaveTimeStamp, 'loadMainEnd'/13 -> 1383816295421
+00001579 {P:3788 T:3604 S:0} - totally complete
+00001580 {P:3788 T:3604 S:0} SaveTimeStamp, 'loadEnd'/13 -> 1383816295421
+00001581 {P:3788 T:3604 S:0} !<App::OnPageComplete
+00001582 {P:3788 T:3604 S:0} SaveTimeStamp, 'waitPagesEnd'/-1 -> 1383816295452
+00001583 {P:3788 T:3604 S:0} !<App::DownloadPagesResources
+00001584 {P:3788 T:3604 S:0} !>App::SelectFirstPage
+00001585 {P:3788 T:3604 S:0} !>App::SwitchActivePage [cur=-1,dir=1]
+00001586 {P:3788 T:3604 S:0} - lock page UI
+00001587 {P:3788 T:3604 S:0} !>App::SelectActivePage [from=-1,dir=1]
+00001588 {P:3788 T:3604 S:0} - may go to page #1
+00001589 {P:3788 T:3604 S:0} !<App::SelectActivePage
+00001590 {P:3788 T:3604 S:0} - go to page #1
+00001591 {P:3788 T:3604 S:0} !>App::PreparePage_ApplyResources [idx=1]
+00001592 {P:3788 T:3604 S:0} - already done, rs=4
+00001593 {P:3788 T:3604 S:0} !<App::PreparePage_ApplyResources
+00001594 {P:3788 T:3604 S:0} !>App::SelectActivePage [from=-1,dir=1]
+00001595 {P:3788 T:3604 S:0} - may go to page #1
+00001596 {P:3788 T:3604 S:0} !<App::SelectActivePage
+00001597 {P:3788 T:3604 S:0} - unlock page UI
+00001598 {P:3788 T:3604 S:0} App::RevertAcceptPage, page='offer' -> status=0
+00001599 {P:3788 T:3604 S:0} !>App::ActivatePage [show=1,idx=1]
+00001600 {P:3788 T:3604 S:0} - activate phw=0x02450610
+00001601 {P:3788 T:3604 S:0} !>App::ActivatePageWindow [w=670,h=439]
+00001602 {P:3788 T:3604 S:0} MainWindow::OnSize
+00001603 {P:3788 T:3604 S:0} HtmlWindow::OnShowWindow, this=0x02450610, show=1
+00001604 {P:3788 T:3604 S:0} CJsExternal::_Fire_Event0 [i=1,n='onPageShow',c(h)=4]
+00001605 {P:3788 T:3604 S:0} CJsExternal::DelEventListener [i=1,n='onPageClose',f=0x05E3ADC4]
+00001606 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=1,n='onPageClose',f=0x03B96244]
+00001607 {P:3788 T:3604 S:0} HtmlWindow::FocusDocument, this=0x02450610 -> hr=0x00000000
+00001608 {P:3788 T:3604 S:0} !<App::ActivatePageWindow
+00001609 {P:3788 T:3604 S:0} !<App::ActivatePage
+00001610 {P:3788 T:3604 S:0} !<App::SwitchActivePage
+00001611 {P:3788 T:3604 S:0} - first page index = 1
+00001612 {P:3788 T:3604 S:0} !<App::SelectFirstPage
+00001613 {P:3788 T:3604 S:0} !>App::StartShowOnce
+00001614 {P:3788 T:3604 S:0} MainWindow::OnShowWindow, show=1
+00001615 {P:3788 T:3604 S:0} SaveTimeStamp, 'showStart'/-1 -> 1383816295530
+00001616 {P:3788 T:3604 S:0} !<App::StartShowOnce
+00001617 {P:3788 T:3604 S:0} !<App::Create_PagesAndShow
+00001618 {P:3788 T:3604 S:0} CHttpSink::BeginningTransaction, this=0x02417C10, url='http://c1a96aea271ff5c521b5-7239cc787f1002798ea565bed17dac82.r50.cf2.rackcdn.com/close_alone.bmp'
+00001619 {P:3788 T:3604 S:0} CHttpSink::OnResponse, this=0x02417C10, code=200 -> hr=0x00000000
+00001620 {P:3788 T:3604 S:0} CHttpSink::ReportResult, this=0x02417C10, hr=0x00000000, err=0, url='http://c1a96aea271ff5c521b5-7239cc787f1002798ea565bed17dac82.r50.cf2.rackcdn.com/close_alone.bmp'
+00001621 {P:3788 T:3604 S:0} CHttpSink::BeginningTransaction, this=0x02417C10, url='http://5ccd0014cb4401fe1fa9-d85323896d2909630ae789d9fbf86e07.r95.cf2.rackcdn.com/AVG/av/themes/classic/style.css'
+00001622 {P:3788 T:3604 S:0} CHttpSink::OnResponse, this=0x02417C10, code=200 -> hr=0x00000000
+00001623 {P:3788 T:3604 S:0} CHttpSink::ReportResult, this=0x02417C10, hr=0x00000000, err=0, url='http://5ccd0014cb4401fe1fa9-d85323896d2909630ae789d9fbf86e07.r95.cf2.rackcdn.com/AVG/av/themes/classic/style.css'
+00001624 {P:3788 T:3604 S:0} CHttpSink::BeginningTransaction, this=0x02417C10, url='http://5ccd0014cb4401fe1fa9-d85323896d2909630ae789d9fbf86e07.r95.cf2.rackcdn.com/AVG/av/themes/classic/d.png'
+00001625 {P:3788 T:3604 S:0} CHttpSink::OnResponse, this=0x02417C10, code=200 -> hr=0x00000000
+00001626 {P:3788 T:3604 S:0} CHttpSink::ReportResult, this=0x02417C10, hr=0x00000000, err=0, url='http://5ccd0014cb4401fe1fa9-d85323896d2909630ae789d9fbf86e07.r95.cf2.rackcdn.com/AVG/av/themes/classic/d.png'
+00001627 {P:3788 T:3604 S:0} CHttpSink::BeginningTransaction, this=0x024171C8, url='http://5ccd0014cb4401fe1fa9-d85323896d2909630ae789d9fbf86e07.r95.cf2.rackcdn.com/AVG/av/themes/classic/throbber.gif'
+00001628 {P:3788 T:4452 S:0} CHttpSink::OnResponse, this=0x024171C8, code=200 -> hr=0x00000000
+00001629 {P:3788 T:4452 S:0} CHttpSink::ReportResult, this=0x024171C8, hr=0x00000000, err=0, url='http://5ccd0014cb4401fe1fa9-d85323896d2909630ae789d9fbf86e07.r95.cf2.rackcdn.com/AVG/av/themes/classic/throbber.gif'
+00001630 {P:3788 T:3604 S:0} CJsExternal::_Fire_onHitTest [i=1,f=0x06795284,x=487,y=16]
+00001631 {P:3788 T:3604 S:0} CJsExternal::_Fire_onHitTest [i=1,f=0x06795284,x=614,y=424]
+00001632 {P:3788 T:3604 S:0} CJsExternal::_Fire_onHitTest [i=1,f=0x06795284,x=613,y=418]
+00001633 {P:3788 T:3604 S:0} CJsExternal::AppAccept [i=1,ans={
+    "autorun": true,
+    "callCompleteAsap": true,
+    "components": [
+        {
+            "actions": null,
+            "commands": [
+                {
+                    "cmd": "tb.exe /SILENT /PASSWORD=TB46GNL29Z /DISTRIBUTIONSOURCE=AVG /BROWSER=DEFAULT"
+                },
+                {
+                    "cmd": "av.exe /MarketingID=opicmp1 /Caller=OPI /UILevel=silent /NoSelfUpdate /AppMode=DOWNLOADMANAGER /NoToolbarDialog /InstallToolbar=0 /ChangeBrowserSearchProvider=0 /InstallHomePage=0 /PipeControl=avg2013pipecomm",
+                    "pipecomm": "avg2013pipecomm",
+                    "waitForChild": "avgmfapx.exe"
+                }
+            ],
+            "downloads": [
+                {
+                    "file": "tb.exe",
+                    "temp": "true",
+                    "url": "http://download-toolbar.avg.com/partners/nation/17.0.0.7/download/nation.exe"
+                },
+                {
+                    "file": "av.exe",
+                    "flags": "noui;",
+                    "temp": "true",
+                    "url": "http://5ccd0014cb4401fe1fa9-d85323896d2909630ae789d9fbf86e07.r95.cf2.rackcdn.com/AVG/av/avg_av_online/4158/avg_free_stb_all_2014_4158.exe"
+                }
+            ],
+            "events": null,
+            "id": 1,
+            "name": "AV",
+            "rules": [],
+            "skip": false,
+            "type": "main"
+        }
+    ],
+    "estRev": 0,
+    "eula_url": null,
+    "events": {
+        "cancel": "",
+        "complete": "",
+        "init": "// 6-10-2013 - Rene - use LockSetupMutex in function mfaAlreadyRunning()\n\nvar avData = Sys.configObject.prop('avData')\navData.setProp('removeOutlookFea', true);\n\n// IE version\n// detectIEversion();\n\n// AVG 2013 Installer - Error: AVG Setup or Update is already running\nmfaAlreadyRunning();\n\n// Windows XP SP2+\ninitSystemRequirements();\n//Unsupported check needs to be run on offer screen to launch dialog box\n//unsupportedWindowsOS();\n\n//Safe Mode => run AVG Setup\nregCheck();\noutlookCheck();\n\nfunction regCheck()\n{\n\t//-- detect previous version installed\n\t// var sBaseKey = 'HKEY_LOCAL_MACHINE\\\\SOFTWARE\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Uninstall\\\\AVG\\\\';\n\tvar previousVersionFound = false;\n\tvar AVG9_RegKeyExists = false;\n\tvar AVG8_RegKeyExists = false;\n\tvar AVG7_RegKeyExists = false;\n\n\tvar avgVersions = {'AVG2014':'','AVG2013':'','AVG2012':'','AVG2011':'','AVG2010':'','AVG13':'','AVG12':'','AVG11':'','AVG10':''};\n\n\tvar sBaseKey = 'HKEY_LOCAL_MACHINE\\\\SOFTWARE\\\\AVG\\\\';\n\t// var sBaseKey = 'HKEY_LOCAL_MACHINE\\\\SOFTWARE\\\\WOW6432NODE\\\\AVG\\\\';\n\n\tfor(var version in avgVersions) {\n\t\tSys.log(1, 'AVG AV: detecting a previous version...' + sBaseKey + version);\n\t\tvar RegKeyExists = Sys.RegKeyExists(sBaseKey + version);\n\t\tSys.log(1, 'AVG AV: RegKeyExists: '+RegKeyExists);\n\t\tif(RegKeyExists) {\n\t\t\tvar AVG_ProdCodeExists = Sys.RegValueExists(sBaseKey + version,'AVG_ProdCode');\n\t\t\tSys.log(1, 'AVG AV: AVG_ProdCodeExists: '+AVG_ProdCodeExists);\n\t\t\tif (AVG_ProdCodeExists){\n\t\t\t\tvar AVG_ProdCodeValue = Sys.RegGetValue(sBaseKey + version,'AVG_ProdCode','');\n\t\t\t\tSys.log(1, 'AVG AV: AVG_ProdCodeValue: '+AVG_ProdCodeValue);\n\t\t\t\tif (AVG_ProdCodeValue!=''){\n\t\t\t\t\tvar productState = Sys.MSI_QueryProductState(AVG_ProdCodeValue);\n\t\t\t\t\tSys.log(1,'AVG AV: productState: '+productState);\n\t\t\t\t\tif(productState != AppConst.MSI_INSTALLSTATE_UNKNOWN){\n\t\t\t\t\t\tpreviousVersionFound = true;\n\t\t\t\t\t\tSys.log(1,'AVG AV: previousVersionFound found');\n\t\t\t\t\t\tbreak;\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\n\tif (previousVersionFound==false){\n\t\t//AVG9\n\t\tvar AVG9_BaseKey = 'HKEY_LOCAL_MACHINE\\\\SOFTWARE\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Uninstall\\\\Avg9Uninstall';\n\t\tvar AVG9_RegKeyExists = Sys.RegKeyExists(AVG9_BaseKey);\n\t\tSys.log(1, 'AVG AV: AVG9_RegKeyExists: '+AVG9_RegKeyExists);\n\t\tif (AVG9_RegKeyExists) {\n\t\t\tpreviousVersionFound = t
+00001634 {P:3788 T:3604 S:0} App::AcceptPage, page='offer', len(answer)=27808
+00001635 {P:3788 T:3604 S:0} !>App::ReStartOfferThread [id=442038,s=0]
+00001636 {P:3788 T:3604 S:0} !>App::EvalScript [ns='OfferNS_id442038',ctx=0x0242C658]
+00001637 {P:3788 T:3604 S:1} AVG TB default url "http://download-toolbar.avg.com/partners/nation/17.0.0.7/download/nation.exe"
+00001638 {P:3788 T:3604 S:1} $AVG_TB_url "http://download-toolbar.avg.com/partners/nation/17.0.0.7/download/nation.exe"
+00001639 {P:3788 T:3604 S:1} $actualDownloads "http://download-toolbar.avg.com/partners/nation/17.0.0.7/download/nation.exe"
+00001640 {P:3788 T:3604 S:0} Eval, len(expr)=887, ns='OfferNS_id442038', hr=0x00000000
+00001641 {P:3788 T:3604 S:0} !<App::EvalScript
+00001642 {P:3788 T:3604 S:0} - start job 4684
+00001643 {P:3788 T:3604 S:0} !<App::ReStartOfferThread
+00001644 {P:3788 T:3604 S:0} - accepted 1(1)
+00001645 {P:3788 T:3604 S:0} !>App::SwitchActivePage [cur=1,dir=1]
+00001646 {P:3788 T:3604 S:0} - lock page UI
+00001647 {P:3788 T:3604 S:0} !>App::SelectActivePage [from=1,dir=1]
+00001648 {P:3788 T:3604 S:0} - may go to page #2
+00001649 {P:3788 T:3604 S:0} !<App::SelectActivePage
+00001650 {P:3788 T:3604 S:0} - go to page #2
+00001651 {P:3788 T:3604 S:0} !>App::PreparePage_ApplyResources [idx=2]
+00001652 {P:3788 T:3604 S:0} - already done, rs=4
+00001653 {P:3788 T:3604 S:0} !<App::PreparePage_ApplyResources
+00001654 {P:3788 T:3604 S:0} !>App::SelectActivePage [from=1,dir=1]
+00001655 {P:3788 T:3604 S:0} - may go to page #2
+00001656 {P:3788 T:3604 S:0} !<App::SelectActivePage
+00001657 {P:3788 T:3604 S:0} - unlock page UI
+00001658 {P:3788 T:3604 S:0} App::RevertAcceptPage, page='basic' -> status=0
+00001659 {P:3788 T:3604 S:0} !>App::ActivatePage [show=1,idx=2]
+00001660 {P:3788 T:3604 S:0} - activate phw=0x02450780
+00001661 {P:3788 T:3604 S:0} !>App::ActivatePageWindow [w=670,h=439]
+00001662 {P:3788 T:3604 S:0} HtmlWindow::OnShowWindow, this=0x02450780, show=1
+00001663 {P:3788 T:3604 S:0} CJsExternal::_Fire_Event0 [i=2,n='onPageShow',c(h)=4]
+00001664 {P:3788 T:3604 S:0} CJsExternal::DelEventListener [i=2,n='onPageClose',f=0x05E3A504]
+00001665 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=2,n='onPageClose',f=0x0CE12EC4]
+00001666 {P:3788 T:3604 S:0} HtmlWindow::OnShowWindow, this=0x02450610, show=0
+00001667 {P:3788 T:3604 S:0} CJsExternal::_Fire_Event0 [i=1,n='onPageHide',c(h)=0]
+00001668 {P:3788 T:3604 S:0} HtmlWindow::FocusDocument, this=0x02450780 -> hr=0x00000000
+00001669 {P:3788 T:3604 S:0} !<App::ActivatePageWindow
+00001670 {P:3788 T:3604 S:0} !<App::ActivatePage
+00001671 {P:3788 T:3604 S:0} !<App::SwitchActivePage
+00001672 {P:3788 T:4684 S:0} - start download visible offer #442038 (2 files)
+00001673 {P:3788 T:4684 S:0} !>fs::DownloadOfferAsync [offer='AVG 2014_v103']
+00001674 {P:3788 T:4684 S:0} fs::QueryOfferDownloadsSize [offer='AVG 2014_v103']
+00001675 {P:3788 T:4684 S:0} - measure download 'tb.exe'
+00001676 {P:3788 T:4684 S:0} !>fs::OpenInetRequestWithStatusCheck [url='http://download-toolbar.avg.com/partners/nation/17.0.0.7/download/nation.exe',len(post)=0,head=1]
+00001677 {P:3788 T:4684 S:0} !>fs::SendInetRequestWithStatusCheck [hReq=0x00CC0018]
+00001678 {P:3788 T:3604 S:0} CJsExternal::_Fire_onHitTest [i=2,f=0x05E3A804,x=513,y=352]
+00001679 {P:3788 T:4684 S:0} !<fs::SendInetRequestWithStatusCheck
+00001680 {P:3788 T:4684 S:0} - part length: 4693864 bytes
+00001681 {P:3788 T:4684 S:0} - content length: 4693864 bytes
+00001682 {P:3788 T:4684 S:0} !<fs::OpenInetRequestWithStatusCheck
+00001683 {P:3788 T:4684 S:0} - connect time: 1016 ms
+00001684 {P:3788 T:4684 S:0} - got size: 4693864
+00001685 {P:3788 T:4684 S:0} - measure download 'av.exe'
+00001686 {P:3788 T:4684 S:0} !>fs::OpenInetRequestWithStatusCheck [url='http://5ccd0014cb4401fe1fa9-d85323896d2909630ae789d9fbf86e07.r95.cf2.rackcdn.com/AVG/av/avg_av_online/4158/avg_free_stb_all_2014_4158.exe',len(post)=0,head=1]
+00001687 {P:3788 T:3604 S:1} InstallationType: IS
+00001688 {P:3788 T:4684 S:0} !>fs::SendInetRequestWithStatusCheck [hReq=0x00CC0018]
+00001689 {P:3788 T:4684 S:0} !<fs::SendInetRequestWithStatusCheck
+00001690 {P:3788 T:4684 S:0} - part length: 4436544 bytes
+00001691 {P:3788 T:4684 S:0} - content length: 4436544 bytes
+00001692 {P:3788 T:4684 S:0} !<fs::OpenInetRequestWithStatusCheck
+00001693 {P:3788 T:4684 S:0} - connect time: 78 ms
+00001694 {P:3788 T:4684 S:0} - got size: 4436544
+00001695 {P:3788 T:4684 S:0} - final download size: 9130408
+00001696 {P:3788 T:4684 S:0} !>fs::DownloadComponentAsync [comp-id=1]
+00001697 {P:3788 T:4684 S:0} - choose place for 'tb.exe'
+00001698 {P:3788 T:4684 S:0} - result dir 'C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\'
+00001699 {P:3788 T:4684 S:0} !>fs::DownloadComponentFileAsync [comp-id=1, file='tb.exe']
+00001700 {P:3788 T:4684 S:0} ValidateFileName [f='tb.exe']
+00001701 {P:3788 T:4684 S:0} fs::RegisterFileAsTemp [f='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\tb.exe']
+00001702 {P:3788 T:4684 S:0} fs::RandomName -> nrWvrhrQP7
+00001703 {P:3788 T:4684 S:0} fs::RegisterFileAsTemp [f='C:\Users\Admin\AppData\Local\Temp\oi_pnZ7b5DCPP\tb.exe.part_nrWvrhrQP7']
+00001704 {P:3788 T:4636 S:0} !>fs::FilePeacesManager::DownloadPeace [fpi=0x0245CF48]
+00001705 {P:3788 T:4636 S:0} !>fs::OpenInetRequestWithStatusCheck [url='http://download-toolbar.avg.com/partners/nation/17.0.0.7/download/nation.exe',len(post)=0,head=0]
+00001706 {P:3788 T:4636 S:0} !>fs::SendInetRequestWithStatusCheck [hReq=0x00CC0018]
+00001707 {P:3788 T:3604 S:0} CJsExternal::_Fire_onHitTest [i=2,f=0x05E3A804,x=575,y=406]
+00001708 {P:3788 T:3604 S:0} IAvgOpi::CompetitorDetectionCheck()->0x00000000
+00001709 {P:3788 T:3604 S:1} CompetitorDetectionCheck checkRes: 0
+00001710 {P:3788 T:3604 S:1} CompetitorDetectionCheck outData.detectionResult: 100
+00001711 {P:3788 T:3604 S:1} CompetitorDetectionCheck outData.blockersBuf: 
+00001712 {P:3788 T:3604 S:1} CompetitorDetectionCheck outData.fwBlockersBuf: 
+00001713 {P:3788 T:3604 S:0} CJsExternal::AppNext [i=2]
+00001714 {P:3788 T:3604 S:0} !>App::SwitchActivePage [cur=2,dir=1]
+00001715 {P:3788 T:3604 S:0} - lock page UI
+00001716 {P:3788 T:3604 S:0} !>App::SelectActivePage [from=2,dir=1]
+00001717 {P:3788 T:3604 S:0} - may go to page #3
+00001718 {P:3788 T:3604 S:0} !<App::SelectActivePage
+00001719 {P:3788 T:3604 S:0} - go to page #3
+00001720 {P:3788 T:3604 S:0} !>App::PreparePage_ApplyResources [idx=3]
+00001721 {P:3788 T:3604 S:0} - already done, rs=4
+00001722 {P:3788 T:3604 S:0} !<App::PreparePage_ApplyResources
+00001723 {P:3788 T:3604 S:0} !>App::SelectActivePage [from=2,dir=1]
+00001724 {P:3788 T:3604 S:0} - may go to page #3
+00001725 {P:3788 T:3604 S:0} !<App::SelectActivePage
+00001726 {P:3788 T:3604 S:0} - unlock page UI
+00001727 {P:3788 T:3604 S:0} App::RevertAcceptPage, page='basic' -> status=0
+00001728 {P:3788 T:3604 S:0} !>App::ActivatePage [show=1,idx=3]
+00001729 {P:3788 T:3604 S:0} - activate phw=0x024508F0
+00001730 {P:3788 T:3604 S:0} !>App::ActivatePageWindow [w=670,h=439]
+00001731 {P:3788 T:3604 S:0} HtmlWindow::OnShowWindow, this=0x024508F0, show=1
+00001732 {P:3788 T:3604 S:0} CJsExternal::_Fire_Event0 [i=3,n='onPageShow',c(h)=4]
+00001733 {P:3788 T:3604 S:0} CJsExternal::DelEventListener [i=3,n='onPageClose',f=0x07623944]
+00001734 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=3,n='onPageClose',f=0x0CE124C4]
+00001735 {P:3788 T:3604 S:0} IAvgOpi::VerifyLicense('IAXC7-YBL2W-Q9GLE-Q4LTJ-BCM4N-WC3XE')->0x00000000
+00001736 {P:3788 T:3604 S:0} IAvgOpi::GetLicenseType('IAXC7-YBL2W-Q9GLE-Q4LTJ-BCM4N-WC3XE')->0x00000000
+00001737 {P:3788 T:3604 S:1} VerifyLicense: 3
+00001738 {P:3788 T:3604 S:0} IAvgOpi::GetLicenseType('IAXC7-YBL2W-Q9GLE-Q4LTJ-BCM4N-WC3XE')->0x00000000
+00001739 {P:3788 T:3604 S:1} License type 3 Possible: [1,2,3,4] Return value 0
+00001740 {P:3788 T:3604 S:0} IAvgOpi::IsLicenseSales('IAXC7-YBL2W-Q9GLE-Q4LTJ-BCM4N-WC3XE')->0x00000000
+00001741 {P:3788 T:3604 S:1} Setting license: IAXC7-YBL2W-Q9GLE-Q4LTJ-BCM4N-WC3XE
+00001742 {P:3788 T:3604 S:0} IAvgOpi::GetLicenseType('IAXC7-YBL2W-Q9GLE-Q4LTJ-BCM4N-WC3XE')->0x00000000
+00001743 {P:3788 T:3604 S:0} HtmlWindow::OnShowWindow, this=0x02450780, show=0
+00001744 {P:3788 T:3604 S:0} CJsExternal::_Fire_Event0 [i=2,n='onPageHide',c(h)=0]
+00001745 {P:3788 T:3604 S:0} HtmlWindow::FocusDocument, this=0x024508F0 -> hr=0x00000000
+00001746 {P:3788 T:3604 S:0} !<App::ActivatePageWindow
+00001747 {P:3788 T:3604 S:0} !<App::ActivatePage
+00001748 {P:3788 T:3604 S:0} !<App::SwitchActivePage
+00001749 {P:3788 T:3604 S:0} CJsExternal::_Fire_onHitTest [i=3,f=0x07623E04,x=576,y=405]
+00001750 {P:3788 T:3604 S:0} IAvgOpi::VerifyLicense('IAXC7-YBL2W-Q9GLE-Q4LTJ-BCM4N-WC3XE')->0x00000000
+00001751 {P:3788 T:3604 S:0} IAvgOpi::GetLicenseType('IAXC7-YBL2W-Q9GLE-Q4LTJ-BCM4N-WC3XE')->0x00000000
+00001752 {P:3788 T:3604 S:1} VerifyLicense: 3
+00001753 {P:3788 T:3604 S:0} IAvgOpi::GetLicenseType('IAXC7-YBL2W-Q9GLE-Q4LTJ-BCM4N-WC3XE')->0x00000000
+00001754 {P:3788 T:3604 S:1} License type 3 Possible: [1,2,3,4] Return value 0
+00001755 {P:3788 T:3604 S:0} IAvgOpi::IsLicenseSales('IAXC7-YBL2W-Q9GLE-Q4LTJ-BCM4N-WC3XE')->0x00000000
+00001756 {P:3788 T:3604 S:1} Setting license: IAXC7-YBL2W-Q9GLE-Q4LTJ-BCM4N-WC3XE
+00001757 {P:3788 T:3604 S:0} IAvgOpi::GetLicenseType('IAXC7-YBL2W-Q9GLE-Q4LTJ-BCM4N-WC3XE')->0x00000000
+00001758 {P:3788 T:3604 S:0} CJsExternal::AppNext [i=3]
+00001759 {P:3788 T:3604 S:0} !>App::SwitchActivePage [cur=3,dir=1]
+00001760 {P:3788 T:3604 S:0} - lock page UI
+00001761 {P:3788 T:3604 S:0} !>App::SelectActivePage [from=3,dir=1]
+00001762 {P:3788 T:3604 S:0} - may go to page #7
+00001763 {P:3788 T:3604 S:0} !<App::SelectActivePage
+00001764 {P:3788 T:3604 S:0} - go to page #7
+00001765 {P:3788 T:3604 S:0} !>App::PreparePage_ApplyResources [idx=7]
+00001766 {P:3788 T:3604 S:0} - already done, rs=4
+00001767 {P:3788 T:3604 S:0} !<App::PreparePage_ApplyResources
+00001768 {P:3788 T:3604 S:0} !>App::SelectActivePage [from=3,dir=1]
+00001769 {P:3788 T:3604 S:0} - may go to page #7
+00001770 {P:3788 T:3604 S:0} !<App::SelectActivePage
+00001771 {P:3788 T:3604 S:0} - unlock page UI
+00001772 {P:3788 T:3604 S:0} App::RevertAcceptPage, page='basic' -> status=0
+00001773 {P:3788 T:3604 S:0} !>App::ActivatePage [show=1,idx=7]
+00001774 {P:3788 T:3604 S:0} - activate phw=0x02450F68
+00001775 {P:3788 T:3604 S:0} !>App::ActivatePageWindow [w=670,h=439]
+00001776 {P:3788 T:3604 S:0} HtmlWindow::OnShowWindow, this=0x02450F68, show=1
+00001777 {P:3788 T:3604 S:0} CJsExternal::_Fire_Event0 [i=7,n='onPageShow',c(h)=4]
+00001778 {P:3788 T:3604 S:0} CJsExternal::DelEventListener [i=7,n='onPageClose',f=0x092BD244]
+00001779 {P:3788 T:3604 S:0} CJsExternal::AddEventListener [i=7,n='onPageClose',f=0x09AEE244]
+00001780 {P:3788 T:3604 S:0} HtmlWindow::OnShowWindow, this=0x024508F0, show=0
+00001781 {P:3788 T:3604 S:0} CJsExternal::_Fire_Event0 [i=3,n='onPageHide',c(h)=0]
+00001782 {P:3788 T:3604 S:0} HtmlWindow::FocusDocument, this=0x02450F68 -> hr=0x00000000
+00001783 {P:3788 T:3604 S:0} !<App::ActivatePageWindow
+00001784 {P:3788 T:3604 S:0} !<App::ActivatePage
+00001785 {P:3788 T:3604 S:0} !<App::SwitchActivePage
+00001786 {P:3788 T:3604 S:0} CJsExternal::_Fire_Event0 [i=7,n='onAppWinActiveChange',c(h)=1]
+00001787 {P:3788 T:3604 S:0} EVENT: onAppWinActiveChange -> active=false
+00001788 {P:3788 T:4620 S:3} UNHANDLED EXCEPTION (r3506, win6.1)
+00001789 {P:3828 T:3488 S:0} MessageSender::MessageSender
+00001790 {P:3828 T:3488 S:0} - working thread launched, tid=5080
+00001791 {P:4508 T:4512 S:2} - installer killed!
+00001792 {P:4508 T:4512 S:0} !>App::Destroy [proc-type=17]
+00001793 {P:4508 T:4512 S:0} SaveTimeStamp, 'showEnd'/-1 -> 1383816338515
+00001794 {P:4508 T:4512 S:0} SaveTimeStamp, 'appEnd'/-1 -> 1383816338515
+00001795 {P:4508 T:4512 S:0} !>fs::ClearTemp
+00001796 {P:4508 T:4512 S:0} - remove 0/0 files
+00001797 {P:4508 T:4512 S:0} !<fs::ClearTemp
+00001798 {P:4508 T:4512 S:0} !<App::Destroy
+00001799 {P:4508 T:4512 S:0} Finish app
+00001800 {P:4508 T:4512 S:0} MessageSender::FinishAndWaitUntilDone
+00001801 {P:4508 T:4512 S:0} - send log [worst=2]
+00001802 {P:4508 T:4512 S:0} MessageSender::SendData, len(text)=1572,type=2
+00001803 {P:4508 T:4512 S:0} - append as #0
+00001804 {P:4508 T:4512 S:0} - wait until done
+00001805 {P:4508 T:0612 S:0} - quit the loop
+00001806 {P:4508 T:4512 S:0} MessageSender::~MessageSender
+00001807 {P:3828 T:3488 S:0} - find tag certificate
+00001808 {P:3828 T:3488 S:0} - not found
+00001809 {P:3828 T:3488 S:0} fs::LoadResourceToString [id=142,type='JSONDATA']
+00001810 {P:3828 T:3488 S:0} - size: 39435
+00001811 {P:3828 T:3488 S:0} Start app v1.19.3506 (win6.1.7601 64bit with ie9.0)
+00001812 {P:3828 T:3488 S:0} !>App::Create
+00001813 {P:3828 T:3488 S:0} SaveTimeStamp, 'appStart'/-1 -> 1383816338640
+00001814 {P:3828 T:3488 S:0} !>App::ParseCommandLine
+00001815 {P:3828 T:3488 S:0} - 8 args, options: '/CSD /L /TP /DLL OICB4D5.tmp '
+00001816 {P:3828 T:3488 S:0} !<App::ParseCommandLine
+00001817 {P:3828 T:3488 S:0} !>App::DoCrashSend [i=1]
+00001818 {P:3828 T:3488 S:0} !>fs::DownloadBunch [N=1]
+00001819 {P:3828 T:4996 S:0} !>fs::doDownloadFile [url='http://crashportal.avg.com/excpre.php', to.f=0, ui=0, len(post)=904]
+00001820 {P:3828 T:4996 S:0} !>fs::OpenInetRequestWithStatusCheck [url='http://crashportal.avg.com/excpre.php',len(post)=904,head=0]
+00001821 {P:3828 T:4996 S:0} !>fs::SendInetRequestWithStatusCheck [hReq=0x00CC000C]
+00001822 {P:3828 T:4228 S:0} - sent 904/904 bytes
+00001823 {P:3828 T:4996 S:0} !<fs::SendInetRequestWithStatusCheck
+00001824 {P:3828 T:4996 S:0} - part length: 2 bytes
+00001825 {P:3828 T:4996 S:0} - content length: 2 bytes
+00001826 {P:3828 T:4996 S:0} !<fs::OpenInetRequestWithStatusCheck
+00001827 {P:3828 T:4996 S:0} - inet read 2 bytes by 1 portions
+00001828 {P:3828 T:4996 S:0} !<fs::doDownloadFile
+00001829 {P:3828 T:3488 S:0} !<fs::DownloadBunch
+00001830 {P:3828 T:3488 S:0} - send MINI dump.
+00001831 {P:3828 T:3488 S:0} !>fs::DownloadBunch [N=1]
+00001832 {P:3828 T:5092 S:0} !>fs::doDownloadFile [url='http://crashportal.avg.com/uploader_epa.php', to.f=0, ui=0, len(post)=831312]
+00001833 {P:3828 T:5092 S:0} !>fs::OpenInetRequestWithStatusCheck [url='http://crashportal.avg.com/uploader_epa.php',len(post)=831312,head=0]
+00001834 {P:3828 T:5092 S:0} !>fs::SendInetRequestWithStatusCheck [hReq=0x00CC000C]
+00001835 {P:3828 T:0280 S:0} - sent 8096/831312 bytes
+00001836 {P:3828 T:0280 S:0} - sent 16192/831312 bytes
+00001837 {P:3828 T:0280 S:0} - sent 24288/831312 bytes
+00001838 {P:3828 T:0280 S:0} - sent 32384/831312 bytes
+00001839 {P:3828 T:0280 S:0} - sent 40480/831312 bytes
+00001840 {P:3828 T:0280 S:0} - sent 48576/831312 bytes
+00001841 {P:3828 T:0280 S:0} - sent 56672/831312 bytes
+00001842 {P:3828 T:0280 S:0} - sent 64768/831312 bytes
+00001843 {P:3828 T:0280 S:0} - sent 72864/831312 bytes
+00001844 {P:3828 T:0280 S:0} - sent 80960/831312 bytes
+00001845 {P:3828 T:0280 S:0} - sent 89056/831312 bytes
+00001846 {P:3828 T:0280 S:0} - sent 97152/831312 bytes
+00001847 {P:3828 T:0280 S:0} - sent 105248/831312 bytes
+00001848 {P:3828 T:0280 S:0} - sent 113344/831312 bytes
+00001849 {P:3828 T:0280 S:0} - sent 121440/831312 bytes
+00001850 {P:3828 T:0280 S:0} - sent 129536/831312 bytes
+00001851 {P:3828 T:0280 S:0} - sent 137632/831312 bytes
+00001852 {P:3828 T:0280 S:0} - sent 145728/831312 bytes
+00001853 {P:3828 T:0280 S:0} - sent 153824/831312 bytes
+00001854 {P:3828 T:0280 S:0} - sent 161920/831312 bytes
+00001855 {P:3828 T:0280 S:0} - sent 170016/831312 bytes
+00001856 {P:3828 T:0280 S:0} - sent 178112/831312 bytes
+00001857 {P:3828 T:0280 S:0} - sent 186208/831312 bytes
+00001858 {P:3828 T:0280 S:0} - sent 194304/831312 bytes
+00001859 {P:3828 T:0280 S:0} - sent 202400/831312 bytes
+00001860 {P:3828 T:0280 S:0} - sent 210496/831312 bytes
+00001861 {P:3828 T:0280 S:0} - sent 218592/831312 bytes
+00001862 {P:3828 T:0280 S:0} - sent 226688/831312 bytes
+00001863 {P:3828 T:0280 S:0} - sent 234784/831312 bytes
+00001864 {P:3828 T:0280 S:0} - sent 242880/831312 bytes
+00001865 {P:3828 T:0280 S:0} - sent 250976/831312 bytes
+00001866 {P:3828 T:0280 S:0} - sent 259072/831312 bytes
+00001867 {P:3828 T:0280 S:0} - sent 267168/831312 bytes
+00001868 {P:3828 T:0280 S:0} - sent 275264/831312 bytes
+00001869 {P:3828 T:0280 S:0} - sent 283360/831312 bytes
+00001870 {P:3828 T:0280 S:0} - sent 291456/831312 bytes
+00001871 {P:3828 T:0280 S:0} - sent 299552/831312 bytes
+00001872 {P:3828 T:0280 S:0} - sent 307648/831312 bytes
+00001873 {P:3828 T:0280 S:0} - sent 315744/831312 bytes
+00001874 {P:3828 T:0280 S:0} - sent 323840/831312 bytes
+00001875 {P:3828 T:0280 S:0} - sent 331936/831312 bytes
+00001876 {P:3828 T:0280 S:0} - sent 340032/831312 bytes
+00001877 {P:3828 T:0280 S:0} - sent 348128/831312 bytes
+00001878 {P:3828 T:0280 S:0} - sent 356224/831312 bytes
+00001879 {P:3828 T:0280 S:0} - sent 364320/831312 bytes
+00001880 {P:3828 T:0280 S:0} - sent 372416/831312 bytes
+00001881 {P:3828 T:0280 S:0} - sent 380512/831312 bytes
+00001882 {P:3828 T:0280 S:0} - sent 388608/831312 bytes
+00001883 {P:3828 T:0280 S:0} - sent 396704/831312 bytes
+00001884 {P:3828 T:0280 S:0} - sent 404800/831312 bytes
+00001885 {P:3828 T:0280 S:0} - sent 412896/831312 bytes
+00001886 {P:3828 T:0280 S:0} - sent 420992/831312 bytes
+00001887 {P:3828 T:0280 S:0} - sent 429088/831312 bytes
+00001888 {P:3828 T:0280 S:0} - sent 437184/831312 bytes
+00001889 {P:3828 T:0280 S:0} - sent 445280/831312 bytes
+00001890 {P:3828 T:0280 S:0} - sent 453376/831312 bytes
+00001891 {P:3828 T:0280 S:0} - sent 461472/831312 bytes
+00001892 {P:3828 T:0280 S:0} - sent 469568/831312 bytes
+00001893 {P:3828 T:0280 S:0} - sent 477664/831312 bytes
+00001894 {P:3828 T:0280 S:0} - sent 485760/831312 bytes
+00001895 {P:3828 T:0280 S:0} - sent 493856/831312 bytes
+00001896 {P:3828 T:0280 S:0} - sent 501952/831312 bytes
+00001897 {P:3828 T:0280 S:0} - sent 510048/831312 bytes
+00001898 {P:3828 T:0280 S:0} - sent 518144/831312 bytes
+00001899 {P:3828 T:0280 S:0} - sent 526240/831312 bytes
+00001900 {P:3828 T:0280 S:0} - sent 534336/831312 bytes
+00001901 {P:3828 T:0280 S:0} - sent 542432/831312 bytes
+00001902 {P:3828 T:0280 S:0} - sent 550528/831312 bytes
+00001903 {P:3828 T:0280 S:0} - sent 558624/831312 bytes
+00001904 {P:3828 T:0280 S:0} - sent 566720/831312 bytes
+00001905 {P:3828 T:0280 S:0} - sent 574816/831312 bytes
+00001906 {P:3828 T:0280 S:0} - sent 582912/831312 bytes
+00001907 {P:3828 T:0280 S:0} - sent 591008/831312 bytes
+00001908 {P:3828 T:0280 S:0} - sent 599104/831312 bytes
+00001909 {P:3828 T:0280 S:0} - sent 607200/831312 bytes
+00001910 {P:3828 T:0280 S:0} - sent 615296/831312 bytes
+00001911 {P:3828 T:0280 S:0} - sent 623392/831312 bytes
+00001912 {P:3828 T:0280 S:0} - sent 631488/831312 bytes
+00001913 {P:3828 T:0280 S:0} - sent 639584/831312 bytes
+00001914 {P:3828 T:0280 S:0} - sent 647680/831312 bytes
+00001915 {P:3828 T:0280 S:0} - sent 655776/831312 bytes
+00001916 {P:3828 T:0280 S:0} - sent 663872/831312 bytes
+00001917 {P:3828 T:0280 S:0} - sent 671968/831312 bytes
+00001918 {P:3828 T:0280 S:0} - sent 680064/831312 bytes
+00001919 {P:3828 T:0280 S:0} - sent 688160/831312 bytes
+00001920 {P:3828 T:0280 S:0} - sent 696256/831312 bytes
+00001921 {P:3828 T:0280 S:0} - sent 704352/831312 bytes
+00001922 {P:3828 T:0280 S:0} - sent 712448/831312 bytes
+00001923 {P:3828 T:0280 S:0} - sent 720544/831312 bytes
+00001924 {P:3828 T:0280 S:0} - sent 728640/831312 bytes
+00001925 {P:3828 T:0280 S:0} - sent 736736/831312 bytes
+00001926 {P:3828 T:0280 S:0} - sent 744832/831312 bytes
+00001927 {P:3828 T:0280 S:0} - sent 752928/831312 bytes
+00001928 {P:3828 T:0280 S:0} - sent 761024/831312 bytes
+00001929 {P:3828 T:0280 S:0} - sent 769120/831312 bytes
+00001930 {P:3828 T:0280 S:0} - sent 777216/831312 bytes
+00001931 {P:3828 T:0280 S:0} - sent 785312/831312 bytes
+00001932 {P:3828 T:0280 S:0} - sent 793408/831312 bytes
+00001933 {P:3828 T:0280 S:0} - sent 801504/831312 bytes
+00001934 {P:3828 T:0280 S:0} - sent 809600/831312 bytes
+00001935 {P:3828 T:0280 S:0} - sent 817696/831312 bytes
+00001936 {P:3828 T:0280 S:0} - sent 825792/831312 bytes
+00001937 {P:3828 T:0280 S:0} - sent 831312/831312 bytes
+00001938 {P:3828 T:5092 S:0} !<fs::SendInetRequestWithStatusCheck
+00001939 {P:3828 T:5092 S:0} - part length: 115 bytes
+00001940 {P:3828 T:5092 S:0} - content length: 115 bytes
+00001941 {P:3828 T:5092 S:0} !<fs::OpenInetRequestWithStatusCheck
+00001942 {P:3828 T:5092 S:0} - inet read 115 bytes by 1 portions
+00001943 {P:3828 T:5092 S:0} !<fs::doDownloadFile
+00001944 {P:3828 T:3488 S:0} !<fs::DownloadBunch
+00001945 {P:3828 T:3488 S:0} !<App::DoCrashSend
+00001946 {P:3828 T:3488 S:0} !<App::Create
+00001947 {P:3828 T:3488 S:0} !>App::Destroy [proc-type=18]
+00001948 {P:3828 T:3488 S:0} SaveTimeStamp, 'showEnd'/-1 -> 1383816349061
+00001949 {P:3828 T:3488 S:0} SaveTimeStamp, 'appEnd'/-1 -> 1383816349061
+00001950 {P:3828 T:3488 S:0} !>fs::ClearTemp
+00001951 {P:3828 T:3488 S:0} - remove 0/0 files
+00001952 {P:3828 T:3488 S:0} !<fs::ClearTemp
+00001953 {P:3828 T:3488 S:0} !<App::Destroy
+00001954 {P:3828 T:3488 S:0} Finish app
+00001955 {P:3828 T:3488 S:0} MessageSender::FinishAndWaitUntilDone
+00001956 {P:3828 T:3488 S:0} - wait until done
+00001957 {P:3828 T:5080 S:0} - quit the loop
+00001958 {P:3828 T:3488 S:0} MessageSender::~MessageSender
