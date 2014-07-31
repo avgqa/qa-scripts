@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings>
+	<aot>false</aot>
+	<authentication>ntlm</authentication>
+	<autologin>true</autologin>
+	<encryption>optional</encryption>
+	<installupdates>no</installupdates>
+	<language>en</language>
+	<last_address>jabber.eleks.com</last_address>
+	<last_autoupdate>0</last_autoupdate>
+	<last_password></last_password>
+	<last_password_remember>false</last_password_remember>
+	<lastheight>560</lastheight>
+	<lastposx>400</lastposx>
+	<lastposy>20</lastposy>
+	<lastwidth>330</lastwidth>
+	<serveraddress></serveraddress>
+	<serverport></serverport>
+	<softwaretrack>stable</softwaretrack>
+	<welcomescreen>no</welcomescreen>
+	<welcomesettings>true</welcomesettings>
+</settings>

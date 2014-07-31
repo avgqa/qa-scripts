@@ -1,0 +1,9 @@
+_DetectCookies
+Y
+office.microsoft.com/
+1024
+490043520
+31079380
+280865563
+30344723
+*
