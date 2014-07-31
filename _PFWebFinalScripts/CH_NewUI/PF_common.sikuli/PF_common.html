@@ -1,0 +1,1201 @@
+
+<html>
+   <head>
+      <style type="text/css">
+         .sikuli-code {
+            font-size: 20px;
+            font-family: "Osaka-mono", Monospace;
+            line-height: 1.5em;
+            display:table-cell;
+            white-space: pre-wrap;       /* css-3 */
+            white-space: -moz-pre-wrap !important;  /* Mozilla, since 1999 */
+            white-space: -pre-wrap;      /* Opera 4-6 */
+            white-space: -o-pre-wrap;    /* Opera 7 */
+            word-wrap: break-word;       /* Internet Explorer 5.5+ */
+            width: 99%;   /* remove horizontal scroll-bar when viewing in IE7 */
+         }
+         .sikuli-code img {
+            vertical-align: middle;
+            margin: 2px;
+            border: 1px solid #ccc;
+            padding: 2px;
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+            -moz-box-shadow: 1px 1px 1px gray;
+            -webkit-box-shadow: 1px 1px 2px gray;
+         }
+         .kw {
+            color: blue;
+         }
+         .skw {
+            color: rgb(63, 127, 127);
+         }
+
+         .str {
+            color: rgb(128, 0, 0);
+         }
+
+         .dig {
+            color: rgb(128, 64, 0);
+         }
+
+         .cmt {
+            color: rgb(200, 0, 200);
+         }
+
+         h2 {
+            display: inline;
+            font-weight: normal;
+         }
+
+         .info {
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+            display: none;
+         }
+
+         a {
+            color: #9D2900;
+         }
+
+         body {
+            font-family: "Trebuchet MS", Arial, Sans-Serif;
+         }
+
+      </style>
+   </head>
+<body>
+<div class="info">
+<h2>PF_common.sikuli\PF_common.sikuli</h2> <a href="PF_common.sikuli\PF_common.zip">(Download this script)</a>
+</div>
+<pre class="sikuli-code">
+<span class="cmt">#4/11/2014 --- Kathy: changed image to smaller one in close_pf_tabs, to match PF family tab.
+</span><span class="cmt">#4/15/2014 --- Kathy: added code in load browser, make sure browser is open to prevent typing link in other application.
+</span><span class="cmt">#4/16/2014 --- Kathy: added lines in ClearBrowsingData() to return if history data is cleared, and verify 
+</span>                <span class="cmt">#history data is cleared after the clear action.
+</span><span class="cmt">#5/1/2014 --- Kathy: change load browser, include url in the browser open command line to avoid install link showing incorretly
+</span>              <span class="cmt">#also kept the old load browser for the link has : in it which won't wrok in command line if url has :
+</span>              <span class="cmt">#the old load browser functin is used by ClearBrowsingData, disable_autofill, etc.
+</span>
+<span class="cmt">#05/02/2014 -- Added create failed logs folder in create function, added copy failed log folder to _rootDir failed_logs folder                      
+</span><span class="cmt">#05/22/2014 -- David chanegd Locate FB, TW, Tracking, LK, Google sections; changed FB login, GL login, LK login
+</span><span class="cmt">#05/23/2014 -- David created twitter login function, edited locate TW functions; added bigger simularity into verify function
+</span><span class="cmt">#07/04/2014 -- Michael: fixed ClearBrowsingData, new InstallExtension, fixed Facebook and Google login
+</span><span class="cmt">#07/07/2014 -- Michael: Fixed install extension
+</span>
+<span class="kw">from</span> __future__ <span class="kw">import</span> with_statement
+<span class="kw">import</span> ConfigParser
+<span class="kw">import</span> logging
+<span class="kw">import</span> shutil
+<span class="kw">from</span> sikuli <span class="kw">import</span> *
+<span class="kw">import</span> os, re
+<span class="kw">from</span> datetime <span class="kw">import</span> datetime
+<span class="kw">import</span> time
+<span class="kw">from</span> random <span class="kw">import</span> randint
+<span class="cmt">############## Below is Ron's code, please don't touch #################
+</span><span class="cmt">#This is the common script for Chrome
+</span>_scriptName = <span class="str">"PF_common.sikuli"</span>
+
+_saveLogToRW = False
+_useAutoUser = False
+
+_log_root = <span class="str">"W:\\Logs\\"</span>
+
+<span class="kw">if</span> len(sys.argv) &gt; <span class="dig">1</span> <span class="kw">and</span> sys.argv[<span class="dig">1</span>] == <span class="str">"logrw"</span>:
+    _useAutoUser = True
+    _saveLogToRW = True
+
+<span class="kw">print</span> <span class="str">"_saveLogToRW: "</span>, _saveLogToRW
+
+<span class="kw">if</span> len(sys.argv) &gt; <span class="dig">1</span> <span class="kw">and</span> sys.argv[<span class="dig">1</span>] == <span class="str">"autoUser"</span>:
+    _useAutoUser = True
+
+<span class="kw">print</span> <span class="str">"_useAutoUser: "</span>, _useAutoUser
+<span class="cmt">############## Above is Ron's code, please don't touch #################
+</span>
+<span class="cmt">#_email = _config.get('Test_account', 'email1') 
+</span><span class="cmt">#_password = _config.get('Test_account', 'pass1') 
+</span>
+_email=<span class="str">"michael.scott.avg@gmail.com"</span>
+<span class="cmt">#_email="tester1avg@gmail.com"
+</span>
+<span class="cmt">#_password="avg123avg"
+</span><span class="cmt">#_email="michael.scott.avg@gmail.com"
+</span>_password=<span class="str">"US!pf.avg"</span>
+
+<span class="cmt">############## Below is Ron's code, please don't touch #################
+</span><span class="kw">if</span> _useAutoUser:
+    <span class="cmt"># when a Driver launches the TC's always use mzhang account.  
+</span>    _email = <span class="str">"mzhang0170@gmail.com"</span>
+    _password = <span class="str">"zhang0170"</span>
+<span class="cmt">############## Above is Ron's code, please don't touch #################
+</span>
+_last_modifed=<span class="str">"7.21.2014 uploaded by kathy"</span>
+_passed_link = <img src="dl.dropboxusercontent.com/u/40284694/passed.png" />
+_failed_link =<img src="dl.dropboxusercontent.com/u/40284694/failed.png" />
+_chrome_appx86=<span class="str">"C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe"</span>
+_chrome_app=<span class="str">"C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"</span>
+_install_link = <span class="str">"https://www.privacyfix.com/start/install"</span>
+_PF_link=<span class="str">"privacyfix.com/start/"</span>
+_reset_url=<span class="str">"http://privacyfix.com/start/reset"</span>
+_rootDir = os.path.dirname(sys.argv[<span class="dig">0</span>])
+<span class="kw">print</span> <span class="str">"_rootDir is: "</span> + _rootDir
+
+<span class="cmt">#_test_suite_log="W:\\privacy-fix\\CH_test_setup_0502.html"
+</span><span class="cmt">#_test_suite_log=_rootDir + "\\test_suite_log.html"
+</span><span class="cmt">#print "_test_suite_log is: " + _test_suite_log
+</span>
+_ch1=(<img src="1387227872882.png" />)
+_ch2=(<img src="1387230266787.png" />)
+_PF_logo=(<img src="1394850440234.png" />)
+
+_PF_logo1=(<img src="1394848892120.png" />)
+
+
+PF_icon=(Pattern(<img src="1386656905238.png" />).similar(<span class="dig">0.90</span>))
+PF_icon_green=(Pattern(<img src="1394609482119.png" />).similar(<span class="dig">0.90</span>))
+PF_icon_orange=(Pattern(<img src="1394609529596.png" />).similar(<span class="dig">0.90</span>))
+Page_not_ready=<img src="1400659899854.png" />
+
+
+_rootDir = os.path.dirname(sys.argv[<span class="dig">0</span>].replace(<span class="str">"/"</span>, <span class="str">"\\"</span>))
+
+
+
+<span class="kw">if</span> <span class="str">".sikuli"</span> <span class="kw">in</span> os.path.basename(_rootDir):
+
+    _rootDir = os.path.dirname(_rootDir)
+_rootDir = _rootDir + <span class="str">"\\"</span>
+<span class="cmt">#_rootDir = "W:\\scripts\\web_app\\chrome\\"
+</span><span class="cmt">#_scriptName = 
+</span>_thisScript = _rootDir + _scriptName
+<span class="kw">print</span> <span class="str">"_thisScript is:"</span> +_thisScript
+<span class="kw">print</span> <span class="str">"_rootDir: "</span>, _rootDir
+_test_suite_log=_rootDir + <span class="str">"\\test_suite_log.html"</span>
+<span class="kw">print</span> <span class="str">"_test_suite_log is: "</span> + _test_suite_log
+
+_commonDashDir = _thisScript + <span class="str">"\\config_dash\\"</span>
+_dirMap = {<span class="str">"dir"</span>:_commonDashDir}
+_config_file= _commonDashDir + <span class="str">"config.txt"</span>
+
+
+
+<span class="kw">if</span> os.path.isfile(_chrome_appx86):
+    <span class="cmt">#check for x86 path (x64 bit) 
+</span>    _chrome_app = _chrome_appx86
+
+_chrome_app = _chrome_app + <span class="str">" --start-maximized"</span>
+
+_config=ConfigParser.ConfigParser(_dirMap)
+_config.read(_config_file)
+FB_section_img=_config.get(<span class="str">'Facebook_Login'</span>, <span class="str">"FB_section_img"</span>)
+
+<span class="cmt">#Clear chrome browser history Data finction. Clear a browser history through browsers hot keys
+</span><span class="cmt">#last update 0304_2014 by Kathy
+</span><span class="kw">def</span> ClearBrowsingData(logfile):
+    reg1=Region(<span class="dig">146</span>,<span class="dig">108</span>,<span class="dig">298</span>,<span class="dig">57</span>)
+    reg2=Region(<span class="dig">472</span>,<span class="dig">217</span>,<span class="dig">493</span>,<span class="dig">479</span>)
+
+    time=_config.get(<span class="str">'Delete_history'</span>, <span class="str">'screen1'</span>)
+    begin=_config.get(<span class="str">'Delete_history'</span>, <span class="str">'screen2'</span>)
+    begin1=_config.get(<span class="str">'Delete_history'</span>, <span class="str">'screen3'</span>)
+    load_browser_with_url(logfile,<span class="str">"chrome://history"</span>)
+    <span class="kw">if</span> exists(<img src="1397592933995.png" />):
+        <span class="skw">find</span>(<img src="1397592933995.png" />).highlight(<span class="dig">1</span>)
+        <span class="kw">print</span> <span class="str">"history is already cleaned!"</span>
+        <span class="kw">return</span>
+
+    reg1.highlight(<span class="dig">1</span>)
+    clear_browsing_data=(<img src="common_clear_browsing_data.png" />)
+    wait_find_reg(reg1,clear_browsing_data)
+    reg1.<span class="skw">click</span>(clear_browsing_data)
+    <span class="skw">sleep</span>(<span class="dig">2</span>)
+    reg2.highlight(<span class="dig">1</span>)
+    clear_browsing_history=(Pattern(<img src="common_browsing_history.png" />).similar(<span class="dig">0.95</span>))
+    <span class="kw">if</span> reg2.exists(clear_browsing_history):<span class="skw">click</span>(clear_browsing_history);<span class="skw">sleep</span>(<span class="dig">1</span>)
+
+    download_history=(Pattern(<img src="common_clear_download_history.png" />).similar(<span class="dig">0.95</span>))
+    <span class="kw">if</span> reg2.exists(download_history):<span class="skw">click</span>(download_history);<span class="skw">sleep</span>(<span class="dig">1</span>)
+
+    clear_cookies=(Pattern(<img src="common_clear_cookies.png" />).similar(<span class="dig">0.90</span>))
+    <span class="kw">if</span> reg2.exists(clear_cookies):<span class="skw">click</span>(clear_cookies);<span class="skw">sleep</span>(<span class="dig">1</span>)
+
+    empty_cache=(Pattern(<img src="common_clear_cached_images.png" />).similar(<span class="dig">0.95</span>))
+    <span class="kw">if</span> reg2.exists(empty_cache):<span class="skw">click</span>(empty_cache);<span class="skw">sleep</span>(<span class="dig">1</span>)
+
+    clear_password=(Pattern(<img src="common_clear_password.png" />).similar(<span class="dig">0.95</span>))
+    <span class="kw">if</span> reg2.exists(clear_password):<span class="skw">click</span>(clear_password);<span class="skw">sleep</span>(<span class="dig">1</span>)
+
+    clear_autofill=(Pattern(<img src="common_clear_auto_file.png" />).similar(<span class="dig">0.95</span>))
+    <span class="kw">if</span> reg2.exists(clear_autofill):<span class="skw">click</span>(clear_autofill);<span class="skw">sleep</span>(<span class="dig">1</span>)
+
+    hosted_app_data=(Pattern(<img src="common_clear_hosted_app_data.png" />).similar(<span class="dig">0.97</span>))
+    <span class="kw">if</span> reg2.exists(hosted_app_data):<span class="skw">click</span>(hosted_app_data);<span class="skw">sleep</span>(<span class="dig">1</span>)
+
+    reg2.<span class="skw">click</span>(time)
+    <span class="skw">sleep</span>(<span class="dig">2</span>)
+    reg2.<span class="skw">click</span>(begin1)
+    <span class="skw">sleep</span>(<span class="dig">1</span>)
+    <span class="skw">type</span>(Key.TAB)
+    <span class="skw">sleep</span>(<span class="dig">1</span>)
+    <span class="skw">type</span>(Key.ENTER)
+    <span class="skw">sleep</span>(<span class="dig">2</span>)
+    load_browser_with_url(logfile,<span class="str">"chrome://history\n "</span>)
+    <span class="kw">if</span> exists (<img src="1397592933995.png" />):
+        <span class="kw">print</span> <span class="str">"Chrome history enteries deleted!"</span>
+    <span class="skw">sleep</span>(<span class="dig">2</span>)
+    <span class="skw">type</span>(<span class="str">"q"</span>, Key.CTRL+Key.SHIFT)
+    load_browser_with_url(logfile,<span class="str">""</span>)
+
+<span class="cmt">#added at 03062014 by Kathy
+</span><span class="kw">def</span> reset_data(logfile):
+
+    load_browser_with_url(logfile,_reset_url)
+    <span class="skw">sleep</span>(<span class="dig">5</span>)
+
+    <span class="cmt">#if not exists(PF_icon):return
+</span>
+    wait_click(<img src="1390478039571-1.png" />)
+
+    <span class="skw">click</span>(<img src="1390478149468-1.png" />)
+    <span class="skw">sleep</span>(<span class="dig">2</span>)
+    <span class="skw">type</span>(<span class="str">"q"</span>, Key.CTRL+Key.SHIFT)
+    load_browser_with_url(logfile,_PF_link)
+
+    <span class="kw">if</span> exists(<img src="1390466175476-3.png" />):<span class="skw">click</span>(<img src="1390466175476-3.png" />)
+    <span class="skw">sleep</span>(<span class="dig">2</span>)
+
+
+<span class="kw">def</span> reset_account(logfile):
+    FacebookLogin(logfile)
+
+    load_browser_with_url(logfile,_reset_url)
+    <span class="skw">sleep</span>(<span class="dig">7</span>)
+
+    <span class="kw">if</span> <span class="kw">not</span> exists(PF_icon):<span class="kw">return</span>
+
+
+    wait_click(<img src="1390478039571.png" />)
+
+    <span class="skw">click</span>(<img src="1390478149468.png" />)
+
+    <span class="skw">click</span>(<img src="1390478078510.png" />)
+    <span class="skw">click</span>(<img src="1390478168609.png" />)
+    <span class="cmt">#wait_click("1390478291311.png")
+</span>    <span class="cmt">#sleep(2)
+</span>    <span class="cmt">#click("1390478307596.png")
+</span>    <span class="cmt">#sleep(2)
+</span>    <span class="cmt">#click("1390478321250.png")
+</span>    <span class="cmt">#sleep(2)
+</span>    load_browser_with_url(logfile,_PF_link)
+    <span class="kw">if</span> exists(<img src="1390466175476.png" />):<span class="skw">click</span>(<img src="1390466175476.png" />)
+    <span class="skw">sleep</span>(<span class="dig">2</span>)
+    <span class="skw">type</span>(<span class="str">"q"</span>, Key.CTRL+Key.SHIFT)
+    <span class="skw">sleep</span>(<span class="dig">2</span>)
+    load_browser_with_url(logfile,_PF_link)
+    <span class="skw">sleep</span>(<span class="dig">2</span>)
+
+<span class="cmt">#remove extension function.
+</span><span class="kw">def</span> RemoveExt(logfile):
+    <span class="kw">if</span> <span class="kw">not</span> exists(_ch1) <span class="kw">and</span> <span class="kw">not</span> exists(_ch2):
+        App.open(_chrome_app)
+        wait_find(_ch2)
+    <span class="cmt">#config=ConfigParser.ConfigParser()
+</span>    <span class="cmt">#config.read(config_file)
+</span>    PF_icon = _config.get(<span class="str">'Uninstall'</span>, <span class="str">"button1"</span>)
+    PF_icon_settings = _config.get(<span class="str">'Uninstall'</span>, <span class="str">"button2"</span>)
+    <span class="skw">sleep</span>(<span class="dig">3</span>)
+    <span class="kw">if</span> exists(PF_icon):
+        <span class="skw">type</span>(<span class="str">"t"</span>, KeyModifier.CTRL)
+        <span class="skw">rightClick</span>(PF_icon)
+        <span class="skw">sleep</span>(<span class="dig">1</span>)
+        <span class="skw">type</span>(<span class="str">"r"</span>)
+        <span class="skw">sleep</span>(<span class="dig">2</span>)
+        <span class="skw">type</span>(Key.LEFT)
+        <span class="skw">type</span>(Key.ENTER)
+        write_log(logfile,<span class="str">"\n&lt;p&gt;Extension was remowed&lt;/p&gt;\n"</span>)
+    <span class="kw">else</span>:
+        write_log(logfile, <span class="str">"PF already removed!"</span>)
+        <span class="kw">return</span>
+    write_log(logfile, <span class="str">"&lt;p&gt;extension removed successfully&lt;/p&gt;\n"</span>)
+
+<span class="cmt">#Install extension function. Take a install_link variable defined earlier and pass as argument
+</span><span class="kw">def</span> InstallExtension(logfile):
+    start_time=datetime.now()
+    disable_autofill(logfile)
+
+    Get_AVG_PF = (<img src="1404464088333.png" />)
+    Add = (<img src="1404464100931.png" />)
+
+    Arrow= (<img src="1389957193540.png" />)
+    Skip= (<img src="1389957226628.png" />)
+
+    reg2=Region(<span class="dig">23</span>,<span class="dig">0</span>,<span class="dig">1417</span>,<span class="dig">215</span>)
+    pfTab=(<img src="1400745489468.png" />)
+
+    <span class="kw">if</span> reg2.exists(pfTab):
+        <span class="skw">click</span> (pfTab)
+        <span class="kw">print</span> <span class="str">"PF is already installed!"</span>
+        write_log_with_screenshot(logfile, <span class="str">"PF is already installed!"</span>)
+        <span class="kw">return</span>
+
+
+    load_browser_with_url(logfile,<span class="str">"about:blank"</span>,)
+    <span class="skw">sleep</span>(<span class="dig">3</span>)
+    <span class="kw">if</span> exists(Pattern(PF_icon).similar(<span class="dig">0.90</span>) <span class="kw">or</span> PF_icon_green <span class="kw">or</span> PF_icon_orange):
+        <span class="skw">find</span>(PF_icon).highlight(<span class="dig">1</span>)
+        <span class="kw">print</span> <span class="str">"PF is already installed!"</span>
+        write_log_with_screenshot(logfile, <span class="str">"PF is already installed!"</span>)
+        <span class="kw">return</span>
+    load_browser_with_url(logfile,_install_link)
+    verify(logfile,Get_AVG_PF)
+    <span class="skw">click</span>(Get_AVG_PF)
+    <span class="skw">wait</span>(<span class="dig">2</span>)
+    <span class="skw">click</span>(Add)
+
+
+    <span class="skw">wait</span>(<span class="dig">5</span>)
+    i=<span class="dig">0</span>
+    <span class="kw">while</span> (i &lt; <span class="dig">3</span>):
+        <span class="kw">if</span> exists(Arrow):<span class="skw">click</span>(Arrow)
+        <span class="skw">wait</span>(<span class="dig">2</span>)
+        i+=<span class="dig">1</span>
+        <span class="kw">print</span> <span class="str">"i is:"</span> + str(i)
+
+
+
+    <span class="skw">sleep</span>(<span class="dig">5</span>)
+    <span class="skw">type</span>(Key.ESC)
+
+    <span class="skw">sleep</span>(<span class="dig">1</span>)
+    <span class="skw">type</span>(<span class="str">"w"</span>, Key.CTRL)
+    <span class="skw">sleep</span>(<span class="dig">1</span>)
+    ClearBrowsingData(logfile)
+    write_log(logfile, <span class="str">"History data cleared!"</span>)
+    write_log_with_screenshot(logfile, <span class="str">"Extension installed successfully"</span>)
+    write_log(logfile, <span class="str">"Total time for installation is: "</span> + str(datetime.now()-start_time))
+
+<span class="kw">def</span> locate_linkedIn_section(logfile):
+
+    linkedIn_section_img =_config.get(<span class="str">'Google_Login'</span>, <span class="str">'linkedIn_section_img'</span>)
+    linkedIn_section_img1=(<img src="1400741734805.png" />)
+    not_logged=(<img src="1400742418324.png" />)
+    <span class="kw">if</span> <span class="kw">not</span> exists(linkedIn_section_img):
+        load_browser_with_url(logfile,_PF_link)
+        wait_find(Page_not_ready)
+        <span class="skw">sleep</span>(<span class="dig">5</span>)
+        <span class="skw">type</span>(Key.END)
+        <span class="skw">sleep</span>(<span class="dig">2</span>)
+    <span class="kw">if</span> exists(Pattern(not_logged).similar(<span class="dig">0.98</span>)):
+        write_log(logfile,<span class="str">"Following expected image was found:\n"</span>)
+        write_img_log(logfile,str(not_logged))
+        write_log(logfile,<span class="str">"You are not logged to LinkedIn"</span>)
+        <span class="kw">return</span> <span class="dig">0</span>
+    <span class="kw">else</span>:
+        <span class="skw">sleep</span>(<span class="dig">2</span>)
+        locate_item_page_by_page(logfile,linkedIn_section_img)
+        locate_item_line_by_line(logfile,linkedIn_section_img1, <span class="dig">0.95</span>)
+        mouseMove(Location(<span class="dig">1000</span>,<span class="dig">100</span>))
+        <span class="kw">return</span> <span class="dig">1</span>
+
+<span class="cmt">#find google section image, an Tracking section image
+</span><span class="cmt">#This is to make sure the whole google section is completely showing on screen
+</span><span class="kw">def</span> locate_google_section(logfile):
+    google_section_img=_config.get(<span class="str">'Google_Login'</span>, <span class="str">'google_section_img'</span>)
+    tracking_section_img=_config.get(<span class="str">'Google_Login'</span>, <span class="str">'tracking_section_img'</span>)
+    <span class="skw">type</span>(Key.HOME)
+    <span class="skw">sleep</span>(<span class="dig">2</span>)
+    <span class="kw">if</span> <span class="kw">not</span> exists(google_section_img):
+        load_browser_with_url(logfile,_PF_link)
+        wait_find(Page_not_ready)
+        <span class="skw">sleep</span>(<span class="dig">5</span>)
+    <span class="skw">type</span>(Key.DOWN+Key.DOWN+Key.DOWN+Key.DOWN+Key.DOWN)
+    mouseMove(Location(<span class="dig">1000</span>,<span class="dig">120</span>))
+
+<span class="kw">def</span> locate_tracking_section(logfile):    <span class="cmt">#locate both tracking and websites section together</span>
+
+    <span class="kw">if</span> <span class="kw">not</span> exists(Page_not_ready):
+        load_browser_with_url(logfile,_PF_link)
+        wait_find(Page_not_ready)
+        <span class="skw">sleep</span>(<span class="dig">5</span>)
+    mouseMove(Location(<span class="dig">1000</span>,<span class="dig">120</span>))
+
+
+<span class="kw">def</span> locate_facebook_section(logfile):
+
+    fb_logged_in=(<img src="1400660343807.png" />)
+    <span class="kw">if</span> <span class="kw">not</span> exists(fb_logged_in):
+        load_browser_with_url(logfile,_PF_link)
+        <span class="skw">sleep</span>(<span class="dig">5</span>)
+        wait_find(Page_not_ready)
+    i=<span class="dig">0</span>
+    <span class="kw">while</span> (<span class="kw">not</span> exists(fb_logged_in) <span class="kw">and</span> i&lt;<span class="dig">2</span>):
+        <span class="skw">type</span>(Key.PAGE_DOWN)
+        mouseMove(Location(<span class="dig">1000</span>,<span class="dig">110</span>))
+        i+=<span class="dig">1</span>
+        <span class="skw">sleep</span>(<span class="dig">3</span>)
+    <span class="kw">if</span> (<span class="kw">not</span> exists (fb_logged_in)):
+        <span class="skw">type</span>(Key.HOME)
+        <span class="kw">return</span> <span class="dig">0</span>
+    <span class="kw">else</span>:
+        bottom=(<img src="1400745371262.png" />)
+        locate_item_line_by_line(logfile,bottom, <span class="dig">0.98</span>)
+        <span class="kw">return</span> <span class="dig">1</span>
+
+<span class="kw">def</span> locate_twitter_section(logfile):
+    TW_logged_in=(Pattern(<img src="1400763752222.png" />).similar(<span class="dig">0.91</span>))
+    <span class="kw">if</span> <span class="kw">not</span> exists(TW_logged_in):
+        load_browser_with_url(logfile,_PF_link)
+        <span class="skw">sleep</span>(<span class="dig">5</span>)
+        wait_find(Page_not_ready)
+    <span class="skw">type</span>(Key.HOME)
+    mouseMove(Location(<span class="dig">1000</span>,<span class="dig">110</span>))
+    <span class="skw">type</span>(Key.PAGE_DOWN)
+    <span class="skw">sleep</span>(<span class="dig">2</span>)
+    <span class="kw">if</span> exists(Pattern(<img src="1400764599480.png" />).similar(<span class="dig">0.90</span>)):
+        <span class="kw">return</span> <span class="dig">0</span>
+    <span class="kw">else</span>:
+        <span class="kw">return</span> <span class="dig">1</span>
+
+<span class="kw">def</span> Twitter_login(logfile):
+    start_time=datetime.now()
+    write_log(logfile, <span class="str">"detecting browser..."</span>)
+    loginbutton=(<img src="1400828304260.png" />)
+    loggedin=(<img src="1400829473286.png" />)
+    TW_logged_in=(<img src="1400829560638.png" />)
+    twitter_page=(<img src="1400829906443.png" />)
+    <span class="kw">if</span> locate_twitter_section(logfile)==<span class="dig">1</span>:
+        mouseMove(Location(<span class="dig">1000</span>,<span class="dig">120</span>))
+        write_log_with_screenshot(logfile, <span class="str">"Twitter is already logged in!"</span>)
+        write_log(logfile, <span class="str">"total time detect logged in is: "</span> + str(datetime.now()-start_time))
+        <span class="kw">return</span>
+    locate_item_page_by_page(logfile,loginbutton, <span class="dig">0.95</span>)
+    <span class="skw">click</span>(Pattern(loginbutton).similar(<span class="dig">0.95</span>).targetOffset(<span class="dig">224</span>,<span class="dig">0</span>))
+    wait_find(twitter_page)
+    <span class="skw">type</span>(<span class="str">"mscott0380"</span>)
+    <span class="skw">sleep</span>(<span class="dig">1</span>)
+    <span class="skw">type</span>(Key.TAB)
+    <span class="skw">sleep</span>(<span class="dig">1</span>)
+    <span class="skw">type</span>(<span class="str">"US!pf.avg"</span>)
+    <span class="skw">sleep</span>(<span class="dig">1</span>)
+    <span class="skw">type</span>(Key.ENTER)
+    verify(logfile,loggedin)
+    <span class="skw">type</span>(<span class="str">'w'</span>, Key.CTRL)
+    wait_find(TW_logged_in)
+    locate_twitter_section(logfile)
+    mouseMove(Location(<span class="dig">1000</span>,<span class="dig">120</span>))
+    write_log_with_screenshot(logfile, <span class="str">"Successfully logged in into Twitter"</span>)
+    write_log(logfile, <span class="str">"total time detect logged in is: "</span> + str(datetime.now()-start_time))
+
+<span class="cmt">#Login to google account
+</span><span class="kw">def</span> GoogleLogin(logfile):
+    start_time=datetime.now()
+
+    write_log(logfile, <span class="str">"detecting browser..."</span>)
+    <span class="kw">if</span> <span class="kw">not</span> exists(_PF_logo):
+        load_browser_with_url(logfile,_PF_link)
+        wait_find(Page_not_ready)
+        <span class="kw">if</span> exists(<img src="1390466175476.png" />):<span class="skw">click</span>(<img src="1390466175476.png" />)
+        <span class="skw">sleep</span>(<span class="dig">5</span>)
+
+    write_log(logfile, <span class="str">"total time detecting browser is: "</span> + str(datetime.now()-start_time))
+    locate_google_section(logfile)
+
+    google_login=(Pattern(<img src="1404713461410.png" />).similar(<span class="dig">0.84</span>))
+
+    <span class="kw">if</span> exists(google_login):
+        <span class="cmt">#load_browser_with_url("https://accounts.google.com")
+</span>        <span class="cmt">#click(google_login)
+</span>        google_account_link=<span class="str">"https://accounts.google.com/Login?continue=https://history.google.com/history/settings%3Fhl%3Den&amp;hl=en"</span>
+        load_browser_with_url(logfile,google_account_link)
+        wait_find(<img src="1395097448887.png" />)
+        <span class="skw">sleep</span>(<span class="dig">2</span>)
+        <span class="kw">if</span> exists(Pattern(<img src="1400736781514.png" />).similar(<span class="dig">0.90</span>)):
+            <span class="skw">sleep</span>(<span class="dig">2</span>)
+            <span class="skw">type</span>(_email)
+            <span class="skw">sleep</span>(<span class="dig">1</span>)
+            <span class="skw">type</span>(Key.TAB)
+        <span class="skw">type</span>(_password)
+        <span class="skw">sleep</span>(<span class="dig">1</span>)
+        <span class="skw">type</span>(Key.ENTER)
+        <span class="skw">sleep</span>(<span class="dig">2</span>)
+        verify(logfile,<img src="1404475286567.png" />)
+
+        write_log(logfile, <span class="str">"logged into Google successfully\n"</span>)
+        write_log(logfile, <span class="str">"Total time for Google login is: "</span> + str(datetime.now()-start_time))
+        load_browser_with_url(logfile,_PF_link)
+        wait_find(Page_not_ready)
+        locate_google_section(logfile)
+        write_log(logfile,<span class="str">"logged into Google successfully\n"</span>)
+        mouseMove(Location(<span class="dig">1000</span>,<span class="dig">100</span>))
+
+    <span class="kw">else</span>:
+        write_log(logfile, <span class="str">"Already logged into Google!\n"</span>)
+        <span class="kw">print</span> <span class="str">"Already logged into Google!\n"</span>
+        write_log(logfile, <span class="str">"Total time for Google login is: "</span> + str(datetime.now()-start_time))
+        mouseMove(Location(<span class="dig">200</span>,<span class="dig">50</span>))
+
+<span class="cmt">#Logging to Facebook
+</span><span class="kw">def</span> FacebookLogin(logfile):
+
+    start_time=datetime.now()
+    FB_reg=Region(<span class="dig">0</span>,<span class="dig">0</span>,<span class="dig">300</span>,<span class="dig">300</span>)
+    Maybe_reg=Region(<span class="dig">720</span>,<span class="dig">450</span>,<span class="dig">720</span>,<span class="dig">450</span>)
+    FB_reg.highlight(<span class="dig">1</span>)
+    logged = _config.get(<span class="str">'Facebook_Login'</span>, <span class="str">"logged"</span>)
+    loginbutton = (<img src="1404474223554.png" />)
+    fb_logged_in_icon=_config.get(<span class="str">'Facebook_Login'</span>, <span class="str">"fb_logged_in_icon"</span>)
+    FB_section_img=_config.get(<span class="str">'Facebook_Login'</span>, <span class="str">"FB_section_img"</span>)
+    <span class="cmt">#locate_facebook_section(logfile)
+</span>    <span class="kw">if</span> locate_facebook_section(logfile)==<span class="dig">1</span>:
+        mouseMove(Location(<span class="dig">1000</span>,<span class="dig">120</span>))
+        write_log_with_screenshot(logfile, <span class="str">"Facebook is already logged in!"</span>)
+        write_log(logfile, <span class="str">"total time detect logged in is: "</span> + str(datetime.now()-start_time))
+        <span class="kw">return</span>
+    <span class="cmt">#if login button shown in facebook section, then login to facebook section
+</span>    fb_logo = _config.get(<span class="str">'Facebook_Login'</span>, <span class="str">"FB_logo"</span>)
+    cert_warning = _config.get(<span class="str">'Facebook_Login'</span>, <span class="str">"cert_warning"</span>)
+    proceed = _config.get(<span class="str">'Facebook_Login'</span>, <span class="str">"proceed"</span>)
+    locate_item_page_by_page(logfile,loginbutton)
+    <span class="skw">click</span>(Pattern(loginbutton).similar(<span class="dig">0.90</span>).targetOffset(<span class="dig">224</span>,<span class="dig">0</span>))
+    <span class="skw">sleep</span>(<span class="dig">2</span>)
+
+    ok_reg=Region(<span class="dig">700</span>,<span class="dig">450</span>,<span class="dig">300</span>,<span class="dig">300</span>)
+
+    ok_button=(<img src="1396524852014.png" />)
+    okay=(<img src="1396524883128.png" />)
+
+    <span class="kw">if</span> ok_reg.exists(ok_button):
+        <span class="skw">click</span>(ok_button)
+        wait_click(ok_button)
+    <span class="skw">sleep</span>(<span class="dig">2</span>)
+    <span class="kw">if</span> ok_reg.exists(okay):
+        <span class="skw">click</span>(okay)
+        wait_click(okay)
+    write_log(logfile, <span class="str">"total time after detect OK button is: "</span> + str(datetime.now()-start_time))
+    wait_find(fb_logo)
+    login_reg=Region(<span class="dig">514</span>,<span class="dig">264</span>,<span class="dig">312</span>,<span class="dig">145</span>)
+    login_reg.highlight(<span class="dig">1</span>)
+
+    <span class="kw">if</span> login_reg.exists(Pattern(<img src="1390183106564.png" />).similar(<span class="dig">0.90</span>)) <span class="kw">or</span> login_reg.exists(Pattern(<img src="1389809891723.png" />).similar(<span class="dig">0.90</span>)):
+        <span class="skw">sleep</span>(<span class="dig">2</span>)
+        <span class="skw">type</span>(_email)
+        <span class="skw">sleep</span>(<span class="dig">2</span>)
+        write_log_with_screenshot(logfile,<span class="str">"email entered"</span>)
+        <span class="skw">type</span>(Key.TAB)
+        <span class="skw">sleep</span>(<span class="dig">2</span>)
+    <span class="skw">type</span>(_password)
+    write_log_with_screenshot(logfile,<span class="str">"password entered"</span>)
+    <span class="skw">sleep</span>(<span class="dig">2</span>)
+    <span class="skw">type</span>(Key.ENTER)
+    <span class="skw">sleep</span>(<span class="dig">5</span>)
+    write_log_with_screenshot(logfile,<span class="str">"after login to facebook"</span>)
+    write_log(logfile, <span class="str">"total time detecting logged in is: "</span> + str(datetime.now()-start_time))
+
+    <span class="kw">if</span> ok_reg.exists(ok_button):
+        <span class="skw">click</span>(ok_button)
+        wait_click(ok_button)
+
+
+    verify(logfile,fb_logged_in_icon)
+    write_log_with_screenshot(logfile, <span class="str">"Logged into Facebook successfully!"</span>)
+    locate_item_line_by_line(logfile,<img src="1400745387897.png" />,<span class="dig">0.98</span>)
+
+    write_log(logfile, <span class="str">"Total Facebook login time is: "</span> + str(datetime.now()-start_time))
+    mouseMove(Location(<span class="dig">1000</span>,<span class="dig">100</span>))
+
+<span class="kw">def</span> LinkedInLogIn(logfile):
+
+    start_time=datetime.now()
+    logged_in_linkedIn = _config.get(<span class="str">'LinkedIn_check'</span>, <span class="str">'logged_in_linkedIn'</span>)
+    loginbutton = _config.get(<span class="str">'LinkedIn_check'</span>, <span class="str">'screen1'</span>)
+    linkedin_section_img=_config.get(<span class="str">'LinkedIn_check'</span>, <span class="str">'linkedin_section_img'</span>)
+    linkedIn_profile=_config.get(<span class="str">'LinkedIn_check'</span>, <span class="str">'linkedIn_profile'</span>)
+
+    <span class="cmt">#if profile image exists, it means linkedin is logged in already
+</span>    <span class="kw">if</span> locate_linkedIn_section(logfile)==<span class="dig">1</span>:
+        write_log_with_screenshot(logfile, <span class="str">"Already logged in LinkedIn!"</span>)
+        mouseMove(Location(<span class="dig">1000</span>,<span class="dig">100</span>))
+        <span class="kw">return</span>
+
+    verify(logfile, loginbutton)
+    <span class="skw">click</span> (Pattern(loginbutton).similar(<span class="dig">0.95</span>).targetOffset(<span class="dig">223</span>,<span class="dig">4</span>))
+    verify(logfile, <img src="1389206359172.png" />)
+
+    <span class="kw">if</span> exists(<img src="1387572272054.png" />):
+        <span class="skw">sleep</span>(<span class="dig">1</span>)
+
+        <span class="skw">type</span>(_email)
+        <span class="skw">sleep</span>(<span class="dig">1</span>)
+        <span class="skw">type</span>(Key.TAB)
+    <span class="skw">type</span>(_password)
+    <span class="skw">type</span>(Key.ENTER)
+    <span class="skw">sleep</span>(<span class="dig">5</span>)
+    verify(logfile,logged_in_linkedIn)
+    write_log_with_screenshot(logfile, <span class="str">"logged into LinkedIn successfully"</span>)
+    write_log(logfile, <span class="str">"LinkedIn login time is: "</span> + str(datetime.now()-start_time))
+    <span class="cmt">#close the logged in tab, suppose to close by itself. it's a bug right now, if fixed in the future, please delete this line
+</span>    <span class="skw">type</span>(<span class="str">'w'</span>, Key.CTRL)
+    <span class="skw">sleep</span>(<span class="dig">1</span>)
+    wait_find(linkedin_section_img)
+    write_log_with_screenshot(logfile, <span class="str">"Total LinkedIn login time is: "</span> + str(datetime.now()-start_time))
+
+<span class="kw">def</span> write_log(logfile,msg):
+    <span class="kw">with</span> open(logfile, <span class="str">'a+'</span>) <span class="kw">as</span> fo:
+        fo.write(<span class="str">"\n&lt;p&gt; "</span> + str(datetime.now())+ <span class="str">":   "</span> + msg + <span class="str">" &lt;/p&gt;\n"</span>)
+
+
+<span class="kw">def</span> write_log_with_screenshot(logfile,msg):
+    write_log(logfile,msg)
+    scr_shot=<span class="skw">capture</span>(<span class="dig">0</span>,<span class="dig">0</span>,<span class="dig">1440</span>,<span class="dig">900</span>)
+    write_screenshot_log(logfile,scr_shot)
+
+
+
+<span class="kw">def</span> write_screenshot_log(logfile, img):
+
+    <span class="kw">with</span> open(logfile, <span class="str">'a+'</span>) <span class="kw">as</span> fo:
+        <span class="cmt">#print "in screenshot def, Image path is: " + img        
+</span>        img_path,img_name=os.path.split(logfile)
+        cmd = <span class="str">"copy %s %s"</span> % (img, img_path)
+        os.system(cmd)
+        path1,img_name=os.path.split(str(img))
+
+        <span class="cmt">#print "Image path after copy is: " + img_name        
+</span>        msg = <span class="str">'&lt;p&gt;Screen shot during test is &lt;a href='</span> +img_name + <span class="str">'&gt;here&lt;/a&gt;&lt;/p&gt;'</span>
+        <span class="cmt">#print "Screenshot msg in screenshot log    is:     " + msg
+</span>        fo.write(msg)
+
+
+<span class="kw">def</span> cleanTestScript(testScript, removeSikExt = False):
+    <span class="kw">if</span> <span class="str">".py.sikuli"</span> <span class="kw">in</span> testScript:
+        testScript = testScript.replace(<span class="str">".py.sikuli"</span>, <span class="str">""</span>)
+
+    <span class="kw">if</span> <span class="str">".sikuli"</span> <span class="kw">in</span> testScript:
+        testScript = testScript.replace(<span class="str">".sikuli"</span>, <span class="str">""</span>)
+
+
+    <span class="kw">if</span> removeSikExt:
+        testScript = testScript.replace(<span class="str">".sikuli"</span>, <span class="str">""</span>)
+    <span class="kw">print</span>(testScript)
+    <span class="kw">return</span> testScript
+
+
+<span class="kw">def</span> create_log_folder(test_case_script_name, testCase):
+
+    <span class="cmt">#timeStamp = str(time.strftime("%H%M%S"))
+</span>    test_case_script_name = cleanTestScript(test_case_script_name)
+    <span class="kw">print</span>(test_case_script_name)
+    log_path = _rootDir +<span class="str">"Logs\\"</span> + test_case_script_name <span class="cmt">#+ "-"+timeStamp  </span>
+
+    <span class="cmt">##### Ron's code, don't touch #######
+</span>    <span class="kw">if</span> _saveLogToRW:
+        log_path = _log_root + cleanTestScript(testScript, True)
+    <span class="cmt">##### Ron's code, don't touch #######    
+</span>
+    suite_path=_rootDir +<span class="str">"Logs\\"</span>
+    Failed_log_foler=_rootDir + <span class="str">"Failed_Logs\\"</span>
+    log_file= log_path +<span class="str">"\\"</span> +str(testCase)+ <span class="str">"-log.html"</span>
+
+    <span class="kw">if</span> <span class="kw">not</span> os.path.exists(suite_path):
+        <span class="kw">try</span>:
+            <span class="kw">print</span> <span class="str">"before create logfile folder!"</span>
+            os.mkdir(suite_path)
+            <span class="kw">print</span> <span class="str">"log path created:  "</span> + suite_path
+
+        <span class="kw">except</span>:
+            <span class="kw">pass</span>
+
+    <span class="kw">if</span> <span class="kw">not</span> os.path.exists(Failed_log_foler):
+        <span class="kw">try</span>:
+            <span class="kw">print</span> <span class="str">"before create Failed_logs folder!"</span>
+            os.mkdir(Failed_log_foler)
+            <span class="kw">print</span> <span class="str">"Failed_Logs folder created:  "</span> + Failed_log_foler
+        <span class="kw">except</span>:
+            <span class="kw">pass</span>
+
+    <span class="kw">if</span> os.path.exists(log_path):
+        <span class="kw">print</span> <span class="str">"log folder exists, will delete this folder!"</span>
+        <span class="kw">try</span>:
+            shutil.rmtree(log_path)
+            <span class="kw">print</span> <span class="str">"Log folder is deleted!"</span>
+
+        <span class="kw">except</span>:
+            <span class="kw">print</span> <span class="str">"log folder is not deleted, will append to the previous log file!"</span>
+
+    <span class="kw">try</span>:
+        <span class="kw">print</span> <span class="str">"before create logfile!"</span>
+        os.mkdir(log_path)
+        <span class="kw">print</span> <span class="str">"log path created:  "</span> + log_path
+
+    <span class="kw">except</span>:
+        <span class="kw">pass</span> <span class="cmt"># fail silently if remote directory already exists    </span>
+    write_log(log_file,<span class="str">"The common last modified"</span>+_last_modifed)
+    <span class="kw">return</span> log_file
+
+<span class="kw">def</span> write_img_log(logfile,img):
+    <span class="kw">print</span> <span class="str">"img is:"</span> + img
+    path_common=_rootDir + _scriptName + <span class="str">"\\"</span>
+    <span class="kw">print</span> <span class="str">"path_common is: "</span> + path_common
+
+    dst_path, script_name =os.path.split(logfile)
+    <span class="kw">print</span> <span class="str">"dst_path is: "</span> + dst_path
+    <span class="kw">print</span> <span class="str">"script_name is"</span> + script_name
+
+    script_path, script_name=os.path.split(dst_path)
+    path_script=_rootDir + script_name + <span class="str">".sikuli\\"</span>
+    <span class="kw">print</span> <span class="str">"path_script is: "</span> + path_script
+
+    src_file=<span class="str">""</span>
+    <span class="kw">if</span> <span class="kw">not</span> <span class="str">"\\"</span> <span class="kw">in</span> img: <span class="cmt">#for the img doesn't have path, only have file name, add path to get full path for source file</span>
+        <span class="kw">if</span> os.path.exists(path_common + img): src_file = path_common + img;<span class="kw">print</span> <span class="str">"img is from common folder, full path:"</span> + src_file
+        <span class="kw">if</span> os.path.exists(path_script + img): src_file = path_script + img;<span class="kw">print</span> <span class="str">"img is from script folder, full path:"</span> + src_file
+        <span class="kw">print</span> <span class="str">"img without path, src_file is:"</span> + src_file
+        dst_file = dst_path + <span class="str">"\\"</span> + img  <span class="cmt">#destination file with path</span>
+        <span class="kw">print</span> <span class="str">"dst_file is: "</span> + dst_file
+    <span class="kw">else</span>: <span class="cmt">#for the img with full path, change the path to destination path for copy</span>
+        src_file = img
+        path, img_name=os.path.split(img)
+        dst_file = dst_path + <span class="str">"\\"</span> + img_name <span class="cmt">#destination file with path</span>
+        <span class="kw">print</span> <span class="str">"img file has full path, src_file is:"</span> + src_file
+        <span class="kw">print</span> <span class="str">"dst_file is: "</span> + dst_file
+    <span class="cmt">#copy the file to log folder 
+</span>    shutil.copyfile(src_file, dst_file)
+
+    <span class="cmt">#write to logfile
+</span>    <span class="kw">with</span> open(logfile, <span class="str">'a+'</span>) <span class="kw">as</span> fo:
+        msg=<span class="str">'\n&lt;img border=\"0" src="'</span> + dst_file+ <span class="str">'"&gt;&lt;/img_new&gt;\n'</span>
+        fo.write(msg)
+
+<span class="kw">def</span> write_img_log0(logfile,img):
+
+    w=<span class="str">""</span>
+    <span class="kw">with</span> open(logfile, <span class="str">'a+'</span>) <span class="kw">as</span> fo:
+
+        <span class="kw">try</span>:
+
+            <span class="kw">if</span> <span class="str">'\\PF-'</span> <span class="kw">in</span> logfile:
+                script_name_old=str(logfile).split(<span class="str">"\\PF-"</span>)[<span class="dig">0</span>]
+            <span class="kw">if</span> <span class="str">'\\Logs'</span> <span class="kw">in</span> script_name_old:
+                script_name=str(script_name_old).replace(<span class="str">"\\Logs"</span>, <span class="str">""</span>)
+            <span class="kw">if</span> <span class="str">'\\PF_WebApp'</span> <span class="kw">in</span> script_name:
+                common=str(script_name).split(<span class="str">"\\PF_WebApp"</span>)[<span class="dig">0</span>]
+                common=common +<span class="str">"\\PF_common.sikuli\\"</span>+ img
+            <span class="kw">if</span> os.path.exists(common):
+                scr=common
+                <span class="kw">print</span>(scr)
+                dst=script_name_old+<span class="str">"\\"</span>+ img
+                <span class="kw">print</span>(dst)
+                shutil.copyfile(scr, dst)
+                <span class="cmt">#open(dst,"w").write(open(scr,"r").read())
+</span>                msg=<span class="str">'\n&lt;img border=\"0" src="'</span> + dst+ <span class="str">'"&gt;&lt;/img&gt;\n'</span>
+                fo.write(msg)
+                <span class="kw">return</span>
+            <span class="kw">if</span> <span class="str">"common"</span> <span class="kw">in</span> img:
+                scr=img
+                img_new=str(randint(<span class="dig">10000</span>,<span class="dig">99999</span>))+<span class="str">'.png'</span>
+                <span class="kw">print</span>(<span class="str">"in common"</span> +scr)
+                dst=script_name_old+<span class="str">"\\"</span>+ img_new
+                <span class="kw">print</span>(<span class="str">"in common"</span>+dst)
+                shutil.copyfile(scr, dst)
+                <span class="cmt">#open(dst,"w").write(open(scr,"r").read())
+</span>                msg=<span class="str">'\n&lt;img border=\"0" src="'</span> + dst+ <span class="str">'"&gt;&lt;/img_new&gt;\n'</span>
+                fo.write(msg)
+                <span class="kw">return</span>
+            scr=script_name +<span class="str">".sikuli\\"</span>+ img
+            <span class="kw">print</span>(<span class="str">"not common"</span> +scr)
+            dst=script_name_old+<span class="str">"\\"</span>+ img
+            <span class="kw">print</span>(<span class="str">"not common"</span>+dst)
+            shutil.copyfile(scr, dst)
+            <span class="cmt">#open(dst,"w").write(open(scr,"r").read())
+</span>            msg=<span class="str">'\n&lt;img border=\"0" src="'</span> + dst+ <span class="str">'"&gt;&lt;/img&gt;\n'</span>
+            fo.write(msg)
+        <span class="kw">except</span> IOError, e:
+            <span class="kw">print</span> <span class="str">"Unable to copy file. %s"</span> % e
+
+        <span class="kw">except</span>:
+            msg=<span class="str">"in exception: There is an except when write img log!"</span>
+            <span class="kw">print</span> msg
+            fo.write(msg)
+
+
+<span class="kw">def</span> wait_find(y):
+    i=<span class="dig">0</span>
+    <span class="kw">while</span> (<span class="kw">not</span> exists(y)<span class="kw">and</span> i&lt;<span class="dig">5</span>):
+        <span class="skw">sleep</span>(<span class="dig">2</span>)
+
+        i+=<span class="dig">1</span>
+    <span class="kw">if</span> exists(y):
+        <span class="skw">find</span>(y).highlight(<span class="dig">1</span>)
+        <span class="kw">return</span> <span class="dig">1</span>
+    <span class="kw">else</span>: <span class="kw">return</span> <span class="dig">0</span>
+
+<span class="kw">def</span> wait_find_reg(reg,y):
+    i=<span class="dig">0</span>
+    <span class="kw">while</span> (<span class="kw">not</span> reg.exists(y)<span class="kw">and</span> i&lt;<span class="dig">5</span>):
+        <span class="skw">sleep</span>(<span class="dig">2</span>)
+        i+=<span class="dig">1</span>
+    <span class="kw">if</span> reg.exists(y):
+        reg.<span class="skw">find</span>(y).highlight(<span class="dig">1</span>)
+        <span class="kw">return</span> <span class="dig">1</span>
+    <span class="kw">else</span>: <span class="kw">return</span> <span class="dig">0</span>
+
+<span class="kw">def</span> wait_click(y):
+    i=<span class="dig">0</span>
+    <span class="kw">while</span> (i&lt;<span class="dig">5</span>):
+        <span class="skw">sleep</span>(<span class="dig">2</span>)
+        i+=<span class="dig">1</span>
+    <span class="kw">if</span> exists(y):
+        <span class="skw">find</span>(y).highlight(<span class="dig">1</span>)
+        <span class="skw">click</span>(y)
+        <span class="kw">return</span> <span class="dig">1</span>
+    <span class="kw">else</span>: <span class="kw">return</span> <span class="dig">0</span>
+
+<span class="kw">def</span> verify_continue(logfile,image):
+
+    x = wait_find(Pattern(image).similar(<span class="dig">0.90</span>))
+
+    screen_shot=<span class="skw">capture</span>(<span class="dig">0</span>,<span class="dig">0</span>,<span class="dig">1440</span>,<span class="dig">900</span>)
+    <span class="kw">if</span> x==<span class="dig">1</span>:
+        write_log(logfile,<span class="str">"Following expected image was found:\n"</span>)
+        write_img_log(logfile,str(image))
+        write_screenshot_log(logfile,screen_shot)
+        <span class="kw">return</span> <span class="dig">1</span>
+    <span class="kw">else</span>:
+        write_log(logfile,<span class="str">"Not able to find following image:\n"</span>)
+        write_img_log(logfile, str(image))
+        write_screenshot_log(logfile,str(screen_shot))
+        <span class="kw">return</span> <span class="dig">0</span>
+
+<span class="kw">def</span> verify_continue_with_similarity(logfile,image,similarity):
+
+    x = wait_find(Pattern(image).similar(similarity))
+
+    screen_shot=<span class="skw">capture</span>(<span class="dig">0</span>,<span class="dig">0</span>,<span class="dig">1440</span>,<span class="dig">900</span>)
+    <span class="kw">if</span> x==<span class="dig">1</span>:
+        write_log(logfile,<span class="str">"Following expected image was found:\n"</span>)
+        write_img_log(logfile,str(image))
+        write_screenshot_log(logfile,screen_shot)
+        <span class="kw">return</span> <span class="dig">1</span>
+    <span class="kw">else</span>:
+        write_log(logfile,<span class="str">"Not able to find following image:\n"</span>)
+        write_img_log(logfile, str(image))
+        write_screenshot_log(logfile,str(screen_shot))
+        <span class="kw">return</span> <span class="dig">0</span>
+
+<span class="kw">def</span> verify(logfile,image):
+
+    x = wait_find(Pattern(image).similar(<span class="dig">0.90</span>))
+    screen_shot=<span class="skw">capture</span>(<span class="dig">0</span>,<span class="dig">0</span>,<span class="dig">1440</span>,<span class="dig">900</span>)
+    <span class="kw">if</span> x==<span class="dig">1</span>:
+        write_log(logfile,<span class="str">"Following expected image was found:\n"</span>)
+        write_img_log(logfile,image)
+        write_screenshot_log(logfile,screen_shot)
+
+    <span class="kw">else</span>:
+        write_log(logfile,<span class="str">"Not able to find following image:\n"</span>)
+        write_img_log(logfile,image)
+        write_screenshot_log(logfile,str(screen_shot))
+        <span class="kw">raise</span> Exception(<span class="str">"Not able to find image "</span> + str(image))
+
+<span class="kw">def</span> verify_exactly(logfile,image):
+
+    x = wait_find(Pattern(image).similar(<span class="dig">0.99</span>))
+    screen_shot=<span class="skw">capture</span>(<span class="dig">0</span>,<span class="dig">0</span>,<span class="dig">1440</span>,<span class="dig">900</span>)
+    <span class="kw">if</span> x==<span class="dig">1</span>:
+        write_log(logfile,<span class="str">"Following expected image was found:\n"</span>)
+        write_img_log(logfile,str(image))
+        write_screenshot_log(logfile,screen_shot)
+    <span class="kw">else</span>:
+        write_log(logfile,<span class="str">"Not able to find following image:\n"</span>)
+        write_img_log(logfile, str(image))
+        write_screenshot_log(logfile,str(screen_shot))
+        <span class="kw">raise</span> Exception(<span class="str">"Not able to find image "</span> + str(image))
+
+<span class="kw">def</span> load_browser_with_url_0(logfile,link):
+    reg1=Region(<span class="dig">1268</span>,<span class="dig">25</span>,<span class="dig">171</span>,<span class="dig">35</span>)
+    start_time=datetime.now()
+    reg1.highlight(<span class="dig">1</span>)
+    <span class="kw">if</span> reg1.exists(<img src="1393420720867.png" />): <span class="skw">type</span>(<span class="str">"w"</span>, Key.CTRL);<span class="skw">sleep</span>(<span class="dig">1</span>)
+
+        <span class="cmt">#write_log(logfile, "total time detecting chrome not open is: " + str(datetime.now()-start_time))
+</span>    App.open(_chrome_app + <span class="str">"  "</span> + link)
+
+    <span class="kw">print</span> <span class="str">"total time open chrome is: "</span> + str(datetime.now()-start_time)
+    wait_find_reg(reg1,<img src="1393420720867.png" />)
+    <span class="kw">if</span> exists(<img src="1395170923573.png" />):<span class="skw">click</span>(<img src="1395170923573.png" />)
+    <span class="kw">print</span> <span class="str">"total time detecting chrome is loaded: "</span> + str(datetime.now()-start_time)
+
+
+<span class="kw">def</span> load_browser_with_url(logfile, link):
+    reg1=Region(<span class="dig">1268</span>,<span class="dig">25</span>,<span class="dig">171</span>,<span class="dig">35</span>)
+    start_time=datetime.now()
+    reg1.highlight(<span class="dig">1</span>)
+    <span class="kw">if</span> <span class="kw">not</span> reg1.exists(<img src="1393420720867.png" />):
+        <span class="cmt">#write_log(logfile, "total time detecting chrome not open is: " + str(datetime.now()-start_time))
+</span>        App.open(_chrome_app)
+
+        <span class="kw">print</span> <span class="str">"total time open chrome is: "</span> + str(datetime.now()-start_time)
+        wait_find_reg(reg1,<img src="1393420720867.png" />)
+        <span class="kw">if</span> exists(<img src="1395170923573.png" />):<span class="skw">click</span>(<img src="1395170923573.png" />)
+        <span class="kw">print</span> <span class="str">"total time detecting chrome is loaded: "</span> + str(datetime.now()-start_time)
+
+    <span class="kw">else</span>:
+        switchApp(<span class="str">"Google Chrome"</span>)
+        <span class="kw">if</span> exists(<img src="1395170923573.png" />):<span class="skw">click</span>(<img src="1395170923573.png" />)
+
+    <span class="skw">sleep</span>(<span class="dig">3</span>)
+    <span class="skw">type</span>(<span class="str">'l'</span>, KEY_CTRL)
+    <span class="skw">sleep</span>(<span class="dig">2</span>)
+    <span class="skw">type</span>(link)
+    <span class="skw">sleep</span>(<span class="dig">2</span>)
+    <span class="skw">type</span>(Key.ENTER)
+    <span class="skw">sleep</span>(<span class="dig">2</span>)
+    <span class="skw">type</span>(Key.HOME)
+    mouseMove(Location(<span class="dig">1000</span>,<span class="dig">100</span>))
+
+
+<span class="kw">def</span> locate_item_line_by_line(logfile,img, pattern=<span class="dig">0.90</span>):
+    i=<span class="dig">0</span>
+    k=<span class="dig">0</span>
+
+    <span class="kw">while</span> (<span class="kw">not</span> exists(Pattern(img).similar(pattern)) <span class="kw">and</span> i&lt;<span class="dig">12</span>):
+        <span class="skw">type</span>(Key.DOWN)
+        <span class="skw">type</span>(Key.DOWN)
+        <span class="skw">type</span>(Key.DOWN)
+        mouseMove(Location(<span class="dig">1000</span>,<span class="dig">100</span>))
+        i+=<span class="dig">1</span>
+    <span class="kw">if</span> exists(Pattern(img).similar(pattern)):
+        <span class="skw">find</span>(Pattern(img).similar(pattern)).highlight(<span class="dig">1</span>)
+        write_log(logfile, <span class="str">"Locate image in locate_item_line_by_line, image found: "</span> +img)
+        write_img_log(logfile, img)
+        write_log_with_screenshot(logfile,<span class="str">"See Screenshot:"</span>)
+        k=<span class="dig">1</span>
+    <span class="kw">else</span>:
+        write_log(logfile, <span class="str">"Locate image in locate_item_line_by_line, not able to find image: "</span> +img)
+        write_img_log(logfile, img)
+        write_log_with_screenshot(logfile,<span class="str">"See Screenshot:"</span>)
+        <span class="kw">raise</span> Exception(<span class="str">"Locate_item_line_by_line Exception: Not able to locate image: "</span> + img)
+
+<span class="kw">def</span> locate_item_page_by_page(logfile,img, pattern=<span class="dig">0.90</span>):
+    i=<span class="dig">0</span>
+    <span class="skw">type</span>(Key.HOME)
+    <span class="skw">sleep</span>(<span class="dig">1</span>)
+    <span class="kw">while</span> (<span class="kw">not</span> exists(Pattern(img).similar(pattern)) <span class="kw">and</span> i&lt;<span class="dig">6</span>):
+        <span class="skw">type</span>(Key.PAGE_DOWN)
+        mouseMove(Location(<span class="dig">200</span>,<span class="dig">50</span>))
+        <span class="skw">sleep</span>(<span class="dig">3</span>)
+        i+=<span class="dig">1</span>
+
+    <span class="kw">if</span> exists((Pattern(img).similar(pattern))):
+        <span class="skw">find</span>((Pattern(img).similar(pattern))).highlight(<span class="dig">1</span>)
+        write_log(logfile, <span class="str">"Locate image in locate_page_by_page, image found: "</span> +img)
+        write_img_log(logfile, img)
+        write_log_with_screenshot(logfile,<span class="str">"See Screenshot:"</span>)
+        k=<span class="dig">1</span>
+    <span class="kw">else</span>:
+        write_log(logfile, <span class="str">"Locate image in locate_page_by_page, not able to find image: "</span> +img)
+        write_img_log(logfile, img)
+        write_log_with_screenshot(logfile,<span class="str">"See Screenshot:"</span>)
+        <span class="kw">raise</span> Exception(<span class="str">"Locate_item_page_by_page Exception: Not able to locate image: "</span> + img)
+
+
+
+<span class="kw">def</span> get_img_value(logfile,image,text):
+    wait_click(<img src="1388032151500.png" />)
+    <span class="skw">sleep</span>(<span class="dig">1</span>)
+
+    <span class="skw">type</span>(Key.F12)
+    wait_click(<img src="1388032189908.png" />)
+
+    <span class="skw">type</span>(<span class="str">"f"</span>, Key.CTRL)
+    <span class="skw">sleep</span>(<span class="dig">3</span>)
+    <span class="skw">type</span>(text)
+    <span class="skw">sleep</span>(<span class="dig">3</span>)
+    write_log_with_screenshot(logfile, <span class="str">"after enter search text"</span>)
+    <span class="cmt">#type(Key.ENTER)
+</span>    <span class="skw">sleep</span>(<span class="dig">2</span>)
+    write_log_with_screenshot(logfile, <span class="str">"search result screen after one more enter:"</span>)
+    <span class="cmt">#type(Key.ENTER)
+</span> <span class="cmt">#   write_log_with_screenshot(logfile, "search result screen after two more enter:")    
+</span>
+    <span class="kw">if</span> exists(image):
+        <span class="skw">click</span>(image)
+        <span class="skw">sleep</span>(<span class="dig">1</span>)
+        <span class="skw">type</span>(<span class="str">"c"</span>, KEY_CTRL)
+        write_log_with_screenshot(logfile, <span class="str">"CTRL_C pressed!"</span>)
+        <span class="skw">sleep</span>(<span class="dig">2</span>)
+        <span class="cmt">#App.open("%windir%\system32\notepad.exe")
+</span>        <span class="cmt">#sleep(3)
+</span>        <span class="cmt">#type("v", Key.CTRL)
+</span>        data=Env.getClipboard()
+        <span class="kw">print</span> <span class="str">"txt: "</span> + str(data)
+        value1=(data.split(<span class="str">'&gt;'</span>)[<span class="dig">1</span>]).split(<span class="str">'&lt;'</span>)[<span class="dig">0</span>]
+        value1=int(value1.replace(<span class="str">'%'</span>,<span class="str">''</span>))
+        <span class="skw">type</span>(Key.F12)
+        <span class="kw">print</span> value1
+        <span class="kw">return</span> value1
+
+    <span class="kw">else</span> : <span class="kw">print</span> <span class="str">"fail"</span>
+
+<span class="kw">def</span> get_protection_value(logfile):
+
+    search_txt1=<img src="1391414402816.png" />
+
+    <span class="cmt">#search_txt2="1386700206064-1.png"
+</span>
+    <span class="cmt">#search_txt1= "1387454285798.png"
+</span>
+    switchApp(<span class="str">"Google Chrome"</span>)
+    <span class="cmt">#search_str2="num_private_settings\n"
+</span>    search_str1=<span class="str">"strong#fb_protection_percent.percentage"</span>
+    <span class="cmt">#print "search img: " +str(search_txt1)
+</span>    percent_value = get_img_value(logfile,search_txt1, search_str1)
+    msg=<span class="str">"Protection value is:"</span> + str(percent_value)
+    write_log_with_screenshot(logfile, msg)
+    mouseMove(Location(<span class="dig">1000</span>,<span class="dig">100</span>))
+    <span class="kw">return</span> percent_value
+
+
+<span class="kw">def</span> testScriptPaths():
+     <span class="kw">print</span> <span class="str">"_rootDir= "</span>, _rootDir, <span class="str">"\n_thisScript= "</span>, _thisScript, <span class="str">"\n_commonDashDir= "</span>, _commonDashDir, <span class="str">"\n_config_file= "</span>, _config_file
+     <span class="kw">print</span> _config.get(<span class="str">'Delete_history'</span>, <span class="str">'screen1'</span>)
+
+
+<span class="kw">def</span> PassCase(log_file, test_case_id):
+    load_browser_with_url(log_file,_passed_link)
+    test_script_name = <span class="str">""</span>
+
+    test_script_name = str(log_file).split(<span class="str">"\\"</span>)[<span class="dig">3</span>]
+    <span class="kw">print</span> <span class="str">"test_script_name is:"</span> + test_script_name
+
+    msg =   test_script_name + <span class="str">" - Test Case Passed!"</span>
+
+    write_log_with_screenshot(log_file,msg)
+    write_log(_test_suite_log,msg)
+    msg=<span class="str">"Tested URL:"</span> + _PF_link
+    write_log(log_file,msg)
+    msg=<span class="str">"Closing browser after test case finished...."</span>
+    write_log(log_file, msg)
+    <span class="skw">sleep</span>(<span class="dig">10</span>)
+    close_pf_tabs(log_file)
+
+
+<span class="kw">def</span> FailTestCase(logfile, test_case_id):
+    load_browser_with_url(logfile,_failed_link)
+    <span class="skw">sleep</span>(<span class="dig">2</span>)
+
+    test_script_name = str(logfile).split(<span class="str">"\\"</span>)[<span class="dig">3</span>]
+    <span class="kw">print</span> <span class="str">"test_script_name is:"</span> + test_script_name
+
+    msg = test_script_name + <span class="str">" - Test Case Failed!"</span>
+    write_log_with_screenshot(logfile, msg)
+    write_log(_test_suite_log,msg)
+    <span class="kw">print</span> <span class="str">"test suite log file is: "</span> + _test_suite_log
+    write_log(logfile,<span class="str">"Tested URL:"</span> + _PF_link)
+    <span class="skw">sleep</span>(<span class="dig">3</span>)
+
+    <span class="cmt">#05/02/2014 -- copy failed log folder to _rootDir failed_logs folder
+</span>    timeStamp = str(time.strftime(<span class="str">"%H%M%S"</span>))
+    Failed_Logs_Folder = _rootDir + <span class="str">"Failed_Logs\\"</span> + test_script_name + <span class="str">"_"</span> + timeStamp +<span class="str">"\\"</span>
+    src_folder=_rootDir+<span class="str">"Logs\\"</span>+ test_script_name+<span class="str">"\\"</span>
+    <span class="kw">print</span> <span class="str">"src_folder is: "</span> + src_folder
+    <span class="kw">print</span> <span class="str">"Failed_Logs_Folder is:"</span> + Failed_Logs_Folder
+    <span class="kw">try</span>:
+        shutil.copytree(src_folder, Failed_Logs_Folder)
+    <span class="kw">except</span> shutil.Error:
+        <span class="kw">print</span> <span class="str">"shutil error occurred."</span>
+    <span class="cmt">#shutil.move(Failed_Logs_Folder,Failed_Logs_Folder+"_"+timeStamp)       
+</span>    close_pf_tabs(logfile)
+
+
+<span class="kw">def</span> close_pf_tabs(logfile):
+    write_log_with_screenshot(logfile, <span class="str">"Screenshot before close PF tabs:"</span>)
+    pf_tab=(<img src="1397187372215.png" />)
+
+    <span class="kw">if</span> exists(pf_tab):
+        PF_tabs=findAll(pf_tab)
+        <span class="kw">for</span> tab <span class="kw">in</span> PF_tabs:
+            <span class="skw">click</span> (pf_tab)
+            <span class="skw">type</span>(<span class="str">"w"</span>, Key.CTRL)
+    write_log_with_screenshot(logfile, <span class="str">"PF tabs are closed"</span>)
+
+<span class="kw">def</span> close_browser(logfile):
+    verify(logfile,<img src="1388806538311.png" />)
+    <span class="skw">click</span>(<img src="1388806538311.png" />)
+    verify(logfile,<img src="1388806596083.png" />)
+    <span class="skw">click</span>(<img src="1388806596083.png" />)
+    write_log_with_screenshot(logfile, <span class="str">"The above test case is done, browser closed!"</span>)
+
+<span class="kw">def</span> ifPassword(logfile):
+    <span class="kw">if</span> exists(<img src="1406121015600.png" />):
+        <span class="skw">sleep</span>(<span class="dig">2</span>)
+        <span class="skw">type</span>(_password)
+        <span class="skw">sleep</span>(<span class="dig">1</span>)
+        <span class="skw">type</span>(Key.ENTER)
+        <span class="skw">sleep</span>(<span class="dig">2</span>)
+
+
+<span class="kw">def</span> verify_link(logfile, link):
+        <span class="skw">sleep</span>(<span class="dig">1</span>)
+        <span class="skw">type</span>(<span class="str">"l"</span>, Key.CTRL)
+        <span class="skw">sleep</span>(<span class="dig">1</span>)
+        <span class="skw">type</span>(<span class="str">"c"</span>, Key.CTRL)
+        x=Env.getClipboard()
+        <span class="kw">if</span> (x==link):
+            write_log(logfile,<span class="str">"Link is correct"</span>)
+        <span class="kw">else</span>:
+            write_log(logfile, <span class="str">"Link is Incorrect"</span>)
+            <span class="kw">raise</span> Exception(<span class="str">"Link is Incorrect"</span>)
+
+<span class="cmt">#disable autofill for chrome browser
+</span><span class="kw">def</span> disable_autofill(logfile):
+    load_browser_with_url(logfile,<span class="str">"chrome://settings/search#password"</span>)
+
+    wait_find(<img src="1398984037415.png" />)
+
+
+    auto_complete1=(<img src="auto_comlete_url-1.png" />)
+
+    <span class="kw">if</span> exists(Pattern(auto_complete1).similar(<span class="dig">0.95</span>)):
+        <span class="skw">find</span>(auto_complete1).highlight(<span class="dig">1</span>)
+        <span class="skw">click</span>(auto_complete1)
+    auto_complete2=(<img src="1395321409938-1.png" />)
+
+    <span class="kw">if</span> exists(Pattern(auto_complete2).similar(<span class="dig">0.95</span>)):
+        <span class="skw">find</span>(auto_complete2).highlight(<span class="dig">1</span>)
+        <span class="skw">click</span>(auto_complete2)
+    <span class="skw">sleep</span>(<span class="dig">1</span>)
+
+    <span class="cmt">#disable password autofill
+</span>
+    enable_autofill_password=(<img src="enable_autofill_password-1.png" />)
+    offer_save_password=(<img src="1397084314994.png" />)
+
+
+    <span class="kw">if</span> exists(Pattern(enable_autofill_password).similar(<span class="dig">0.95</span>)):
+        <span class="skw">find</span>(enable_autofill_password).highlight(<span class="dig">1</span>)
+        <span class="skw">click</span>(enable_autofill_password)
+
+    <span class="kw">if</span> exists(Pattern(offer_save_password).similar(<span class="dig">0.95</span>)):
+        <span class="skw">find</span>(offer_save_password).highlight(<span class="dig">1</span>)
+        <span class="skw">click</span>(offer_save_password)
+
+
+<span class="kw">if</span> __name__ == <span class="str">"__main__"</span>:
+    <span class="cmt"># This runs when executing PF_common directly, it will NOT run when importing.
+</span>    <span class="cmt"># if indented (under the if statement, if not indented it will always run.)
+</span>    <span class="kw">print</span> <span class="str">"sys.argv: "</span>, sys.argv
+    <span class="cmt">#testScriptPaths()
+</span><span class="cmt">#test_case_id="3233"
+</span><span class="cmt">#logfile='C:\\Automation_PF\\Logs\\PF_WebApp_FB01_Findable_OnGoogle_GreyToGreen_1331\\PF-1331-log.html'
+</span><span class="cmt">#img='C:\\Automation_PF\\PF_common.sikuli\\config_dash\\Delete_history\\begin.png'
+</span><span class="cmt">#write_img_log(logfile,img) 
+</span><span class="cmt">#ClearBrowsingData()
+</span><span class="cmt">#load_browser_with_url(_PF_link)
+</span><span class="cmt">#App.open(_chrome_app + "  " + _PF_link)
+</span><span class="cmt">#load_browser_with_url("privacyfix.com/start")</span>
+</pre>
+</body>
+</html>

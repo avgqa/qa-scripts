@@ -1,0 +1,386 @@
+
+<html>
+   <head>
+      <style type="text/css">
+         .sikuli-code {
+            font-size: 20px;
+            font-family: "Osaka-mono", Monospace;
+            line-height: 1.5em;
+            display:table-cell;
+            white-space: pre-wrap;       /* css-3 */
+            white-space: -moz-pre-wrap !important;  /* Mozilla, since 1999 */
+            white-space: -pre-wrap;      /* Opera 4-6 */
+            white-space: -o-pre-wrap;    /* Opera 7 */
+            word-wrap: break-word;       /* Internet Explorer 5.5+ */
+            width: 99%;   /* remove horizontal scroll-bar when viewing in IE7 */
+         }
+         .sikuli-code img {
+            vertical-align: middle;
+            margin: 2px;
+            border: 1px solid #ccc;
+            padding: 2px;
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+            -moz-box-shadow: 1px 1px 1px gray;
+            -webkit-box-shadow: 1px 1px 2px gray;
+         }
+         .kw {
+            color: blue;
+         }
+         .skw {
+            color: rgb(63, 127, 127);
+         }
+
+         .str {
+            color: rgb(128, 0, 0);
+         }
+
+         .dig {
+            color: rgb(128, 64, 0);
+         }
+
+         .cmt {
+            color: rgb(200, 0, 200);
+         }
+
+         h2 {
+            display: inline;
+            font-weight: normal;
+         }
+
+         .info {
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+            display: none;
+         }
+
+         a {
+            color: #9D2900;
+         }
+
+         body {
+            font-family: "Trebuchet MS", Arial, Sans-Serif;
+         }
+
+      </style>
+   </head>
+<body>
+<div class="info">
+<h2>PF_Chrome_setup_1638.sikuli\PF_Chrome_setup_1638.sikuli</h2> <a href="PF_Chrome_setup_1638.sikuli\PF_Chrome_setup_1638.zip">(Download this script)</a>
+</div>
+<pre class="sikuli-code">
+<span class="cmt"># Last changes:
+</span><span class="cmt"># - Linked in section has been updated
+</span><span class="cmt"># - we have added reset for Google section
+</span><span class="cmt">#05/02/2014 -- Kathy: change script id to PF-1638, and added 1638 to the script name.
+</span><span class="cmt">#06/25/2014-- Michael: changed images and added new logic. 
+</span><span class="cmt">#Can't verify correctly because currently on production item status doesn't change after fixing it and some remain the same
+</span>
+
+<span class="kw">import</span> PF_common
+reload(PF_common)
+
+
+<span class="cmt">#setup link doesn't work consistant, not going to use it.
+</span><span class="cmt">#setup_link="http://addons.privacyfix.com/pf/seenclear?uid=1e8e0c7992c57417cc4a6af0d3908f2e"
+</span>PF_link=PF_common._PF_link
+browser_type=<span class="str">"Chrome"</span>
+test_case_id=<span class="str">"PF_1638"</span>
+
+fix_icon=(<img src="fixes.png" />)
+
+
+FB01_green=(<img src="fb1.png" />)
+
+
+<span class="kw">def</span> set_FB01_grey(log_file):
+        <span class="skw">click</span>(FB01_green)
+        <span class="skw">sleep</span>(<span class="dig">5</span>)
+        PF_common.verify(log_file,<img src="1396333260662.png" />)
+        <span class="skw">click</span>(Pattern(<img src="1396333268916.png" />).similar(<span class="dig">0.91</span>))
+        <span class="skw">sleep</span>(<span class="dig">4</span>)
+        <span class="skw">click</span>(fix_icon)
+
+        <span class="skw">sleep</span>(<span class="dig">5</span>)
+        mouseMove(Location(<span class="dig">1000</span>,<span class="dig">100</span>))
+        PF_common.verify(log_file,<img src="fb1grery.png" />)
+        PF_common.write_log_with_screenshot(log_file, <span class="str">"FB01 is set to grey!"</span>)
+
+FB02_green=(<img src="1404473650618.png" />)
+<span class="kw">def</span> set_FB02_grey(log_file):
+    <span class="skw">click</span>(FB02_green)
+    <span class="skw">sleep</span>(<span class="dig">5</span>)
+    PF_common.verify(log_file,<img src="1404473746361.png" />)
+    <span class="skw">click</span>(<img src="1404473764442.png" />)
+    <span class="skw">sleep</span>(<span class="dig">2</span>)
+    <span class="skw">click</span>(<img src="1404473808957.png" />)
+    <span class="skw">sleep</span>(<span class="dig">3</span>)
+    <span class="skw">click</span>(fix_icon)
+    <span class="skw">sleep</span>(<span class="dig">5</span>)
+    mouseMove(Location(<span class="dig">1000</span>,<span class="dig">100</span>))
+    PF_common.verify(log_file,<img src="1404473847855.png" />)
+    PF_common.write_log_with_screenshot(log_file, <span class="str">"FB02 is set to grey!"</span>)
+
+FB04_green=(<img src="fb2green.png" />)
+<span class="kw">def</span> set_FB04_grey(log_file):
+    <span class="skw">click</span>(FB04_green)
+    <span class="skw">sleep</span>(<span class="dig">5</span>)
+    PF_common.verify(log_file,<img src="1396333369062.png" />)
+    <span class="skw">click</span>(<img src="1396333360141.png" />)
+    <span class="skw">sleep</span>(<span class="dig">2</span>)
+    <span class="skw">click</span>(<img src="1396333407392.png" />)
+    <span class="skw">sleep</span>(<span class="dig">3</span>)
+    <span class="skw">click</span>(fix_icon)
+    <span class="skw">sleep</span>(<span class="dig">5</span>)
+    mouseMove(Location(<span class="dig">1000</span>,<span class="dig">100</span>))
+    PF_common.verify(log_file,<img src="fb2grey.png" />)
+
+    PF_common.write_log_with_screenshot(log_file, <span class="str">"FB04 is set to grey!"</span>)
+
+
+
+FB06_green=(<img src="fb6green.png" />)
+
+<span class="kw">def</span> set_FB06_grey(log_file):
+    <span class="skw">click</span>(FB06_green)
+    <span class="skw">sleep</span>(<span class="dig">5</span>)
+    PF_common.wait_click(<img src="1390020887226.png" />)
+    <span class="skw">sleep</span>(<span class="dig">2</span>)
+    <span class="skw">click</span>(<img src="1396333454235.png" />)
+    <span class="skw">sleep</span>(<span class="dig">3</span>)
+
+    <span class="skw">click</span>(fix_icon)
+    <span class="skw">sleep</span>(<span class="dig">5</span>)
+    mouseMove(Location(<span class="dig">1000</span>,<span class="dig">100</span>))
+    PF_common.verify(log_file,<img src="fb6grey.png" />)
+
+    PF_common.write_log_with_screenshot(log_file, <span class="str">"FB06 is set to grey!"</span>)
+
+
+
+FB07_green=(<img src="fb8green.png" />)
+<span class="kw">def</span> set_FB07_grey(log_file):
+    <span class="skw">click</span>(FB07_green)
+    <span class="skw">sleep</span>(<span class="dig">5</span>)
+    PF_common.verify(log_file,(<img src="1396333514212.png" />))
+    <span class="skw">click</span>(<img src="1396333538808.png" />)
+    <span class="skw">sleep</span>(<span class="dig">1</span>)
+    <span class="skw">click</span>(<img src="1396333582627.png" />)
+    <span class="skw">sleep</span>(<span class="dig">1</span>)
+    <span class="skw">click</span>(<img src="1396333605262.png" />)
+    <span class="skw">sleep</span>(<span class="dig">3</span>)
+    <span class="skw">click</span>(fix_icon)
+    mouseMove(Location(<span class="dig">1000</span>,<span class="dig">100</span>))
+    <span class="skw">sleep</span>(<span class="dig">5</span>)
+    PF_common.verify(log_file,<img src="fb8grey.png" />)
+    PF_common.write_log_with_screenshot(log_file, <span class="str">"FB07 is set to grey!"</span>)
+
+
+
+
+
+
+LK01_green=(<img src="lk1green.png" />)
+<span class="kw">def</span> set_LK01_grey(log_file):
+    <span class="skw">click</span>(LK01_green)
+    <span class="skw">sleep</span>(<span class="dig">3</span>)
+    <span class="kw">if</span> exists(<img src="1389742039148.png" />):
+        <span class="skw">type</span>(PF_common._password)
+        <span class="skw">sleep</span>(<span class="dig">1</span>)
+        <span class="skw">click</span>(<img src="1389742095839.png" />)
+        <span class="skw">sleep</span>(<span class="dig">5</span>)
+    PF_common.verify(log_file,<img src="1390020628935.png" />)
+    <span class="skw">click</span>(<img src="1390020628935.png" />)
+    <span class="skw">click</span>(<img src="1389817979018.png" />)
+    <span class="skw">click</span>(fix_icon)
+    mouseMove(Location(<span class="dig">1000</span>,<span class="dig">100</span>))
+    <span class="skw">sleep</span>(<span class="dig">5</span>)
+    PF_common.verify(log_file,<img src="lk1grey.png" />)
+
+    PF_common.write_log_with_screenshot(log_file, <span class="str">"LK01 is set to grey!"</span>)
+
+LK03_green=(<img src="lk3green.png" />)
+
+<span class="kw">def</span> set_LK03_grey(log_file):
+    <span class="skw">click</span>(LK03_green)
+    <span class="skw">sleep</span>(<span class="dig">5</span>)
+    <span class="kw">if</span> exists(<img src="1389742039148.png" />):
+        <span class="skw">type</span>(PF_common._password)
+        <span class="skw">sleep</span>(<span class="dig">1</span>)
+        <span class="skw">click</span>(<img src="1389742095839.png" />)
+        <span class="skw">sleep</span>(<span class="dig">3</span>)
+    PF_common.verify(log_file,<img src="1390068268007.png" />)
+
+    <span class="skw">click</span>(<img src="1390068268007.png" />)
+
+    <span class="skw">click</span>(<img src="1389818291777.png" />)
+    <span class="skw">sleep</span>(<span class="dig">3</span>)
+    <span class="skw">click</span>(fix_icon)
+    <span class="skw">sleep</span>(<span class="dig">5</span>)
+    mouseMove(Location(<span class="dig">1000</span>,<span class="dig">100</span>))
+    PF_common.verify(log_file,<img src="lk3grey.png" />)
+
+    PF_common.write_log_with_screenshot(log_file, <span class="str">"LK03 is set to grey!"</span>)
+
+
+LK05_green=(<img src="lk5green.png" />)
+<span class="kw">def</span> set_LK05_grey(log_file):
+    <span class="skw">click</span>(LK05_green)
+    <span class="skw">sleep</span>(<span class="dig">5</span>)
+    <span class="kw">if</span> exists(<img src="1389742039148.png" />):
+        <span class="skw">type</span>(PF_common._password)
+        <span class="skw">sleep</span>(<span class="dig">1</span>)
+        <span class="skw">click</span>(<img src="1389742095839.png" />)
+        <span class="skw">sleep</span>(<span class="dig">3</span>)
+    PF_common.verify(log_file,<img src="1389818632828.png" />)
+    <span class="skw">click</span>(<img src="1389818632828.png" />)
+    <span class="skw">sleep</span>(<span class="dig">2</span>)
+    <span class="skw">click</span>(<img src="1389818887123.png" />);<span class="skw">click</span>(<img src="1389818951938.png" />)
+    <span class="skw">sleep</span>(<span class="dig">3</span>)
+    <span class="skw">click</span>(fix_icon)
+    <span class="skw">sleep</span>(<span class="dig">5</span>)
+    mouseMove(Location(<span class="dig">1000</span>,<span class="dig">100</span>))
+    PF_common.verify(log_file,<img src="lk5grey.png" />)
+    PF_common.write_log_with_screenshot(log_file, <span class="str">"LK05 is set to grey!"</span>)
+
+
+
+GL01_green=(<img src="1403699957947.png" />)
+
+<span class="kw">def</span> set_GL01_grey(log_file):
+    <span class="skw">click</span>(GL01_green)
+    <span class="skw">sleep</span>(<span class="dig">5</span>)
+    PF_common.verify(log_file,<img src="1397822686053.png" />)
+    <span class="skw">click</span>(<img src="1397822710861.png" />)
+    <span class="skw">sleep</span>(<span class="dig">2</span>)
+    <span class="skw">click</span>(fix_icon)
+    <span class="skw">sleep</span>(<span class="dig">5</span>)
+    mouseMove(Location(<span class="dig">1000</span>,<span class="dig">100</span>))
+    PF_common.verify(log_file, <img src="1397822850994.png" />)
+    PF_common.write_log_with_screenshot(log_file, <span class="str">"GL01 is set to grey!"</span>)
+
+
+GL02_green=(<img src="1403700407750.png" />)
+<span class="kw">def</span> set_GL02_grey(log_file):
+    <span class="skw">click</span>(GL02_green)
+    <span class="skw">sleep</span>(<span class="dig">5</span>)
+    resume=(Pattern(<img src="1397824304800.png" />).similar(<span class="dig">0.91</span>))
+    <span class="kw">if</span> exists(resume):<span class="skw">click</span>(resume)
+    <span class="skw">sleep</span>(<span class="dig">2</span>)
+    PF_common.load_browser_with_url(log_file,<span class="str">"https://www.youtube.com/watch?v=02DQL00zivI&amp;index=10&amp;list=PLRnM5wRWOH8Bs1cTbybzZdCCC7jmh64jU\n"</span>)
+    <span class="skw">sleep</span>(<span class="dig">10</span>)
+    <span class="skw">type</span>(<span class="str">"w"</span>, Key.CTRL)
+    PF_common.locate_google_section(log_file)
+    PF_common.verify(log_file,<img src="1403700538421.png" /> )
+
+
+GL03_green=(<img src="1403700548890.png" />)
+
+<span class="kw">def</span> set_GL03_grey(log_file):
+    <span class="skw">click</span>(GL03_green)
+    <span class="skw">sleep</span>(<span class="dig">5</span>)
+    PF_common.verify(log_file, <img src="1397823232052.png" />)
+    <span class="skw">click</span>(<img src="1397823339801.png" />)
+    <span class="skw">sleep</span>(<span class="dig">2</span>)
+    <span class="skw">click</span>(<img src="1397823384109.png" />)
+    <span class="skw">sleep</span>(<span class="dig">2</span>)
+    <span class="skw">click</span>(<img src="1397824049012.png" />)
+    <span class="skw">sleep</span>(<span class="dig">5</span>)
+    mouseMove(Location(<span class="dig">1000</span>,<span class="dig">100</span>))
+    PF_common.verify(log_file, <img src="1403700605466.png" />)
+
+<span class="kw">def</span> FixGoogleSection(log_file):
+    PF_common.GoogleLogin(log_file)
+    <span class="kw">if</span> PF_common.verify_continue_with_similarity(log_file,<img src="1404474658234.png" />,<span class="dig">0.95</span>)==<span class="dig">0</span>:
+       PF_common.write_log_with_screenshot(log_file,<span class="str">"Google section is not orange"</span>)
+       rs=<span class="dig">7</span>
+
+    <span class="kw">if</span> exists(Pattern(GL01_green).similar(<span class="dig">0.90</span>)):set_GL01_grey(log_file);rs=<span class="dig">7</span>
+    <span class="kw">if</span> exists(Pattern(GL02_green).similar(<span class="dig">0.90</span>)):set_GL02_grey(log_file);rs=<span class="dig">7</span>
+    <span class="kw">if</span> exists(Pattern(GL03_green).similar(<span class="dig">0.90</span>)):set_GL03_grey(log_file);rs=<span class="dig">7</span>
+
+<span class="kw">def</span> PF_check_required_init(log_file):
+    <span class="skw">sleep</span>(<span class="dig">2</span>)
+    rs=<span class="dig">1</span>
+
+    PF_common.load_browser_with_url(log_file, PF_common._PF_link)
+    <span class="skw">sleep</span>(<span class="dig">2</span>)
+
+    PF_common.wait_find(<img src="1396563774390.png" />)
+    <span class="skw">wait</span>(<span class="dig">10</span>)
+    <span class="cmt">#FixGoogleSection(log_file)
+</span>    PF_common.FacebookLogin(log_file)
+
+    PF_common.write_log_with_screenshot(log_file,<span class="str">"FB section1 before check!"</span>)
+    FBFirstSection=(<img src="1404805532966.png" />)
+    FBSecondSection=(<img src="1404805548873.png" />)
+    pf_common.locate_linkedIn_section(log_file)
+    <span class="kw">if</span> PF_common.verify_continue_with_similarity(log_file,FBFirstSection,<span class="dig">0.93</span>)==<span class="dig">0</span> <span class="kw">or</span> PF_common.verify_continue_with_similarity(log_file,FBSecondSection,<span class="dig">0.93</span>)==<span class="dig">0</span> :
+        PF_common.write_log_with_screenshot(log_file,<span class="str">"FB section1 in is not orange"</span>)
+        rs=<span class="dig">2</span>
+
+    <span class="kw">if</span> exists(Pattern(FB01_green).similar(<span class="dig">0.90</span>)):set_FB01_grey(log_file);rs=<span class="dig">2</span>
+    <span class="kw">if</span> exists(Pattern(FB02_green).similar(<span class="dig">0.90</span>)):set_FB02_grey(log_file);rs=<span class="dig">2</span>
+    <span class="kw">if</span> exists(Pattern(FB04_green).similar(<span class="dig">0.90</span>)):set_FB04_grey(log_file);rs=<span class="dig">2</span>
+    <span class="kw">if</span> exists(Pattern(FB06_green).similar(<span class="dig">0.90</span>)):set_FB06_grey(log_file);rs=<span class="dig">2</span>
+    <span class="kw">if</span> exists(Pattern(FB07_green).similar(<span class="dig">0.90</span>)): set_FB07_grey(log_file);rs=<span class="dig">3</span>
+
+    PF_common.LinkedInLogIn(log_file)
+    <span class="skw">wait</span>(<span class="dig">10</span>)
+    <span class="kw">if</span> PF_common.verify_continue_with_similarity(log_file,<img src="1404735275920.png" />,<span class="dig">0.95</span>)==<span class="dig">0</span>:
+
+        PF_common.write_log_with_screenshot(log_file,<span class="str">"Linked in is not orange"</span>)
+        rs=<span class="dig">4</span>
+
+    <span class="kw">if</span> exists(Pattern(LK01_green).similar(<span class="dig">0.90</span>)):set_LK01_grey(log_file);rs=<span class="dig">4</span>
+    <span class="kw">if</span> exists(Pattern(LK03_green).similar(<span class="dig">0.90</span>)):set_LK03_grey(log_file);rs=<span class="dig">4</span>
+    <span class="kw">if</span> exists(Pattern(LK05_green).similar(<span class="dig">0.90</span>)):set_LK05_grey(log_file);rs=<span class="dig">4</span>
+    <span class="kw">return</span> rs
+
+<span class="kw">def</span> reset_result(log_file):
+    y=PF_check_required_init(log_file)
+    PF_common.write_log(log_file, <span class="str">"value of y is:"</span> +str(y))
+    <span class="kw">if</span> y &gt;<span class="dig">1</span>:
+        <span class="cmt">#PF_Chrome_setup(log_file)
+</span>        PF_common.reset_account(log_file)
+        y=PF_check_required_init(log_file)
+        <span class="kw">if</span> y==<span class="dig">1</span>:PF_common.write_log_with_screenshot(log_file, <span class="str">"Required status are set to orange, ready to test!"</span>)
+        <span class="kw">else</span>:
+            PF_common.write_log_with_screenshot(log_file,<span class="str">"Chrome setup failed! Please check out and restart setup!"</span>+str(y))
+            <span class="kw">raise</span> Exception(<span class="str">"Chrome setup failed! Please check out and restart setup!"</span>+str(y))
+    <span class="kw">else</span>:
+        PF_common.write_log_with_screenshot(log_file, <span class="str">"Required status are all already orange, ready to test!"</span>)
+
+<span class="cmt">#Function_call
+</span><span class="kw">if</span> __name__ == <span class="str">"__main__"</span>:
+    log_file = <span class="str">""</span>
+    <span class="kw">try</span>:
+        script_path, test_case_script_name=os.path.split(sys.argv[<span class="dig">0</span>])
+        test_case_script_name=test_case_script_name + <span class="str">".sikuli"</span>
+        log_file=PF_common.create_log_folder(test_case_script_name, <span class="str">"PF_Chrome_setup"</span>)
+        <span class="kw">print</span> <span class="str">"Log_file: "</span>+log_file
+        <span class="kw">print</span> <span class="str">"email is: "</span> +PF_common._email
+
+        PF_common.disable_autofill(log_file)
+        PF_common.InstallExtension(log_file)
+        PF_common.ClearBrowsingData(log_file)
+
+        reset_result(log_file)
+        PF_common.PassCase(log_file, test_case_id)
+
+    <span class="kw">except</span> FindFailed, f:
+        msg =  <span class="str">"Find Failed Exception: %s "</span> % f
+        <span class="kw">print</span> <span class="str">"msg: "</span>+msg
+        PF_common.write_log_with_screenshot(log_file,msg)
+
+        PF_common.FailTestCase(log_file, test_case_id)
+
+    <span class="kw">except</span> Exception, e:
+        msg =  <span class="str">"Exception detected: %s "</span> % e
+        <span class="kw">print</span> <span class="str">"msg: "</span>+msg
+        PF_common.write_log_with_screenshot(log_file,msg)
+        PF_common.FailTestCase(log_file, test_case_id)
+</pre>
+</body>
+</html>
