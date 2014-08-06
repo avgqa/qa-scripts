@@ -12,6 +12,7 @@
 #05/23/2014 -- David created twitter login function, edited locate TW functions; added bigger simularity into verify function
 #07/04/2014 -- Michael: fixed ClearBrowsingData, new InstallExtension, fixed Facebook and Google login
 #07/07/2014 -- Michael: Fixed install extension
+#08/06/2014 -- Ron M: Added fixes so script can run from the Driver.
 
 from __future__ import with_statement
 import ConfigParser
@@ -25,20 +26,13 @@ from random import randint
 ############## Below is Ron's code, please don't touch #################
 #This is the common script for Chrome
 _scriptName = "PF_common.sikuli"
-
-_saveLogToRW = False
 _useAutoUser = False
 
 _log_root = "W:\\Logs\\"
 
-if len(sys.argv) > 1 and sys.argv[1] == "logrw":
-    _useAutoUser = True
-    _saveLogToRW = True
-
-print "_saveLogToRW: ", _saveLogToRW
-
-if len(sys.argv) > 1 and sys.argv[1] == "autoUser":
-    _useAutoUser = True
+if len(sys.argv) > 1:
+    if sys.argv[1] == "autoUser" or sys.argv[1] == "logrw" :
+        _useAutoUser = True
 
 print "_useAutoUser: ", _useAutoUser
 ############## Above is Ron's code, please don't touch #################
@@ -60,7 +54,7 @@ if _useAutoUser:
     _password = "zhang0170"
 ############## Above is Ron's code, please don't touch #################
 
-_last_modifed="7.21.2014 uploaded by kathy"
+_last_modifed="8.06.2014 by Ron Maldonado"
 _passed_link = "dl.dropboxusercontent.com/u/40284694/passed.png"
 _failed_link ="dl.dropboxusercontent.com/u/40284694/failed.png"
 _chrome_appx86="C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe"
@@ -108,7 +102,8 @@ _commonDashDir = _thisScript + "\\config_dash\\"
 _dirMap = {"dir":_commonDashDir}
 _config_file= _commonDashDir + "config.txt" 
 
-
+# Ron M. added module level logFile
+_logFile = ""
 
 if os.path.isfile(_chrome_appx86):
     #check for x86 path (x64 bit) 
@@ -570,12 +565,23 @@ def LinkedInLogIn(logfile):
     wait_find(linkedin_section_img)
     write_log_with_screenshot(logfile, "Total LinkedIn login time is: " + str(datetime.now()-start_time))
      
+def setValOfLogIfNeeded(logfile = None):
+    # When executing through the command logfile may be empty if not appropriatly assigned. When using the IDE this is not the case since
+    # the IDE stores all variables in a global cache. IDE is very forgiving to programmers.
+    if logfile is None or len(logfile.strip()) == 0:
+        if len(_logFile.strip()) > 0:
+            logfile = _logFile
+        else:
+            raise Exception("(PF_common.setValOfLogIfNeeded) - Both logfile and _logFile don't have a value. Please check code in PF_common")
+
 def write_log(logfile,msg):
+    logfile = setValOfLogIfNeeded(logfile)
     with open(logfile, 'a+') as fo:
         fo.write("\n<p> " + str(datetime.now())+ ":   " + msg + " </p>\n")
 
     
 def write_log_with_screenshot(logfile,msg):
+    logfile = setValOfLogIfNeeded(logfile)
     write_log(logfile,msg)
     scr_shot=capture(0,0,1440,900)
     write_screenshot_log(logfile,scr_shot)
@@ -619,13 +625,36 @@ def create_log_folder(test_case_script_name, testCase):
     log_path = _rootDir +"Logs\\" + test_case_script_name #+ "-"+timeStamp  
     
     ##### Ron's code, don't touch #######
-    if _saveLogToRW:
-        log_path = _log_root + cleanTestScript(testScript, True)
+    if _useAutoUser:
+        print "***************"
+        logDir = "Logs_W_drive"
+        driveParts = os.path.splitdrive(_rootDir)
+        driveLetter = driveParts[0]
+        logRoot = _rootDir
+
+
+        print "driveLetter: ", driveLetter
+
+        if driveLetter.lower() != "w:":
+            # make the logRoot point to the W: drive if it is not...
+            logRoot = os.path.join("W:", driveParts[1])
+            print "(create_log_folder) - repointed logRoot: ", logRoot
+
+        if driveLetter is not None and len(driveLetter.strip()) > 0:
+            logDir = "Logs_%s_drive" % (driveLetter.rstrip(":"))
+            print "logDir: ", logDir
+
+
+        log_path = logRoot + logDir +  "\\" + test_case_script_name
+        print "(create_log_folder) - log_path: ", log_path
     ##### Ron's code, don't touch #######    
-    
+   
     suite_path=_rootDir +"Logs\\"
     Failed_log_foler=_rootDir + "Failed_Logs\\"
-    log_file= log_path +"\\" +str(testCase)+ "-log.html"  
+    
+    log_file= log_path +"\\" +str(testCase)+ "-log.html"
+
+    _logFile = log_file 
     
     if not os.path.exists(suite_path):     
         try:
@@ -654,13 +683,22 @@ def create_log_folder(test_case_script_name, testCase):
             print "log folder is not deleted, will append to the previous log file!"  
             
     try:
-        print "before create logfile!"
-        os.mkdir(log_path)
+        print "before to  create logfile!"
+        if  not os.path.exists(log_path):
+            print "log_path does not exis attempt to create"
+            #os.mkdir(log_path)
+            # RON: Make the entire path, if it does not exist.
+            os.makedirs(log_path)
+        else:
+            print "log_path exists, no need to create"
         print "log path created:  " + log_path
 
-    except:
-        pass # fail silently if remote directory already exists    
-    write_log(log_file,"The common last modified"+_last_modifed)      
+    except Exception, e:
+		print "(PF_common.create_log_folder) Error creating log_path folder. Msg: " + str(e)
+		# re-raise the original error.
+		raise 
+    
+    _logFile = log_file	   
     return log_file   
 
 def write_img_log(logfile,img):
