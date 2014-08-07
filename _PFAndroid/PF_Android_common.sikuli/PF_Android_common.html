@@ -1,0 +1,881 @@
+
+<html>
+   <head>
+      <style type="text/css">
+         .sikuli-code {
+            font-size: 20px;
+            font-family: "Osaka-mono", Monospace;
+            line-height: 1.5em;
+            display:table-cell;
+            white-space: pre-wrap;       /* css-3 */
+            white-space: -moz-pre-wrap !important;  /* Mozilla, since 1999 */
+            white-space: -pre-wrap;      /* Opera 4-6 */
+            white-space: -o-pre-wrap;    /* Opera 7 */
+            word-wrap: break-word;       /* Internet Explorer 5.5+ */
+            width: 99%;   /* remove horizontal scroll-bar when viewing in IE7 */
+         }
+         .sikuli-code img {
+            vertical-align: middle;
+            margin: 2px;
+            border: 1px solid #ccc;
+            padding: 2px;
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+            -moz-box-shadow: 1px 1px 1px gray;
+            -webkit-box-shadow: 1px 1px 2px gray;
+         }
+         .kw {
+            color: blue;
+         }
+         .skw {
+            color: rgb(63, 127, 127);
+         }
+
+         .str {
+            color: rgb(128, 0, 0);
+         }
+
+         .dig {
+            color: rgb(128, 64, 0);
+         }
+
+         .cmt {
+            color: rgb(200, 0, 200);
+         }
+
+         h2 {
+            display: inline;
+            font-weight: normal;
+         }
+
+         .info {
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+            display: none;
+         }
+
+         a {
+            color: #9D2900;
+         }
+
+         body {
+            font-family: "Trebuchet MS", Arial, Sans-Serif;
+         }
+
+      </style>
+   </head>
+<body>
+<div class="info">
+<h2>PF_Android_common.sikuli\PF_Android_common(2).sikuli</h2> <a href="PF_Android_common.sikuli\PF_Android_common(2).zip">(Download this script)</a>
+</div>
+<pre class="sikuli-code">
+<span class="cmt">#3/25/2014 -- David
+</span><span class="cmt"># added check for loading settings to GL_login and FB_login and appOpen finctions
+</span><span class="cmt"># added verify after login to Google
+</span><span class="cmt">#3/25/2014 -- Kathy
+</span><span class="cmt">#change iOS common folder to PF_Android_common in write_img_log function
+</span><span class="cmt">#3/27/2014 -- added loop and verify tutorial images to sliding tutorial page in Tutorial function
+</span><span class="cmt">#             added lines in FB login handle the black screen, changed wait time to 15 sec in FB login and Google login
+</span><span class="cmt">#             line 75, changed pf_gear to image instead of a region(region is physical location, it stucked in an infinite loop in one test)
+</span><span class="cmt">#4/04/2014 -- David added sleep after close browseer in pass and fail function
+</span><span class="cmt">#4/4/2014 --  Kathy: added go to top of main page in AppOpen function to avoid google section icon not able to locate issue
+</span><span class="cmt">#4/24/2014 -- Michael new logging function, Pass Fail save results to suite log
+</span><span class="cmt">#8/07/2014 -- Michael Changed images and logic, added  zenLogin, twitterLogin functions
+</span>
+<span class="kw">from</span> __future__ <span class="kw">import</span> with_statement
+<span class="cmt"># import settings
+</span><span class="kw">import</span> shutil
+<span class="kw">from</span> pawt <span class="kw">import</span> swing
+<span class="cmt">#from java import net
+</span><span class="kw">from</span> javax.swing <span class="kw">import</span> JButton, JFrame
+<span class="cmt">#integrate the sikuli global namespace to this namespace
+</span><span class="kw">from</span> sikuli <span class="kw">import</span> *
+
+<span class="kw">import</span> ConfigParser
+<span class="kw">import</span> logging
+<span class="kw">from</span> sikuli <span class="kw">import</span> *
+<span class="kw">import</span> os, re
+<span class="kw">from</span> datetime <span class="kw">import</span> datetime
+<span class="kw">import</span> os
+<span class="kw">from</span> os.path <span class="kw">import</span> expanduser
+<span class="kw">import</span> ConfigParser
+
+reload(os)
+<span class="kw">import</span> sys
+reload(sys)
+<span class="kw">from</span> datetime <span class="kw">import</span> datetime
+
+<span class="cmt">#Android ='Nexus 4 - 4.2.2 - API 17 - 480x800'
+</span>Android =<span class="str">'Nexus S - 4.1.1 - API 16 - 480x800'</span>
+<span class="cmt">#Android ='Galaxy S2 - 4.1.1 - API 16 - 480x800'
+</span>sim = switchApp(Android)
+
+_chrome_appx86=<span class="str">"C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe"</span>
+_chrome_app=<span class="str">"C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"</span>
+_passed_link = <img src="dl.dropboxusercontent.com/u/40284694/passed.png" />
+_failed_link =<img src="dl.dropboxusercontent.com/u/40284694/failed.png" />
+
+_PF_logo=(<img src="1407394387605.png" />)
+
+
+
+<span class="cmt">#_rootDir = os.path.dirname(sys.argv[0])
+</span>_rootDir = os.path.dirname(sys.argv[<span class="dig">0</span>].replace(<span class="str">"/"</span>, <span class="str">"\\"</span>))
+<span class="kw">print</span> <span class="str">"sys.argv[0] in common is:"</span> + sys.argv[<span class="dig">0</span>]
+<span class="cmt">#print "_rootDir is: " + _rootDir
+</span>
+<span class="kw">if</span> <span class="str">".sikuli"</span> <span class="kw">in</span> os.path.basename(_rootDir):
+    <span class="cmt"># Running in command line returns the path including the sikuli script, different from IDE
+</span>    _rootDir = os.path.dirname(_rootDir)
+_rootDir = _rootDir + <span class="str">"\\"</span>
+<span class="kw">print</span> <span class="str">"_rootDir is:"</span> + _rootDir
+
+_thisScript = _rootDir + <span class="str">"PF_Android_common.sikuli"</span>
+
+<span class="cmt">#_commonDashDir = _thisScript + "\\config_dash\\"
+</span><span class="cmt">#_dirMap = {"dir":_commonDashDir}
+</span><span class="cmt">#_config_file= _commonDashDir + "config.txt" 
+</span>_test_suite_log=_rootDir + <span class="str">"\\test_suite_log.html"</span>
+
+_email=<span class="str">"jonnylast2013@gmail.com"</span>
+_password=<span class="str">"US!pf.avg"</span>
+
+<span class="kw">def</span> clearCookiesOnPF(logfile, sleepTime = <span class="dig">3</span>, pf_gear = None, findGear = True, pln=None):
+   <span class="cmt"># Clear Cookies helper function for PF iOS Platform 
+</span>    switchApp(Android)
+
+
+    <span class="kw">try</span>:
+
+        <span class="kw">if</span> findGear:
+            <span class="kw">if</span> pf_gear <span class="kw">is</span> None:
+                pf_gear = (<img src="gear.png" />)
+            <span class="skw">find</span>(pf_gear).highlight(<span class="dig">1</span>)
+            <span class="skw">click</span>(pf_gear)
+            <span class="skw">sleep</span>(sleepTime)
+            write_log_with_screenshot(logfile, <span class="str">"after click on gear!"</span>)
+            <span class="kw">while</span> exists(<img src="Black_Gear.png" />) <span class="kw">or</span> exists(Pattern(<img src="1395662626803.png" />).exact()):
+                <span class="skw">click</span>(<img src="Back_buttton.png" />)
+                <span class="skw">sleep</span>(<span class="dig">2</span>)
+                write_log_with_screenshot(logfile, <span class="str">"after click on back button on the bottoe!"</span>)
+                <span class="skw">click</span>(pf_gear)
+                <span class="skw">sleep</span>(sleepTime)
+        <span class="kw">if</span> pln:
+            pln(<img src="reset1.png" />)
+        pf_reset = <span class="skw">wait</span>(<img src="reset2.png" />)
+
+
+        hover(<img src="Reset_hover.png" />)
+        <span class="skw">sleep</span>(<span class="dig">1</span>)
+
+        mouseDown(Button.LEFT)
+        <span class="skw">wait</span>(<span class="dig">12</span>)
+        mouseUp(Button.LEFT)
+        <span class="skw">doubleClick</span>(pf_reset)
+        <span class="skw">wait</span>(<span class="dig">5</span>)
+        Tutorial(logfile)
+    <span class="kw">except</span>:
+        e,b,c = sys.exc_info()
+        <span class="kw">if</span> pln:
+            pln(<span class="str">"Cookies not cleared due to error:"</span>)
+            pln(<span class="str">"%s %s %s"</span> % (e,b,c))
+        <span class="kw">else</span>:
+            <span class="kw">print</span> <span class="str">"Cookies not cleared due to error:"</span>
+            <span class="kw">print</span> e,b,c
+        <span class="kw">pass</span>
+    home=(<img src="home1.png" />)
+    apps=(<img src="apps.png" />)
+    pFApp=(<img src="PFAPP.png" />)
+    verify(logfile,home)
+    <span class="skw">click</span>(home)
+    verify(logfile,apps)
+    <span class="skw">click</span>(apps)
+    <span class="skw">sleep</span>(<span class="dig">2</span>)
+    hover(pFApp)
+    mouseDown(Button.LEFT)
+    <span class="skw">wait</span>(<span class="dig">5</span>)
+    mouseUp(Button.LEFT)
+    <span class="skw">click</span>(<img src="removeFromLis.png" />)
+    <span class="skw">sleep</span>(<span class="dig">2</span>)
+    verify(logfile,home)
+    <span class="skw">click</span>(home)
+    AppOpen (logfile)
+    Tutorial(logfile)
+
+
+
+<span class="kw">def</span> dragAndDrop ():
+
+
+    sim = switchApp(Android)
+    sim_region = sim.focusedWindow()
+    center = sim_region.getCenter()
+    <span class="skw">sleep</span>(<span class="dig">2</span>)
+
+    Settings.DelayAfterDrag =  -<span class="dig">2</span>
+    Settings.DelayBeforeDrop =  -<span class="dig">2</span>
+    Settings.MoveMouseDelay = -<span class="dig">1</span>
+    <span class="skw">dragDrop</span>(center.right(<span class="dig">150</span>),center.left(<span class="dig">250</span>))
+
+
+<span class="kw">def</span> locateItem (logfile,item):
+    k=<span class="dig">0</span>
+    <span class="kw">while</span> (<span class="kw">not</span> exists (Pattern(item).similar(<span class="dig">0.90</span>)) <span class="kw">and</span> k&lt;<span class="dig">8</span>) :
+        sim = switchApp(Android)
+        <span class="skw">sleep</span>(<span class="dig">1</span>)
+        k+=<span class="dig">1</span>
+        sim_region = sim.focusedWindow()
+        center = sim_region.getCenter()
+        wheel(center, WHEEL_DOWN, <span class="dig">2</span>)
+        <span class="cmt">#dragDrop(center.below(150), center.above(50))   
+</span>    verify(logfile,item)
+
+<span class="kw">def</span> locateItemWebPage (logfile,item):
+    k=<span class="dig">0</span>
+    <span class="kw">while</span> (<span class="kw">not</span> exists (Pattern(item).similar(<span class="dig">0.90</span>)) <span class="kw">and</span> k&lt;<span class="dig">12</span>) :
+        sim = switchApp(Android)
+        <span class="skw">sleep</span>(<span class="dig">1</span>)
+        k+=<span class="dig">1</span>
+        sim_region = sim.focusedWindow()
+        center = sim_region.getCenter()
+        wheel(center, WHEEL_DOWN, <span class="dig">5</span>)
+    verify(logfile,item)
+
+<span class="kw">def</span> LocateOnTop (logfile,item):
+    k=<span class="dig">0</span>
+
+    <span class="kw">while</span> (<span class="kw">not</span> exists (Pattern(item).similar(<span class="dig">0.90</span>)) <span class="kw">and</span> k&lt;<span class="dig">12</span>):
+        sim = switchApp(Android)
+        k+=<span class="dig">1</span>
+        sim_region = sim.focusedWindow()
+        center = sim_region.getCenter()
+        wheel(center, WHEEL_UP, <span class="dig">2</span>)
+    verify(logfile,item)
+
+<span class="kw">def</span> verify(logfile,image):
+    x = wait_find(Pattern(image).similar(<span class="dig">0.90</span>),logfile)
+    screen_shot=<span class="skw">capture</span>(<span class="dig">0</span>,<span class="dig">0</span>,<span class="dig">1600</span>,<span class="dig">1200</span>)
+    <span class="kw">if</span> x==<span class="dig">1</span>:
+        write_log(logfile,<span class="str">"Following expected image was found:\n"</span>)
+        write_img_log(logfile,str(image))
+        write_screenshot_log(logfile,screen_shot)
+
+    <span class="kw">else</span>:
+        write_log(logfile,<span class="str">"Not able to find following image:\n"</span>)
+        write_img_log(logfile, str(image))
+        write_screenshot_log(logfile,str(screen_shot))
+        <span class="kw">raise</span> Exception(<span class="str">"Not able to find image "</span> + str(image))
+
+<span class="kw">def</span> verify_continue(logfile,image,similarity):
+    x = wait_find(Pattern(image).similar(similarity),logfile)
+    screen_shot=<span class="skw">capture</span>(<span class="dig">0</span>,<span class="dig">0</span>,<span class="dig">1440</span>,<span class="dig">900</span>)
+    <span class="kw">if</span> x==<span class="dig">1</span>:
+        write_log(logfile,<span class="str">"Following expected image was found:\n"</span>)
+        write_img_log(logfile,str(image))
+        write_screenshot_log(logfile,screen_shot)
+        <span class="kw">return</span> <span class="dig">1</span>
+
+    <span class="kw">else</span>:
+        write_log(logfile,<span class="str">"Not able to find following image:\n"</span>)
+        write_img_log(logfile, str(image))
+        write_screenshot_log(logfile,str(screen_shot))
+        <span class="kw">return</span> <span class="dig">0</span>
+
+<span class="kw">def</span> cleanTestScript(testScript, removeSikExt = False):
+    <span class="kw">if</span> <span class="str">".py.sikuli"</span> <span class="kw">in</span> testScript:
+        testScript = testScript.replace(<span class="str">".py.sikuli"</span>, <span class="str">""</span>)
+
+    <span class="kw">if</span> <span class="str">".sikuli"</span> <span class="kw">in</span> testScript:
+        testScript = testScript.replace(<span class="str">".sikuli"</span>, <span class="str">""</span>)
+
+
+    <span class="kw">if</span> removeSikExt:
+        testScript = testScript.replace(<span class="str">".sikuli"</span>, <span class="str">""</span>)
+    <span class="kw">print</span>(testScript)
+    <span class="kw">return</span> testScript
+
+
+<span class="kw">def</span> create_log_folder(test_case_script_name, testCase):
+
+    timeStamp = str(time.strftime(<span class="str">"%H%M%S"</span>))
+    test_case_script_name = cleanTestScript(test_case_script_name)
+    <span class="kw">print</span>(test_case_script_name)
+    log_path = _rootDir +<span class="str">"Logs\\"</span> + test_case_script_name <span class="cmt">#+ "/log"+timeStamp           </span>
+    sute_path=_rootDir +<span class="str">"Logs\\"</span>
+    log_file= log_path +<span class="str">"\\"</span> +str(testCase)+ <span class="str">"-log.html"</span>
+    <span class="kw">if</span> <span class="kw">not</span> os.path.exists(sute_path):
+        <span class="kw">try</span>:
+            <span class="kw">print</span> <span class="str">"before create logfile!"</span>
+            os.mkdir(sute_path)
+            <span class="kw">print</span> <span class="str">"log path created:  "</span> + sute_path
+
+        <span class="kw">except</span>:
+            <span class="kw">pass</span>
+
+    <span class="kw">if</span> os.path.exists(log_path):
+        <span class="kw">print</span> <span class="str">"log folder exists, will delete this folder!"</span>
+        <span class="kw">try</span>:
+            shutil.rmtree(log_path)
+            <span class="kw">print</span> <span class="str">"Log folder is deleted!"</span>
+        <span class="kw">except</span>:
+            <span class="kw">print</span> <span class="str">"log folder is not deleted, will append to the previous log file!"</span>
+
+    <span class="kw">try</span>:
+        <span class="kw">print</span> <span class="str">"before create logfile!"</span>
+        os.mkdir(log_path)
+        <span class="kw">print</span> <span class="str">"log path created:  "</span> + log_path
+
+    <span class="kw">except</span>:
+        <span class="kw">pass</span> <span class="cmt"># fail silently if remote directory already exists    </span>
+
+    <span class="kw">return</span> log_file
+
+
+
+<span class="kw">def</span> write_log(logfile,msg):
+    <span class="cmt">#fo=open(logfile, 'a+')
+</span>    <span class="kw">with</span> open(logfile, <span class="str">'a+'</span>) <span class="kw">as</span> fo:
+        fo.write(<span class="str">"\n&lt;p&gt; "</span> + str(datetime.now())+ <span class="str">":   "</span> + msg + <span class="str">" &lt;/p&gt;\n"</span>)
+
+<span class="kw">def</span> checkLoading(logfile):
+    wheeL=(Pattern(<img src="Wheel.png" />).similar(<span class="dig">0.44</span>))
+    speed=(Pattern(<img src="1395842225470.png" />).similar(<span class="dig">0.90</span>))
+    blackscreen=(Pattern(<img src="1395925615798.png" />).similar(<span class="dig">0.90</span>))
+    k=<span class="dig">0</span>
+    <span class="kw">print</span> <span class="str">"k is:"</span> + str(k)
+    <span class="kw">while</span>(<span class="kw">not</span> exists (speed) <span class="kw">or</span> exists(wheeL)):
+        <span class="kw">print</span>(<span class="str">"Downloading in progress"</span>)
+        App.focus(Android)
+        test=App.focusedWindow()
+        scr_shot=<span class="skw">capture</span>(test)
+        write_log(logfile,<span class="str">"Downloading in progress"</span>)
+        write_screenshot_log(logfile,scr_shot)
+        <span class="cmt">#write_img_log(logfile,y)
+</span>        <span class="skw">sleep</span> (<span class="dig">4</span>)
+        k+=<span class="dig">1</span>
+        <span class="kw">if</span> k&gt;<span class="dig">5</span>:
+            <span class="kw">return</span> <span class="dig">0</span>
+            <span class="cmt">#break
+</span>
+<span class="kw">def</span> wait_find(y,logfile):
+
+    i=<span class="dig">0</span>
+    msg=<span class="str">"looking for image:"</span> + str(y)
+    <span class="kw">print</span> msg
+    write_log(logfile,msg)
+
+    checkLoading(logfile)
+    <span class="kw">while</span> (<span class="kw">not</span> exists(y)<span class="kw">and</span> i&lt;<span class="dig">7</span>):
+
+        checkLoading(logfile)
+        <span class="skw">wait</span>(<span class="dig">2</span>)
+        i+=<span class="dig">1</span>
+        <span class="kw">print</span>(<span class="str">"waiting for image"</span>)
+
+    <span class="cmt">#while (not exists(y)and i&lt;5):
+</span>     <span class="cmt">#   sleep(2)
+</span>    <span class="cmt">#    i+=1
+</span>    <span class="kw">if</span> exists(y):
+        <span class="skw">find</span>(y).highlight(<span class="dig">1</span>)
+        <span class="kw">return</span> <span class="dig">1</span>
+    <span class="kw">else</span>: <span class="kw">return</span> <span class="dig">0</span>
+
+
+<span class="kw">def</span> write_img_log(logfile,img):
+    <span class="kw">print</span>(str(img))
+    <span class="kw">with</span> open(logfile, <span class="str">'a+'</span>) <span class="kw">as</span> fo:
+        <span class="kw">try</span>:
+
+            <span class="kw">if</span> <span class="str">'\\PF-'</span> <span class="kw">in</span> logfile:
+                script_name_old=str(logfile).split(<span class="str">"\\PF-"</span>)[<span class="dig">0</span>]
+            <span class="kw">if</span> <span class="str">'\\Logs'</span> <span class="kw">in</span> script_name_old:
+                script_name=str(script_name_old).replace(<span class="str">"\\Logs"</span>, <span class="str">""</span>)
+            <span class="kw">if</span> <span class="str">'\\PF_Android'</span> <span class="kw">in</span> script_name:
+                common=str(script_name).split(<span class="str">"\\PF_Android"</span>)[<span class="dig">0</span>]
+                common=common +<span class="str">"\\PF_Android_common.sikuli\\"</span>+ img
+            <span class="kw">if</span> os.path.exists(common):
+                scr=common
+                dst=script_name_old+<span class="str">"\\"</span>+ img
+                shutil.copyfile(scr, dst)
+                <span class="cmt">#open(dst,"w").write(open(scr,"r").read())
+</span>                msg=<span class="str">'\n&lt;img border=\"0" src="'</span> +img+<span class="str">'"&gt;&lt;/img&gt;\n'</span>
+                fo.write(msg)
+                <span class="kw">return</span>
+            <span class="kw">if</span> <span class="str">"common"</span> <span class="kw">in</span> img:
+                scr=img
+                img_new=str(randint(<span class="dig">10000</span>,<span class="dig">99999</span>))+<span class="str">'.png'</span>
+                dst=script_name_old+<span class="str">"\\"</span>+ img_new
+                shutil.copyfile(scr, dst)
+                <span class="cmt">#open(dst,"w").write(open(scr,"r").read())
+</span>                msg=<span class="str">'\n&lt;img border=\"0" src="'</span>+img+ <span class="str">'"&gt;&lt;/img_new&gt;\n'</span>
+                fo.write(msg)
+                <span class="kw">return</span>
+            scr=script_name +<span class="str">".sikuli\\"</span>+ img
+            dst=script_name_old+<span class="str">"\\"</span>+ img
+            shutil.copyfile(scr, dst)
+            <span class="cmt">#open(dst,"w").write(open(scr,"r").read())
+</span>            msg=<span class="str">'\n&lt;img border=\"0" src="'</span>+img+  <span class="str">'"&gt;&lt;/img&gt;\n'</span>
+            fo.write(msg)
+        <span class="kw">except</span> IOError, e:
+            <span class="kw">print</span> <span class="str">"Unable to copy file. %s"</span> % e
+
+        <span class="kw">except</span>:
+            msg=<span class="str">"in exception: There is an except when write img log!"</span>
+            <span class="kw">print</span> msg
+            fo.write(msg)
+
+
+<span class="kw">def</span> write_screenshot_log(logfile, img):
+    <span class="cmt">#fo=open(logfile, "a+")
+</span>    <span class="kw">with</span> open(logfile, <span class="str">'a+'</span>) <span class="kw">as</span> fo:
+        img_path,img_name=os.path.split(logfile)
+        shutil.copy (img, img_path)
+        path1,img_name=os.path.split(str(img))
+        img= img_path +<span class="str">"/"</span>+ img_name
+        img = img.replace(<span class="str">" "</span>, <span class="str">"%20"</span>)
+        msg = <span class="str">'&lt;p&gt;Screen shot during test is &lt;a href='</span> + img_name + <span class="str">'&gt;here&lt;/a&gt;&lt;/p&gt;'</span>
+
+        fo.write(msg)
+
+
+<span class="kw">def</span> write_log_with_screenshot(logfile,msg):
+    write_log(logfile,msg)
+    scr_shot=<span class="skw">capture</span>(<span class="dig">0</span>,<span class="dig">0</span>,<span class="dig">1680</span>,<span class="dig">1050</span>)
+    write_screenshot_log(logfile,scr_shot)
+
+<span class="kw">def</span> FB_logIn(log_file):
+
+
+
+
+    connectToFacebook = (<img src="1407398302935.png" />)
+    fbConnectTopbar = (<img src="1407398438166.png" />)
+    email_field = (<img src="FBEmail.png" />)
+    password_field = (<img src="FBPassword.png" />)
+    logInButton = (<img src="1407398455367.png" />)
+    fixesButton = (<img src="1407398118226.png" />)
+    logged=(<img src="1407399202564.png" />)
+
+
+    sim = switchApp(Android)
+    sim_region = sim.focusedWindow()
+    center = sim_region.getCenter()
+
+    <span class="skw">wait</span> (<span class="dig">5</span>)
+    wheel(center, WHEEL_DOWN, <span class="dig">20</span>)
+    <span class="skw">sleep</span>(<span class="dig">2</span>)
+    hover(<img src="1395926778937.png" />)
+    <span class="kw">if</span> exists(connectToFacebook):
+        verify (log_file,connectToFacebook)
+        <span class="skw">click</span> (connectToFacebook)
+        <span class="skw">sleep</span>(<span class="dig">10</span>)
+        blackAndWhiteScreen(connectToFacebook,log_file)
+        verify (log_file,email_field)
+        <span class="skw">click</span> (email_field)
+        <span class="skw">sleep</span> (<span class="dig">5</span>)
+        <span class="skw">type</span> (_email)
+        verify (log_file,password_field)
+        <span class="skw">type</span>(Key.TAB)
+        <span class="skw">sleep</span> (<span class="dig">3</span>)
+        <span class="skw">type</span> (_password)
+        <span class="skw">sleep</span> (<span class="dig">3</span>)
+        <span class="skw">click</span> (logInButton)
+        <span class="skw">sleep</span>(<span class="dig">30</span>)
+        <span class="cmt">#while exists(wheeL):
+</span>         <span class="cmt">#   write_log_with_screenshot(log_file,"Wheel detected")
+</span>         <span class="cmt">#   sleep(5)
+</span>        verify (log_file,logged)
+        msg=<span class="str">"You are connected to Facebook"</span>
+        <span class="kw">print</span> msg
+        write_log_with_screenshot(log_file,msg)
+
+    <span class="kw">else</span>:
+        msg=<span class="str">"You are already connected to Facebook"</span>
+        <span class="kw">print</span> msg
+        write_log_with_screenshot(log_file,msg)
+        <span class="kw">return</span>
+
+
+
+
+
+
+<span class="kw">def</span> Google_logIn(logfile):
+
+    Google_section_img=(<img src="1407400454220.png" />)
+    More_sectioni_img=(<img src="1407400461238.png" />)
+    wheeL=(Pattern(<img src="Wheel.png" />).similar(<span class="dig">0.40</span>))
+
+    reenter=(<img src="1395653717827.png" />)
+
+    connectToGoogle = (<img src="1407398094610.png" />)
+
+    googleConnectTopbar = (<img src="1407400521923.png" />)
+    email_field = (<img src="GLEMAIL.png" />)
+    password_field = (<img src="GLPASSWORD.png" />)
+    logInButton = (<img src="GLSingIn.png" />)
+    fixesButton = (<img src="1407398108530.png" />)
+    GoogleLogo=(<img src="gplus.png" />)
+    switchApp(Android)
+    sim = switchApp(Android)
+    sim_region = sim.focusedWindow()
+    center = sim_region.getCenter()
+
+    <span class="skw">wait</span>(<span class="dig">2</span>)
+    wheel(center, WHEEL_UP, <span class="dig">30</span>)
+    locateItem(logfile,Google_section_img)
+    locateItem(logfile,More_sectioni_img)
+    hover(_PF_logo)
+    <span class="skw">sleep</span>(<span class="dig">1</span>)
+    <span class="kw">if</span> exists (connectToGoogle):
+        <span class="skw">click</span> (connectToGoogle)
+        <span class="skw">sleep</span> (<span class="dig">5</span>)
+        <span class="kw">if</span> <span class="kw">not</span> exists(reenter):
+            verify (logfile,email_field)
+            <span class="skw">click</span> (email_field)
+            <span class="skw">sleep</span> (<span class="dig">5</span>)
+            <span class="skw">type</span> (_email)
+            <span class="skw">sleep</span>(<span class="dig">2</span>)
+        <span class="skw">click</span>(password_field)
+        <span class="skw">sleep</span> (<span class="dig">3</span>)
+        <span class="skw">type</span> (_password)
+        <span class="skw">sleep</span> (<span class="dig">3</span>)
+        <span class="skw">click</span> (logInButton)
+        <span class="skw">sleep</span>(<span class="dig">30</span>)
+        verify(logfile,GoogleLogo)
+        <span class="cmt">#while exists(wheeL):
+</span>           <span class="cmt"># write_log_with_screenshot(logfile,"Wheel detected")
+</span>           <span class="cmt"># sleep(5)
+</span>        <span class="kw">if</span> (exists(GoogleLogo)):
+            write_log_with_screenshot(logfile,<span class="str">"You are sucessfully logged into Google"</span>)
+
+    <span class="kw">else</span>:
+        msg=<span class="str">"You are already logged in to Google"</span>
+        write_log_with_screenshot(logfile,msg)
+        <span class="kw">print</span> msg
+
+<span class="kw">def</span> Tutorial(log_file):
+
+    <span class="kw">if</span> exists(<img src="gear2.png" />) :
+        msg =<span class="str">"Tutorial was already skipped"</span>
+        <span class="kw">print</span> (msg)
+        write_log(log_file,msg)
+        <span class="kw">return</span>
+    tutorial1=(<img src="welcome.png" />)
+
+
+
+
+
+    continue_text = (<img src="GetStarted.png" />)
+
+
+    t=verify_continue(log_file, continue_text, <span class="dig">0.90</span>)
+
+    <span class="kw">if</span> t==<span class="dig">0</span>:
+        write_log_with_screenshot(log_file, <span class="str">"Welcome page was not shown!"</span>)
+        <span class="kw">print</span> <span class="str">"Tutorial was not shown!"</span>
+    <span class="kw">else</span>:
+
+        verify(log_file,tutorial1)
+        dragAndDrop()
+        <span class="skw">click</span>(continue_text)
+        <span class="skw">sleep</span>(<span class="dig">2</span>)
+
+        msg=<span class="str">"Welcome page was shown"</span>
+        <span class="kw">print</span> msg
+
+
+    verify(log_file,_PF_logo)
+
+    write_log_with_screenshot(log_file,<span class="str">"PrivacyFix App is opened"</span>)
+
+
+<span class="kw">def</span> PassCase(logfile, test_case_id):
+    w=<span class="dig">0</span>
+    <span class="kw">try</span>:
+        <span class="kw">if</span> <span class="str">'.sikuli'</span> <span class="kw">and</span> <span class="str">'PF_Android_'</span> <span class="kw">in</span> logfile:
+            w=str(logfile).split(<span class="str">".sikuli"</span>)[<span class="dig">0</span>].split(<span class="str">"PF_"</span>)[<span class="dig">1</span>]
+        <span class="kw">if</span> <span class="str">'\\PF-'</span> <span class="kw">in</span> w:
+            w=w.split(<span class="str">'\\PF-'</span>)[<span class="dig">0</span>]
+    <span class="kw">except</span>   ValueError :
+        <span class="kw">print</span> (<span class="str">"cant be converted into string"</span>)
+    <span class="kw">except</span> :
+        <span class="kw">print</span>(<span class="str">"Test case name is not correct, please change"</span>)
+    msg =   w + <span class="str">" - Test Case Passed!"</span>
+    <span class="kw">print</span> msg
+    os.system(<img src="start chrome http://dl.dropboxusercontent.com/u/40284694/passed.png" />)
+    write_log(logfile,msg)
+    write_log_with_screenshot(logfile,msg)
+    write_log(_test_suite_log,msg)
+    <span class="cmt">#PopUp('http://dl.dropboxusercontent.com/u/40284694/passed.png')   
+</span>    <span class="skw">sleep</span>(<span class="dig">15</span>)
+    <span class="skw">type</span>(<span class="str">"q"</span>, Key.CTRL+Key.SHIFT)
+    <span class="skw">sleep</span>(<span class="dig">2</span>)
+    App.focus (Android)
+
+
+
+<span class="kw">def</span> FailTestCase(logfile, test_case_id):
+    w=<span class="dig">0</span>
+    os.system(<img src="start chrome http://dl.dropboxusercontent.com/u/40284694/failed.png" />)
+    <span class="kw">try</span>:
+        <span class="kw">if</span> <span class="str">'.sikuli'</span> <span class="kw">and</span> <span class="str">'PF_Android_'</span> <span class="kw">in</span> logfile:
+            w=str(logfile).split(<span class="str">".sikuli"</span>)[<span class="dig">0</span>].split(<span class="str">"PF_"</span>)[<span class="dig">1</span>]
+        <span class="kw">if</span> <span class="str">'\\PF-'</span> <span class="kw">in</span> w:
+            w=w.split(<span class="str">'\\PF-'</span>)[<span class="dig">0</span>]
+        test_script_name1 = str(logfile).split(<span class="str">".sikuli"</span>)[<span class="dig">0</span>].split(_rootDir)[<span class="dig">1</span>].replace(<span class="str">"Logs\\"</span>,<span class="str">""</span>).split(<span class="str">"\\PF-"</span>)[<span class="dig">0</span>]
+        <span class="kw">print</span>(test_script_name1 )
+
+    <span class="kw">except</span>   ValueError :
+        <span class="kw">print</span> (<span class="str">"cant be converted into string"</span>)
+    <span class="kw">except</span> :
+        <span class="kw">print</span>(<span class="str">"Test case name is not correct, please change"</span>)
+
+    msg =   w + <span class="str">" - Test Case Failed!"</span>
+    write_log(logfile,msg)
+    write_log_with_screenshot(logfile, msg)
+    write_log(_test_suite_log,msg)
+    <span class="kw">print</span> msg
+    <span class="skw">sleep</span>(<span class="dig">15</span>)
+    <span class="cmt">#print "test suite log file is: " + _test_suite_log
+</span>    <span class="skw">type</span>(<span class="str">"q"</span>, Key.CTRL+Key.SHIFT)
+    <span class="skw">sleep</span>(<span class="dig">2</span>)
+    timeStamp = str(time.strftime(<span class="str">"%H%M%S"</span>))
+    Failed_Logs_Folder = _rootDir + <span class="str">"Failed_Logs\\"</span> + test_script_name1<span class="cmt"># + "_" + timeStamp +"/"</span>
+    <span class="kw">print</span> <span class="str">"Failed_Logs_Folder is:"</span> + Failed_Logs_Folder
+
+    src_folder=_rootDir+<span class="str">"Logs\\"</span>+ test_script_name1+<span class="str">"\\"</span>
+    <span class="kw">print</span> <span class="str">"src_folder is:"</span> + src_folder
+
+    <span class="kw">print</span> <span class="str">"src_folder is: "</span> + src_folder
+    <span class="kw">print</span> <span class="str">"Failed_Logs_Folder is:"</span> + Failed_Logs_Folder+ <span class="str">"\\"</span>
+    <span class="kw">if</span> os.path.exists(Failed_Logs_Folder):
+        <span class="kw">print</span> <span class="str">"log folder exists, will delete this folder!"</span>
+        <span class="kw">try</span>:
+            shutil.rmtree(Failed_Logs_Folder)
+            <span class="kw">print</span> <span class="str">"Log folder is deleted!"</span>
+        <span class="kw">except</span>:
+            <span class="kw">print</span> <span class="str">"log folder is not deleted, will append to the previous log file!"</span>
+    <span class="skw">wait</span>(<span class="dig">1</span>)
+    <span class="kw">try</span>:
+        shutil.copytree(src_folder, Failed_Logs_Folder)
+    <span class="kw">except</span> shutil.Error, e:
+
+        <span class="kw">print</span> <span class="str">"shutil error occurred."</span>
+        <span class="kw">print</span> e
+    App.focus (Android)
+
+<span class="kw">def</span> AppOpen (log_file):
+
+    sim = switchApp(Android)
+    sim_region=sim.focusedWindow()
+    center = sim_region.getCenter()
+    fixes=(<img src="1407398108530.png" />)
+    back=(<img src="1395993486132.png" />)
+    <span class="kw">if</span> exists (fixes):
+        <span class="skw">click</span> (fixes)
+    <span class="kw">if</span> exists (back):
+        <span class="skw">click</span> (back)
+    wheeL=(Pattern(<img src="Wheel.png" />).similar(<span class="dig">0.40</span>))
+    <span class="kw">if</span> exists(_PF_logo):
+        msg = <span class="str">'App is already opened'</span>
+        write_log_with_screenshot(log_file,msg)
+        <span class="kw">print</span> msg
+        <span class="kw">while</span> <span class="kw">not</span> exists(Pattern(<img src="1396673216085.png" />).similar(<span class="dig">0.91</span>)):
+            <span class="kw">print</span> <span class="str">"not at the top"</span>
+            App.focus(Android)
+            <span class="skw">sleep</span>(<span class="dig">1</span>)
+            wheel(center, WHEEL_UP, <span class="dig">16</span>)
+
+        <span class="kw">if</span> exists(wheeL):<span class="skw">sleep</span>(<span class="dig">5</span>)
+        <span class="kw">return</span>
+
+
+
+    PF= ( <img src="PFMenuLogo.png" />)
+    menu=(<img src="menu.png" />)
+    home=(<img src="home1.png" />)
+    AVG=(<img src="1407394387605.png" />)
+    verify(log_file,home)
+    <span class="skw">click</span>(home)
+    <span class="skw">wait</span>(<span class="dig">3</span>)
+    verify(log_file,menu)
+    <span class="skw">click</span>(menu)
+    <span class="skw">wait</span>(<span class="dig">3</span>)
+
+    <span class="kw">if</span> <span class="kw">not</span> exists (PF):
+        <span class="kw">print</span> <span class="str">"need to slide to find PF_icon"</span>
+        sim = switchApp(Android)
+        sim_region = sim.focusedWindow()
+        sim_center = sim_region.getCenter()
+        Settings.DelayAfterDrag = -<span class="dig">1</span>
+        Settings.DelayBeforeDrop = -<span class="dig">1</span>
+        Settings.MoveMouseDelay = -<span class="dig">1</span>
+        <span class="skw">dragDrop</span>(sim_center.right(<span class="dig">200</span>), sim_center.left(<span class="dig">200</span>))
+        verify(log_file,PF)
+        <span class="kw">print</span> <span class="str">"slide and found PF_icon"</span>
+        <span class="skw">click</span> (PF)
+        <span class="skw">sleep</span>(<span class="dig">2</span>)
+
+
+        <span class="cmt">#while exists(wheeL):
+</span>           <span class="cmt"># write_log_with_screenshot(log_file,"Wheel detected")
+</span>          <span class="cmt">#  sleep(5)
+</span>
+    <span class="kw">else</span>:
+        verify(log_file,PF)
+        <span class="skw">click</span> (PF)
+        <span class="skw">sleep</span>(<span class="dig">2</span>)
+       <span class="cmt"># while exists(wheeL):
+</span>          <span class="cmt">#  write_log_with_screenshot(log_file,"Wheel detected")
+</span>          <span class="cmt">#  sleep(5)
+</span>    <span class="skw">sleep</span>(<span class="dig">2</span>)
+    Tutorial(log_file)
+    verify(log_file,AVG)
+
+<span class="kw">def</span> IfPass(log_file):
+    reenter=(<img src="1395653717827.png" />)
+    <span class="kw">if</span> exists(reenter):
+        verify(log_file,reenter)
+        <span class="skw">click</span>(reenter)
+        <span class="skw">sleep</span>(<span class="dig">1</span>)
+        <span class="skw">type</span>(Key.TAB)
+        <span class="skw">sleep</span>(<span class="dig">1</span>)
+        <span class="skw">type</span>(_password)
+        <span class="skw">type</span>(Key.TAB)
+        <span class="skw">sleep</span>(<span class="dig">1</span>)
+        <span class="skw">type</span>(Key.ENTER)
+        <span class="skw">sleep</span>(<span class="dig">5</span>)
+        write_log_with_screenshot(log_file, <span class="str">"Password for Google entered"</span>)
+    <span class="kw">else</span>: write_log_with_screenshot(log_file, <span class="str">"You are already logged to Google"</span>)
+
+<span class="kw">def</span> blackAndWhiteScreen(item,log_file):
+    i=<span class="dig">0</span>
+    <span class="skw">sleep</span>(<span class="dig">1</span>)
+    <span class="kw">while</span> (exists(Pattern(<img src="Black_Gear.png" />).similar(<span class="dig">0.90</span>)) <span class="kw">or</span> exists(Pattern(<img src="1395662626803.png" />).exact())<span class="kw">and</span> i&lt;<span class="dig">10</span>):
+        <span class="skw">click</span>(<img src="Back_buttton.png" />)
+        <span class="skw">sleep</span>(<span class="dig">2</span>)
+        msg=(<span class="str">"going back"</span>)
+        write_log(log_file,msg)
+        <span class="kw">print</span>(msg)
+        i+=<span class="dig">1</span>
+        <span class="skw">click</span> (item)
+
+
+    <span class="kw">if</span> (exists(Pattern(<img src="Black_Gear.png" />).similar(<span class="dig">0.90</span>)) <span class="kw">or</span> exists(Pattern(<img src="1395662626803.png" />).exact())):
+
+
+
+        <span class="skw">click</span>(<img src="1395997193551.png" />)
+        <span class="skw">click</span>(<img src="1395997214636.png" />)
+        <span class="skw">click</span>(<img src="1395997240033.png" />)
+        <span class="skw">click</span>(<img src="1395997253361.png" />)
+        <span class="skw">click</span>(<img src="1395997272315.png" />)
+        <span class="skw">click</span>(<img src="1395997282619.png" />)
+        <span class="skw">click</span>(<img src="1395997297258.png" />)
+        AppOpen (log_file)
+        verify(log_file,item)
+        <span class="skw">click</span>(item)
+
+
+<span class="kw">def</span> Twitter_logIn(logfile):
+
+    Facebook_section_img=(<img src="FBLogo.png" />)
+    Twitter_section_img=(<img src="TWLogo.png" />)
+    wheeL=(Pattern(<img src="Wheel.png" />).similar(<span class="dig">0.40</span>))
+
+    reenter=(<img src="1395653717827.png" />)
+
+    connectToTwitter = (<img src="ConnectToTwitter.png" />)
+
+    TwitterConnectTopbar = (<img src="1407411197759.png" />)
+    email_field = (<img src="1407401447007.png" />)
+    password_field = (<img src="1407401452700.png" />)
+    logInButton = (<img src="1407401458908.png" />)
+    fixesButton = (<img src="1407398108530.png" />)
+    TwitterLogo=(<img src="1407403032469.png" />)
+    switchApp(Android)
+    sim = switchApp(Android)
+    sim_region = sim.focusedWindow()
+    center = sim_region.getCenter()
+
+    <span class="skw">wait</span>(<span class="dig">2</span>)
+    wheel(center, WHEEL_UP, <span class="dig">30</span>)
+    locateItem(logfile,Twitter_section_img)
+    locateItem(logfile,Facebook_section_img)
+    hover(_PF_logo)
+    <span class="skw">sleep</span>(<span class="dig">1</span>)
+    <span class="kw">if</span> (exists (connectToTwitter)<span class="kw">and</span> <span class="kw">not</span> exists(TwitterLogo)):
+        <span class="skw">click</span> (connectToTwitter)
+        <span class="skw">sleep</span> (<span class="dig">5</span>)
+        <span class="kw">if</span> <span class="kw">not</span> exists(reenter):
+            verify (logfile,email_field)
+            <span class="skw">click</span> (email_field)
+            <span class="skw">sleep</span> (<span class="dig">5</span>)
+            <span class="skw">type</span> (_email)
+            <span class="skw">sleep</span>(<span class="dig">2</span>)
+        <span class="skw">click</span>(password_field)
+        <span class="skw">sleep</span> (<span class="dig">3</span>)
+        <span class="skw">type</span> (_password)
+        <span class="skw">sleep</span> (<span class="dig">3</span>)
+        <span class="skw">click</span> (logInButton)
+        <span class="skw">sleep</span>(<span class="dig">30</span>)
+        verify(logfile,TwitterLogo)
+        <span class="cmt">#while exists(wheeL):
+</span>           <span class="cmt"># write_log_with_screenshot(logfile,"Wheel detected")
+</span>           <span class="cmt"># sleep(5)
+</span>        <span class="kw">if</span> (exists(TwitterLogo)):
+            write_log_with_screenshot(logfile,<span class="str">"You are sucessfully logged into Twitter"</span>)
+
+    <span class="kw">else</span>:
+        msg=<span class="str">"You are already logged in to Twitter"</span>
+        write_log_with_screenshot(logfile,msg)
+        <span class="kw">print</span> msg
+
+
+
+
+
+<span class="kw">def</span> zenLogin(logfile):
+    Zen=(<img src="1407413479946.png" />)
+    ZenUI=(<img src="1407413519949.png" />)
+    ZenLogin=(<img src="1407413549908.png" />)
+    LogInTab=(<img src="1407413685874.png" />)
+    Email=(<img src="1407413706129.png" />)
+    Password=(<img src="1407413718527.png" />)
+    LogInButton=(<img src="1407414094429.png" />)
+
+
+    verify(logfile,Zen)
+    <span class="skw">click</span>(Zen)
+    verify(logfile,ZenUI)
+    verify(logfile,ZenLogin)
+    <span class="skw">click</span>(ZenLogin)
+    <span class="kw">if</span> exists(LogInTab):
+        <span class="skw">click</span>(LogInTab)
+    verify(logfile,Email)
+    <span class="skw">click</span>(Email)
+    <span class="skw">type</span>(_email)
+    verify(logfile,Password)
+    <span class="skw">click</span>(Password)
+    <span class="skw">type</span>(_password)
+    verify(logfile,LogInButton)
+    <span class="skw">click</span>(LogInButton)
+
+
+
+test_case_id=<span class="str">"PF-1646"</span>
+script_path, test_case_script_name=os.path.split(sys.argv[<span class="dig">0</span>])
+test_case_script_name=test_case_script_name + <span class="str">".sikuli"</span>
+log_file=create_log_folder(test_case_script_name,test_case_id)
+zenLogin(log_file)
+<span class="cmt">#logfile="C:\\log111.html"
+</span><span class="cmt">#AppOpen (logfile)
+</span><span class="cmt">#clearCookiesOnPF(logfile)
+</span><span class="cmt">#Tutorial(logfile)
+</span><span class="cmt">#FB_logIn(logfile)</span>
+</pre>
+</body>
+</html>

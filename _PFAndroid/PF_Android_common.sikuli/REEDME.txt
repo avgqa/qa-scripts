@@ -1,0 +1,14 @@
+#3/23/2014 -- Kathy: 
+#added cleanTestScript function from PF_common to work with different path when running test script in command line. 
+#updated create_log_folder to clean Test Script name when there is .py in the name when running in command line
+#adjust Android name for the emulator name 
+#wait_find: change i<5 instead of i<2, since waiting time is longer sometimes
+
+
+#3/24/2014 -- Michael
+#changed locate item for web page
+#3/24/2014 -- David
+# changed Google login for check if exists email field
+# added function IfPass if you was logged out from google
+#changed Facebook login button
+#changed clear function: Added check for black and white screen
