@@ -384,16 +384,25 @@ def FB_logIn(log_file):
     logInButton = ("1407398455367.png")
     fixesButton = ("1407398118226.png")
     logged=("1407399202564.png")
+
+    locateFacebookSection(log_file)
+    if exists (logged):
+        msg="You was connected to Facebook"
+        print msg
+        write_log_with_screenshot(log_file,msg)
+        return
+        
  
 
     sim = switchApp(Android)
     sim_region = sim.focusedWindow()
     center = sim_region.getCenter()
 
-    wait (5) 
-    wheel(center, WHEEL_DOWN, 20)
-    sleep(2)
-    hover("1395926778937.png")
+ #   wait (5) 
+ #   wheel(center, WHEEL_DOWN, 20)
+ #   sleep(2)
+ #   hover("1395926778937.png")
+
     if exists(connectToFacebook):
         verify (log_file,connectToFacebook)       
         click (connectToFacebook)
@@ -611,7 +620,7 @@ def AppOpen (log_file):
         msg = 'App is already opened'
         write_log_with_screenshot(log_file,msg)
         print msg
-        while not exists(Pattern("1396673216085.png").similar(0.91)):   
+        while not exists("1407835399958.png"):   
             print "not at the top"
             App.focus(Android)
             sleep(1)
@@ -792,13 +801,29 @@ def zenLogin(logfile):
     verify(logfile,LogInButton)
     click(LogInButton)
     
+def locateFacebookSection(logfile):
+    FBLogo=("1407478026867.png")
+    More=("1407478350430.png")
+    if not exists (FBLogo):
+        switchApp(Android)
+        sim = switchApp(Android)
+        sim_region = sim.focusedWindow()
+        center = sim_region.getCenter()
+        #wheel(center, WHEEL_UP, 10)
+        locateItem (logfile,More)
+        wheel(center, WHEEL_UP, 5)
+        locateItem (logfile,FBLogo)
+        
+        
+    
+    
     
 
 test_case_id="PF-1646"
 script_path, test_case_script_name=os.path.split(sys.argv[0])
 test_case_script_name=test_case_script_name + ".sikuli"
 log_file=create_log_folder(test_case_script_name,test_case_id)
-zenLogin(log_file)
+FB_logIn(log_file)
 #logfile="C:\\log111.html"
 #AppOpen (logfile)
 #clearCookiesOnPF(logfile)

@@ -457,15 +457,24 @@ _password=<span class="str">"US!pf.avg"</span>
     fixesButton = (<img src="1407398118226.png" />)
     logged=(<img src="1407399202564.png" />)
 
+    locateFacebookSection(log_file)
+    <span class="kw">if</span> exists (logged):
+        msg=<span class="str">"You was connected to Facebook"</span>
+        <span class="kw">print</span> msg
+        write_log_with_screenshot(log_file,msg)
+        <span class="kw">return</span>
+
+
 
     sim = switchApp(Android)
     sim_region = sim.focusedWindow()
     center = sim_region.getCenter()
 
-    <span class="skw">wait</span> (<span class="dig">5</span>)
-    wheel(center, WHEEL_DOWN, <span class="dig">20</span>)
-    <span class="skw">sleep</span>(<span class="dig">2</span>)
-    hover(<img src="1395926778937.png" />)
+ <span class="cmt">#   wait (5) 
+</span> <span class="cmt">#   wheel(center, WHEEL_DOWN, 20)
+</span> <span class="cmt">#   sleep(2)
+</span> <span class="cmt">#   hover("1395926778937.png")
+</span>
     <span class="kw">if</span> exists(connectToFacebook):
         verify (log_file,connectToFacebook)
         <span class="skw">click</span> (connectToFacebook)
@@ -683,7 +692,7 @@ _password=<span class="str">"US!pf.avg"</span>
         msg = <span class="str">'App is already opened'</span>
         write_log_with_screenshot(log_file,msg)
         <span class="kw">print</span> msg
-        <span class="kw">while</span> <span class="kw">not</span> exists(Pattern(<img src="1396673216085.png" />).similar(<span class="dig">0.91</span>)):
+        <span class="kw">while</span> <span class="kw">not</span> exists(<img src="1407835399958.png" />):
             <span class="kw">print</span> <span class="str">"not at the top"</span>
             App.focus(Android)
             <span class="skw">sleep</span>(<span class="dig">1</span>)
@@ -864,13 +873,29 @@ _password=<span class="str">"US!pf.avg"</span>
     verify(logfile,LogInButton)
     <span class="skw">click</span>(LogInButton)
 
+<span class="kw">def</span> locateFacebookSection(logfile):
+    FBLogo=(<img src="1407478026867.png" />)
+    More=(<img src="1407478350430.png" />)
+    <span class="kw">if</span> <span class="kw">not</span> exists (FBLogo):
+        switchApp(Android)
+        sim = switchApp(Android)
+        sim_region = sim.focusedWindow()
+        center = sim_region.getCenter()
+        <span class="cmt">#wheel(center, WHEEL_UP, 10)
+</span>        locateItem (logfile,More)
+        wheel(center, WHEEL_UP, <span class="dig">5</span>)
+        locateItem (logfile,FBLogo)
+
+
+
+
 
 
 test_case_id=<span class="str">"PF-1646"</span>
 script_path, test_case_script_name=os.path.split(sys.argv[<span class="dig">0</span>])
 test_case_script_name=test_case_script_name + <span class="str">".sikuli"</span>
 log_file=create_log_folder(test_case_script_name,test_case_id)
-zenLogin(log_file)
+FB_logIn(log_file)
 <span class="cmt">#logfile="C:\\log111.html"
 </span><span class="cmt">#AppOpen (logfile)
 </span><span class="cmt">#clearCookiesOnPF(logfile)

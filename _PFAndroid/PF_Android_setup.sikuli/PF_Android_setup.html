@@ -1,0 +1,302 @@
+
+<html>
+   <head>
+      <style type="text/css">
+         .sikuli-code {
+            font-size: 20px;
+            font-family: "Osaka-mono", Monospace;
+            line-height: 1.5em;
+            display:table-cell;
+            white-space: pre-wrap;       /* css-3 */
+            white-space: -moz-pre-wrap !important;  /* Mozilla, since 1999 */
+            white-space: -pre-wrap;      /* Opera 4-6 */
+            white-space: -o-pre-wrap;    /* Opera 7 */
+            word-wrap: break-word;       /* Internet Explorer 5.5+ */
+            width: 99%;   /* remove horizontal scroll-bar when viewing in IE7 */
+         }
+         .sikuli-code img {
+            vertical-align: middle;
+            margin: 2px;
+            border: 1px solid #ccc;
+            padding: 2px;
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+            -moz-box-shadow: 1px 1px 1px gray;
+            -webkit-box-shadow: 1px 1px 2px gray;
+         }
+         .kw {
+            color: blue;
+         }
+         .skw {
+            color: rgb(63, 127, 127);
+         }
+
+         .str {
+            color: rgb(128, 0, 0);
+         }
+
+         .dig {
+            color: rgb(128, 64, 0);
+         }
+
+         .cmt {
+            color: rgb(200, 0, 200);
+         }
+
+         h2 {
+            display: inline;
+            font-weight: normal;
+         }
+
+         .info {
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+            display: none;
+         }
+
+         a {
+            color: #9D2900;
+         }
+
+         body {
+            font-family: "Trebuchet MS", Arial, Sans-Serif;
+         }
+
+      </style>
+   </head>
+<body>
+<div class="info">
+<h2>PF_Android_setup.sikuli\PF_Android_setup.sikuli</h2> <a href="PF_Android_setup.sikuli\PF_Android_setup.zip">(Download this script)</a>
+</div>
+<pre class="sikuli-code">
+<span class="kw">import</span> PF_Android_common
+reload(PF_Android_common)
+<span class="kw">from</span> sikuli <span class="kw">import</span> *
+
+
+test_case_id=<span class="str">"PF-952"</span>
+Android =PF_Android_common.Android
+
+orange1=(<img src="FB01_orange.png" />)
+green1=(<img src="FBgreen1.png" />)
+gray1=(<img src="FB1Grey.png" />)
+orange2=(<img src="FB02_orange.png" />)
+green2=(<img src="FBgreen2.png" />)
+gray2=(<img src="FB2grey.png" />)
+orange3=(<img src="FB03_orange.png" />)
+green3=(<img src="FBgreen3.png" />)
+gray3=(<img src="FBgrey3.png" />)
+orange4=(<img src="fbOrange4.png" />)
+orange5=(<img src="FB05_orange.png" />)
+green5=(<img src="FBgreen5.png" />)
+gray5=(<img src="FBgrey5.png" />)
+orange6=(<img src="FBorange6.png" />)
+orange7=(<img src="FBorange.png" />)
+orange8=(<img src="FBorange8.png" />)
+
+orange9=(<img src="FB09_orange.png" />)
+green9=(<img src="FBgreen9.png" />)
+gray9=(<img src="FBgrey9.png" />)
+GL01_orange=(<img src="GL01_orange.png" />)
+GL01_green=(<img src="GL01_green.png" />)
+GL01_gray=(<img src="GL01_gray.png" />)
+GL02_orange=(<img src="GLorange2.png" />)
+GL03_orange=(<img src="GLorange3.png" />)
+GL03_green=(<img src="GL3Green.png" />)
+GL03_gray=(<img src="GL3grey.png" />)
+Fixes=(<img src="Fixes.png" />)
+Android =<span class="str">'Nexus S - 4.1.1 - API 16 - 480x800'</span>
+sim = switchApp(Android)
+sim_region = sim.focusedWindow()
+center = sim_region.getCenter()
+
+<span class="kw">def</span> FixFirstItem (log_file):
+    setting=(<img src="FB01_setting.png" />)
+    changed=(<img src="FB01_changed.png" />)
+    <span class="skw">sleep</span>(<span class="dig">2</span>)
+    <span class="skw">click</span> (green1)
+    <span class="skw">sleep</span>(<span class="dig">2</span>)
+    PF_Android_common.verify (log_file,setting)
+    <span class="skw">click</span>(setting)
+    PF_Android_common.verify (log_file,changed)
+    <span class="skw">click</span> (Fixes)
+    PF_Android_common.verify (log_file,gray1)
+    PF_Android_common.write_log_with_screenshot(log_file,<span class="str">"state of item 1 was changed to Gray"</span>)
+    <span class="kw">print</span> (<span class="str">"state of item 1 was changed to Gray"</span>)
+
+
+<span class="kw">def</span> FixSecondItem (log_file):
+    <span class="skw">sleep</span>(<span class="dig">2</span>)
+    <span class="skw">click</span> (green2)
+    PF_Android_common.verify (log_file,<img src="1395392730389.png" />)
+    wheel(center, WHEEL_DOWN, <span class="dig">5</span>)
+    <span class="skw">sleep</span>(<span class="dig">2</span>)
+    <span class="skw">click</span> (<img src="FB02_click.png" />)
+    PF_Android_common.verify (log_file,<img src="FB02_clicked.png" />)
+    <span class="skw">click</span> (Fixes)
+    PF_Android_common.verify (log_file,gray2)
+    PF_Android_common.write_log_with_screenshot(log_file,<span class="str">"state of item 2 was changed to Gray"</span>)
+    <span class="kw">print</span> (<span class="str">"state of item 2 was changed to Gray"</span>)
+
+<span class="kw">def</span> FixThirdItem (log_file):
+    <span class="skw">sleep</span>(<span class="dig">2</span>)
+    <span class="skw">click</span> (green3)
+
+    PF_Android_common.verify (log_file,<img src="FB03_page.png" />)
+    <span class="skw">click</span> (<img src="FB03_click.png" />)
+    PF_Android_common.verify (log_file,<img src="Fb03_chacked.png" />)
+    <span class="skw">click</span> (Fixes)
+    PF_Android_common.verify (log_file,gray3)
+    PF_Android_common.write_log_with_screenshot(log_file,<span class="str">"state of item 3 was changed to Gray"</span>)
+    <span class="kw">print</span> (<span class="str">"state of item 3 was changed to Gray"</span>)
+
+<span class="kw">def</span> FixFifthItem (log_file):
+    <span class="skw">sleep</span>(<span class="dig">3</span>)
+    <span class="skw">click</span> (green5)
+    <span class="skw">sleep</span>(<span class="dig">5</span>)
+    <span class="skw">click</span> (<img src="FB05_click.png" />)
+    PF_Android_common.verify (log_file,<img src="Fb05_CHECKED.png" />)
+    <span class="skw">click</span> (Fixes)
+    PF_Android_common.verify (log_file,gray5)
+    PF_Android_common.write_log_with_screenshot(log_file,<span class="str">"state of item 5 was changed to Gray"</span>)
+    <span class="kw">print</span> (<span class="str">"state of item 5 was changed to Gray"</span>)
+
+
+<span class="kw">def</span> FixNinthItem (log_file):
+    <span class="skw">sleep</span>(<span class="dig">2</span>)
+    <span class="skw">click</span> (green9)
+    PF_Android_common.verify (log_file,<img src="FB09_click.png" />)
+    <span class="skw">click</span> (<img src="FB09_click.png" />)
+    PF_Android_common.verify (log_file,<img src="FB09_off.png" />)
+    <span class="skw">click</span> (Fixes)
+    PF_Android_common.verify (log_file,gray9)
+    PF_Android_common.write_log_with_screenshot(log_file,<span class="str">"state of item 9 was changed to Gray"</span>)
+    <span class="kw">print</span> (<span class="str">"state of item 9 was changed to Gray"</span>)
+
+<span class="kw">def</span> FixGL01 (log_file):
+    <span class="skw">sleep</span>(<span class="dig">2</span>)
+    <span class="skw">click</span>(GL01_green)
+    PF_Android_common.IfPass(log_file)
+    PF_Android_common.verify (log_file,<img src="GL01_on.png" />)
+    <span class="skw">click</span>(<img src="GL01_on.png" />)
+    PF_Android_common.verify (log_file,<img src="GL01_off.png" />)
+    <span class="skw">click</span>(Fixes)
+    PF_Android_common.verify (log_file,GL01_gray)
+    PF_Android_common.write_log(log_file,<span class="str">"State of Item GL01 changed to Gray"</span>)
+    <span class="kw">print</span> (<span class="str">"item GL01 status was changed"</span>)
+
+<span class="kw">def</span> FixGL03(log_file):
+    save_button=(<img src="GL03_save.png" />)
+    <span class="skw">sleep</span>(<span class="dig">2</span>)
+    <span class="skw">click</span>(GL03_green)
+    PF_Android_common.IfPass(log_file)
+    PF_Android_common.verify(log_file,<img src="GL03_page.png" />)
+    wheel(center, WHEEL_DOWN, <span class="dig">25</span>)
+    <span class="skw">click</span>(<img src="GL03_unchecked.png" />)
+    <span class="skw">sleep</span>(<span class="dig">2</span>)
+    <span class="skw">click</span>(save_button)
+    <span class="skw">sleep</span>(<span class="dig">2</span>)
+    <span class="skw">click</span>(Fixes)
+    PF_Android_common.verify(log_file,GL03_gray)
+    PF_Android_common.write_log(log_file,<span class="str">"State of Item GL03 changed to Gray"</span>)
+    <span class="kw">print</span> (<span class="str">"item GL03 status was changed"</span>)
+
+
+
+<span class="kw">def</span> value(green, orange, gray):
+    <span class="kw">if</span> exists(Pattern(green).similar(<span class="dig">0.90</span>)):
+        PF_Android_common.write_log(log_file,<span class="str">"Item in green state detected"</span>)
+        PF_Android_common.verify(log_file,green)
+        <span class="kw">return</span> <span class="dig">1</span>
+    <span class="kw">elif</span> exists(Pattern(orange).similar(<span class="dig">0.90</span>)):
+        PF_Android_common.write_log(log_file,<span class="str">"Item in orange state detected"</span>)
+        PF_Android_common.verify(log_file,orange)
+        <span class="kw">return</span> <span class="dig">0</span>
+    <span class="kw">elif</span> exists(Pattern(gray).similar(<span class="dig">0.90</span>)):
+        PF_Android_common.write_log(log_file,<span class="str">"Item in gray state detected"</span>)
+        PF_Android_common.verify(log_file,gray)
+        <span class="kw">return</span> <span class="dig">0</span>
+    <span class="kw">else</span>:
+        <span class="kw">raise</span> Exception(<span class="str">"Item not found"</span>)
+<span class="kw">def</span> Android_Setup(log_file) :
+
+    PF_Android_common.FB_logIn(log_file)
+    <span class="skw">sleep</span>(<span class="dig">10</span>)
+    x=value(green1, orange1, gray1)
+    <span class="kw">if</span> x==<span class="dig">1</span>:
+        FixFirstItem (log_file)
+        <span class="skw">sleep</span>(<span class="dig">3</span>)
+    y=value(green2, orange2, gray2)
+    <span class="kw">if</span> y==<span class="dig">1</span>:
+        FixSecondItem (log_file)
+        <span class="skw">sleep</span>(<span class="dig">3</span>)
+    z=value(green3, orange3, gray3)
+    <span class="kw">if</span> z==<span class="dig">1</span>:
+        FixThirdItem (log_file)
+    <span class="skw">sleep</span>(<span class="dig">2</span>)
+    wheel(center, WHEEL_DOWN, <span class="dig">5</span>)
+    <span class="skw">sleep</span>(<span class="dig">2</span>)
+    k=value(green5, orange5, gray5)
+    <span class="kw">if</span> k==<span class="dig">1</span>:
+        FixFifthItem (log_file)
+    wheel(center, WHEEL_DOWN, <span class="dig">5</span>)
+    <span class="skw">sleep</span>(<span class="dig">2</span>)
+    j=value(green9, orange9, gray9)
+    <span class="kw">if</span> j==<span class="dig">1</span>:
+        FixNinthItem (log_file)
+    PF_Android_common.Google_logIn(log_file)
+    <span class="skw">sleep</span>(<span class="dig">5</span>)
+    GL01=value(GL01_green, GL01_orange, GL01_gray)
+    <span class="kw">if</span> GL01==<span class="dig">1</span>:
+        FixGL01 (log_file)
+    GL03=value(GL03_green, GL03_orange, GL03_gray)
+    <span class="kw">if</span> GL03==<span class="dig">1</span>:
+        FixGL03 (log_file)
+    PF_Android_common.clearCookiesOnPF(log_file, sleepTime = <span class="dig">6</span>, pf_gear = None, findGear = True, pln=None)
+    <span class="skw">sleep</span>(<span class="dig">5</span>)
+    PF_Android_common.FB_logIn(log_file)
+    <span class="skw">sleep</span>(<span class="dig">15</span>)
+    PF_Android_common.Google_logIn(log_file)
+    <span class="skw">sleep</span>(<span class="dig">5</span>)
+    wheel(center, WHEEL_UP, <span class="dig">20</span>)
+    <span class="skw">sleep</span>(<span class="dig">2</span>)
+    wheel(center, WHEEL_DOWN, <span class="dig">3</span>)
+    orange01_05=[orange1,orange2,orange3,orange4,orange5,]
+    orange06_09=[orange6,orange7,orange8,orange9]
+    google=[GL01_orange,GL02_orange,GL03_orange]
+    <span class="kw">for</span> i <span class="kw">in</span> orange01_05:
+        PF_Android_common.verify(log_file, i)
+        <span class="skw">sleep</span>(<span class="dig">2</span>)
+    wheel(center, WHEEL_DOWN, <span class="dig">5</span>)
+    <span class="kw">for</span> i <span class="kw">in</span> orange06_09:
+        PF_Android_common.verify(log_file, i)
+        <span class="skw">sleep</span>(<span class="dig">2</span>)
+    PF_Android_common.locateItem (log_file,<img src="More.png" />)
+    <span class="kw">for</span> i <span class="kw">in</span> google:
+        PF_Android_common.verify(log_file, i)
+        <span class="skw">sleep</span>(<span class="dig">2</span>)
+
+
+
+<span class="kw">if</span> __name__ == <span class="str">"__main__"</span>:
+    <span class="kw">try</span>:
+        script_path, test_case_script_name=os.path.split(sys.argv[<span class="dig">0</span>])
+        test_case_script_name=test_case_script_name + <span class="str">".sikuli"</span>
+        log_file=PF_Android_common.create_log_folder(test_case_script_name,test_case_id)
+        PF_Android_common.AppOpen(log_file)
+        <span class="skw">sleep</span>(<span class="dig">10</span>)
+        Android_Setup(log_file)
+        PF_Android_common.PassCase(log_file, test_case_id)
+
+    <span class="kw">except</span> FindFailed, f:
+        msg =  <span class="str">"Find Failed Exception: %s "</span> % f
+        PF_Android_common.write_log(log_file,msg)
+        PF_Android_common.FailTestCase(log_file, test_case_id)
+    <span class="kw">except</span> Exception, e:
+        msg =  <span class="str">"Exception detected: %s "</span> % e
+        PF_Android_common.write_log(log_file,msg)
+        PF_Android_common.FailTestCase(log_file, test_case_id)
+</pre>
+</body>
+</html>
