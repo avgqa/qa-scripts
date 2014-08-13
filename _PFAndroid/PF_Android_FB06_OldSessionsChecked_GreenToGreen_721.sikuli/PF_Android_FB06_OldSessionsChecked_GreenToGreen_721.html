@@ -1,0 +1,129 @@
+
+<html>
+   <head>
+      <style type="text/css">
+         .sikuli-code {
+            font-size: 20px;
+            font-family: "Osaka-mono", Monospace;
+            line-height: 1.5em;
+            display:table-cell;
+            white-space: pre-wrap;       /* css-3 */
+            white-space: -moz-pre-wrap !important;  /* Mozilla, since 1999 */
+            white-space: -pre-wrap;      /* Opera 4-6 */
+            white-space: -o-pre-wrap;    /* Opera 7 */
+            word-wrap: break-word;       /* Internet Explorer 5.5+ */
+            width: 99%;   /* remove horizontal scroll-bar when viewing in IE7 */
+         }
+         .sikuli-code img {
+            vertical-align: middle;
+            margin: 2px;
+            border: 1px solid #ccc;
+            padding: 2px;
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+            -moz-box-shadow: 1px 1px 1px gray;
+            -webkit-box-shadow: 1px 1px 2px gray;
+         }
+         .kw {
+            color: blue;
+         }
+         .skw {
+            color: rgb(63, 127, 127);
+         }
+
+         .str {
+            color: rgb(128, 0, 0);
+         }
+
+         .dig {
+            color: rgb(128, 64, 0);
+         }
+
+         .cmt {
+            color: rgb(200, 0, 200);
+         }
+
+         h2 {
+            display: inline;
+            font-weight: normal;
+         }
+
+         .info {
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+            display: none;
+         }
+
+         a {
+            color: #9D2900;
+         }
+
+         body {
+            font-family: "Trebuchet MS", Arial, Sans-Serif;
+         }
+
+      </style>
+   </head>
+<body>
+<div class="info">
+<h2>PF_Android_FB06_OldSessionsChecked_GreenToGreen_721.sikuli\PF_Android_FB06_OldSessionsChecked_GreenToGreen_721.sikuli</h2> <a href="PF_Android_FB06_OldSessionsChecked_GreenToGreen_721.sikuli\PF_Android_FB06_OldSessionsChecked_GreenToGreen_721.zip">(Download this script)</a>
+</div>
+<pre class="sikuli-code">
+<span class="kw">import</span> PF_Android_common
+reload(PF_Android_common)
+<span class="kw">from</span> sikuli <span class="kw">import</span> *
+
+
+<span class="kw">def</span> PF_Android_06_OldSessionsChecked_GreenToGreen_721 (log_file):
+    more=(<img src="Pros.png" />)
+    less=(<img src="Less-1.png" />)
+    top_bar=(<img src="1407931767897.png" />)
+    active_sessions=(<img src="FB06_session.png" />)
+    fixes=(<img src="1407931777884.png" />)
+    old_sessions_green=(<img src="1407931754029.png" />)
+
+
+    PF_Android_common.locateItem(log_file, old_sessions_green)
+    <span class="skw">click</span> (old_sessions_green)
+    PF_Android_common.verify (log_file,more)
+    <span class="skw">click</span>(more)
+    PF_Android_common.verify (log_file,top_bar)
+    PF_Android_common.verify (log_file,less)
+    <span class="skw">click</span>(less)
+    PF_Android_common.verify (log_file,active_sessions)
+    <span class="skw">click</span>(fixes)
+    PF_Android_common.verify (log_file,old_sessions_green)
+
+
+
+test_case_id=<span class="str">"PF-721"</span>
+
+
+<span class="kw">if</span> __name__ == <span class="str">"__main__"</span>:
+    log_file=<span class="str">""</span>
+    <span class="kw">try</span>:
+        script_path, test_case_script_name=os.path.split(sys.argv[<span class="dig">0</span>])
+        test_case_script_name=test_case_script_name + <span class="str">".sikuli"</span>
+        log_file=PF_Android_common.create_log_folder(test_case_script_name,test_case_id)
+
+        PF_Android_common.AppOpen (log_file)
+        <span class="skw">sleep</span>(<span class="dig">5</span>)
+        PF_Android_common.FB_logIn(log_file)
+        <span class="skw">sleep</span>(<span class="dig">5</span>)
+
+        PF_Android_06_OldSessionsChecked_GreenToGreen_721 (log_file)
+
+        PF_Android_common.PassCase(log_file, test_case_id)
+
+    <span class="kw">except</span> FindFailed, f:
+        msg =  <span class="str">"Find Failed Exception: %s "</span> % f
+        PF_Android_common.write_log(log_file,msg)
+        PF_Android_common.FailTestCase(log_file, test_case_id)
+    <span class="kw">except</span> Exception, e:
+        msg =  <span class="str">"Exception detected: %s "</span> % e
+        PF_Android_common.write_log(log_file,msg)
+        PF_Android_common.FailTestCase(log_file, test_case_id)
+</pre>
+</body>
+</html>

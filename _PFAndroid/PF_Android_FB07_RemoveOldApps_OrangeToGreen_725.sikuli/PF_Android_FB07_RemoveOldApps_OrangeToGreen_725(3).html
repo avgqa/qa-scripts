@@ -1,0 +1,144 @@
+
+<html>
+   <head>
+      <style type="text/css">
+         .sikuli-code {
+            font-size: 20px;
+            font-family: "Osaka-mono", Monospace;
+            line-height: 1.5em;
+            display:table-cell;
+            white-space: pre-wrap;       /* css-3 */
+            white-space: -moz-pre-wrap !important;  /* Mozilla, since 1999 */
+            white-space: -pre-wrap;      /* Opera 4-6 */
+            white-space: -o-pre-wrap;    /* Opera 7 */
+            word-wrap: break-word;       /* Internet Explorer 5.5+ */
+            width: 99%;   /* remove horizontal scroll-bar when viewing in IE7 */
+         }
+         .sikuli-code img {
+            vertical-align: middle;
+            margin: 2px;
+            border: 1px solid #ccc;
+            padding: 2px;
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+            -moz-box-shadow: 1px 1px 1px gray;
+            -webkit-box-shadow: 1px 1px 2px gray;
+         }
+         .kw {
+            color: blue;
+         }
+         .skw {
+            color: rgb(63, 127, 127);
+         }
+
+         .str {
+            color: rgb(128, 0, 0);
+         }
+
+         .dig {
+            color: rgb(128, 64, 0);
+         }
+
+         .cmt {
+            color: rgb(200, 0, 200);
+         }
+
+         h2 {
+            display: inline;
+            font-weight: normal;
+         }
+
+         .info {
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+            display: none;
+         }
+
+         a {
+            color: #9D2900;
+         }
+
+         body {
+            font-family: "Trebuchet MS", Arial, Sans-Serif;
+         }
+
+      </style>
+   </head>
+<body>
+<div class="info">
+<h2>PF_Android_FB07_RemoveOldApps_OrangeToGreen_725.sikuli\PF_Android_FB07_RemoveOldApps_OrangeToGreen_725(2).sikuli</h2> <a href="PF_Android_FB07_RemoveOldApps_OrangeToGreen_725.sikuli\PF_Android_FB07_RemoveOldApps_OrangeToGreen_725(2).zip">(Download this script)</a>
+</div>
+<pre class="sikuli-code">
+<span class="kw">import</span> PF_Android_common
+reload(PF_Android_common)
+<span class="kw">from</span> sikuli <span class="kw">import</span> *
+
+
+
+
+<span class="kw">def</span>  PF_Android_FB07_RemoveOldApps_OrangeToGreen_725 ():
+
+    Orange = (<img src="1394021665590.png" />)
+    More =(<img src="1394021677017.png" />)
+    Less=(<img src="1394021687122.png" />)
+    Percentage=(<img src="1394021694327.png" />)
+    TopBar =(<img src="1394021701297.png" />)
+    Fixes =(<img src="1394021707915.png" />)
+    Text = (<img src="1394021732054.png" />)
+    Green =(<img src="1394021753599.png" />)
+
+
+    PF_Android_common.locateItem(log_file,Orange)
+    PF_Android_common.verify (log_file,Orange)
+    <span class="skw">click</span> (Orange)
+    <span class="skw">sleep</span>(<span class="dig">2</span>)
+
+    PF_Android_common.verify (log_file,More)
+    <span class="skw">sleep</span>(<span class="dig">1</span>)
+    <span class="skw">click</span> (More)
+
+    PF_Android_common.verify (log_file,TopBar)
+
+    PF_Android_common.verify (log_file,Less)
+    <span class="skw">sleep</span>(<span class="dig">1</span>)
+    <span class="skw">click</span>(Less)
+
+    PF_Android_common.verify (log_file,Percentage)
+
+    PF_Android_common.verify(log_file,Text)
+
+    PF_Android_common.verify(log_file,Fixes)
+    <span class="skw">click</span>(Fixes)
+    <span class="skw">sleep</span>(<span class="dig">2</span>)
+    PF_Android_common.verify(log_file,Green)
+
+
+test_case_id=<span class="str">"PF-1994"</span>
+
+
+<span class="kw">if</span> __name__ == <span class="str">"__main__"</span>:
+    <span class="kw">try</span>:
+        script_path, test_case_script_name=os.path.split(sys.argv[<span class="dig">0</span>])
+        test_case_script_name=test_case_script_name + <span class="str">".sikuli"</span>
+        log_file=PF_Android_common.create_log_folder(test_case_script_name,test_case_id)
+
+        PF_Android_common.AppOpen (log_file)
+        PF_Android_common.FB_logIn(log_file)
+
+        PF_Android_FB07_RemoveOldApps_OrangeToGreen_725 ()
+
+
+        PF_Android_common.PassCase(log_file, test_case_id)
+
+    <span class="kw">except</span> FindFailed, f:
+        msg =  <span class="str">"Find Failed Exception: %s "</span> % f
+        PF_Android_common.write_log(log_file,msg)
+        PF_Android_common.FailTestCase(log_file, test_case_id)
+    <span class="kw">except</span> Exception, e:
+        msg =  <span class="str">"Exception detected: %s "</span> % e
+        PF_Android_common.write_log(log_file,msg)
+        PF_Android_common.FailTestCase(log_file, test_case_id)
+</pre>
+</body>
+</html>
