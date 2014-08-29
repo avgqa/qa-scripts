@@ -1,0 +1,174 @@
+
+<html>
+   <head>
+      <style type="text/css">
+         .sikuli-code {
+            font-size: 20px;
+            font-family: "Osaka-mono", Monospace;
+            line-height: 1.5em;
+            display:table-cell;
+            white-space: pre-wrap;       /* css-3 */
+            white-space: -moz-pre-wrap !important;  /* Mozilla, since 1999 */
+            white-space: -pre-wrap;      /* Opera 4-6 */
+            white-space: -o-pre-wrap;    /* Opera 7 */
+            word-wrap: break-word;       /* Internet Explorer 5.5+ */
+            width: 99%;   /* remove horizontal scroll-bar when viewing in IE7 */
+         }
+         .sikuli-code img {
+            vertical-align: middle;
+            margin: 2px;
+            border: 1px solid #ccc;
+            padding: 2px;
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+            -moz-box-shadow: 1px 1px 1px gray;
+            -webkit-box-shadow: 1px 1px 2px gray;
+         }
+         .kw {
+            color: blue;
+         }
+         .skw {
+            color: rgb(63, 127, 127);
+         }
+
+         .str {
+            color: rgb(128, 0, 0);
+         }
+
+         .dig {
+            color: rgb(128, 64, 0);
+         }
+
+         .cmt {
+            color: rgb(200, 0, 200);
+         }
+
+         h2 {
+            display: inline;
+            font-weight: normal;
+         }
+
+         .info {
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+            display: none;
+         }
+
+         a {
+            color: #9D2900;
+         }
+
+         body {
+            font-family: "Trebuchet MS", Arial, Sans-Serif;
+         }
+
+      </style>
+   </head>
+<body>
+<div class="info">
+<h2>AM_WebApp_AccountOverview_168.sikuli\AM_WebApp_AccountOverview_168.sikuli</h2> <a href="AM_WebApp_AccountOverview_168.sikuli\AM_WebApp_AccountOverview_168.zip">(Download this script)</a>
+</div>
+<pre class="sikuli-code">
+<span class="kw">import</span> AVGME_common <span class="kw">as</span> AM_common
+reload(AM_common)
+
+
+
+test_case_id=<span class="str">"AM-168"</span>
+
+<span class="kw">def</span> AM_WebApp_AccountOverview_168(log_file):
+    Accounts=(<img src="1406027347813.png" />)
+    FbFilled=(<img src="1406027609084.png" />)
+    FbGrey=(<img src="1406027642065.png" />)
+    FbHover=(<img src="1406027666607.png" />)
+    Cancel=(<img src="1406028180682.png" />)
+    TwitterGrey=(<img src="1406028218310.png" />)
+    TwitterHover=(<img src="1406028257890.png" />)
+    TwitterFilled=(<img src="1406028286723.png" />)
+    GmailGrey=(<img src="1406028356302.png" />)
+    GmailHover=(<img src="1406028375115.png" />)
+    GmailFilled=(<img src="1406028395426.png" />)
+
+    NewGrey=(<img src="1406028472773.png" />)
+    NewHover=(<img src="1406028504858.png" />)
+    NewFilled=(<img src="1406028526951.png" />)
+    Pass=(<img src="1406029044253.png" />)
+
+    AM_common.AppOpen(log_file)
+    <span class="kw">if</span> exists (Accounts):
+        <span class="skw">click</span>(Accounts)
+    AM_common.verify(log_file,FbGrey)
+    hover(FbGrey)
+    AM_common.verify(log_file,FbHover)
+    <span class="skw">click</span>(FbHover)
+    AM_common.verify(log_file,FbFilled)
+    <span class="skw">click</span>(Cancel)
+
+
+    AM_common.verify(log_file,TwitterGrey)
+    hover(TwitterGrey)
+    AM_common.verify(log_file,TwitterHover)
+    <span class="skw">click</span>(TwitterHover)
+    AM_common.verify(log_file,TwitterFilled)
+    <span class="skw">click</span>(Cancel)
+    hover(Pass)
+
+    AM_common.verify(log_file,GmailGrey)
+    hover(GmailGrey)
+    AM_common.verify(log_file,GmailHover)
+    <span class="skw">click</span>(GmailHover)
+    AM_common.verify(log_file,GmailFilled)
+    <span class="skw">click</span>(Cancel)
+
+
+    AM_common.verify(log_file,NewGrey)
+    hover(NewGrey)
+    AM_common.verify(log_file,NewHover)
+    <span class="skw">click</span>(NewHover)
+    AM_common.verify(log_file,NewFilled)
+    <span class="skw">click</span>(Cancel)
+
+
+
+
+
+
+
+
+
+
+
+<span class="cmt">#Function_call
+</span><span class="kw">if</span> __name__ == <span class="str">"__main__"</span>:
+    log_file = <span class="str">""</span>
+    <span class="kw">try</span>:
+        script_path, test_case_script_name=os.path.split(sys.argv[<span class="dig">0</span>])
+        test_case_script_name=test_case_script_name + <span class="str">".sikuli"</span>
+        log_file=AM_common.create_log_folder(test_case_script_name, test_case_id)
+
+        AM_common.InstallExtention(log_file)
+        AM_common.LoginTOApp(log_file)
+        AM_common.delItem(log_file)
+
+
+
+
+        AM_WebApp_AccountOverview_168(log_file)
+
+
+        AM_common.PassCase(log_file, test_case_id)
+
+    <span class="kw">except</span> FindFailed, f:
+        msg =  <span class="str">"Find Failed Exception: %s "</span> % f
+        AM_common.write_log(log_file,msg)
+        AM_common.FailTestCase(log_file, test_case_id)
+
+    <span class="kw">except</span> Exception, e:
+        msg =  <span class="str">"Exception detected: %s "</span> % e
+        <span class="kw">print</span> <span class="str">"exception"</span>
+        AM_common.write_log(log_file,msg)
+        AM_common.FailTestCase(log_file, test_case_id)
+</pre>
+</body>
+</html>
