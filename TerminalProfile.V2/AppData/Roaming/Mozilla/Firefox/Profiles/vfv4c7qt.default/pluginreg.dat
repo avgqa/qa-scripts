@@ -5,15 +5,6 @@ Version|0.17|$
 Arch|x86-msvc|$
 
 [PLUGINS]
-NPSWF32_14_0_0_145.dll|$
-C:\Windows\SysWOW64\Macromed\Flash\NPSWF32_14_0_0_145.dll|$
-14.0.0.145|$
-1405004658258|0|0|0|$
-Shockwave Flash 14.0 r0|$
-Shockwave Flash|$
-2
-0|application/x-shockwave-flash|Adobe Flash movie|swf|$
-1|application/futuresplash|FutureSplash movie|spl|$
 nppdf32.dll|$
 C:\Program Files (x86)\Adobe\Reader 10.0\Reader\AIR\nppdf32.dll|$
 10.1.10.18|$
@@ -51,20 +42,29 @@ Silverlight Plug-In|$
 2
 0|application/x-silverlight|npctrl|scr|$
 1|application/x-silverlight-2|||$
+NPSWF32_11_9_900_152.dll|$
+C:\Windows\SysWOW64\Macromed\Flash\NPSWF32_11_9_900_152.dll|$
+11.9.900.152|$
+1384354025569|0|0|0|$
+Shockwave Flash 11.9 r900|$
+Shockwave Flash|$
+2
+0|application/x-shockwave-flash|Adobe Flash movie|swf|$
+1|application/futuresplash|FutureSplash movie|spl|$
 npdeployJava1.dll|$
 C:\Program Files (x86)\Java\jre6\bin\new_plugin\npdeployJava1.dll|$
-6.0.290.11|$
-1317611164000|0|0|0|$
+6.0.250.6|$
+1307544455307|0|0|0|$
 NPRuntime Script Plug-in Library for Java(TM) Deploy|$
-Java Deployment Toolkit 6.0.290.11|$
+Java Deployment Toolkit 6.0.250.6|$
 1
 0|application/java-deployment-toolkit|||$
 npjp2.dll|$
 C:\Program Files (x86)\Java\jre6\bin\new_plugin\npjp2.dll|$
-6.0.290.11|$
-1317611141000|0|0|0|$
-Next Generation Java Plug-in 1.6.0_29 for Mozilla browsers|$
-Java(TM) Platform SE 6 U29|$
+6.0.250.6|$
+1307544455305|0|0|0|$
+Next Generation Java Plug-in 1.6.0_25 for Mozilla browsers|$
+Java(TM) Platform SE 6 U25|$
 34
 0|application/x-java-applet|Java Applet||$
 1|application/x-java-bean|JavaBeans||$
@@ -97,8 +97,8 @@ Java(TM) Platform SE 6 U29|$
 28|application/x-java-bean;version=1.5|||$
 29|application/x-java-applet;version=1.6|||$
 30|application/x-java-bean;version=1.6|||$
-31|application/x-java-applet;jpi-version=1.6.0_29|||$
-32|application/x-java-bean;jpi-version=1.6.0_29|||$
+31|application/x-java-applet;jpi-version=1.6.0_25|||$
+32|application/x-java-bean;jpi-version=1.6.0_25|||$
 33|application/x-java-vm-npruntime|||$
 np-vmware-vmrc.dll|$
 C:\Program Files (x86)\Common Files\VMware\VMware VMRC Plug-in\Firefox\np-vmware-vmrc.dll|$
@@ -117,17 +117,17 @@ Yahoo Application State Plugin|$
 1
 0|application/x-vnd.yahoo.applicationstate|npYState|npYState|$
 NPSPWRAP.DLL|$
-C:\PROGRA~2\MICROS~1\Office14\NPSPWRAP.DLL|$
+C:\PROGRA~2\MICROS~3\Office14\NPSPWRAP.DLL|$
 14.0.4761.1000|$
-1269454958000|0|0|0|$
+1269451358000|0|0|0|$
 The plug-in allows you to open and edit files using Microsoft Office applications|$
 Microsoft Office 2010|$
 1
 0|application/x-sharepoint|SharePoint Plug-in for Firefox||$
 NPAUTHZ.DLL|$
-C:\PROGRA~2\MICROS~1\Office14\NPAUTHZ.DLL|$
+C:\PROGRA~2\MICROS~3\Office14\NPAUTHZ.DLL|$
 14.0.4730.1010|$
-1263066138000|0|0|0|$
+1263062538000|0|0|0|$
 Office Authorization plug-in for NPAPI browsers|$
 Microsoft Office 2010|$
 1
