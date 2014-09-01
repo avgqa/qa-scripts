@@ -85,13 +85,13 @@ test_case_id=<span class="str">"AM-202"</span>
     GmailAcc=(<img src="1405341461409.png" />)
     AddNew=(<img src="1404913650255.png" />)
     Name=(<img src="1405685022627.png" />)
-    Address=(<img src="1405685728068.png" />)
+    Address=(<img src="1409318275207.png" />)
     Username=(<img src="1405686157656.png" />)
     Password1=(<img src="1405686257803.png" />)
     Passowrd=(<img src="1405338004216.png" />)
     SaveChanges=(<img src="1404914048588.png" />)
     SaveChangesGrey=(<img src="1405683391812.png" />)
-    Stored=( <img src="1404914110969.png" />)
+    Stored=( <img src="1409318086750.png" />)
     Advanced=(<img src="1405341526448.png" />)
     Speed=(<img src="1405341545558.png" />)
     Item=(<img src="1405585496047.png" />)
@@ -187,8 +187,8 @@ test_case_id=<span class="str">"AM-202"</span>
         test_case_script_name=test_case_script_name + <span class="str">".sikuli"</span>
         log_file=AM_common.create_log_folder(test_case_script_name, test_case_id)
 
-        <span class="cmt">#AM_common.InstallExtention(log_file)
-</span>
+        AM_common.InstallExtention(log_file)
+
         AM_common.LoginTOApp(log_file)
         AM_WebApp_All_fields_are_empty_202(log_file)
 

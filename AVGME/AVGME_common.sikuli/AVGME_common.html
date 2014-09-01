@@ -636,8 +636,8 @@ image=<span class="str">"avgme-mapping"</span>
     Close=(<img src="1405584053375.png" />)
     Topbar=( <img src="1405584104731.png" />)
     greenlock=(<img src="1405582009901.png" />)
-    greenlock1=(<span class="str">""</span>)
-    count = <span class="dig">0</span>
+    <span class="cmt">#greenlock1=("")
+</span>    count = <span class="dig">0</span>
     <span class="skw">wait</span>(<span class="dig">1</span>)
     <span class="kw">if</span> <span class="kw">not</span> exists (greenlock):
         <span class="kw">return</span> <span class="dig">0</span>
@@ -789,7 +789,7 @@ image=<span class="str">"avgme-mapping"</span>
         Free=(<img src="1404895678910.png" />)
         Add=(<img src="1404895706525.png" />)
         Options=(Pattern(<img src="1404895861227.png" />).similar(<span class="dig">0.91</span>))
-        Server=(<img src="1404895912804.png" />)
+        Server=( <img src="1409301894446.png" />)
         Save=(<img src="1404896133634.png" />)
         AvgPass=(<img src="1404898394393.png" />)
         load_browser_with_url(<span class="str">""</span>)
@@ -811,6 +811,7 @@ image=<span class="str">"avgme-mapping"</span>
         <span class="skw">wait</span>(<span class="dig">2</span>)
         <span class="cmt">#hover(Options)
 </span>        <span class="skw">click</span>(Options)
+        <span class="skw">wait</span>(<span class="dig">3</span>)
         <span class="kw">if</span> exists (Server):
             <span class="skw">click</span>(Server)
             <span class="skw">wait</span>(<span class="dig">2</span>)
@@ -899,7 +900,7 @@ image=<span class="str">"avgme-mapping"</span>
 
 
 <span class="kw">def</span> delItem(log_file):
-    Item=(Pattern(<img src="1405585496047-1.png" />).similar(<span class="dig">0.90</span>))
+    Item=(<img src="1409316568129.png" />)
     Trash=(<img src="1405343738103-1.png" />)
     Delete=(<img src="1405587762833-1.png" />)
     <span class="skw">click</span>(redicon)
@@ -922,6 +923,30 @@ image=<span class="str">"avgme-mapping"</span>
     <span class="kw">if</span> exists(Logout):
         <span class="skw">click</span>(Logout)
     verify(logfile,Welcome)
+
+
+
+
+<span class="kw">if</span> __name__ == <span class="str">"__main__"</span>:
+    log_file = <span class="str">""</span>
+    <span class="kw">try</span>:
+        script_path, test_case_script_name=os.path.split(sys.argv[<span class="dig">0</span>])
+        test_case_script_name=test_case_script_name + <span class="str">".sikuli"</span>
+        log_file=create_log_folder(test_case_script_name, test_case_id)
+
+        delItem(log_file)
+
+
+    <span class="kw">except</span> FindFailed, f:
+        msg =  <span class="str">"Find Failed Exception: %s "</span> % f
+        write_log(log_file,msg)
+        FailTestCase(log_file, test_case_id)
+
+    <span class="kw">except</span> Exception, e:
+        msg =  <span class="str">"Exception detected: %s "</span> % e
+        <span class="kw">print</span> <span class="str">"exception"</span>
+        write_log(log_file,msg)
+        FailTestCase(log_file, test_case_id)
 </pre>
 </body>
 </html>

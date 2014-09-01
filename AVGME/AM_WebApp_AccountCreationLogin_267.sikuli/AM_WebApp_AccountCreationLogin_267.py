@@ -12,13 +12,13 @@ def AM_WebApp_AccountCreationLogin_267(log_file):
     Email=(Pattern("1406290215010.png").targetOffset(-2,18))
     Password=(Pattern("1406290240488.png").targetOffset(7,22))
 
-    Topbar=("1406288911113.png")
+    Topbar=("1409312402729.png")
     Never=("1406289312290.png")
     NotNow=("1406289369609.png")
     LogIn=("1406288988206.png")
     Dropdown=("1406289052724.png")
     LogOut=("1406289083491.png")
-    NoAccounts=("1406290095137.png")
+    NoAccounts=("1409312866244.png")
     Close=("1406290616730.png")
     Stored=("1406290696951.png")
     AM_common.load_browser_with_url("https://facebook.com")
@@ -26,7 +26,7 @@ def AM_WebApp_AccountCreationLogin_267(log_file):
     if exists (Dropdown):
         click(Dropdown)
         click(LogOut)
-    
+    AM_common.delItem(log_file)
     
     click(Email)
     type("a", KEY_CTRL)  
@@ -53,7 +53,8 @@ def AM_WebApp_AccountCreationLogin_267(log_file):
     type("US!pf.avg")
     click(LogIn)
     AM_common.verify(log_file,Topbar)
-    click(Close)                                      
+    if exists (Close):
+        click(Close)                                      
     click(AM_common.redicon)
     wait(4)
     AM_common.verify(log_file,Item)

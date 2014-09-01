@@ -13,13 +13,13 @@ def AM_WebApp_All_fields_are_empty_202(log_file):
     GmailAcc=("1405341461409.png")
     AddNew=("1404913650255.png")
     Name=("1405685022627.png")
-    Address=("1405685728068.png")
+    Address=("1409318275207.png")
     Username=("1405686157656.png")
     Password1=("1405686257803.png")
     Passowrd=("1405338004216.png")
     SaveChanges=("1404914048588.png")
     SaveChangesGrey=("1405683391812.png")
-    Stored=( "1404914110969.png")
+    Stored=( "1409318086750.png")
     Advanced=("1405341526448.png")
     Speed=("1405341545558.png")
     Item=("1405585496047.png")
@@ -115,7 +115,7 @@ if __name__ == "__main__":
         test_case_script_name=test_case_script_name + ".sikuli"
         log_file=AM_common.create_log_folder(test_case_script_name, test_case_id)
 
-        #AM_common.InstallExtention(log_file)
+        AM_common.InstallExtention(log_file)
 
         AM_common.LoginTOApp(log_file)
         AM_WebApp_All_fields_are_empty_202(log_file)

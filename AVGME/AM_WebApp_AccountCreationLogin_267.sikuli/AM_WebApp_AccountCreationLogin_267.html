@@ -84,13 +84,13 @@ test_case_id=<span class="str">"AM-267"</span>
     Email=(Pattern(<img src="1406290215010.png" />).targetOffset(-<span class="dig">2</span>,<span class="dig">18</span>))
     Password=(Pattern(<img src="1406290240488.png" />).targetOffset(<span class="dig">7</span>,<span class="dig">22</span>))
 
-    Topbar=(<img src="1406288911113.png" />)
+    Topbar=(<img src="1409312402729.png" />)
     Never=(<img src="1406289312290.png" />)
     NotNow=(<img src="1406289369609.png" />)
     LogIn=(<img src="1406288988206.png" />)
     Dropdown=(<img src="1406289052724.png" />)
     LogOut=(<img src="1406289083491.png" />)
-    NoAccounts=(<img src="1406290095137.png" />)
+    NoAccounts=(<img src="1409312866244.png" />)
     Close=(<img src="1406290616730.png" />)
     Stored=(<img src="1406290696951.png" />)
     AM_common.load_browser_with_url(<span class="str">"https://facebook.com"</span>)
@@ -98,7 +98,7 @@ test_case_id=<span class="str">"AM-267"</span>
     <span class="kw">if</span> exists (Dropdown):
         <span class="skw">click</span>(Dropdown)
         <span class="skw">click</span>(LogOut)
-
+    AM_common.delItem(log_file)
 
     <span class="skw">click</span>(Email)
     <span class="skw">type</span>(<span class="str">"a"</span>, KEY_CTRL)
@@ -125,7 +125,8 @@ test_case_id=<span class="str">"AM-267"</span>
     <span class="skw">type</span>(<span class="str">"US!pf.avg"</span>)
     <span class="skw">click</span>(LogIn)
     AM_common.verify(log_file,Topbar)
-    <span class="skw">click</span>(Close)
+    <span class="kw">if</span> exists (Close):
+        <span class="skw">click</span>(Close)
     <span class="skw">click</span>(AM_common.redicon)
     <span class="skw">wait</span>(<span class="dig">4</span>)
     AM_common.verify(log_file,Item)

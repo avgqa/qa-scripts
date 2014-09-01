@@ -565,7 +565,7 @@ def fill_fields(logfile):
     Close=("1405584053375.png")
     Topbar=( "1405584104731.png")
     greenlock=("1405582009901.png")
-    greenlock1=("")
+    #greenlock1=("")
     count = 0
     wait(1)
     if not exists (greenlock):
@@ -710,7 +710,7 @@ def LoginTOApp(logfile):
     write_log_with_screenshot(logfile,"See Screenshot:")
     type(Key.ESC)
     write_log(logfile,"You are succesfully logged in") 
-            
+
 
 
 def InstallExtention(logfile):
@@ -718,7 +718,7 @@ def InstallExtention(logfile):
         Free=("1404895678910.png")
         Add=("1404895706525.png")
         Options=(Pattern("1404895861227.png").similar(0.91))
-        Server=("1404895912804.png")
+        Server=( "1409301894446.png")
         Save=("1404896133634.png")
         AvgPass=("1404898394393.png")
         load_browser_with_url("")
@@ -740,6 +740,7 @@ def InstallExtention(logfile):
         wait(2)
         #hover(Options)
         click(Options)
+        wait(3)
         if exists (Server):
             click(Server)
             wait(2)
@@ -828,7 +829,7 @@ def AddNewAccount(logfile) :
     
   
 def delItem(log_file):   
-    Item=(Pattern("1405585496047-1.png").similar(0.90))
+    Item=("1409316568129.png")
     Trash=("1405343738103-1.png")
     Delete=("1405587762833-1.png")
     click(redicon)
@@ -855,6 +856,25 @@ def LogOut(logfile):
     
   
     
-    
+if __name__ == "__main__":
+    log_file = ""
+    try:
+        script_path, test_case_script_name=os.path.split(sys.argv[0])
+        test_case_script_name=test_case_script_name + ".sikuli"
+        log_file=create_log_folder(test_case_script_name, test_case_id)
+
+        delItem(log_file)
+
+
+    except FindFailed, f:
+        msg =  "Find Failed Exception: %s " % f
+        write_log(log_file,msg)        
+        FailTestCase(log_file, test_case_id)
+        
+    except Exception, e:
+        msg =  "Exception detected: %s " % e
+        print "exception"
+        write_log(log_file,msg)        
+        FailTestCase(log_file, test_case_id)    
     
     
