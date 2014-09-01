@@ -1,9 +1,0 @@
-_DetectCookies
-Y
-office14client.microsoft.com/
-1024
-2894659584
-30989471
-2739822810
-30254814
-*
